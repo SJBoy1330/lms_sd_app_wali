@@ -139,3 +139,21 @@
     height: 90px;
   }
   
+  .sidebar{
+    background-image: url(../images/bg-sidebar.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .sidebar-wrap.sidebar-overlay .sidebar {
+    width: 280px;
+    left: -280px;
+    background-color: #EC3528;
+    z-index: 1;
+  }
+
+  .nav-item.logout{
+    position: absolute;
+    bottom: 0;
+  }

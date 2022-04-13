@@ -26,7 +26,7 @@
                 </button>
             </li>
             <li class="nav-item">
-                <a class="nav-link mt-1 " href="toko-SD.html">
+                <a class="nav-link mt-1 " href="<?= base_url('toko')?>">
                     <span>
                         <i class="fa-solid fa-shop size-18"></i>
                         <span class="nav-text">Toko</span>
@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="col-auto text-center">
-                        <a href="tugas-SD.html" class="avatar avatar-60 p-1 shadow-sm shadow-warning rounded-20 bg-warning mb-2">
+                        <a href="<?= base_url('rapot'); ?>" class="avatar avatar-60 p-1 shadow-sm shadow-warning rounded-20 bg-warning mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-success">

@@ -13755,12 +13755,12 @@ linearGradient stop:last-child {
   opacity: 0;
 }
 
-.sidebar-wrap.sidebar-overlay .sidebar {
+/* .sidebar-wrap.sidebar-overlay .sidebar {
   width: 280px;
   left: -280px;
   background-color: var(--finwallapp-theme-color);
   z-index: 1;
-}
+} */
 
 .sidebar-wrap.sidebar-overlay .sidebar .nav .nav-item.dropdown .dropdown-menu {
   position: relative !important;
