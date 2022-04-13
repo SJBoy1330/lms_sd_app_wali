@@ -29,15 +29,15 @@ class Function_ctl extends MY_Welcome
             // CEK KODDE SEKOLAH
             if ($kds) {
                 // CETAK SESSION SERVER
-                $dbs['lms_sd_siswa_server'] = $kds->server;
+                $dbs['lms_sd_wali_server'] = $kds->server;
                 $this->session->set_userdata($dbs);
                 $this->db2 = $this->load->database('db_sekolah', TRUE);
-                $user = $this->db2->get_where('siswa', ['username' => $username])->row();
+                $user = $this->db2->get_where('wali', ['username' => $username])->row();
                 if ($user) {
                     if (hash_my_password($kds->id_sekolah, $user->username, $kata_sandi) == $user->password) {
-                        $arruser['lms_siswa_id_siswa'] = $user->id_siswa;
-                        $arruser['lms_siswa_role'] = 'siswa';
-                        $arruser['lms_siswa_id_sekolah'] = $kds->id_sekolah;
+                        $arruser['lms_wali_id_wali'] = $user->id_wali;
+                        $arruser['lms_wali_role'] = 'wali';
+                        $arruser['lms_wali_id_sekolah'] = $kds->id_sekolah;
                         $this->session->set_userdata($arruser);
 
                         $data['status'] = true;
@@ -45,14 +45,14 @@ class Function_ctl extends MY_Welcome
                         echo json_encode($data);
                         exit;
                     } else {
-                        $this->session->unset_userdata('lms_sd_siswa_server');
+                        $this->session->unset_userdata('lms_sd_wali_server');
                         $data['required'][] = ['req_kata_sandi', 'Kata sandi salah !'];
                         $data['status'] = false;
                         echo json_encode($data);
                         exit;
                     }
                 } else {
-                    $this->session->unset_userdata('lms_sd_siswa_server');
+                    $this->session->unset_userdata('lms_sd_wali_server');
                     $data['required'][] = ['req_username', 'Username tidak terdaftar !'];
                     $data['status'] = false;
                     echo json_encode($data);

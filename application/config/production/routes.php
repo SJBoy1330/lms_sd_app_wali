@@ -123,6 +123,21 @@ $route['home/(:any)'] = 'home/controller_ctl/$1';
 $route['home/(:any)/(:any)'] = 'home/controller_ctl/$1/$2';
 
 
+
+$route['rapot']  = 'rapot/controller_ctl';
+
+$route['rapot/(:any)'] = 'rapot/controller_ctl/$1';
+
+$route['rapot/(:any)/(:any)'] = 'rapot/controller_ctl/$1/$2';
+
+
+$route['func_rapot']  = 'rapot/function_ctl';
+
+$route['func_rapot/(:any)'] = 'rapot/function_ctl/$1';
+
+$route['func_rapot/(:any)/(:any)'] = 'rapot/function_ctl/$1/$2';
+
+
 $route['404_override'] = '';
 
 $route['translate_uri_dashes'] = FALSE;

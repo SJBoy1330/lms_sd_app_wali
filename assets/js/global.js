@@ -104,8 +104,6 @@ function submit_form(element, id_form) {
                 }
                 if (data.redirect) {
                     location.href = data.redirect;
-                } else {
-                    location.reload();
                 }
             }
         }

@@ -12,7 +12,7 @@ class Controller_ctl extends MY_Welcome
 	public function index()
 	{
 		// CEK SESSION
-		if ($this->session->userdata('lms_siswa_id_siswa')) {
+		if ($this->session->userdata('lms_wali_id_wali')) {
 			redirect('home');
 		}
 		// LOAD TITLE
@@ -29,7 +29,7 @@ class Controller_ctl extends MY_Welcome
 	public function login()
 	{
 		// CEK SESSION
-		if ($this->session->userdata('lms_siswa_id_siswa')) {
+		if ($this->session->userdata('lms_wali_id_wali')) {
 			redirect('home');
 		}
 		// LOAD TITLE
@@ -42,7 +42,7 @@ class Controller_ctl extends MY_Welcome
 	public function send_email()
 	{
 		// CEK SESSION
-		if ($this->session->userdata('lms_siswa_id_siswa')) {
+		if ($this->session->userdata('lms_wali_id_wali')) {
 			redirect('home');
 		}
 		// LOAD TITLE
@@ -55,7 +55,7 @@ class Controller_ctl extends MY_Welcome
 	public function otp()
 	{
 		// CEK SESSION
-		if ($this->session->userdata('lms_siswa_id_siswa')) {
+		if ($this->session->userdata('lms_wali_id_wali')) {
 			redirect('home');
 		}
 		// LOAD TITLE
@@ -70,7 +70,7 @@ class Controller_ctl extends MY_Welcome
 	public function reset_sandi()
 	{
 		// CEK SESSION
-		if ($this->session->userdata('lms_siswa_id_siswa')) {
+		if ($this->session->userdata('lms_wali_id_wali')) {
 			redirect('home');
 		}
 		// LOAD TITLE
@@ -83,10 +83,10 @@ class Controller_ctl extends MY_Welcome
 
 	public function logout()
 	{
-		$this->session->unset_userdata('lms_sd_siswa_server');
-		$this->session->unset_userdata('lms_siswa_id_siswa');
-		$this->session->unset_userdata('lms_siswa_role');
-		$this->session->unset_userdata('lms_siswa_id_sekolah');
+		$this->session->unset_userdata('lms_sd_wali_server');
+		$this->session->unset_userdata('lms_wali_id_wali');
+		$this->session->unset_userdata('lms_wali_role');
+		$this->session->unset_userdata('lms_wali_id_sekolah');
 
 		redirect('auth/login');
 	}
