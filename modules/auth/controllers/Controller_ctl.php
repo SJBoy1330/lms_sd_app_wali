@@ -32,6 +32,16 @@ class Controller_ctl extends MY_Welcome
 		if ($this->session->userdata('lms_wali_id_wali')) {
 			redirect('home');
 		}
+
+		// LOAD CSS
+		$this->data['css_add'][] = '
+		<style>
+			.form-control.form-control-pribadi{
+				text-align: start;
+			}
+		</style>
+		';
+
 		// LOAD TITLE
 		$mydata['title'] = 'Login';
 		// LOAD VIEW
@@ -75,6 +85,10 @@ class Controller_ctl extends MY_Welcome
 		}
 		// LOAD TITLE
 		$mydata['title'] = 'Verif OTP';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/auth/resetsandi.js"></script>';
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('reset_sandi', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
