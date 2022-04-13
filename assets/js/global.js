@@ -24,7 +24,7 @@ handleLocation();
 
 function password_show_hide() {
 
-    var x = document.getElementById("password");
+    var x = document.getElementById("kata_sandi");
 
     var show_eye = document.getElementById("show_eye");
 
