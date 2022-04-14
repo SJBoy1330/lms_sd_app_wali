@@ -13977,7 +13977,7 @@ linearGradient stop:last-child {
 }
 
 .menu-open .sidebar-wrap.sidebar-overlay::after {
-  opacity: 0.2;
+  opacity: 0;
 }
 
 .menu-open .sidebar-wrap.sidebar-overlay .sidebar {
