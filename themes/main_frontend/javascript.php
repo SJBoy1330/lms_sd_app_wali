@@ -54,10 +54,10 @@
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-danger">
-                                <i class="fa-solid fa-book-open-cover size-28 text-white"></i>
+                                <i class="fa-solid fa-envelope-open-dollar size-28 text-white"></i>
                             </div>
                         </a>
-                        <p class="size-13 text-secondary">Materi</p>
+                        <p class="size-13 text-secondary">SPP</p>
                     </div>
 
                     <div class="col-auto text-center">
@@ -65,10 +65,10 @@
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-purple">
-                                <i class="fa-solid fa-book-bookmark size-28 text-white"></i>
+                                <i class="fa-solid fa-envelope-open-text size-28 text-white"></i>
                             </div>
                         </a>
-                        <p class="size-13 text-secondary">Ujian</p>
+                        <p class="size-13 text-secondary">Surat Ijin</p>
                     </div>
 
                     <div class="col-auto text-center">
@@ -79,21 +79,18 @@
                                 <i class="fa-solid fa-list-check size-28 text-white"></i>
                             </div>
                         </a>
-                        <p class="size-13 text-secondary">Tugas</p>
+                        <p class="size-13 text-secondary">Rapot</p>
                     </div>
 
                     <div class="col-auto text-center">
-                        <div class="notifikasi-chat">
-                            <p>2</p>
-                        </div>
                         <a href="pesan-SD.html" class="avatar avatar-60 p-1 shadow-sm shadow-success rounded-20 bg-success mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-success">
-                                <i class="fa-solid fa-messages size-28 text-white"></i>
+                                <i class="fa-solid fa-phone size-28 text-white"></i>
                             </div>
                         </a>
-                        <p class="size-13 text-secondary">Chatting</p>
+                        <p class="size-13 text-secondary">Kontak</p>
                     </div>
                 </div>
             </div>

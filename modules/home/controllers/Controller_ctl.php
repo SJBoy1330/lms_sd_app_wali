@@ -22,4 +22,31 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function list_pengumuman(){
+		
+		// LOAD TITLE
+		$mydata['title'] = 'Pengumuman';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('list_pengumuman', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
+	public function detail_pengumuman()
+	{
+
+		// LOAD TITLE
+		$mydata['title'] = 'Detail Pengumuman';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('detail_pengumuman', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
 }
