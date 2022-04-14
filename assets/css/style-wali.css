@@ -152,8 +152,3 @@
     background-color: #EC3528;
     z-index: 1;
   }
-
-  .nav-item.logout{
-    position: absolute;
-    bottom: 0;
-  }
