@@ -13,8 +13,8 @@
             <li class="nav-item">
                 <a class="nav-link mt-1 " href="jadwal-SD.html">
                     <span>
-                        <i class="far fa-calendar-alt size-18"></i>
-                        <span class="nav-text">Jadwal</span>
+                        <i class="fa-solid fa-envelope-open-text size-18"></i>
+                        <span class="nav-text">SPP</span>
                     </span>
                 </a>
             </li>
