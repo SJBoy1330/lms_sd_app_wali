@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-auto">
             <a href="javascript:void(0)" target="_self" class="btn btn-44 menu-btn">
-                <img src="../HTML/assets/icons/hamburger.png" width="24" alt="">
+                <img src="<?= base_url('assets/icons/hamburger.png')?>" width="24" alt="">
             </a>
         </div>
         <div class="col text-center">
@@ -17,7 +17,7 @@
         </div>
         <div class="col-auto">
             <a href="notifikasi-SD.html" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
-                <img src="../HTML/assets/icons/notif.png" width="24" alt="">
+                <img src="<?= base_url('assets/icons/notif.png')?>" width="24" alt="">
                 <span class="count-indicator"></span>
             </a>
         </div>

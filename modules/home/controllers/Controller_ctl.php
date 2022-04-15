@@ -59,7 +59,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/auth/listberita.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/berita/listberita.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_berita', $mydata, TRUE);

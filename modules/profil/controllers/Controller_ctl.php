@@ -16,7 +16,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Profil';
 
 		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/uploadfoto.js"></script>';
@@ -32,7 +32,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Ubah Profil';
 
 		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('ubah_profil', $mydata, TRUE);
@@ -45,7 +45,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Ubah Kata Sandi';
 
 		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/ubahpassword.js"></script>';
@@ -61,7 +61,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Laporan Ujian';
 
 		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('laporan_ujian', $mydata, TRUE);
@@ -74,7 +74,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Tentang Sekolah';
 
 		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('tentang_sekolah', $mydata, TRUE);
@@ -87,7 +87,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Bantuan';
 
 		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/bantuan.js"></script>';
