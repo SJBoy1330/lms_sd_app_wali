@@ -131,6 +131,32 @@ $route['rapot/(:any)'] = 'rapot/controller_ctl/$1';
 $route['rapot/(:any)/(:any)'] = 'rapot/controller_ctl/$1/$2';
 
 
+
+$route['spp']  = 'spp/controller_ctl';
+
+$route['spp/(:any)'] = 'spp/controller_ctl/$1';
+
+$route['spp/(:any)/(:any)'] = 'spp/controller_ctl/$1/$2';
+
+
+
+$route['toko']  = 'toko/controller_ctl';
+
+$route['toko/(:any)'] = 'toko/controller_ctl/$1';
+
+$route['toko/(:any)/(:any)'] = 'toko/controller_ctl/$1/$2';
+
+
+
+$route['profil']  = 'profil/controller_ctl';
+
+$route['profil/(:any)'] = 'profil/controller_ctl/$1';
+
+$route['profil/(:any)/(:any)'] = 'profil/controller_ctl/$1/$2';
+
+
+
+
 $route['func_rapot']  = 'rapot/function_ctl';
 
 $route['func_rapot/(:any)'] = 'rapot/function_ctl/$1';

@@ -3,7 +3,7 @@
     <div class="container">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
-                <a class="nav-link mt-1  active" href="index-SD.html">
+                <a class="nav-link mt-1  active" href="<?= base_url('home');?>">
                     <span>
                         <i class="fa-solid fa-house size-18"></i>
                         <span class="nav-text">Dashboard</span>
@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mt-1 " href="jadwal-SD.html">
+                <a class="nav-link mt-1 " href="<?= base_url('spp');?>">
                     <span>
                         <i class="fa-solid fa-envelope-open-text size-18"></i>
                         <span class="nav-text">SPP</span>
@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mt-1 " href="akun-SD.html">
+                <a class="nav-link mt-1 " href="<?= base_url('profil')?>">
                     <span>
                         <i class="fa-solid fa-user size-18"></i>
                         <span class="nav-text">Profil</span>
