@@ -437,3 +437,11 @@
   span.blm-lns{
     border-radius: 0px 0px 0px 15px;
   }
+
+  .modal .modal-dialog .modal-content.formulir-pembayaran{
+    border-radius: 0px;
+  }
+
+  .modal .modal-dialog .modal-content.detail-tagihan{
+    border-radius: 0px;
+  }
