@@ -366,3 +366,75 @@
     z-index: 1;
   }
   
+  .bg-ec3528{
+    background-color: #ec3528;
+  }
+  
+  .lg-size-myicon{
+    font-size: 20px;
+    padding: 0 2px;
+  }
+  
+  .xl-size-myicon{
+    font-size: 28px;
+    padding: 3px 8px;
+  }
+  
+  .bg-f5f5f5{
+    background-color: #f5f5f5;
+  }
+  
+  .bg-00DFA3{
+    background-color: #00dfa3;
+  }
+  
+  .avatar-125{
+    line-height: 125px;
+    height: 125px;
+    width: 125px;
+  }
+  
+  .bg-grey{
+    background-color: #d9d1d1;
+  }
+  
+  .circle-icon {
+    width: 22px;
+    height: 22px;
+    background-color: #ec3528;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  
+  .icon-box-profile{
+    width: 35px;
+    height: 35px;
+  }
+  
+  .icon-box-profile-sm{
+    width: 31px;
+    height: 31px;
+  }
+  
+  .password-field{
+    border:none;
+  }
+  
+  .ul-form-pembayaran{
+    list-style: none;
+  }
+  
+  .ul-form-pembayaran li::before {
+      content: "\2022";
+      color: red;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+  }
+
+  span.blm-lns{
+    border-radius: 0px 0px 0px 15px;
+  }
