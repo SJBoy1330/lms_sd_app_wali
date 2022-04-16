@@ -7,6 +7,7 @@ class Controller_ctl extends MY_Frontend
 		// Load the constructer from MY_Controller
 		parent::__construct();
 		is_logged_in();
+		$this->load->model('siswa_m');
 	}
 
 
@@ -18,13 +19,20 @@ class Controller_ctl extends MY_Frontend
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
+		// Load meta data
+		$id_wali = $this->session->userdata('lms_wali_id_wali');
+		$mydata['data_siswa'] = $this->siswa_m->get_siswa_by_idwali($id_wali);
+		$mydata['nama_wali'] = $this->session->userdata('lms_wali_nama');
+
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 
-	public function list_pengumuman(){
-		
+	public function list_pengumuman()
+	{
+
 		// LOAD TITLE
 		$mydata['title'] = 'Pengumuman';
 
@@ -63,7 +71,7 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_berita', $mydata, TRUE);
-		$this->display($this->input->get('routing'));	
+		$this->display($this->input->get('routing'));
 	}
 
 	public function detail_berita()
@@ -76,6 +84,6 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_berita', $mydata, TRUE);
-		$this->display($this->input->get('routing'));	
+		$this->display($this->input->get('routing'));
 	}
 }

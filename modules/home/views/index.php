@@ -30,44 +30,29 @@
         <!-- Ucapan Selamat Datang -->
         <div class="row my-4 text-start">
             <div class="col-9">
-                <p class="mb-0 ms-2 title-2">Halo, Ibu Wali Saka</p>
+                <p class="mb-0 ms-2 title-2">Halo, Wali <?= $nama_wali ?></p>
                 <p class="mb-0 ms-2 title-1-home">Selamat Datang</p>
             </div>
         </div>
-
         <div class="row mb-4">
             <div class="col-12 d-flex justify-content-center align-items-center">
-                <a href="<?= base_url('rapot') ?>" class="card mx-1 anak-wali">
-                    <div class="card-body">
-                        <div class="row mt-3 d-flex justify-content-center align-items-center">
-                            <div class="col-auto">
-                                <div class="avatar avatar-90 bg-opac-50 p-1 shadow-sm rounded-circle anak-wali" style="background-image: url(<?= base_url(); ?>assets/images/maria-ozawa.png)"></div>
+                <?php foreach ($data_siswa as $siswa) : ?>
+                    <a href="<?= base_url('rapot') ?>" class="card mx-1 anak-wali">
+                        <div class="card-body">
+                            <div class="row mt-3 d-flex justify-content-center align-items-center">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-90 bg-opac-50 p-1 shadow-sm rounded-circle anak-wali" style="background-image: url(<?= base_url(); ?>assets/images/maria-ozawa.png)"></div>
+                                </div>
+                            </div>
+                            <div class="row mt-3 d-flex justify-content-center align-items-center">
+                                <div class="col align-self-center ps-0">
+                                    <p class="size-14 text-center text-secondary mb-0"><?= $siswa->nis ?></p>
+                                    <p class="text-center label-merah fw-medium"><?= $siswa->nama ?></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="row mt-3 d-flex justify-content-center align-items-center">
-                            <div class="col align-self-center ps-0">
-                                <p class="size-14 text-center text-secondary mb-0">232302123</p>
-                                <p class="text-center label-merah fw-medium">Maria Ozawa</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="<?= base_url('rapot') ?>" class="card mx-1 anak-wali">
-                    <div class="card-body">
-                        <div class="row mt-3 d-flex justify-content-center align-items-center">
-                            <div class="col-auto">
-                                <div class="avatar avatar-90 bg-opac-50 p-1 shadow-sm rounded-circle anak-wali" style="background-image: url(<?= base_url(); ?>assets/images/mia-khalifa.png)"></div>
-                            </div>
-                        </div>
-                        <div class="row mt-3 d-flex justify-content-center align-items-center">
-                            <div class="col align-self-center ps-0">
-                                <p class="size-14 text-center text-secondary mb-0">2424302123</p>
-                                <p class="text-center label-merah fw-medium">Mia Khalifah</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                <?php endforeach; ?>
             </div>
         </div>
 

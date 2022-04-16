@@ -10,9 +10,9 @@ class Function_ctl extends MY_Welcome
 
     public function login_proses()
     {
-        $arrVar['kode_sekolah']         = 'Kode sekolah';
-        $arrVar['username']    = 'Username';
-        $arrVar['kata_sandi'] = 'Kata sandi';
+        $arrVar['kode_sekolah'] = 'Kode sekolah';
+        $arrVar['username']     = 'Username';
+        $arrVar['kata_sandi']   = 'Kata sandi';
         foreach ($arrVar as $var => $value) {
             $$var = $this->input->post($var);
 
@@ -36,6 +36,7 @@ class Function_ctl extends MY_Welcome
                 if ($user) {
                     if (hash_my_password($kds->id_sekolah, $user->username, $kata_sandi) == $user->password) {
                         $arruser['lms_wali_id_wali'] = $user->id_wali;
+                        $arruser['lms_wali_nama'] = $user->nama;
                         $arruser['lms_wali_role'] = 'wali';
                         $arruser['lms_wali_id_sekolah'] = $kds->id_sekolah;
                         $this->session->set_userdata($arruser);
