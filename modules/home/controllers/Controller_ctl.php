@@ -16,24 +16,15 @@ class Controller_ctl extends MY_Frontend
 		// LOAD TITLE
 		$mydata['title'] = 'Home';
 
-<<<<<<< HEAD
-=======
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
->>>>>>> 1e2cae45277a92fea8a8fb661fe2ba91c93141aa
 		// Load meta data
 		$id_wali = $this->session->userdata('lms_wali_id_wali');
 		$mydata['data_siswa'] = $this->siswa_m->get_siswa_by_idwali($id_wali);
 		$mydata['nama_wali'] = $this->session->userdata('lms_wali_nama');
 
 
-<<<<<<< HEAD
-		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
-
-=======
->>>>>>> 1e2cae45277a92fea8a8fb661fe2ba91c93141aa
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

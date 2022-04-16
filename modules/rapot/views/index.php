@@ -5,12 +5,12 @@
     <header class="header tugas-ujian position-fixed" style="background-color: #EC3528;">
         <div class="row">
             <div class="col-auto">
-                <a href="<?= base_url('home')?>" target="_self" class="btn btn-44">
+                <a href="<?= base_url('home') ?>" target="_self" class="btn btn-44">
                     <i class="fa-solid fa-chevron-left text-white"></i>
                 </a>
             </div>
             <div class="col d-flex justify-content-center align-items-center text-center">
-                <h5 class="text-white">Mia Khalifah</h5>
+                <h5 class="text-white"><?= $data_siswa->nama ?></h5>
             </div>
             <div class="col-auto">
                 <a href="#" target="_self" class="btn btn-44 rounded-circle">
@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
                                             <p class="mb-0 size-10 fw-normal text-secondary">Nama Sekolah</p>
-                                            <p class="mb-0 size-12 fw-medium">SMK Negeri 4 Malang</p>
+                                            <p class="mb-0 size-12 fw-medium"><?= $data_sekolah->nama_sekolah ?></p>
                                         </div>
                                     </div>
                                     <div class="col-6 d-flex">
@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
                                             <p class="mb-0 size-10 fw-normal text-secondary">Kelas</p>
-                                            <p class="mb-0 size-12 fw-medium">XI IPA 1</p>
+                                            <p class="mb-0 size-12 fw-medium"><?= $data_kelas->nama ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                             </div>
                                         </div>
                                         <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                            <p class="mb-0 size-10 fw-normal text-secondary">Alamat</p>
+                                            <p class="mb-0 size-10 fw-normal text-secondary">Alamat Sekolah</p>
                                             <p class="mb-0 size-12 fw-medium">Jalan Tanimbar No.22</p>
                                         </div>
                                     </div>
@@ -83,13 +83,13 @@
                                         <div class="col-auto">
                                             <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                                 <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-calendar-circle-user size-16 text-white"></i>
+                                                    <i class="fa-solid fa-globe-stand size-18 text-white"></i>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                            <p class="mb-0 size-10 fw-normal text-secondary">Semester</p>
-                                            <p class="mb-0 size-12 fw-medium">Ganjil</p>
+                                            <p class="mb-0 size-10 fw-normal text-secondary">Tahun Pelajaran</p>
+                                            <p class="mb-0 size-12 fw-medium"><?= $data_kelas->tahun_ajaran ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -104,22 +104,10 @@
                                         </div>
                                         <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
                                             <p class="mb-0 size-10 fw-normal text-secondary">Nama</p>
-                                            <p class="mb-0 size-12 fw-medium">Mia Khalifah</p>
+                                            <p class="mb-0 size-12 fw-medium"><?= $data_siswa->nama ?></p>
                                         </div>
                                     </div>
-                                    <div class="col-6 d-flex">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                                <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-globe-stand size-18 text-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                            <p class="mb-0 size-10 fw-normal text-secondary">Tahun Pelajaran</p>
-                                            <p class="mb-0 size-12 fw-medium">2021 / 2022 Ganjil</p>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -462,13 +450,13 @@
 </main>
 <!-- Page ends-->
 
- <!-- Modal Detail Tugas -->
- <div class="modal fade" id="modalDetailTugas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+<!-- Modal Detail Tugas -->
+<div class="modal fade" id="modalDetailTugas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen modal-dialog-centered">
         <div class="modal-content detail-tugas-ujian">
             <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tugas Siswa</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">Tugas Siswa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row bg-white" style="position: fixed; z-index: 1;">
@@ -476,7 +464,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
                             <button class="input-group-text searhing" id="basic-addon2"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
-                          </div>
+                        </div>
                     </div>
                     <div class="col-2 d-flex justify-content-center align-items-center">
                         <button class="btn btn-secondary filter-tugas border-0" data-bs-toggle="modal" data-bs-target="#filterTugasModal">
@@ -490,14 +478,14 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                       <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
                                             <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-success">Tuntas</p> 
+                                    <p class="mb-0 size-14 fw-normal text-success">Tuntas</p>
                                 </div>
                                 <div class="col-auto align-self-center">
                                     <div class="nilai-tugas">
@@ -507,74 +495,74 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                       <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
                                             <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p> 
+                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                       <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
                                             <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p> 
+                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                       <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
                                             <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p> 
+                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                       <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
                                             <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p> 
+                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p>
                                 </div>
                             </div>
                         </div>
@@ -585,14 +573,14 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                       <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
                                             <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-success">Tuntas</p> 
+                                    <p class="mb-0 size-14 fw-normal text-success">Tuntas</p>
                                 </div>
                                 <div class="col-auto align-self-center">
                                     <div class="nilai-tugas">
@@ -602,74 +590,74 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                       <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
                                             <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p> 
+                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                       <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
                                             <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p> 
+                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                       <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
                                             <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p> 
+                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                       <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
                                             <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p> 
+                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p>
                                 </div>
                             </div>
                         </div>
@@ -679,16 +667,16 @@
             <div class="modal-footer">
             </div>
         </div>
-        </div>
     </div>
+</div>
 
-    <!-- Filter Tugas Modal -->
-    <div class="modal fade" id="filterTugasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+<!-- Filter Tugas Modal -->
+<div class="modal fade" id="filterTugasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="box-shadow: 100px 0px 100px 100px rgb(0 0 0 / 10%)">
             <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Keterangan Tugas</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">Keterangan Tugas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-4">
@@ -705,16 +693,16 @@
                 <a href="#" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</a>
             </div>
         </div>
-        </div>
     </div>
+</div>
 
-    <!-- Filter Ujian Modal -->
-    <div class="modal fade" id="filterUjianModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+<!-- Filter Ujian Modal -->
+<div class="modal fade" id="filterUjianModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="box-shadow: 100px 0px 100px 100px rgb(0 0 0 / 10%)">
             <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Keterangan Ujian</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">Keterangan Ujian</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-4">
@@ -740,16 +728,16 @@
                 <a href="#" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</a>
             </div>
         </div>
-        </div>
     </div>
+</div>
 
-    <!-- Filter Detail Ujian Modal -->
-    <div class="modal fade" id="detailUjianModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+<!-- Filter Detail Ujian Modal -->
+<div class="modal fade" id="detailUjianModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="box-shadow: 100px 0px 100px 100px rgb(0 0 0 / 10%)">
             <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Detail Ujian</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">Detail Ujian</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row mb-3">
@@ -839,5 +827,5 @@
             <div class="modal-footer">
             </div>
         </div>
-        </div>
     </div>
+</div>
