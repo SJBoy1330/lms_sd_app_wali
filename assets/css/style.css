@@ -16613,3 +16613,30 @@ button.button-kirim-pesan{
   border-radius: 50%;
   display: inline-block;
 }
+
+.form-control.form-control-solid.form-control-pribadi.file-input{
+  padding-top: 12px;
+}
+
+a.btn-filter{
+  width: 100%;
+  background-color: #EC3528;
+  border-radius: 8px;
+  color: #FFFFFF;
+  height: 45px;
+  padding-top: 10px;
+}
+
+.wrapper-files{
+  position: absolute;
+  top: 145px;
+  left: 16px;
+  background-color: #E5E5E5;
+  height: 100p;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 115px;
+  border-radius: 10px 0px 0px 10px;
+}

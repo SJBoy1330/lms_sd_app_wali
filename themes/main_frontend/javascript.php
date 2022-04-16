@@ -50,18 +50,7 @@
             <div class="modal-body">
                 <div class="row justify-content-center">
                     <div class="col-auto text-center">
-                        <a href="#" class="avatar avatar-60 p-1 shadow-sm shadow-danger rounded-20 bg-danger mb-2">
-                            <div class="circle-bg-top"></div>
-                            <div class="circle-bg-bottom"></div>
-                            <div class="icons text-danger">
-                                <i class="fa-solid fa-envelope-open-dollar size-28 text-white"></i>
-                            </div>
-                        </a>
-                        <p class="size-13 text-secondary">SPP</p>
-                    </div>
-
-                    <div class="col-auto text-center">
-                        <a href="#" class="avatar avatar-60 p-1 shadow-sm shadow-primary rounded-20 bg-primary mb-2">
+                        <a href="<?= base_url('surat'); ?>" class="avatar avatar-60 p-1 shadow-sm shadow-primary rounded-20 bg-primary mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-purple">
@@ -83,7 +72,7 @@
                     </div>
 
                     <div class="col-auto text-center">
-                        <a href="pesan-SD.html" class="avatar avatar-60 p-1 shadow-sm shadow-success rounded-20 bg-success mb-2">
+                        <a href="<?= base_url('kontak'); ?>" class="avatar avatar-60 p-1 shadow-sm shadow-success rounded-20 bg-success mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-success">

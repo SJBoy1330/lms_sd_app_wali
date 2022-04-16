@@ -657,7 +657,7 @@
         <div class="modal-body">
             <div class="mb-4">
                 <label for="exampleFormControlInput3" class="form-label title-3">Keterangan tugas</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select-pribadi" aria-label="Default select example">
                     <option selected>Pilih keterangan tugas</option>
                     <option value="1">Tuntas</option>
                     <option value="2">Belum Tuntas</option>
@@ -683,7 +683,7 @@
         <div class="modal-body">
             <div class="mb-4">
                 <label for="exampleFormControlInput3" class="form-label title-3">Pelajaran</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select form-select-pribadi" aria-label="Default select example">
                     <option selected>Pilih pelajaran</option>
                     <option value="1">XI IPA 1</option>
                     <option value="2">XI IPA 2</option>
@@ -693,7 +693,7 @@
 
             <div class="mb-4">
                 <label for="exampleFormControlInput3" class="form-label title-3">Keterangan Ujian</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select form-select-pribadi" aria-label="Default select example">
                     <option selected>Pilih keterangan</option>
                     <option value="1">Tuntas</option>
                     <option value="2">Belum Tuntas</option>
