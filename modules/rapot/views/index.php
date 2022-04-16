@@ -10,7 +10,7 @@
                 </a>
             </div>
             <div class="col d-flex justify-content-center align-items-center text-center">
-                <h5 class="text-white">Mia Khalifah</h5>
+                <h6 class="text-white">Mia Khalifah</h6>
             </div>
             <div class="col-auto">
                 <a href="#" target="_self" class="btn btn-44 rounded-circle">
@@ -37,7 +37,7 @@
                     <div class="card-body tabcontent-wali" id="Tugas" style="padding: 6px 0px;">
                         <div class="card mb-4">
                             <div class="card-body">
-                                <div class="row mb-3">
+                                <div class="row mt-2 mb-3">
                                     <div class="col-6 d-flex">
                                         <div class="col-auto align-self-center">
                                             <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
@@ -50,7 +50,7 @@
                                             <p class="mb-0 size-10 fw-normal text-secondary">Nama Sekolah</p>
                                             <p class="mb-0 size-12 fw-medium">SMK Negeri 4 Malang</p>
                                         </div>
-                                    </div>
+                                    </div>  
                                     <div class="col-6 d-flex">
                                         <div class="col-auto align-self-center">
                                             <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
@@ -65,7 +65,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-1">
+                                    <div class="col-6 d-flex">
+                                        <div class="col-auto align-self-center">
+                                            <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
+                                                <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                                    <i class="fa-solid fa-globe-stand size-18 text-white"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
+                                            <p class="mb-0 size-10 fw-normal text-secondary">Tahun Ajaran</p>
+                                            <p class="mb-0 size-12 fw-medium">2021 / 2022 Ganjil</p>
+                                        </div>
+                                    </div>
                                     <div class="col-6 d-flex">
                                         <div class="col-auto align-self-center">
                                             <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
@@ -76,35 +89,7 @@
                                         </div>
                                         <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
                                             <p class="mb-0 size-10 fw-normal text-secondary">Alamat</p>
-                                            <p class="mb-0 size-12 fw-medium">Jalan Tanimbar No.22</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 d-flex">
-                                        <div class="col-auto align-self-center">
-                                            <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                                <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-graduation-cap size-16 text-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                            <p class="mb-0 size-10 fw-normal text-secondary">Nama</p>
-                                            <p class="mb-0 size-12 fw-medium">Mia Khalifah</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 d-flex">
-                                        <div class="col-auto align-self-center">
-                                            <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                                <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-globe-stand size-18 text-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                            <p class="mb-0 size-10 fw-normal text-secondary">Tahun Pelajaran</p>
-                                            <p class="mb-0 size-12 fw-medium">2021 / 2022 Ganjil</p>
+                                            <p class="mb-0 size-12 fw-medium">Jln. Tanimbar No.22</p>
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +148,7 @@
                     <div class="card-body tabcontent-wali" id="Ujian" style="padding: 6px 0px;">
                         <div class="wrapper-searching-tugas">
                             <div class="wrapper-samaran"></div>
-                            <div class="row bg-white">
+                            <div class="row">
                                 <div class="col-10">
                                     <div class="input-group">
                                         <input type="text" class="form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">

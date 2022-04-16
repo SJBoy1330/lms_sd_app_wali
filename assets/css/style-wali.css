@@ -120,19 +120,18 @@
   
   .wrapper-samaran{
     background-color: #FFFFFF;
-    height: 20px;
-    width: 100%;
+    height: 85px;
+    width: 100vw;
     position: absolute;
-    z-index: 10;
-    top: -20px;
+    z-index: 0;
+    top: -24px;
   }
   
   .wrapper-searching-tugas{
     height: 50px;
     position: fixed;
     z-index: 1;
-    width: 94%;
-    background-color: #FFFFFF;
+    width: 91%;
   }
   
   .card-body.detail-ujian{
