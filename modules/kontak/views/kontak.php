@@ -5,19 +5,15 @@
 <header class="header position-fixed">
     <div class="row">
         <div class="col-auto">
-            <a href="index-SD.html" class="btn btn-44">
-                <img src="../HTML/assets/icons/kembali.svg" width="24" alt="">
+            <a href="<?= base_url('home')?>" target="_self" class="btn btn-44">
+                <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
-        <div class="col text-center">
-            <div class="logo-small">
-                <h5>Detail KBM</h5>
-            </div>
+        <div class="col d-flex justify-content-center align-items-center text-center">
+            <h6>Kontak</h6>
         </div>
         <div class="col-auto">
-            <a href="profile.html" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
-                <img src="../HTML/assets/icons/notif.png" width="24" alt="">
-                <span class="count-indicator"></span>
+            <a data-bs-toggle="modal" href="#tambahSuratIjin" role="button" class="btn btn-44">
             </a>
         </div>
     </div>
