@@ -16,7 +16,7 @@
                     </div> -->
             </div>
             <div class="col-auto">
-                <a href="notifikasi-SD.html" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
+                <a href="<?= base_url('notifikasi'); ?>" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
                     <img src="<?= base_url(); ?>assets/icons/notif.png" width="24" alt="">
                     <span class="count-indicator"></span>
                 </a>
@@ -62,17 +62,17 @@
                 <h6 class="title">Pengumuman</h6>
             </div>
             <div class="col-auto align-self-center">
-                <a href="list-pengumuman-SD.html" class="label-merah">Lihat Semua</a>
+                <a href="<?= base_url('home/list_pengumuman'); ?>" class="label-merah">Lihat Semua</a>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="detail-pengumuman-SD.html" class="card mb-3">
+                <a href="<?= base_url('home/detail_pengumuman')?>" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
                                 <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
-
+                                    <img src="<?= base_url(); ?>assets/images/no-photo.png" alt="">
                                 </div>
                             </div>
                             <div class="col align-self-center ps-0">
@@ -85,7 +85,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="detail-pengumuman-SD.html" class="card mb-3">
+                <a href="<?= base_url('home/detail_pengumuman')?>" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -103,7 +103,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="detail-pengumuman-SD.html" class="card mb-3">
+                <a href="<?= base_url('home/detail_pengumuman')?>" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -128,7 +128,7 @@
                 <h6 class="title">Berita</h6>
             </div>
             <div class="col-auto">
-                <a href="list-berita-SD.html" class="label-merah">Lihat Semua</a>
+                <a href="<?= base_url('home/list_berita'); ?>" class="label-merah">Lihat Semua</a>
             </div>
         </div>
         <div class="row mb-2">

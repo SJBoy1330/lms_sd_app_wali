@@ -3,7 +3,7 @@
     <div class="container">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
-                <a class="nav-link mt-1  active" href="index-SD.html">
+                <a class="nav-link mt-1  active" href="<?= base_url('home');?>">
                     <span>
                         <i class="fa-solid fa-house size-18"></i>
                         <span class="nav-text">Dashboard</span>
@@ -11,10 +11,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mt-1 " href="jadwal-SD.html">
+                <a class="nav-link mt-1 " href="<?= base_url('spp');?>">
                     <span>
-                        <i class="far fa-calendar-alt size-18"></i>
-                        <span class="nav-text">Jadwal</span>
+                        <i class="fa-solid fa-envelope-open-text size-18"></i>
+                        <span class="nav-text">SPP</span>
                     </span>
                 </a>
             </li>
@@ -26,7 +26,7 @@
                 </button>
             </li>
             <li class="nav-item">
-                <a class="nav-link mt-1 " href="toko-SD.html">
+                <a class="nav-link mt-1 " href="<?= base_url('toko')?>">
                     <span>
                         <i class="fa-solid fa-shop size-18"></i>
                         <span class="nav-text">Toko</span>
@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mt-1 " href="akun-SD.html">
+                <a class="nav-link mt-1 " href="<?= base_url('profil')?>">
                     <span>
                         <i class="fa-solid fa-user size-18"></i>
                         <span class="nav-text">Profil</span>
@@ -54,10 +54,10 @@
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-danger">
-                                <i class="fa-solid fa-book-open-cover size-28 text-white"></i>
+                                <i class="fa-solid fa-envelope-open-dollar size-28 text-white"></i>
                             </div>
                         </a>
-                        <p class="size-13 text-secondary">Materi</p>
+                        <p class="size-13 text-secondary">SPP</p>
                     </div>
 
                     <div class="col-auto text-center">
@@ -65,35 +65,32 @@
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-purple">
-                                <i class="fa-solid fa-book-bookmark size-28 text-white"></i>
+                                <i class="fa-solid fa-envelope-open-text size-28 text-white"></i>
                             </div>
                         </a>
-                        <p class="size-13 text-secondary">Ujian</p>
+                        <p class="size-13 text-secondary">Surat Ijin</p>
                     </div>
 
                     <div class="col-auto text-center">
-                        <a href="tugas-SD.html" class="avatar avatar-60 p-1 shadow-sm shadow-warning rounded-20 bg-warning mb-2">
+                        <a href="<?= base_url('rapot'); ?>" class="avatar avatar-60 p-1 shadow-sm shadow-warning rounded-20 bg-warning mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-success">
                                 <i class="fa-solid fa-list-check size-28 text-white"></i>
                             </div>
                         </a>
-                        <p class="size-13 text-secondary">Tugas</p>
+                        <p class="size-13 text-secondary">Rapot</p>
                     </div>
 
                     <div class="col-auto text-center">
-                        <div class="notifikasi-chat">
-                            <p>2</p>
-                        </div>
                         <a href="pesan-SD.html" class="avatar avatar-60 p-1 shadow-sm shadow-success rounded-20 bg-success mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-success">
-                                <i class="fa-solid fa-messages size-28 text-white"></i>
+                                <i class="fa-solid fa-phone size-28 text-white"></i>
                             </div>
                         </a>
-                        <p class="size-13 text-secondary">Chatting</p>
+                        <p class="size-13 text-secondary">Kontak</p>
                     </div>
                 </div>
             </div>

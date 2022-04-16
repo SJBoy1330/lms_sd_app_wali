@@ -34,4 +34,4 @@
 
 </head>
 
-<body class="body-scroll" data-page="index">
+<body class="body-scroll" data-page="index" style="background-image: url(<?= base_url(); ?>assets/images/bg-2.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
