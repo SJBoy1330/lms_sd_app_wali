@@ -41,7 +41,7 @@
                 <div class="form-group mb-4" id="req_kata_sandi">
                     <label for="kata_sandi" class="form-label title-3">Kata Sandi</label>
                     <div class="wrapper-password d-flex">
-                        <input type="password" class="form-control form-control-pribadi" name="kata_sandi" id="kata_samndi" placeholder="Masukkan kata sandi" autocomplete="off">
+                        <input type="password" class="form-control form-control-pribadi" name="kata_sandi" id="kata_sandi" placeholder="Masukkan kata sandi" autocomplete="off">
 
                         <div class="input-group-append show-hide">
 

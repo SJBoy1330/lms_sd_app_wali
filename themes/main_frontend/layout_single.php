@@ -1,6 +1,7 @@
 <?php include_once("header.php"); ?>
 <?php include_once("sidemenu.php"); ?>
-<div id="reload-content">
+<div id="reload-content">   
+<script src="https://kit.fontawesome.com/86bfabf1f4.js" crossorigin="anonymous"></script>
     <?php
 
     echo alert_show($this->session->flashdata('judul'), $this->session->flashdata('message'), $this->session->flashdata('icon'), $this->session->flashdata('image'));

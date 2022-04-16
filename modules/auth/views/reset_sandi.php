@@ -33,15 +33,15 @@
             <div class="form-group mb-4">
                 <label for="exampleFormControlInput3" class="form-label title-3">Kata sandi baru</label>
                 <div class="wrapper-password d-flex">
-                    <input type="password" class="form-control form-control-pribadi" name="password" id="password" placeholder="Masukkan kata sandi" autocomplete="off">
+                    <input type="password" class="form-control form-control-pribadi" name="password_baru" id="passwordNew" placeholder="Masukkan kata sandi" autocomplete="off">
 
                     <div class="input-group-append show-hide">
 
-                        <span class="input-group-text" onclick="password_show_hide();">
+                        <span class="input-group-text" onclick="password_show_hide_new();">
 
-                            <i class="bi bi-eye" id="show_eye"></i>
+                            <i class="bi bi-eye" id="show_eye_new"></i>
 
-                            <i class="bi bi-eye-slash d-none" id="hide_eye"></i>
+                            <i class="bi bi-eye-slash d-none" id="hide_eye_new"></i>
 
                         </span>
 
@@ -52,15 +52,15 @@
             <div class="form-group mb-4">
                 <label for="exampleFormControlInput3" class="form-label title-3">Konfirmasi kata sandi</label>
                 <div class="wrapper-password d-flex">
-                    <input type="password" class="form-control form-control-pribadi" name="password" id="password" placeholder="Masukkan kata sandi" autocomplete="off">
+                    <input type="password" class="form-control form-control-pribadi" name="password_konfirmasi" id="passwordConfirm" placeholder="Konfirmasi kata sandi" autocomplete="off">
 
                     <div class="input-group-append show-hide">
 
-                        <span class="input-group-text" onclick="password_show_hide();">
+                        <span class="input-group-text" onclick="password_show_hide_confirm();">
 
-                            <i class="bi bi-eye" id="show_eye"></i>
+                            <i class="bi bi-eye" id="show_eye_confirm"></i>
 
-                            <i class="bi bi-eye-slash d-none" id="hide_eye"></i>
+                            <i class="bi bi-eye-slash d-none" id="hide_eye_confirm"></i>
 
                         </span>
 

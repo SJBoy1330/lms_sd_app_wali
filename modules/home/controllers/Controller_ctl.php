@@ -20,8 +20,11 @@ class Controller_ctl extends MY_Frontend
 		$id_wali = $this->session->userdata('lms_wali_id_wali');
 		$mydata['data_siswa'] = $this->siswa_m->get_siswa_by_idwali($id_wali);
 		$mydata['nama_wali'] = $this->session->userdata('lms_wali_nama');
-		
-		
+
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
