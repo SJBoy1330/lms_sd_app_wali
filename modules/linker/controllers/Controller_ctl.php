@@ -74,7 +74,7 @@ class Controller_ctl extends MY_Frontend
     }
     public function img_user($gambar)
     {
-        $path = $this->base_link . 'sekolah_' . $this->id_sekolah . '/siswa/';
+        $path = $this->base_link . 'sekolah_' . $this->id_sekolah . '/wali/';
 
         $filename = base64url_decode($gambar);
 
