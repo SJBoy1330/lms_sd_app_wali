@@ -8,8 +8,8 @@ class Controller_ctl extends MY_Frontend
 		parent::__construct();
 		is_logged_in();
 		$this->load->model('siswa_m');
+		$this->load->model('pengumuman_m');
 	}
-
 
 	public function index()
 	{
@@ -23,7 +23,7 @@ class Controller_ctl extends MY_Frontend
 		$id_wali = $this->session->userdata('lms_wali_id_wali');
 		$mydata['data_siswa'] = $this->siswa_m->get_siswa_by_idwali($id_wali);
 		$mydata['nama_wali'] = $this->session->userdata('lms_wali_nama');
-
+		$mydata['data_pengumuman'] = $this->pengumuman_m->get_list_berita("tanggal_mulai >= now() AND tanggal_akhir <= now()", 3);
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
@@ -32,7 +32,6 @@ class Controller_ctl extends MY_Frontend
 
 	public function list_pengumuman()
 	{
-
 		// LOAD TITLE
 		$mydata['title'] = 'Pengumuman';
 

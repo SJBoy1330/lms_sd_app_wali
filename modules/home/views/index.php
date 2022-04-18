@@ -66,25 +66,29 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="<?= base_url('home/detail_pengumuman') ?>" class="card mb-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-auto">
-                                <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
-                                    <img src="<?= base_url(); ?>assets/images/no-photo.png" alt="">
+            <?php foreach ($data_pengumuman as $pengumuman) : ?>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <a href="<?= base_url('home/detail_pengumuman') ?>" class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
+                                        <!-- <img src="<?= base_url(); ?>assets/images/no-photo.png" alt=""> -->
+                                        <img src="https://github.com/SJBoy1330/data_sd/blob/main/sekolah_1/konten/2023/04/konten1.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col align-self-center ps-0">
+                                    <p class="mb-1 size-13 fw-normal">Himbauan mengikuti vaksin covid 19
+                                        untuk melakukan kegiatan PTM...</p>
+                                    <p class="fw-normal text-secondary size-12">3 bulan yang lalu</p>
                                 </div>
                             </div>
-                            <div class="col align-self-center ps-0">
-                                <p class="mb-1 size-13 fw-normal">Himbauan mengikuti vaksin covid 19
-                                    untuk melakukan kegiatan PTM...</p>
-                                <p class="fw-normal text-secondary size-12">3 bulan yang lalu</p>
-                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
+                    </a>
+                </div>
+            <?php endforeach; ?>
+
+            <!-- <div class="col-12 col-md-6 col-lg-4">
                 <a href="<?= base_url('home/detail_pengumuman') ?>" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
@@ -119,7 +123,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
         </div>
 
         <!-- Berita -->
