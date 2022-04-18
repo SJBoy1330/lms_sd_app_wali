@@ -126,7 +126,7 @@ $route['home/(:any)/(:any)'] = 'home/controller_ctl/$1/$2';
 
 $route['rapot']  = 'rapot/controller_ctl';
 
-$route['rapot/(:any)'] = 'rapot/controller_ctl/$1';
+$route['rapot/(:any)'] = 'rapot/controller_ctl/index/$1';
 
 $route['rapot/(:any)/(:any)'] = 'rapot/controller_ctl/$1/$2';
 

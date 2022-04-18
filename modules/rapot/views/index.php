@@ -5,12 +5,12 @@
     <header class="header tugas-ujian position-fixed" style="background-color: #EC3528;">
         <div class="row">
             <div class="col-auto">
-                <a href="<?= base_url('home')?>" target="_self" class="btn btn-44">
+                <a href="<?= base_url('home') ?>" target="_self" class="btn btn-44">
                     <i class="fa-solid fa-chevron-left text-white"></i>
                 </a>
             </div>
             <div class="col d-flex justify-content-center align-items-center text-center">
-                <h6 class="text-white">Mia Khalifah</h6>
+                <h5 class="text-white"><?= $data_siswa->nama ?></h5>
             </div>
             <div class="col-auto">
                 <a href="#" target="_self" class="btn btn-44 rounded-circle">
@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
                                             <p class="mb-0 size-10 fw-normal text-secondary">Nama Sekolah</p>
-                                            <p class="mb-0 size-12 fw-medium">SMK Negeri 4 Malang</p>
+                                            <p class="mb-0 size-12 fw-medium"><?= $data_sekolah->nama_sekolah ?></p>
                                         </div>
                                     </div>  
                                     <div class="col-6 d-flex">
@@ -61,24 +61,11 @@
                                         </div>
                                         <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
                                             <p class="mb-0 size-10 fw-normal text-secondary">Kelas</p>
-                                            <p class="mb-0 size-12 fw-medium">XI IPA 1</p>
+                                            <p class="mb-0 size-12 fw-medium"><?= $data_kelas->nama ?></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mb-1">
-                                    <div class="col-6 d-flex">
-                                        <div class="col-auto align-self-center">
-                                            <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                                <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-globe-stand size-18 text-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                            <p class="mb-0 size-10 fw-normal text-secondary">Tahun Ajaran</p>
-                                            <p class="mb-0 size-12 fw-medium">2021 / 2022 Ganjil</p>
-                                        </div>
-                                    </div>
                                     <div class="col-6 d-flex">
                                         <div class="col-auto align-self-center">
                                             <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
@@ -88,10 +75,40 @@
                                             </div>
                                         </div>
                                         <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                            <p class="mb-0 size-10 fw-normal text-secondary">Alamat</p>
-                                            <p class="mb-0 size-12 fw-medium">Jln. Tanimbar No.22</p>
+                                            <p class="mb-0 size-10 fw-normal text-secondary">Alamat Sekolah</p>
+                                            <p class="mb-0 size-12 fw-medium">Jalan Tanimbar No.22</p>
                                         </div>
                                     </div>
+                                    <div class="col-6 d-flex">
+                                        <div class="col-auto">
+                                            <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
+                                                <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                                    <i class="fa-solid fa-globe-stand size-18 text-white"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
+                                            <p class="mb-0 size-10 fw-normal text-secondary">Tahun Pelajaran</p>
+                                            <p class="mb-0 size-12 fw-medium"><?= $data_kelas->tahun_ajaran ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 d-flex">
+                                        <div class="col-auto">
+                                            <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
+                                                <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                                    <i class="fa-solid fa-graduation-cap size-16 text-white"></i>
+                                                    <i class="fa-solid fa-globe-stand size-18 text-white"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
+                                            <p class="mb-0 size-10 fw-normal text-secondary">Nama</p>
+                                            <p class="mb-0 size-12 fw-medium"><?= $data_siswa->nama ?></p>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

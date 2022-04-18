@@ -37,7 +37,7 @@
         <div class="row mb-4">
             <div class="col-12 d-flex justify-content-center align-items-center">
                 <?php foreach ($data_siswa as $siswa) : ?>
-                    <a href="<?= base_url('rapot') ?>" class="card mx-1 anak-wali">
+                    <a href="<?= base_url('rapot') ?><?= "/{$siswa->id_siswa}" ?>" class="card mx-1 anak-wali">
                         <div class="card-body">
                             <div class="row mt-3 d-flex justify-content-center align-items-center">
                                 <div class="col-auto">
@@ -67,7 +67,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="<?= base_url('home/detail_pengumuman')?>" class="card mb-3">
+                <a href="<?= base_url('home/detail_pengumuman') ?>" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -85,7 +85,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="<?= base_url('home/detail_pengumuman')?>" class="card mb-3">
+                <a href="<?= base_url('home/detail_pengumuman') ?>" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -103,7 +103,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="<?= base_url('home/detail_pengumuman')?>" class="card mb-3">
+                <a href="<?= base_url('home/detail_pengumuman') ?>" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
