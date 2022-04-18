@@ -404,3 +404,22 @@ function is_logged_in()
     redirect('auth/login');
   }
 }
+function video_access($path, $filename = 'kosong', $default = NULL)
+{
+
+  $filepath = $path . $filename;
+
+  $tmp = explode(".", $filename);
+  $video_default = explode(".", $default);
+  $extfile = $tmp[1];
+
+  if ($filename != 'kosong' || $filename != NULL) {
+    if (file_exists($path . $filename)) {
+      $im = file_get_contents($path . $filename);
+      header("Content-type: video/mp4");
+      echo $im;
+    }
+  } else {
+    echo 'not-found';
+  }
+}
