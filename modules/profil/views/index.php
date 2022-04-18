@@ -10,10 +10,7 @@
             </a>
         </div>
         <div class="col text-center">
-            <!-- <div class="logo-small">
-                <img src="assets/img/logo.png" alt="" />
-                <h5><span class="text-secondary fw-light">Finance</span><br />Wallet</h5>
-            </div> -->
+            
         </div>
         <div class="col-auto">
             <a href="notifikasi-SD.html" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">

@@ -22,4 +22,17 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function riwayat_spp()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'SPP Lunas';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
+		
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('riwayat_spp', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
 }

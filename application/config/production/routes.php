@@ -156,6 +156,22 @@ $route['profil/(:any)/(:any)'] = 'profil/controller_ctl/$1/$2';
 
 
 
+$route['surat']  = 'surat/controller_ctl';
+
+$route['surat/(:any)'] = 'surat/controller_ctl/$1';
+
+$route['surat/(:any)/(:any)'] = 'surat/controller_ctl/$1/$2';
+
+
+
+$route['kontak']  = 'kontak/controller_ctl';
+
+$route['kontak/(:any)'] = 'kontak/controller_ctl/$1';
+
+$route['kontak/(:any)/(:any)'] = 'kontak/controller_ctl/$1/$2';
+
+
+
 
 $route['func_rapot']  = 'rapot/function_ctl';
 
