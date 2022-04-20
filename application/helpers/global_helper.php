@@ -212,6 +212,7 @@ function image_access($path, $filename)
 {
 
   $filepath = $path . $filename;
+  var_dump($filepath);
   // $tmp = explode(".", $filename);
   $extfile = pathinfo($filepath, PATHINFO_EXTENSION);
 

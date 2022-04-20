@@ -20,3 +20,4 @@ application/config/production/config.php
 application/config/production/database.php
 application/config/development/*
 application/config/production/autoload.php
+.env
