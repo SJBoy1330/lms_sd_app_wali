@@ -10,6 +10,7 @@ class Controller_ctl extends MY_Welcome
 
 		$this->load->model('siswa_m');
 		$this->load->model('sekolah_m');
+		$this->load->model('pelajaran_m');
 	}
 
 
@@ -20,7 +21,8 @@ class Controller_ctl extends MY_Welcome
 		$mydata["data_siswa"] = $this->siswa_m->get_siswa_by_id($idsiswa);
 		// $mydata["data_kelas"] = $this->siswa_m->get_kelas_tahun_ajaran_by_idsiswa($idsiswa);
 		$mydata["data_sekolah"] = $this->sekolah_m->get_single_sekolah(array("id_sekolah" => $idsekolah));
-
+		$mydata["data_pelajaran"] = $this->pelajaran_m->get_list_pelajaran_siswa($idsiswa);
+		
 		// LOAD TITLE
 		$mydata['title'] = 'Rapot';
 		
