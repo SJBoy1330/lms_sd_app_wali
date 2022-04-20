@@ -18,7 +18,7 @@ class Controller_ctl extends MY_Welcome
 		// meta data
 		$idsekolah = $this->session->userdata('lms_wali_id_sekolah');
 		$mydata["data_siswa"] = $this->siswa_m->get_siswa_by_id($idsiswa);
-		$mydata["data_kelas"] = $this->siswa_m->get_kelas_tahun_ajaran_by_idsiswa($idsiswa);
+		// $mydata["data_kelas"] = $this->siswa_m->get_kelas_tahun_ajaran_by_idsiswa($idsiswa);
 		$mydata["data_sekolah"] = $this->sekolah_m->get_single_sekolah(array("id_sekolah" => $idsekolah));
 
 		// LOAD TITLE
