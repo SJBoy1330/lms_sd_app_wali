@@ -65,12 +65,12 @@ function submit_form(element, id_form) {
         method: 'post',
         dataType: 'json',
         beforeSend: function () {
-            $('#' + element.id).prop('disabled', true);
-            // $('#' + element.id).html('<div class="spinner-border text-light" role="status"><span class="sr-only"></span></div>');
+            $("#" + element.id).prop('disabled', true);
+            // $("#" + element.id).html('<div class="spinner-border text-light" role="status"><span class="sr-only"></span></div>');
         },
         success: function (data) {
-            $('#' + element.id).prop('disabled', false);
-            // $('#' + element.id).html('<span class="indicator-label">Simpan</span>');
+            $("#" + element.id).prop('disabled', false);
+            // $("#" + element.id).html('<span class="indicator-label">Simpan</span>');
             $('.fadedin').remove();
 
             if (data.status == true) {
@@ -99,7 +99,7 @@ function submit_form(element, id_form) {
                 if (data.required) {
                     const array = data.required.length;
                     for (var i = 0; i < array; i++) {
-                        $('#' + data.required[i][0]).append('<span class="text-danger fadedin">' + data.required[i][1] + '</span>');
+                        $("#" + data.required[i][0]).append('<span class="text-danger fadedin">' + data.required[i][1] + '</span>');
                     }
                 }
                 if (data.redirect) {

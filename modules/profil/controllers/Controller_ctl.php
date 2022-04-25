@@ -7,6 +7,8 @@ class Controller_ctl extends MY_Frontend
 		// Load the constructer from MY_Controller
 		parent::__construct();
 		is_logged_in();
+
+		$this->load->model('wali_m');
 	}
 
 
@@ -14,6 +16,9 @@ class Controller_ctl extends MY_Frontend
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Profil';
+
+		// Meta Data
+		$mydata['nama_wali'] = $this->session->userdata('lms_wali_nama');
 
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
@@ -30,6 +35,10 @@ class Controller_ctl extends MY_Frontend
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Ubah Profil';
+
+		// Meta Data
+		$idwali = $this->session->userdata('lms_wali_id_wali');
+		$mydata['data_wali'] = $this->wali_m->get_data_wali($idwali);
 
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
