@@ -9,6 +9,9 @@ class Controller_ctl extends MY_Frontend
 		is_logged_in();
 
 		$this->load->model('wali_m');
+		$this->load->model('sekolah_m');
+		$this->load->model('siswa_m');
+		$this->load->model('staf_m');
 	}
 
 
@@ -81,6 +84,12 @@ class Controller_ctl extends MY_Frontend
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Tentang Sekolah';
+
+		// meta data
+		$idsekolah = $this->session->userdata('lms_wali_id_sekolah');
+		$mydata['data_sekolah'] = $this->sekolah_m->get_single_sekolah(array('id_sekolah' => $idsekolah));
+		$mydata['count_siswa'] = $this->siswa_m->count_data_siswa();
+		$mydata['count_staf'] = $this->staf_m->count_data_staf();
 
 		// HIDDEN FOOTER
 		$mydata['config_hidden']['footer'] = true;

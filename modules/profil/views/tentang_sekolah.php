@@ -41,7 +41,7 @@
                     </div>
                     <div class="col align-self-center ps-0">
                         <p class="mb-0 size-13 fw-medium">Nama Sekolah</p>
-                        <p class="mb-0 size-10 fw-normal text-secondary">Sekolah Tunas Bangsa Nasional </p>
+                        <p class="mb-0 size-10 fw-normal text-secondary"><?= $data_sekolah->nama_sekolah ?></p>
                     </div>
                 </div>
                 <div class="row mb-3 bg-f5f5f5 py-3 rounded-10 rows-1">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="col align-self-center ps-0">
                         <p class="mb-0 size-13 fw-medium">NPSM</p>
-                        <p class="mb-0 size-10 fw-normal text-secondary">121314</p>
+                        <p class="mb-0 size-10 fw-normal text-secondary"><?= $data_sekolah->npsm ?></p>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="col-auto align-self-center ps-0">
                         <p class="mb-0 size-13 fw-medium mb-2 text-center">Alamat Sekolah</p>
-                        <p class="mb-0 size-10 fw-normal text-secondary ps-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro deserunt nemo laudantium aliquid nostrum velit sint corporis, alias fugiat, molestiae esse impedit ullam quo eius mollitia illo! Nostrum, dolores ullam.</p>
+                        <p class="mb-0 size-10 fw-normal text-secondary ps-3"><?= $data_sekolah->alamat ?></p>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     </div>
                     <div class="col align-self-center ps-0">
                         <p class="mb-0 size-12 fw-medium">Jumlah Siswa</p>
-                        <p class="mb-0 size-10 fw-normal text-secondary">1200 Siswa</p>
+                        <p class="mb-0 size-10 fw-normal text-secondary"><?= $count_siswa ?> Siswa</p>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="col align-self-center ps-0">
                         <p class="mb-0 size-12 fw-medium">Jumlah Staf</p>
-                        <p class="mb-0 size-10 fw-normal text-secondary">150 Siswa</p>
+                        <p class="mb-0 size-10 fw-normal text-secondary"><?= $count_staf ?> Staf</p>
                     </div>
                 </div>
             </div>

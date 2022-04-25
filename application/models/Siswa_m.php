@@ -42,4 +42,12 @@ class Siswa_m extends MY_Model
 			return false;
 		}
 	}
+
+	public function count_data_siswa($filter = NULL)
+	{
+		$this->db_sekolah->select('id_siswa');
+		$this->db_sekolah->from('siswa');
+		$this->db_sekolah->where(array('deleted' => 'N', 'aktif' => 'Y'), $filter);
+		return $this->db_sekolah->count_all_results();
+	}
 }
