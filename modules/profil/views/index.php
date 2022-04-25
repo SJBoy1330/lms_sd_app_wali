@@ -106,6 +106,26 @@
                             </div>
                         </div>
                     </a>
+                    <a href="<?= base_url('profil/tentang_sekolah'); ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
+                        <div class="row p-2">
+                            <div class="d-flex col-auto align-items-center ">
+                                <div class="bg-ec3528 rounded-10 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">
+                                    <i class="fa-solid fa-school size-18  "></i>
+                                </div>
+                            </div>
+                            <div class="col align-self-center p-0">
+                                <p class="mb-0 fw-bold size-14">Tentang Sekolah</p>
+                                <p class="text-secondary size-12">
+                                    Sejarah, Tempat, dll
+                                </p>
+                            </div>
+                            <div class="col-auto d-flex justify-content-end align-items-center ps-0">
+                                <div class="fs-3">
+                                    <i class="fa-solid fa-chevron-right size-14"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                     <a href="<?= base_url('profil/bantuan') ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
                         <div class="row p-2">
                             <div class="d-flex col-auto align-items-center ">

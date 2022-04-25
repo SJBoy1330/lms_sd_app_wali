@@ -82,6 +82,10 @@ class Controller_ctl extends MY_Frontend
 		// LOAD TITLE
 		$mydata['title'] = 'Tentang Sekolah';
 
+		// HIDDEN FOOTER
+		$mydata['config_hidden']['footer'] = true;
+		$mydata['config_hidden']['button_back'] = true;
+
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 

@@ -1,49 +1,51 @@
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <ul class="nav nav-pills nav-justified">
-            <li class="nav-item">
-                <a class="nav-link mt-1  active" href="<?= base_url('home');?>">
-                    <span>
-                        <i class="fa-solid fa-house size-18"></i>
-                        <span class="nav-text">Dashboard</span>
-                    </span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mt-1 " href="<?= base_url('spp');?>">
-                    <span>
-                        <i class="fa-solid fa-envelope-open-text size-18"></i>
-                        <span class="nav-text">SPP</span>
-                    </span>
-                </a>
-            </li>
-            <li class="nav-item centerbutton">
-                <button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#menumodal" id="centermenubtn">
-                    <span class="theme-radial-gradient d-flex justify-content-center align-items-center">
-                        <i class="bi bi-columns-gap size-22"></i>
-                    </span>
-                </button>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mt-1 " href="<?= base_url('toko')?>">
-                    <span>
-                        <i class="fa-solid fa-shop size-18"></i>
-                        <span class="nav-text">Toko</span>
-                    </span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mt-1 " href="<?= base_url('profil')?>">
-                    <span>
-                        <i class="fa-solid fa-user size-18"></i>
-                        <span class="nav-text">Profil</span>
-                    </span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</footer>
+<?php if (!isset($config_hidden) && $config_hidden['footer'] != true) : ?>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link mt-1  active" href="<?= base_url('home'); ?>">
+                        <span>
+                            <i class="fa-solid fa-house size-18"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mt-1 " href="<?= base_url('spp'); ?>">
+                        <span>
+                            <i class="fa-solid fa-envelope-open-text size-18"></i>
+                            <span class="nav-text">SPP</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item centerbutton">
+                    <button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#menumodal" id="centermenubtn">
+                        <span class="theme-radial-gradient d-flex justify-content-center align-items-center">
+                            <i class="bi bi-columns-gap size-22"></i>
+                        </span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mt-1 " href="<?= base_url('toko') ?>">
+                        <span>
+                            <i class="fa-solid fa-shop size-18"></i>
+                            <span class="nav-text">Toko</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mt-1 " href="<?= base_url('profil') ?>">
+                        <span>
+                            <i class="fa-solid fa-user size-18"></i>
+                            <span class="nav-text">Profil</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+<?php endif; ?>
 <div class="modal fade" id="menumodal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content shadow position-absolute" style="bottom: 65px;">
