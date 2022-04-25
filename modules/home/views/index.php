@@ -90,41 +90,43 @@
         <?php endif; ?>
 
         <!-- Berita -->
-        <div class="row mt-4 mb-3 px-1">
-            <div class="col">
-                <h6 class="title">Berita</h6>
+        <?php if (count($data_berita) > 0) : ?>
+            <div class="row mt-4 mb-3 px-1">
+                <div class="col">
+                    <h6 class="title">Berita</h6>
+                </div>
+                <div class="col-auto">
+                    <a href="<?= base_url('home/list_berita'); ?>" class="label-merah">Lihat Semua</a>
+                </div>
             </div>
-            <div class="col-auto">
-                <a href="<?= base_url('home/list_berita'); ?>" class="label-merah">Lihat Semua</a>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-12 px-0">
-                <div class="swiper-container cardswiper cardswiper-berita">
-                    <div class="swiper-wrapper">
-                        <?php foreach ($data_berita as $b) : ?>
-                            <div class="swiper-slide">
-                                <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= base_url(); ?>assets/images/tari-saman.png');">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-auto position-absolute badge-status">
-                                                <span class="badge rounded-pill px-3 py-2 bg-badge fw-normal"><?= $b->nama ?></span>
+            <div class="row mb-2">
+                <div class="col-12 px-0">
+                    <div class="swiper-container cardswiper cardswiper-berita">
+                        <div class="swiper-wrapper">
+                            <?php foreach ($data_berita as $b) : ?>
+                                <div class="swiper-slide">
+                                    <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= base_url(); ?>assets/images/tari-saman.png');">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-auto position-absolute badge-status">
+                                                    <span class="badge rounded-pill px-3 py-2 bg-badge fw-normal"><?= $b->nama ?></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="wrapper-text shadow-sm">
-                                    <div class="row px-3 py-3">
-                                        <p class="mb-1 title-1-home-text"><?= $b->judul ?></p>
-                                        <p class="mb-0 title-4-home-text"><?= $b->keterangan ?></p>
+                                    <div class="wrapper-text shadow-sm">
+                                        <div class="row px-3 py-3">
+                                            <p class="mb-1 title-1-home-text"><?= $b->judul ?></p>
+                                            <p class="mb-0 title-4-home-text"><?= $b->keterangan ?></p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php endif; ?>
 
     </div>
     <!-- main page content ends -->
