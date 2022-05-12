@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script allowed');
 
-class Manual_m extends MY_Model
+class Manual_m extends CI_Model
 {
 
 	public function get_today_lesson($id_sekolah, $date, $filter = 'all', $id_kelas = NULL, $time_access = NULL)

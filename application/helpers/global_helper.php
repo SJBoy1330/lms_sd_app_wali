@@ -395,11 +395,6 @@ function is_logged_in()
   if ($ci->session->userdata('lms_wali_id_wali')) {
     if ($ci->session->userdata('lms_wali_role') != 'wali') {
       redirect('auth/login');
-    } else {
-      $ci->db2 = $ci->load->database('db_sekolah', TRUE);
-      $ci->db2->set('last_access', date('Y-m-d H:i:s'));
-      $ci->db2->where('id_wali', $ci->session->userdata('lms_wali_id_wali'));
-      $ci->db2->update('wali');
     }
   } else {
     redirect('auth/login');

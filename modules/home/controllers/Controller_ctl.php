@@ -7,9 +7,6 @@ class Controller_ctl extends MY_Frontend
 		// Load the constructer from MY_Controller
 		parent::__construct();
 		is_logged_in();
-		$this->load->model('siswa_m');
-		$this->load->model('pengumuman_m');
-		$this->load->model('berita_m');
 	}
 
 	public function index()
@@ -23,7 +20,7 @@ class Controller_ctl extends MY_Frontend
 		// Load meta data
 		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
 		$id_wali = $this->session->userdata('lms_wali_id_wali');
-		
+
 		$mydata['nama_wali'] = $this->session->userdata('lms_wali_nama');
 
 		// Data Siswa
@@ -61,8 +58,8 @@ class Controller_ctl extends MY_Frontend
 			]
 		);
 		$mydata['data_berita'] = $data_berita;
-		
-		
+
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -137,7 +134,7 @@ class Controller_ctl extends MY_Frontend
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 		$mydata['berita'] = $this->berita_m->get_detail_berita($id);
-		
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_berita', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
