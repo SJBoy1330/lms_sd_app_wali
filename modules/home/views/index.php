@@ -74,7 +74,18 @@
                                 <div class="row">
                                     <div class="col-auto">
                                         <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
-                                            <img src="<?= base_url("linker/img_konten/" . ($pengumuman->gambar != '' || $pengumuman->gambar != NULL ? base64url_encode($pengumuman->gambar) : 'kosong') . '/' . base64url_encode($pengumuman->create_date)); ?>" alt="">
+                                            <?php
+
+                                            if ($pengumuman->gambar != '' || $pengumuman->gambar != NULL) {
+
+                                                $gambar = base64url_encode($pengumuman->gambar);
+                                            } else {
+
+                                                $gambar = base64url_encode('kosong');
+                                            }
+
+                                            ?>
+                                            <img src="<?= base_url('linker/img_konten/' . $gambar . '/' . base64url_encode($pengumuman->create_date)) ?>" loading="lazy" alt="">
                                         </div>
                                     </div>
                                     <div class="col align-self-center ps-0">
@@ -105,7 +116,18 @@
                         <div class="swiper-wrapper">
                             <?php foreach ($data_berita as $b) : ?>
                                 <div class="swiper-slide">
-                                    <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= base_url(); ?>assets/images/tari-saman.png');">
+                                    <?php
+
+                                    if ($b->gambar != '' || $b->gambar != NULL) {
+
+                                        $gambar = base64url_encode($b->gambar);
+                                    } else {
+
+                                        $gambar = base64url_encode('kosong');
+                                    }
+
+                                    ?>
+                                    <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= site_url('linker/img_konten/' . $gambar . '/' . base64url_encode($row->create_date)); ?>');">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-auto position-absolute badge-status">

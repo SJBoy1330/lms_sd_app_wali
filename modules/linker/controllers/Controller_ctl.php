@@ -10,30 +10,12 @@ class Controller_ctl extends MY_Frontend
 
         parent::__construct();
         $this->base_link = APPPATH . '../../data_sd/';
-        $this->id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+        $this->id_sekolah = $this->session->userdata('lms_wali_id_wali');
     }
 
     public function index()
     {
         show_404();
-    }
-
-    public function img_splash($gambar)
-    {
-        $path = $this->base_link . 'splash/';
-
-        $filename = base64url_decode($gambar);
-
-        image_access($path, $filename);
-    }
-
-    public function img_banner($gambar)
-    {
-        $path = $this->base_link . 'sekolah_' . $this->id_sekolah . '/banner/';
-
-        $filename = base64url_decode($gambar);
-
-        image_access($path, $filename);
     }
 
     public function img_konten($gambar, $date)
@@ -43,7 +25,7 @@ class Controller_ctl extends MY_Frontend
         $bulan = date_format($dt, "m");
         // var_dump($dt);die;
         $path = $this->base_link . 'sekolah_' . $this->id_sekolah . '/konten/' . $tahun . '/' . $bulan . '/';
-
+        // echo $tahun . '/' . $bulan;
         $filename = base64url_decode($gambar);
 
         image_access($path, $filename);
@@ -74,7 +56,7 @@ class Controller_ctl extends MY_Frontend
     }
     public function img_user($gambar)
     {
-        $path = $this->base_link . 'sekolah_' . $this->id_sekolah . '/wali/';
+        $path = $this->base_link . 'sekolah_' . $this->id_sekolah . '/siswa/';
 
         $filename = base64url_decode($gambar);
 

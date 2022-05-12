@@ -187,17 +187,17 @@ $route['func_rapot/(:any)/(:any)'] = 'rapot/function_ctl/$1/$2';
 
 
 
-$route['linker']  = 'linker/function_ctl';
+$route['linker']  = 'linker/controller_ctl';
 
-$route['linker/(:any)'] = 'linker/function_ctl/$1';
+$route['linker/(:any)'] = 'linker/controller_ctl/$1';
 
-$route['linker/(:any)/(:any)'] = 'linker/function_ctl/$1/$2';
+$route['linker/(:any)/(:any)'] = 'linker/controller_ctl/$1/$2';
 
-$route['linker/(:any)/(:any)/(:any)'] = 'linker/function_ctl/$1/$2/$3';
+$route['linker/(:any)/(:any)/(:any)'] = 'linker/controller_ctl/$1/$2/$3';
 
-$route['linker/(:any)/(:any)/(:any)/(:any)'] = 'linker/function_ctl/$1/$2/$3/$4';
+$route['linker/(:any)/(:any)/(:any)/(:any)'] = 'linker/controller_ctl/$1/$2/$3/$4';
 
-$route['linker/(:any)/(:any)/(:any)/(:)/(:any)any)'] = 'linker/function_ctl/$1/$2/$3/$4/$5';
+$route['linker/(:any)/(:any)/(:any)/(:any)/(:any)'] = 'linker/controller_ctl/$1/$2/$3/$4/$5';
 
 
 $route['404_override'] = '';
