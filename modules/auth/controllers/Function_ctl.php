@@ -25,14 +25,13 @@ class Function_ctl extends MY_Welcome
         }
 
         if (!in_array(false, $arrAccess)) {
-            $url = "https://sd.klasq.id/api/wali/login";
             $request_data = array(
                 'kode_sekolah' => $this->input->post('kode_sekolah'),
                 'username' => $this->input->post('username'),
                 'password' => $this->input->post('kata_sandi'),
             );
 
-            [$error, $message, $status, $response_data] = curl_post($url, $request_data);
+            [$error, $message, $status, $response_data] = curl_post('login', $request_data);
             $data['status'] = !$error;
 
             if ($error) {

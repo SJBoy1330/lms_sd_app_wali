@@ -1,8 +1,8 @@
 <?php
-function curl_post($url, $fields = array())
+function curl_post($path, $fields = array())
 {
     $postvars = http_build_query($fields);
-    $ch = curl_init($url);
+    $ch = curl_init(API_URL($path));
     curl_setopt($ch, CURLOPT_POST, 1);                //0 for a get request
     curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -13,10 +13,11 @@ function curl_post($url, $fields = array())
     return response_parser($response);
 }
 
-function curl_get($url)
+function curl_get($path, $fields = array())
 {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
+    $request_url = API_URL($path) . "?" . http_build_query($fields);
+    $ch = curl_init($request_url);
+    // curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_POST, 0);                //0 for a get request
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
@@ -35,4 +36,13 @@ function response_parser($response)
         $res->status,
         $res->data,
     ];
+}
+
+function API_URL($path = null)
+{
+    $uri = 'https://sd.klasq.id/api/wali/';
+    if ($path != null) {
+        $uri .= $path;
+    }
+    return $uri;
 }

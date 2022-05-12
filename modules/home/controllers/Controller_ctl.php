@@ -21,12 +21,48 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
 		// Load meta data
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
 		$id_wali = $this->session->userdata('lms_wali_id_wali');
-		$mydata['data_siswa'] = $this->siswa_m->get_siswa_by_idwali($id_wali);
+		
 		$mydata['nama_wali'] = $this->session->userdata('lms_wali_nama');
-		$mydata['data_pengumuman'] = $this->pengumuman_m->get_list_pengumuman("tanggal_mulai >= now() AND now() <= tanggal_akhir", 3);
-		$mydata['data_berita'] = $this->berita_m->get_list_berita(null, 3);
-		// var_dump($mydata['data_berita']);
+
+		// Data Siswa
+		[
+			$error, $message, $status, $data_siswa
+		] = curl_get(
+			'data_anak',
+			[
+				"id_sekolah" => $id_sekolah,
+				"id_wali" => $id_wali
+			]
+		);
+		$mydata['data_siswa'] = $data_siswa;
+
+		// data pengumuman
+		[
+			$error, $message, $status, $data_pengumuman
+		] = curl_get(
+			'pengumuman',
+			[
+				"id_sekolah" => $id_sekolah,
+				"limit" => 3
+			]
+		);
+		$mydata['data_pengumuman'] = $data_pengumuman;
+
+		// data berita
+		[
+			$error, $message, $status, $data_berita
+		] = curl_get(
+			'berita',
+			[
+				"id_sekolah" => $id_sekolah,
+				"limit" => 3
+			]
+		);
+		$mydata['data_berita'] = $data_berita;
+		
+		
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
