@@ -17,7 +17,6 @@ function curl_get($path, $fields = array())
 {
     $request_url = API_URL($path) . "?" . http_build_query($fields);
     $ch = curl_init($request_url);
-    // curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_POST, 0);                //0 for a get request
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
