@@ -25,46 +25,43 @@ class Function_ctl extends MY_Welcome
         }
 
         if (!in_array(false, $arrAccess)) {
-            $kds = $this->sekolah_m->get_single(array('kode_sekolah' => $kode_sekolah));
-            // CEK KODDE SEKOLAH
-            if ($kds) {
-                // CETAK SESSION SERVER
-                $dbs['lms_sd_wali_server'] = $kds->server;
-                $this->session->set_userdata($dbs);
-                $this->db2 = $this->load->database('db_sekolah', TRUE);
-                $user = $this->db2->get_where('wali', ['username' => $username])->row();
-                if ($user) {
-                    if (hash_my_password($kds->id_sekolah, $user->username, $kata_sandi) == $user->password) {
-                        $arruser['lms_wali_id_wali'] = $user->id_wali;
-                        $arruser['lms_wali_nama'] = $user->nama;
-                        $arruser['lms_wali_role'] = 'wali';
-                        $arruser['lms_wali_id_sekolah'] = $kds->id_sekolah;
-                        $this->session->set_userdata($arruser);
+            $url = "https://sd.klasq.id/api/wali/login";
+            $request_data = array(
+                'kode_sekolah' => $this->input->post('kode_sekolah'),
+                'username' => $this->input->post('username'),
+                'password' => $this->input->post('kata_sandi'),
+            );
 
-                        $data['status'] = true;
-                        $data['redirect'] = base_url('home');
-                        echo json_encode($data);
-                        exit;
-                    } else {
-                        $this->session->unset_userdata('lms_sd_wali_server');
-                        $data['required'][] = ['req_kata_sandi', 'Kata sandi salah !'];
-                        $data['status'] = false;
-                        echo json_encode($data);
-                        exit;
-                    }
-                } else {
-                    $this->session->unset_userdata('lms_sd_wali_server');
-                    $data['required'][] = ['req_username', 'Username tidak terdaftar !'];
-                    $data['status'] = false;
-                    echo json_encode($data);
-                    exit;
+            [$error, $message, $status, $response_data] = curl_post($url, $request_data);
+            $data['status'] = !$error;
+
+            if ($error) {
+                if (strpos($message, "Kode sekolah") !== false) {
+                    $data['required'][] = ['req_kode_sekolah', $message];
+                }
+
+                if (strpos($message, "Username") !== false) {
+                    $data['required'][] = ['req_username', $message];
+                }
+
+                if (strpos($message, "Kata sandi") !== false) {
+                    $data['required'][] = ['req_kata_sandi', $message];
                 }
             } else {
-                $data['required'][] = ['req_kode_sekolah', 'Kode sekolah tidak terdaftar !'];
-                $data['status'] = false;
-                echo json_encode($data);
-                exit;
+                $dbs['lms_sd_wali_server']      = $response_data->server;
+                $this->session->set_userdata($dbs);
+
+                $arruser['lms_wali_id_wali']    = $response_data->id_wali;
+                $arruser['lms_wali_nama']       = $response_data->nama;
+                $arruser['lms_wali_role']       = $response_data->role;
+                $arruser['lms_wali_id_sekolah'] = $response_data->id_sekolah;
+                $this->session->set_userdata($arruser);
+
+                $data['redirect'] = base_url('home');
             }
+
+            echo json_encode($data);
+            exit;
         } else {
             $data['status'] = false;
             echo json_encode($data);
