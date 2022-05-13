@@ -26,12 +26,12 @@
     <!-- main page content -->
     <div class="main-container container">
         <!-- Pengumuman -->
-        <div class="row mb-3 px-1">
+        <!-- <div class="row mb-3 px-1">
             <div class="col"></div>
             <div class="col-auto align-self-center">
                 <h6 class="title">10 dari 12 Pengumuman</h6>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <?php foreach ($data_pengumuman as $p) : ?>
                 <div class="col-12 col-md-6 col-lg-4">
