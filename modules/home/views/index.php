@@ -127,7 +127,7 @@
                                     }
 
                                     ?>
-                                    <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= site_url('linker/img_konten/' . $gambar . '/' . base64url_encode($row->create_date)); ?>');">
+                                    <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= site_url('linker/img_konten/' . $gambar . '/' . base64url_encode($b->create_date)); ?>');">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-auto position-absolute badge-status">

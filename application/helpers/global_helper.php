@@ -212,7 +212,6 @@ function image_access($path, $filename)
 {
 
   $filepath = $path . $filename;
-  var_dump($filepath);
   // $tmp = explode(".", $filename);
   $extfile = pathinfo($filepath, PATHINFO_EXTENSION);
 
@@ -222,8 +221,6 @@ function image_access($path, $filename)
     echo $im;
   }
 }
-
-
 function audio_access($path, $filename)
 {
 
@@ -248,7 +245,6 @@ function image_access_svg($path, $filename)
     echo $im;
   }
 }
-
 
 function get_range_date($date1, $date2)
 {
