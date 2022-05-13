@@ -74,7 +74,16 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
 		// load meta data
-		$mydata['data_pengumuman'] = $this->pengumuman_m->get_list_pengumuman("tanggal_mulai >= now()");
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		[
+			$error, $message, $status, $data_pengumuman
+		] = curl_get(
+			'pengumuman',
+			[
+				"id_sekolah" => $id_sekolah
+			]
+		);
+		$mydata['data_pengumuman'] = $data_pengumuman;
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_pengumuman', $mydata, TRUE);
