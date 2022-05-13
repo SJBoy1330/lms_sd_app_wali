@@ -487,3 +487,13 @@ function nice_date($format, $tanggal = "now")
 
   return str_replace($en, $id, date($format, strtotime($tanggal)));
 }
+
+function nice_date_time($tanggal = "now")
+{
+  $en = array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Jan", "Feb",  "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+  $id = array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu",  "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September",  "Oktober", "November", "Desember");
+  $format = 'D, j M Y H:i';
+
+  $date_formated = date($format, strtotime($tanggal));
+  return str_replace($en, $id, $date_formated);
+}

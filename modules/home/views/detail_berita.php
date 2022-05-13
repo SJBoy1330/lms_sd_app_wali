@@ -30,15 +30,15 @@
                 <div class="row">
                     <div class="col-12">
                         <figure class="overflow-hidden rounded-15 text-center">
-                            <img src="<?= base_url('assets/images/tari-saman.png'); ?>" alt="" class="w-100 mx-auto">
+                            <img src="<?= base_url('linker/img_konten/' . base64url_encode($berita->gambar != '' || $berita->gambar != NULL ? $berita->gambar : 'kosong') . '/' . base64url_encode($berita->create_date)) ?>" alt="" class="w-100 mx-auto">
                         </figure>
                     </div>
                 </div>
 
                 <div class="row mx-2">
                     <p class="mt-2 mb-3 title-1-home"><?= $berita->judul ?></p>
-                    <p class="mb-1 title-3">Penulis <span class="mx-2">:</span><?= $berita->create_by ?></p>
-                    <p class="mb-1 title-3"><?= $berita->create_date ?></p>
+                    <p class="mb-1 title-2">Tanggal dibuat: </p>
+                    <p class="mb-1 title-3"><?= nice_date_time($berita->create_date) ?></p>
                 </div>
 
                 <div class="mt-3 mb-4 mx-2">

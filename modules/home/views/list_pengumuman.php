@@ -40,7 +40,7 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
-                                        <img src="<?= base_url(); ?>assets/images/no-photo.png" alt="">
+                                        <img src="<?= base_url('linker/img_konten/' . base64url_encode($p->gambar != '' || $p->gambar != NULL ? $p->gambar : 'kosong') . '/' . base64url_encode($p->create_date)) ?>" alt="">
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">

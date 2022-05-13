@@ -75,15 +75,11 @@
                                     <div class="col-auto">
                                         <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
                                             <?php
-
                                             if ($pengumuman->gambar != '' || $pengumuman->gambar != NULL) {
-
                                                 $gambar = base64url_encode($pengumuman->gambar);
                                             } else {
-
                                                 $gambar = base64url_encode('kosong');
                                             }
-
                                             ?>
                                             <img src="<?= base_url('linker/img_konten/' . $gambar . '/' . base64url_encode($pengumuman->create_date)) ?>" loading="lazy" alt="">
                                         </div>

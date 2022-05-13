@@ -100,7 +100,17 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
 		// load meta data
-		$mydata['pengumuman'] = $this->pengumuman_m->get_detail_pengumuman($id);
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		[
+			$error, $message, $status, $data_pengumuman
+		] = curl_get(
+			'pengumuman',
+			[
+				"id_sekolah" => $id_sekolah,
+				"id_pengumuman" => $id
+			]
+		);
+		$mydata['pengumuman'] = $data_pengumuman;
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_pengumuman', $mydata, TRUE);
@@ -119,16 +129,27 @@ class Controller_ctl extends MY_Frontend
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/berita/listberita.js"></script>';
 
 		// meta data
-		$filter_berita = null;
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
 		$idkategori = $this->input->get('kategori', TRUE);
+
+		$filter_berita['id_sekolah'] = $id_sekolah;
 		if (
-			$idkategori != ""
+			$idkategori != "" && $idkategori != null
 		) {
-			$filter_berita["k.id_kategori_konten"] = $idkategori;
+			$filter_berita["id_kategori"] = $idkategori;
 		}
 
-		$mydata['data_berita'] = $this->berita_m->get_list_berita($filter_berita);
-		$mydata['data_kategori'] = $this->berita_m->get_list_kategori();
+		[
+			$error, $message, $status, $data_berita
+		] = curl_get('berita', $filter_berita);
+		$mydata['data_berita'] = $data_berita;
+
+		[
+			$error, $message, $status, $data_kategori
+		] = curl_get('berita/kategori', [
+			"id_sekolah" => $id_sekolah,
+		]);
+		$mydata['data_kategori'] = $data_kategori;
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_berita', $mydata, TRUE);
@@ -142,7 +163,15 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
-		$mydata['berita'] = $this->berita_m->get_detail_berita($id);
+
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		[
+			$error, $message, $status, $data_berita
+		] = curl_get('berita', [
+			"id_sekolah" => $id_sekolah,
+			'id_konten' => $id
+		]);
+		$mydata['berita'] = $data_berita;
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_berita', $mydata, TRUE);

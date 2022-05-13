@@ -64,7 +64,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <figure class="overflow-hidden rounded-15 text-center">
-                                    <img src="<?= base_url('assets/images/tari-saman.png'); ?>" alt="" class="w-100 mx-auto">
+                                    <img src="<?= base_url('linker/img_konten/' . base64url_encode($b->gambar != '' || $b->gambar != NULL ? $b->gambar : 'kosong') . '/' . base64url_encode($b->create_date)) ?>" alt="" class="w-100 mx-auto">
                                 </figure>
                             </div>
                         </div>
