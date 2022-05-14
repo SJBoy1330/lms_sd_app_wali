@@ -49,6 +49,16 @@ class Controller_ctl extends MY_Frontend
 		);
 		$mydata['data_wali'] = $data_profile;
 
+		[
+			$error, $message, $status, $data_agama
+		] = curl_get(
+			'attribut/agama',
+			[
+				"id_sekolah" => $id_sekolah
+			]
+		);
+		$mydata['data_agama'] = $data_agama;
+
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 

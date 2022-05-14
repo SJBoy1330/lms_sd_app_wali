@@ -26,6 +26,13 @@
         <div class="row mx-2">
             <div class="col-12">
                 <form class="row g-3 mt-1">
+                    Agama:
+                    <select name="agama" id="agama">
+                        <?php foreach ($data_agama as $agama) : ?>
+                            <option style="color: black;" value="<?= $agama->id_agama ?>" <?= $agama->id_agama == $data_wali->id_agama ? 'selected' : ''   ?>><?= $agama->nama ?></option>
+                        <?php endforeach; ?>
+                    </select>
+
                     <div class="col-12">
                         <label for="nis" class="form-label fw-bold size-14">Nomer Induk Siswa (NIS)</label>
                         <input type="text" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" id="nis" placeholder="203131341321t" autocomplete="off">

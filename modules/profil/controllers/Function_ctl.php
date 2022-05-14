@@ -57,4 +57,9 @@ class Function_ctl extends MY_Welcome
         echo json_encode($data);
         exit;
     }
+
+    public function edit_profil()
+    {
+        # code...
+    }
 }
