@@ -34,29 +34,12 @@
                     </select>
 
                     <div class="col-12">
-                        <label for="nis" class="form-label fw-bold size-14">Nomer Induk Siswa (NIS)</label>
-                        <input type="text" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" id="nis" placeholder="203131341321t" autocomplete="off">
+                        <label for="username" class="form-label fw-bold size-14">Username</label>
+                        <input type="text" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" id="username" name="username" placeholder="Masukan username anda!" value="<?= $data_wali->username ?>" autocomplete=" off">
                     </div>
                     <div class="col-12">
                         <label for="nama" class="form-label fw-bold size-14">Nama lengkap</label>
                         <input type="text" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" id="nama" placeholder="Dono kasino indro..." autocomplete="off" value="<?= $data_wali->nama ?>">
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label fw-bold size-14">Gender</label>
-                        <div class="row">
-                            <div class="col bg-f5f5f5 mx-2 py-2 d-flex align-items-center rounded-10 gender-laki">
-                                <input class="form-check-input p-2 m-0 bg-grey border-white" type="radio" name="flexRadioDefault" id="gender" autocomplete="off">
-                                <label class="ms-2 form-check-label size-14 text-secondary" for="gender">
-                                    laki-laki
-                                </label>
-                            </div>
-                            <div class="col bg-f5f5f5 mx-2 py-2 d-flex align-items-center rounded-10 gender-perempuan">
-                                <input class="form-check-input p-2 m-0 bg-grey border-white" type="radio" name="flexRadioDefault" id="gender2" autocomplete="off">
-                                <label class="ms-2 form-check-label size-14 text-secondary" for="gender2">
-                                    Perempuan
-                                </label>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-12">
                         <label for="alamat" class="form-label fw-bold size-14">Alamat</label>
