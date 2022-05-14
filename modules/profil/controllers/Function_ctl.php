@@ -58,8 +58,55 @@ class Function_ctl extends MY_Welcome
         exit;
     }
 
-    public function edit_profil()
+    public function edit_profil_proses()
     {
-        # code...
+        $arrVar['username']  = 'Username';
+        $arrVar['email'] = 'Email';
+        $arrVar['agama'] = 'Agama';
+        foreach ($arrVar as $var => $value) {
+            $$var = $this->input->post($var);
+            if (!$$var) {
+                $data['required'][] = ['req_' . $var, $value . ' tidak boleh kosong !'];
+                $arrAccess[] = false;
+            } else {
+                $arrAccess[] = true;
+            }
+        }
+
+        if (in_array(false, $arrAccess)) {
+            $data['status'] = false;
+            echo json_encode($data);
+            exit;
+        }
+
+        $idsekolah = $this->session->userdata('lms_wali_id_sekolah');
+        $idwali = $this->session->userdata('lms_wali_id_wali');
+        $request_data = [
+            "id_sekolah" => $idsekolah,
+            "id_wali" => $idwali,
+            "nama" => $this->input->post('nama'),
+            "alamat" => $this->input->post('alamat'),
+            "telp" => $this->input->post('nohp'),
+            "username" => $username,
+            "email" => $email,
+            "id_agama" => $agama,
+        ];
+
+        [$error, $message, $status, $response_data] = curl_post('profil/edit', $request_data);
+        // $data['status'] = false;
+        // $data['res'] = [
+        //     "message" => $message,
+        //     "status" => $status,
+        //     "response_data" => $response_data
+        // ];
+        // echo json_encode($data);
+        // exit;
+
+        $data['status'] = !$error;
+        if (!$error) {
+            $data['redirect'] = base_url('profil/ubah_profil');
+        }
+        echo json_encode($data);
+        exit;
     }
 }

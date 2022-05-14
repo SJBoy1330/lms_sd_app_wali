@@ -111,9 +111,9 @@ class Controller_ctl extends MY_Frontend
 				"id_sekolah" => $id_sekolah,
 			]
 		);
-		$mydata['data_sekolah'] = $data_sekolah;
-		// $mydata['count_siswa'] = $this->siswa_m->count_data_siswa();
-		// $mydata['count_staf'] = $this->staf_m->count_data_staf();
+		$mydata['data_sekolah'] = $data_sekolah->sekolah;
+		$mydata['count_siswa'] = $data_sekolah->jumlah->siswa;
+		$mydata['count_staf'] = $data_sekolah->jumlah->staf;
 
 		// HIDDEN FOOTER
 		$mydata['config_hidden']['footer'] = true;
