@@ -1,6 +1,5 @@
 <!-- Begin page -->
 <main class="h-100">
-
     <!-- Header -->
     <header class="header position-fixed">
         <div class="row">

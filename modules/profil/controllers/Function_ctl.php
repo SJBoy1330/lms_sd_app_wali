@@ -6,7 +6,6 @@ class Function_ctl extends MY_Welcome
     {
         // Load the constructer from MY_Controller
         parent::__construct();
-        $this->load->model('wali_m');
     }
 
     public function ubah_password_proses()
@@ -30,31 +29,31 @@ class Function_ctl extends MY_Welcome
             exit;
         }
 
-        if ($newpassword != $repeat_newpassword) {
-            $data['required'][] = ['req_repeat_newpassword', 'Kata sandi tidak sesuai dengan input sandi baru !'];
-            $data['status'] = false;
-            echo json_encode($data);
-            exit;
-        }
-
-        $idwali = $this->session->userdata('lms_wali_id_wali');
-        $data_wali = $this->wali_m->get_data_wali($idwali);
-
-
         $idsekolah = $this->session->userdata('lms_wali_id_sekolah');
-        $passhash = hash_my_password($idsekolah, $data_wali->username, $nowpassword);
-        if ($passhash != $data_wali->password) {
-            $data['required'][] = ['req_nowpassword', 'Kata sandi salah !'];
-            $data['status'] = false;
-            echo json_encode($data);
-            exit;
+        $idwali = $this->session->userdata('lms_wali_id_wali');
+
+        $request_data = [
+            "id_sekolah" => $idsekolah,
+            "id_wali" => $idwali,
+            "old_password" => $nowpassword,
+            "new_password" => $newpassword,
+            "repeat_password" => $repeat_newpassword
+        ];
+
+        [$error, $message, $status, $response_data] = curl_post('profil/edit_password', $request_data);
+        $data['status'] = !$error;
+
+        if ($error) {
+            if ($message === "Kata sandi lama anda salah!") {
+                $data['required'][] = ['req_nowpassword', 'Kata sandi salah !'];
+            }
+
+            if ($message === "Kata sandi tidak sama!") {
+                $data['required'][] = ['req_repeat_newpassword', 'Kata sandi tidak sesuai dengan input sandi baru !'];
+            }
+        } else {
+            $data['redirect'] = base_url('profil');
         }
-
-        $newpassword = hash_my_password($idsekolah, $data_wali->username, $newpassword);
-        $this->wali_m->update(array('password' => $newpassword), $idwali);
-
-        $data['status'] = true;
-        $data['redirect'] = base_url('profil');
         echo json_encode($data);
         exit;
     }

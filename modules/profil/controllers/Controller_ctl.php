@@ -8,10 +8,6 @@ class Controller_ctl extends MY_Frontend
 		parent::__construct();
 		is_logged_in();
 
-		$this->load->model('wali_m');
-		$this->load->model('sekolah_m');
-		$this->load->model('siswa_m');
-		$this->load->model('staf_m');
 	}
 
 
@@ -40,8 +36,18 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Ubah Profil';
 
 		// Meta Data
-		$idwali = $this->session->userdata('lms_wali_id_wali');
-		$mydata['data_wali'] = $this->wali_m->get_data_wali($idwali);
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		$id_wali = $this->session->userdata('lms_wali_id_wali');
+		[
+			$error, $message, $status, $data_profile
+		] = curl_get(
+			'profil',
+			[
+				"id_sekolah" => $id_sekolah,
+				"id_wali" => $id_wali
+			]
+		);
+		$mydata['data_wali'] = $data_profile;
 
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
@@ -86,10 +92,18 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Tentang Sekolah';
 
 		// meta data
-		$idsekolah = $this->session->userdata('lms_wali_id_sekolah');
-		$mydata['data_sekolah'] = $this->sekolah_m->get_single_sekolah(array('id_sekolah' => $idsekolah));
-		$mydata['count_siswa'] = $this->siswa_m->count_data_siswa();
-		$mydata['count_staf'] = $this->staf_m->count_data_staf();
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		[
+			$error, $message, $status, $data_sekolah
+		] = curl_get(
+			'profil/tentang_sekolah',
+			[
+				"id_sekolah" => $id_sekolah,
+			]
+		);
+		$mydata['data_sekolah'] = $data_sekolah;
+		// $mydata['count_siswa'] = $this->siswa_m->count_data_siswa();
+		// $mydata['count_staf'] = $this->staf_m->count_data_staf();
 
 		// HIDDEN FOOTER
 		$mydata['config_hidden']['footer'] = true;
