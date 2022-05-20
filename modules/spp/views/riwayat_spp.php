@@ -3,7 +3,7 @@
 <header class="header position-fixed">
     <div class="row">
         <div class="col-auto">
-            <a href="<?= base_url('home')?>" target="_self" class="btn btn-44">
+            <a href="<?= base_url('spp')?>" target="_self" class="btn btn-44">
                 <i class="fa-solid fa-chevron-left"></i>
             </a>
         </div>
@@ -158,7 +158,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-receipt mt-0 size-18 text-white"></i>
+                                        <i class="fa-solid fa-receipt mt-0 size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -173,7 +173,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-calendar-week size-18 text-white"></i>
+                                        <i class="fa-solid fa-calendar-week size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +203,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-rupiah-sign size-18 text-white"></i>
+                                        <i class="fa-solid fa-rupiah-sign size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +218,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-building-columns size-18 text-white"></i>
+                                        <i class="fa-solid fa-building-columns size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -233,7 +233,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-money-bill-transfer size-18 text-white"></i>
+                                        <i class="fa-solid fa-money-bill-transfer size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>

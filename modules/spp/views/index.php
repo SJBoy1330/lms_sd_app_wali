@@ -9,10 +9,14 @@
         </div>
         <div class="col text-center"></div>
         <div class="col-auto">
-            <a href="notifikasi-SD.html" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
-                <img src="<?= base_url('assets/icons/notif.png')?>" width="24" alt="">
-                <span class="count-indicator"></span>
-            </a>
+            <div class="dropdown btn-group dropstart">
+                <a class="btn btn-44 rounded-circle btn-notifikasi" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item size-15" href="<?= base_url('spp/riwayat_spp')?>"><i class="fa-solid fa-rectangle-history pe-2"></i>Riwayat Tagihan</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>
@@ -20,6 +24,36 @@
 <!-- main page content -->
 <div class="main-container container">
     <div class="row">
+        <div class="col-12 px-0">
+            <!-- swiper categories -->
+            <div class="swiper-container connectionwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="tag border active">
+                            <span class="text-uppercase">Saka</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="tag border ">
+                            <span class="text-uppercase">Aljen</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="tag border ">
+                            <span class="text-uppercase">Nabila</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="tag border ">
+                            <span class="text-uppercase">Nanda</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-12">
             <div class="row">
                 <div class="col">
@@ -183,7 +217,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-receipt mt-0 size-18 text-white"></i>
+                                        <i class="fa-solid fa-receipt mt-0 size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -198,7 +232,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-calendar-week size-18 text-white"></i>
+                                        <i class="fa-solid fa-calendar-week size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -228,7 +262,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-rupiah-sign size-18 text-white"></i>
+                                        <i class="fa-solid fa-rupiah-sign size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -243,7 +277,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-building-columns size-18 text-white"></i>
+                                        <i class="fa-solid fa-building-columns size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -258,7 +292,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-money-bill-transfer size-18 text-white"></i>
+                                        <i class="fa-solid fa-money-bill-transfer size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -275,7 +309,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-building-columns mt-0 size-18 text-white"></i>
+                                        <i class="fa-solid fa-building-columns mt-0 size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -310,7 +344,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-receipt mt-0 size-18 text-white"></i>
+                                        <i class="fa-solid fa-receipt mt-0 size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -340,7 +374,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
                                 <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-rupiah-sign mt-0 size-18 text-white"></i>
+                                        <i class="fa-solid fa-rupiah-sign mt-0 size-16 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -353,8 +387,7 @@
                     <div class="col-12 rounded-15 shadow-sm mb-2 p-2 border p-2">
                         <p class="mb-0 fw-bolder size-15 my-2 ms-1">Metode Pembayaran</p>
                         <form class="mt-2 mx-1">
-                            <select class="form-select form-select-pribadi text-secondary bg-f5f5f5 size-11"
-                                    aria-label="Default select example">
+                            <select class="form-select form-select-pribadi text-secondary bg-f5f5f5 size-11 border-0">
                                 <option selected value="1">BRI</option>
                                 <option value="2">BNI</option>
                                 <option value="3">BCA</option>
@@ -405,7 +438,7 @@
                                 <p class="mb-0 size-15 fw-medium">INVOICE 03/1</p>
                             </div>
                         </div>
-                        <button class="w-100 my-2 py-2 rounded-10 btn btn-primary bg-ec3528 border-white size-12 fw-lighter">
+                        <button class="w-100 my-2 py-2 rounded-10 btn btn-danger bg-ec3528 border-white size-12 fw-lighter">
                             UPLOAD BUKTI PEMBAYARAN
                         </button>
                     </div>

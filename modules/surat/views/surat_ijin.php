@@ -11,8 +11,7 @@
             <h6>Surat Ijin</h6>
         </div>
         <div class="col-auto">
-            <a data-bs-toggle="modal" href="#tambahSuratIjin" role="button" class="btn btn-44 rounded-circle btn-notifikasi">
-                <i class="fa-solid fa-plus"></i>
+            <a  class="btn btn-44">
             </a>
         </div>
     </div>
@@ -20,6 +19,41 @@
 
 <!-- main page content -->
 <div class="main-container container">
+    <div class="row">
+        <a data-bs-toggle="modal" data-bs-target="#tambahSuratIjin" class="avatar avatar-60 shadow-lg rounded-circle avatar-presensi-solid avatar-kontak position-fixed">
+            <i class="fa-solid fa-plus-large size-26 text-white mt-1"></i>
+        </a>
+        <div class="col-12 px-0">
+            <!-- swiper categories -->
+            <div class="swiper-container connectionwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="tag border active">
+                            <span class="text-uppercase">Saka</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="tag border ">
+                            <span class="text-uppercase">Aljen</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="tag border ">
+                            <span class="text-uppercase">Nabila</span>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="tag border ">
+                            <span class="text-uppercase">Nanda</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12">
             <a class="row mb-3">
@@ -131,8 +165,8 @@
 
 <!-- Modal Detail Surat Ijin -->
 <div class="modal fade" id="detailSuratIjin" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content" style="border-radius: 0px;">
             <div class="modal-header border-0">
                 <h5 class="modal-title" id="detailSuratIjinModal">Detail Surat Ijin</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -166,8 +200,8 @@
 
 <!-- Modal Tambah Surat Ijin -->
 <div class="modal fade" id="tambahSuratIjin" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content" style="border-radius: 0px;">
             <div class="modal-header border-0">
                 <h5 class="modal-title" id="detailSuratIjinModal">Tambah Surat Izin</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -176,7 +210,7 @@
                 <form class="row g-3">
                     <div class="mb-0">
                         <label for="jenis_surat" class="form-label title-3">Jenis Surat</label>
-                        <select class="form-select form-select-pribadi" aria-label="Default select example">
+                        <select class="form-select form-select-pribadi border-0" aria-label="Default select example">
                             <option selected>Pilih jenis surat</option>
                             <option value="1">Izin</option>
                             <option value="2">Sakit</option>
@@ -184,7 +218,7 @@
                     </div>
                     <div class="">
                         <label for="formFile" class="form-label title-3">File Surat</label>
-                        <input class="form-control form-control-solid form-control-pribadi file-input" type="file" id="formFile">
+                        <input class="form-control form-control-solid form-control-pribadi file-input border-0" type="file" id="formFile">
                         <div class="wrapper-files">
                             <span class="fw-medium">Pilih File</span>
                         </div>
@@ -193,14 +227,14 @@
                     <div class="form-group">
                         <label for="kata_sandi" class="form-label title-3">Berlaku Mulai</label>
                         <div class="wrapper-password d-flex">
-                            <input type="date" class="form-control form-control-pribadi text-start" autocomplete="off">
+                            <input type="date" class="form-control form-control-pribadi text-start border-0" autocomplete="off">
                         </div>
                     </div>
 
                     <div class="form-group mb-3">
                         <label for="kata_sandi" class="form-label title-3">Berlaku Sampai</label>
                         <div class="wrapper-password d-flex">
-                            <input type="date" class="form-control form-control-pribadi text-start" autocomplete="off">
+                            <input type="date" class="form-control form-control-pribadi text-start birder-0" autocomplete="off">
                         </div>
                     </div>
                 </form>

@@ -25,7 +25,7 @@
     <div class="row mt-3">
         <div class="col-12 col-md-10 col-lg-8 mx-auto">
             <div class="row">
-                <div class="col-6 mx-auto">
+                <div class="col-12 mx-auto mb-4">
                     <div class="card mb-3">
                         <div class="col-auto position-absolute avatar-detail-kbm">
                             <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 mx-auto">
+                <div class="col-12 mx-auto mb-4">
                     <div class="card mb-3">
                         <div class="col-auto position-absolute avatar-detail-kbm">
                             <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
@@ -63,10 +63,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row my-4">
-                <div class="col-6 mx-auto">
+                <div class="col-12 mx-auto mb-4">
                     <div class="card mb-3">
                         <div class="col-auto position-absolute avatar-detail-kbm">
                             <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
@@ -85,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 mx-auto">
+                <div class="col-12 mx-auto mb-4">
                     <div class="card mb-3">
                         <div class="col-auto position-absolute avatar-detail-kbm">
                             <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">

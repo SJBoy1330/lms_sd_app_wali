@@ -17,6 +17,9 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/spp/spp.js"></script>';
 		
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
