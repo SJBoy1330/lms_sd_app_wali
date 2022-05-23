@@ -11,6 +11,7 @@
 
     <!-- manifest meta -->
     <meta name="apple-mobile-web-app-capable" content="yes">
+    
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="<?= base_url(); ?>assets/images/logo-sd.png" sizes="180x180">
     <link rel="icon" href="<?= base_url(); ?>assets/images/logo-sd.png" sizes="32x32" type="image/png">

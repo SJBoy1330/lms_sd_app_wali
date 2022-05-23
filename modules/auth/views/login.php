@@ -30,12 +30,12 @@
 
                 <div class="mb-4" id="req_kode_sekolah">
                     <label for="kode_sekolah" class="form-label title-3">Kode Sekolah</label>
-                    <input type="text" class="form-control form-control-pribadi" id="kode_sekolah" name="kode_sekolah" placeholder="Masukkan Username" autocomplete="off">
+                    <input type="text" class="form-control form-control-pribadi" id="kode_sekolah" name="kode_sekolah" placeholder="Masukkan kode sekolah" autocomplete="off">
                 </div>
 
                 <div class="mb-4" id="req_username">
                     <label for="username" class="form-label title-3">Username</label>
-                    <input type="text" class="form-control form-control-pribadi" id="username" name="username" placeholder="Masukkan Username" autocomplete="off">
+                    <input type="text" class="form-control form-control-pribadi" id="username" name="username" placeholder="Masukkan username" autocomplete="off">
                 </div>
 
                 <div class="form-group mb-4" id="req_kata_sandi">
