@@ -33,30 +33,15 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-calendar-days"></i></div>
-                            <div class="col">Jadwal</div>
-                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-book-open-cover"></i></div>
-                            <div class="col">Materi</div>
+                        <a class="nav-link" href="<?= base_url('spp'); ?>" tabindex="-1">
+                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-envelope-open-dollar"></i></div>
+                            <div class="col">SPP</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-list-check"></i></div>
-                            <div class="col">Tugas</div>
-                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
+                        <a class="nav-link" href="<?= base_url('suratijin')?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-envelope-open-text"></i></div>
                             <div class="col">Surat Ijin</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -64,34 +49,29 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-screen-users"></i></div>
-                            <div class="col">KBM</div>
+                        <a class="nav-link" href="<?= base_url('home/list_pengumuman')?>" tabindex="-1">
+                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-bullhorn"></i></div>
+                            <div class="col">Pengumuman</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
+                        <a class="nav-link" href="<?= base_url('home/list_berita')?>" tabindex="-1">
+                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-newspaper"></i></div>
+                            <div class="col">Berita</div>
+                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('toko')?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-shop"></i></div>
                             <div class="col">Toko</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-book-user"></i></div>
-                            <div class="col">Jurnal Staf</div>
-                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-book-user"></i></div>
-                            <div class="col">Jurnal Siswa</div>
-                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                        </a>
-                    </li>
+
                     <li class="nav-item logout">
                         <a class="nav-link" href="#" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-right-from-bracket"></i></div>
