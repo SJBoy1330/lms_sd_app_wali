@@ -15,6 +15,32 @@ class Controller_ctl extends MY_Frontend
 		// LOAD TITLE
 		$mydata['title'] = 'SPP';
 
+		// Meta data
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		$id_wali = $this->session->userdata('lms_wali_id_wali');
+
+		[
+			$error, $message, $status, $data_siswa
+		] = curl_get(
+			'data_anak',
+			[
+				"id_sekolah" => $id_sekolah,
+				"id_wali" => $id_wali
+			]
+		);
+		$mydata['data_siswa'] = $data_siswa;
+
+		[
+			$error, $message, $status, $data_spp
+		] = curl_get(
+			'spp',
+			[
+				"id_sekolah" => $id_sekolah,
+				"id_siswa" => 1
+			]
+		);
+		$mydata['data_spp'] = $data_spp;
+
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
