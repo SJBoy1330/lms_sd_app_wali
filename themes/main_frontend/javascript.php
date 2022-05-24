@@ -14,7 +14,7 @@
                 <li class="nav-item">
                     <a class="nav-link mt-1 " href="<?= base_url('spp'); ?>">
                         <span>
-                            <i class="fa-solid fa-envelope-open-text size-18"></i>
+                            <i class="fa-solid fa-envelope-open-dollar size-18"></i>
                             <span class="nav-text">SPP</span>
                         </span>
                     </a>
@@ -63,14 +63,14 @@
                     </div>
 
                     <div class="col-auto text-center">
-                        <a href="<?= base_url('rapot'); ?>" class="avatar avatar-60 p-1 shadow-sm shadow-warning rounded-20 bg-warning mb-2">
+                        <a href="<?= base_url('spp'); ?>" class="avatar avatar-60 p-1 shadow-sm shadow-warning rounded-20 bg-warning mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-success">
-                                <i class="fa-solid fa-list-check size-28 text-white"></i>
+                                <i class="fa-solid fa-envelope-open-dollar size-28 text-white"></i>
                             </div>
                         </a>
-                        <p class="size-13 text-secondary">Rapot</p>
+                        <p class="size-13 text-secondary">SPP</p>
                     </div>
 
                     <div class="col-auto text-center">
