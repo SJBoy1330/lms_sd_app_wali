@@ -179,6 +179,8 @@
                     <h5 class="modal-title" id="detailTagihanModal">Detail Tagihan</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <!-- Ngko di hapus yo wkwkw -->
+                <h1 id="tampil_sementara"></h1>
                 <div class="modal-body">
                     <div class="row m-2fix">
                         <div class="col-6 px-1 mb-3">
