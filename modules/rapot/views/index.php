@@ -119,32 +119,34 @@
                             </div>
                         </div>
 
-                        <?php foreach ($data_pelajaran as $p) : ?>
-                            <a data-bs-toggle="modal" href="#modalDetailTugas" role="button" class="card mb-4">
-                                <div class="card-body">
-                                    <div class="row mb-3">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                                <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                                    <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                                </div>
+                        <?php //foreach ($data_pelajaran as $p) : 
+                        ?>
+                        <a data-bs-toggle="modal" href="#modalDetailTugas" role="button" class="card mb-4">
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-auto">
+                                        <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
+                                            <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                                <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
                                             </div>
                                         </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="mb-0 size-14 fw-normal text-secondary">Mata Pelajaran</p>
-                                            <p class="mb-0 size-16 fw-medium"><?= $p->nama ?></p>
-                                            <?php if ($p->jumlah_tugas != 0) : ?>
-                                                <div class="progress mt-1 rounded-10" style="height:20px;">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: <?= $p->persen_tugas ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $p->persen_tugas ?>%</div>
-                                                </div>
-                                            <?php else : ?>
-                                                Tidak ada tugas
-                                            <?php endif; ?>
-                                        </div>
+                                    </div>
+                                    <div class="col align-self-center ps-0">
+                                        <p class="mb-0 size-14 fw-normal text-secondary">Mata Pelajaran</p>
+                                        <p class="mb-0 size-16 fw-medium"><?= $p->nama ?></p>
+                                        <?php if ($p->jumlah_tugas != 0) : ?>
+                                            <div class="progress mt-1 rounded-10" style="height:20px;">
+                                                <div class="progress-bar bg-danger" role="progressbar" style="width: <?= $p->persen_tugas ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?= $p->persen_tugas ?>%</div>
+                                            </div>
+                                        <?php else : ?>
+                                            Tidak ada tugas
+                                        <?php endif; ?>
                                     </div>
                                 </div>
-                            </a>
-                        <?php endforeach; ?>
+                            </div>
+                        </a>
+                        <?php //endforeach; 
+                        ?>
                     </div>
 
                     <div class="card-body tabcontent-wali" id="Ujian" style="padding: 6px 0px;">
