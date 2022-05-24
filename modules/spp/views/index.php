@@ -510,25 +510,25 @@
 
 <!-- Filter Status SPP -->
 <div class="modal fade" id="filterSPP" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="box-shadow: 100px 0px 100px 100px rgb(0 0 0 / 10%)">
-                <div class="modal-header border-0">
-                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="box-shadow: 100px 0px 100px 100px rgb(0 0 0 / 10%)">
+            <div class="modal-header border-0">
+            <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label title-3">Status</label>
+                    <select class="form-select form-select form-select-pribadi border-0">
+                        <option selected>Pilih status</option>
+                        <option value="1">Lunas</option>
+                        <option value="2">Belum Lunas</option>
+                    </select>
                 </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label title-3">Status</label>
-                        <select class="form-select form-select form-select-pribadi border-0">
-                            <option selected>Pilih status</option>
-                            <option value="1">Lunas</option>
-                            <option value="2">Belum Lunas</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-footer border-0">
-                    <a href="#" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</a>
-                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <a href="#" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</a>
             </div>
         </div>
     </div>
+</div>
