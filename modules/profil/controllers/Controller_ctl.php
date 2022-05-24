@@ -18,6 +18,8 @@ class Controller_ctl extends MY_Frontend
 
 		// Meta Data
 		$mydata['nama_wali'] = $this->session->userdata('lms_wali_nama');
+		$mydata['id_sekolah'] = $this->session->userdata('lms_wali_id_sekolah');
+		$mydata['id_wali'] = $this->session->userdata('lms_wali_id_wali');
 
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
