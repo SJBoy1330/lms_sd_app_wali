@@ -33,7 +33,7 @@
                     <label for="photo" class="custom-profile-upload position-absolute top-100 start-100 bg-ec3528 rounded-15 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">
                         <i class="bi bi-plus-lg lg-size-myicon"></i>
                     </label>
-                    <input id="photo" type="file" onchange="previewImage()" />
+                    <input id="photo" type="file" onchange="previewImage(<?= $id_sekolah ?>, <?= $id_wali ?>)" />
                 </div>
             </div>
             <div class="col-12 text-center mt-2 mb-3">
