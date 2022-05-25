@@ -1,0 +1,26 @@
+.file {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .file > input[type='file'] {
+    display: none
+  }
+
+  .file > label {
+    cursor: pointer;
+    width: 100%;
+    outline: 0;
+    user-select: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EC3528;
+    border-radius: 8px;
+    color: #FFFFFF;
+    height: 45px;
+    padding-top: 10px;
+  }

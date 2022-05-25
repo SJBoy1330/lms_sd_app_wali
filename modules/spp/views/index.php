@@ -409,9 +409,10 @@
                                     <p class="mb-0 size-15 fw-medium">INVOICE 03/1</p>
                                 </div>
                             </div>
-                            <button class="w-100 my-2 py-2 rounded-10 btn btn-danger bg-ec3528 border-white size-12 fw-lighter">
-                                UPLOAD BUKTI PEMBAYARAN
-                            </button>
+                            <div class='file my-1'>
+                                <label for='input-file' class="btn btn-block btn-md btn-danger">Upload Bukti Pembayaran</label>
+                                <input id='input-file' type='file' />
+                            </div>
                         </div>
                     </div>
                 </div>
