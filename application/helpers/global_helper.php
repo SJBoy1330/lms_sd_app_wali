@@ -315,6 +315,7 @@ function rupiah($angka, $format = "Rp. ")
   $hasil_rupiah = "$format" . number_format($angka, 0, ',', '.');
   return $hasil_rupiah;
 }
+
 function ifnull($value = NULL, $ganti = NULL)
 {
   if (isset($value) == NULL) {
