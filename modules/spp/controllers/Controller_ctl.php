@@ -64,4 +64,24 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('riwayat_spp', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function modal_detail_tagihan()
+	{
+		$id_siswa = $this->input->post('id_siswa');
+		$id_tagihan = $this->input->post('id_tagihan');
+
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		[
+			$error, $message, $status, $data_spp
+		] = curl_get(
+			'spp',
+			[
+				"id_sekolah" => $id_sekolah,
+				"id_siswa" => $id_siswa,
+				"id_tagihan" => $id_tagihan
+			]
+		);
+
+		$this->load->view("modal_detail_tagihan", $data_spp);
+	}
 }
