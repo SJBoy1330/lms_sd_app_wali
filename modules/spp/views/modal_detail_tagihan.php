@@ -105,11 +105,16 @@
                     <p class="mb-0 fw-bold size-15">Bukti Pembayaran</p>
                     <p class="mb-0 fw-normal size-12 text-secondary">bukti bayar spp.png</p>
                 </div>
+                <div class="col align-self-center align-items-end">
+                    <div class='file-edit'>
+                        <label for='input-file' class="btn btn-block btn-xs"><i class="fa-solid fa-pen-to-square me-2"></i>Edit Foto</label>
+                        <input id='input-file' type='file' />
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-11 p-0">
             <figure class="overflow-hidden rounded-15 text-center">
-                <button class="btn btn-xs" style="position: absolute; right: 17px;"><i class="fa-solid fa-pen-to-square" style="color: #FFBD17; font-size:25px;"></i></button>
                 <img src="assets/img/news1.jpg" alt="" class="w-100 mx-auto">
             </figure>
         </div>
