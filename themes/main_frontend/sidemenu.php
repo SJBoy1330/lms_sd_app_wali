@@ -9,7 +9,7 @@
                 <div class="row mt-3">
                     <div class="col-auto">
                         <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm">
-                            <img src="<?= base_url('assets/images/mia-khalifa.png')?>" alt="" class="rounded-18">
+                            <img src="<?= base_url('assets/images/mia-khalifa.png') ?>" alt="" class="rounded-18">
                         </figure>
                     </div>
                     <div class="col px-0 align-self-center">
@@ -41,7 +41,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('suratijin')?>" tabindex="-1">
+                        <a class="nav-link" href="<?= base_url('suratijin') ?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-envelope-open-text"></i></div>
                             <div class="col">Surat Ijin</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -49,7 +49,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('home/list_pengumuman')?>" tabindex="-1">
+                        <a class="nav-link" href="<?= base_url('home/list_pengumuman') ?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-bullhorn"></i></div>
                             <div class="col">Pengumuman</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -57,7 +57,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('home/list_berita')?>" tabindex="-1">
+                        <a class="nav-link" href="<?= base_url('home/list_berita') ?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-newspaper"></i></div>
                             <div class="col">Berita</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -65,7 +65,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('toko')?>" tabindex="-1">
+                        <a class="nav-link" href="<?= base_url('toko') ?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-shop"></i></div>
                             <div class="col">Toko</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -73,7 +73,7 @@
                     </li>
 
                     <li class="nav-item logout">
-                        <a class="nav-link" href="#" tabindex="-1">
+                        <a class="nav-link" href="<?= base_url('auth/logout') ?>?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-right-from-bracket"></i></div>
                             <div class="col">Keluar</div>
                         </a>

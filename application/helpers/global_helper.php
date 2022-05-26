@@ -530,3 +530,17 @@ function month_from_number($nomor)
       return "";
   }
 }
+
+
+function data_url($path = null, $id_sekolah = true)
+{
+  $ci = &get_instance();
+  $uri = 'https://sd.klasq.id/linker/';
+  if ($path != null) {
+    $uri .= $path;
+  }
+  if ($id_sekolah == true) {
+    $uri .= '/' . base64url_encode($ci->session->userdata('lms_wali_id_sekolah'));
+  }
+  return $uri;
+}
