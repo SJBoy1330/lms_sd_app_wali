@@ -14,16 +14,23 @@ function previewImage(id_sekolah, id_wali) {
     formdata.append("foto", file);
 
     $.ajax({
-        url: "https://sd.klasq.id/api/wali/profil/edit_foto/",
+        url: API_URL + "profil/edit_foto/",
         data: formdata,
         processData: false,
         contentType: false,
-        type: 'POST',
+        method: 'POST',
+        dataType: 'json',
         success: function (data) {
-            console.log("sukses update");
-        },
-        error: function (e) {
-            console.log(e);
+            Swal.fire({
+                title: 'PEMBERITAHUAN',
+                text: "yey",
+                icon: 'success',
+                buttonsStyling: !1,
+                confirmButtonText: "Ok",
+                customClass: {
+                    confirmButton: "btn btn-primary"
+                }
+            })
         }
     })
 
@@ -31,4 +38,3 @@ function previewImage(id_sekolah, id_wali) {
         getPhoto.src = oFREvent.target.result;
     }
 }
-console.log('ok');

@@ -10,7 +10,7 @@ class Controller_ctl extends MY_Frontend
 	}
 
 
-	public function index()
+	public function index($id_siswa = NULL)
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'SPP';
@@ -28,6 +28,13 @@ class Controller_ctl extends MY_Frontend
 				"id_wali" => $id_wali
 			]
 		);
+
+		if ($id_siswa == null) {
+			$id_siswa = $data_siswa[0]->id_siswa;
+			$mydata['id_siswa'] = $id_siswa;
+		} else {
+			$mydata['id_siswa'] = $id_siswa;
+		}
 		$mydata['data_siswa'] = $data_siswa;
 
 		[
@@ -36,7 +43,7 @@ class Controller_ctl extends MY_Frontend
 			'spp',
 			[
 				"id_sekolah" => $id_sekolah,
-				"id_siswa" => 1
+				"id_siswa" => $id_siswa
 			]
 		);
 		$mydata['data_spp'] = $data_spp;
@@ -47,7 +54,7 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/spp/spp.js"></script>';
-		
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -60,7 +67,7 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
-		
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('riwayat_spp', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

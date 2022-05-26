@@ -22,29 +22,15 @@
                     <!-- swiper categories -->
                     <div class="swiper-container connectionwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="tag border active">
-                                    <span class="text-uppercase">Saka</span>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="tag border ">
-                                    <span class="text-uppercase">Aljen</span>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="tag border ">
-                                    <span class="text-uppercase">Nabila</span>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="tag border ">
-                                    <span class="text-uppercase">Nanda</span>
-                                </div>
-                            </div>
+                            <?php foreach ($data_siswa as $row) : ?>
+                                <a href="<?= base_url('spp/index/' . $row->id_siswa); ?>" class="swiper-slide">
+                                    <div class="tag border <?php if ($row->id_siswa == $id_siswa) {
+                                                                echo 'active';
+                                                            } ?>">
+                                        <span class="text-uppercase"><?= $row->nama; ?></span>
+                                    </div>
+                                </a>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -74,59 +60,63 @@
                         </div>
                     </div>
                 </div>
-                <?php foreach ($data_spp->result as $spp) : ?>
-                    <a class="row mb-3">
-                        <a data-bs-toggle="modal" data-bs-target="#detailTagihan">
-                            <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
-                                <?php if ($spp->lunas === 'Y') : ?>
-                                    <span class="py-2 px-3 text-light size-14 position-absolute top-0 end-0 bg-00DFA3 rounded-15-start-bottom blm-lns">Lunas</span>
-                                <?php else : ?>
-                                    <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Belum Lunas</span>
-                                <?php endif; ?>
-                                <span class="size-14 fw-bold">SPP <?= month_from_number($spp->bulan) ?> <?= $spp->tahun ?></span>
-                                <div class="row py-1 px-2 mt-2 mb-2 ">
-                                    <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-rupiah-sign size-20 text-white"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                        <p class="mb-0 fw-normal size-13 text-secondary">Jumlah bayar</p>
-                                        <p class="mb-0 fw-bold size-15"><?= rupiah($spp->jumlah) ?></p>
-                                    </div>
-                                </div>
-                                <?php if ($spp->lunas === 'Y') : ?>
-                                    <div class="row py-1 px-2 mb-3">
+                <?php if ($data_spp) : ?>
+                    <?php foreach ($data_spp->result as $spp) : ?>
+                        <a class="row mb-3">
+                            <a data-bs-toggle="modal" data-bs-target="#detailTagihan">
+                                <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
+                                    <?php if ($spp->lunas === 'Y') : ?>
+                                        <span class="py-2 px-3 text-light size-14 position-absolute top-0 end-0 bg-00DFA3 rounded-15-start-bottom blm-lns">Lunas</span>
+                                    <?php else : ?>
+                                        <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Belum Lunas</span>
+                                    <?php endif; ?>
+                                    <span class="size-14 fw-bold">SPP <?= month_from_number($spp->bulan) ?> <?= $spp->tahun ?></span>
+                                    <div class="row py-1 px-2 mt-2 mb-2 ">
                                         <div class="d-flex col-auto align-items-center ps-0 pe-2">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                                 <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-building-columns size-20 text-white"></i>
+                                                    <i class="fa-solid fa-rupiah-sign size-20 text-white"></i>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                            <p class="mb-0 fw-normal size-13 text-secondary">Nama Bank</p>
-                                            <p class="mb-0 fw-bold size-15"><?= $spp->nama_bank ?></p>
+                                            <p class="mb-0 fw-normal size-13 text-secondary">Jumlah bayar</p>
+                                            <p class="mb-0 fw-bold size-15"><?= rupiah($spp->jumlah) ?></p>
                                         </div>
                                     </div>
-                                <?php endif; ?>
+                                    <?php if ($spp->lunas === 'Y') : ?>
+                                        <div class="row py-1 px-2 mb-3">
+                                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
+                                                <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                                    <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                        <i class="fa-solid fa-building-columns size-20 text-white"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
+                                                <p class="mb-0 fw-normal size-13 text-secondary">Nama Bank</p>
+                                                <p class="mb-0 fw-bold size-15"><?= $spp->nama_bank ?></p>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
 
-                                <?php if ($spp->lunas === 'Y') : ?>
-                                    <div class="row mt-4 mx-1">
-                                        <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_detail_ajax">Detail Tagihan</a>
-                                    </div>
-                                <?php else : ?>
-                                    <div class="row mt-4 mx-1">
-                                        <a data-bs-toggle="modal" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas">Bayar Tagihan</a>
-                                    </div>
-                                <?php endif; ?>
+                                    <?php if ($spp->lunas === 'Y') : ?>
+                                        <div class="row mt-4 mx-1">
+                                            <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_detail_ajax">Detail Tagihan</a>
+                                        </div>
+                                    <?php else : ?>
+                                        <div class="row mt-4 mx-1">
+                                            <a data-bs-toggle="modal" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas">Bayar Tagihan</a>
+                                        </div>
+                                    <?php endif; ?>
 
-                            </div>
+                                </div>
+                            </a>
                         </a>
-                    </a>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <h1>Tidak ada data spp</h1>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -375,6 +365,13 @@
                                 <input id='input-file' type='file' />
                             </div>
                         </div>
+
+
+                    </div>
+                    <div class="col-11 p-0">
+                        <figure class="overflow-hidden rounded-15 text-center">
+                            <img src="<?= base_url('assets/images/tari-saman.png'); ?>" alt="" class="w-100 mx-auto">
+                        </figure>
                     </div>
                 </div>
             </div>

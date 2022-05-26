@@ -7,20 +7,21 @@ class Controller_ctl extends MY_Frontend
 		// Load the constructer from MY_Controller
 		parent::__construct();
 		is_logged_in();
-
 	}
 
 
 	public function index()
 	{
+		header("Access-Control-Allow-Origin: *");
 		// LOAD TITLE
 		$mydata['title'] = 'Profil';
 
 		// Meta Data
 		$mydata['nama_wali'] = $this->session->userdata('lms_wali_nama');
-		$mydata['id_sekolah'] = $this->session->userdata('lms_wali_id_sekolah');
-		$mydata['id_wali'] = $this->session->userdata('lms_wali_id_wali');
+		$mydata['id_sekolah'] = $id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		$mydata['id_wali'] = $id_wali =  $this->session->userdata('lms_wali_id_wali');
 
+		$mydata['data'] = curl_get("profil/get", array('id_sekolah' => $id_sekolah, 'id_wali' => $id_wali))[3];
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 

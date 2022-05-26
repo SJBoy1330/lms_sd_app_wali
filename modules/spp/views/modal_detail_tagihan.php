@@ -115,7 +115,7 @@
         </div>
         <div class="col-11 p-0">
             <figure class="overflow-hidden rounded-15 text-center">
-                <img src="assets/img/news1.jpg" alt="" class="w-100 mx-auto">
+                <img src="<?= base_url('assets/img/news1.jpg'); ?>" alt="" class="w-100 mx-auto">
             </figure>
         </div>
     </div>

@@ -4,7 +4,7 @@
         <div class="container">
             <ul class="nav nav-pills nav-justified">
                 <li class="nav-item">
-                    <a class="nav-link mt-1  active" href="<?= base_url('home'); ?>">
+                    <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" href="<?= base_url('home'); ?>">
                         <span>
                             <i class="fa-solid fa-house size-18"></i>
                             <span class="nav-text">Dashboard</span>
@@ -12,7 +12,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mt-1 " href="<?= base_url('spp'); ?>">
+                    <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'spp', $this->uri->segment(2), array('index'))) ?>" href="<?= base_url('spp'); ?>">
                         <span>
                             <i class="fa-solid fa-envelope-open-dollar size-18"></i>
                             <span class="nav-text">SPP</span>
@@ -27,7 +27,7 @@
                     </button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mt-1 " href="<?= base_url('toko') ?>">
+                    <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'toko', $this->uri->segment(2), array())) ?>" href="<?= base_url('toko') ?>">
                         <span>
                             <i class="fa-solid fa-shop size-18"></i>
                             <span class="nav-text">Toko</span>
@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mt-1 " href="<?= base_url('profil') ?>">
+                    <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'profil', $this->uri->segment(2), array())) ?>" href="<?= base_url('profil') ?>">
                         <span>
                             <i class="fa-solid fa-user size-18"></i>
                             <span class="nav-text">Profil</span>
@@ -91,6 +91,7 @@
 <!-- Required jquery and libraries -->
 <script>
     var BASE_URL = baseUrl = '<?= base_url(); ?>';
+    var API_URL = apiUrl = '<?= API_URL() ?>';
 </script>
 <script src="<?= base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
 <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
@@ -116,6 +117,25 @@
 
 <script src="<?= base_url() ?>assets/js/global.js"></script>
 
+
+<script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>
+<script src="<?= base_url('assets/js/alert/scriptalert.js') ?>"></script>
+
+<script src="<?= base_url('assets/js/page/function.js') ?>"></script>
+<script type="text/javascript">
+    const api_url = "https://sd.klasq.id/api/wali/profil?id_sekolah=1&id_wali=1";
+    $.ajax({
+        url: api_url,
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+            xhr.setRequestHeader("Access-Control-Allow-Origin", api_url);
+        },
+        success: function(data) {
+            console.log(data);
+            //process the JSON data etc
+        }
+    })
+</script>
 <?php
 
 if (isset($js_add) && is_array($js_add)) {

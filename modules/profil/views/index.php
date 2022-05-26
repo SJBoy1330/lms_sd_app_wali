@@ -28,16 +28,16 @@
             <div class="col-12 d-flex justify-content-center">
                 <div class="image-profile position-relative text-center">
                     <figure class="avatar avatar-125 rounded-35 shadow-sm position-relative avatar-profile">
-                        <img src="assets/img/user1.jpg" alt="" class="rounded-20" id="photouser">
+                        <img src="<?= data_url('img_wali/' . base64url_encode($data->foto)); ?>" alt="" class="rounded-20" id="photouser">
                     </figure>
                     <label for="photo" class="custom-profile-upload position-absolute top-100 start-100 bg-ec3528 rounded-15 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">
                         <i class="bi bi-plus-lg lg-size-myicon"></i>
                     </label>
-                    <input id="photo" type="file" onchange="previewImage(<?= $id_sekolah ?>, <?= $id_wali ?>)" />
+                    <input id="photo" type="file" onchange="previewImage(<?= $id_sekolah ?>, <?= $id_wali ?>)" accept="image/*" />
                 </div>
             </div>
             <div class="col-12 text-center mt-2 mb-3">
-                <span class="fw-bold size-18"><?= $nama_wali ?></span>
+                <span class="fw-bold size-18"><?= $data->nama ?></span>
                 <p class="size-12">Wali Murid</p>
             </div>
         </div>

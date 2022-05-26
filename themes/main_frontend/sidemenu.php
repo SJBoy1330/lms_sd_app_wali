@@ -25,7 +25,7 @@
             <div class="col-12">
                 <ul class="nav nav-pills">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= base_url('home'); ?>">
+                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" aria-current="page" href="<?= base_url('home'); ?>">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-house"></i></div>
                             <div class="col">Dashboard</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -33,7 +33,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="<?= base_url('spp'); ?>" tabindex="-1">
+                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'spp', $this->uri->segment(2), array())) ?>" href="<?= base_url('spp'); ?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-envelope-open-dollar"></i></div>
                             <div class="col">SPP</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -41,7 +41,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('suratijin') ?>" tabindex="-1">
+                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'suratijin', $this->uri->segment(2), array())) ?>" href="<?= base_url('suratijin') ?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-envelope-open-text"></i></div>
                             <div class="col">Surat Ijin</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -49,14 +49,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('home/list_pengumuman') ?>" tabindex="-1">
+                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'home/list_pengumuman', $this->uri->segment(2), array())) ?>" href="<?= base_url('home/list_pengumuman') ?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-bullhorn"></i></div>
                             <div class="col">Pengumuman</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item <?= (set_active($this->uri->segment(1), 'home/list_berita', $this->uri->segment(2), array())) ?>">
                         <a class="nav-link" href="<?= base_url('home/list_berita') ?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-newspaper"></i></div>
                             <div class="col">Berita</div>
@@ -64,7 +64,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item <?= (set_active($this->uri->segment(1), 'toko', $this->uri->segment(2), array())) ?>">
                         <a class="nav-link" href="<?= base_url('toko') ?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-shop"></i></div>
                             <div class="col">Toko</div>

@@ -137,6 +137,8 @@ $route['spp/(:any)'] = 'spp/controller_ctl/$1';
 
 $route['spp/(:any)/(:any)'] = 'spp/controller_ctl/$1/$2';
 
+$route['spp/(:any)/(:any)/(:any)'] = 'spp/controller_ctl/$1/$2/$3';
+
 
 
 $route['toko']  = 'toko/controller_ctl';
