@@ -177,4 +177,20 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('detail_berita', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function notifikasi()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Notifikasi';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/notifikasi/notifikasi.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('notifikasi', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
 }

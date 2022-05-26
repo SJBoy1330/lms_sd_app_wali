@@ -109,6 +109,7 @@
         </div>
         <div class="col-11 p-0">
             <figure class="overflow-hidden rounded-15 text-center">
+                <button class="btn btn-xs" style="position: absolute; right: 17px;"><i class="fa-solid fa-pen-to-square" style="color: #FFBD17; font-size:25px;"></i></button>
                 <img src="assets/img/news1.jpg" alt="" class="w-100 mx-auto">
             </figure>
         </div>
