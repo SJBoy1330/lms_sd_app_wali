@@ -37,7 +37,7 @@
         <div class="row mb-4">
             <div class="col-12 d-flex justify-content-center align-items-center">
                 <?php foreach ($data_siswa as $siswa) : ?>
-                    <a href="<?= base_url('rapot') ?><?= "/{$siswa->id_siswa}" ?>" class="card mx-1 anak-wali">
+                    <!-- <a href="<?= base_url('rapot') ?><?= "/{$siswa->id_siswa}" ?>" class="card mx-1 anak-wali">
                         <div class="card-body">
                             <div class="row mt-3 d-flex justify-content-center align-items-center">
                                 <div class="col-auto">
@@ -48,6 +48,22 @@
                                 <div class="col align-self-center ps-0">
                                     <p class="size-14 text-center text-secondary mb-0"><?= $siswa->nis ?></p>
                                     <p class="text-center label-merah fw-medium"><?= $siswa->nama ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a> -->
+                    <a href="<?= base_url('rapot') ?><?= "/{$siswa->id_siswa}" ?>" class="card mx-1 anak-wali" style="background-image: url(<?= base_url();?>assets/images/bg-card-wali.png); width: 100%;">
+                        <div class="card-body">
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-auto d-flex justify-content-center align-items-center">
+                                    <div class="avatar avatar-90 bg-opac-50 p-1 shadow-sm rounded-circle anak-wali" style="background-image: url(<?= base_url(); ?>assets/images/maria-ozawa.png)"></div>
+                                </div>
+                                <div class="col align-self-center ps-3">
+                                    <p class="text-start fw-medium size-15 mb-0">Nama Siswa</p>
+                                    <p class="text-start label-merah fw-medium size-14"><?= $siswa->nama ?></p>
+
+                                    <p class="text-start fw-medium size-15 mb-0">NISN Siswa</p>
+                                    <p class="text-start text-secondary size-14 mb-0"><?= $siswa->nis ?></p>
                                 </div>
                             </div>
                         </div>

@@ -451,3 +451,11 @@
     padding-top: 0px;
     padding-bottom: 0px;
   }
+
+  .card.anak-wali{
+    background-repeat: no-repeat; background-size: cover; background-position: center;
+  }
+  
+  .avatar.anak-wali{
+    background-repeat: no-repeat; background-size: cover; background-position: center;
+  }
