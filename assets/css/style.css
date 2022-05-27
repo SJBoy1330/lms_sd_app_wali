@@ -16192,10 +16192,11 @@ div.progress{
 }
 
 .cardswiper .swiper-wrapper .swiper-slide .card.card-berita {
-  min-height: 130px;
+  height: 130px;
 }
 
 .card.card-berita {
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 15px 15px 0px 0px;
@@ -16211,7 +16212,7 @@ div.progress{
 
 .wrapper-text {
   width: 100%;
-  min-height: 100px;
+  height: 100px;
   background-color: #FFFFFF;
   border-radius: 0px 0px 15px 15px;
 }
