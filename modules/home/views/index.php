@@ -42,7 +42,7 @@
                             <div class="card-body">
                                 <div class="row mt-3 d-flex justify-content-center align-items-center">
                                     <div class="col-auto">
-                                        <div class="avatar avatar-90 bg-opac-50 p-1 shadow-sm rounded-circle anak-wali" style="background-image: url(<?= data_url('img_siswa/' . base64url_encode($siswa->foto)); ?>"></div>
+                                        <div class="avatar avatar-90 bg-opac-50 p-1 shadow-sm rounded-circle anak-wali" style="background-image: url(<?= $siswa->foto; ?>);"></div>
                                     </div>
                                 </div>
                                 <div class="row mt-3 d-flex justify-content-center align-items-center">
@@ -69,7 +69,7 @@
                         <div class="card-body">
                             <div class="row d-flex justify-content-center align-items-center">
                                 <div class="col-auto d-flex justify-content-center align-items-center">
-                                    <div class="avatar avatar-90 bg-opac-50 p-1 shadow-sm rounded-circle anak-wali" style="background-image: url(<?= data_url('img_siswa/' . base64url_encode($data_siswa[0]->foto)); ?>)"></div>
+                                    <div class="avatar avatar-90 bg-opac-50 p-1 shadow-sm rounded-circle anak-wali" style="background-image: url(<?= $data_siswa[0]->foto; ?>)"></div>
                                 </div>
                                 <div class="col align-self-center ps-3">
                                     <p class="text-start fw-medium size-15 mb-0">Nama Siswa</p>
@@ -151,22 +151,11 @@
                         <div class="swiper-wrapper">
                             <?php foreach ($data_berita as $b) : ?>
                                 <div class="swiper-slide">
-                                    <?php
-
-                                    if ($b->gambar != '' || $b->gambar != NULL) {
-
-                                        $gambar = base64url_encode($b->gambar);
-                                    } else {
-
-                                        $gambar = base64url_encode('kosong');
-                                    }
-
-                                    ?>
-                                    <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= data_url('img_konten/' . $gambar . '/' . base64url_encode($b->create_date)); ?>');">
+                                    <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= $b->gambar; ?>');">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-auto position-absolute badge-status">
-                                                    <span class="badge rounded-pill px-3 py-2 bg-badge fw-normal"><?= $b->nama ?></span>
+                                                    <span class="badge rounded-pill px-3 py-2 bg-badge fw-normal"><?= $b->nama_kategori ?></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -174,7 +163,7 @@
                                     <div class="wrapper-text shadow-sm">
                                         <div class="row px-3 py-3">
                                             <p class="mb-1 title-1-home-text"><?= $b->judul ?></p>
-                                            <p class="mb-0 title-4-home-text"><?= $b->keterangan ?></p>
+                                            <p class="mb-0 title-4-home-text"><?= nice_title($b->keterangan, 70); ?></p>
                                         </div>
                                     </div>
                                 </div>
