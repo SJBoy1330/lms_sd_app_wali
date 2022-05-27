@@ -113,14 +113,7 @@
                                 <div class="row">
                                     <div class="col-auto">
                                         <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
-                                            <?php
-                                            if ($pengumuman->gambar != '' || $pengumuman->gambar != NULL) {
-                                                $gambar = base64url_encode($pengumuman->gambar);
-                                            } else {
-                                                $gambar = base64url_encode('kosong');
-                                            }
-                                            ?>
-                                            <img src="<?= data_url('img_konten/' . $gambar . '/' . base64url_encode($pengumuman->create_date)) ?>" loading="lazy" alt="">
+                                            <img src="<?= $pengumuman->gambar; ?>" loading="lazy" alt="">
                                         </div>
                                     </div>
                                     <div class="col align-self-center ps-0">
@@ -151,7 +144,7 @@
                         <div class="swiper-wrapper">
                             <?php foreach ($data_berita as $b) : ?>
                                 <div class="swiper-slide">
-                                    <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= $b->gambar; ?>');">
+                                    <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= $b->gambar; ?>');" loading="lazy">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-auto position-absolute badge-status">
