@@ -145,3 +145,7 @@
   align-items: center;
   flex-direction: column;
 }
+
+p.loader{
+  color: #ec3528;
+}
