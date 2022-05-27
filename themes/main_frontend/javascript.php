@@ -122,20 +122,6 @@
 <script src="<?= base_url('assets/js/alert/scriptalert.js') ?>"></script>
 
 <script src="<?= base_url('assets/js/page/function.js') ?>"></script>
-<script type="text/javascript">
-    const api_url = "https://sd.klasq.id/api/wali/profil?id_sekolah=1&id_wali=1";
-    $.ajax({
-        url: api_url,
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-            xhr.setRequestHeader("Access-Control-Allow-Origin", api_url);
-        },
-        success: function(data) {
-            console.log(data);
-            //process the JSON data etc
-        }
-    })
-</script>
 <?php
 
 if (isset($js_add) && is_array($js_add)) {

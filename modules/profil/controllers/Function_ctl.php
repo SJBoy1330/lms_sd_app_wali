@@ -109,4 +109,15 @@ class Function_ctl extends MY_Welcome
         echo json_encode($data);
         exit;
     }
+
+    public function edit_foto()
+    {
+        $arr['id_sekolah'] = $id_sekolah = $this->input->post('id_sekolah');
+        $arr['id_wali'] = $id_wali = $this->input->post('id_wali');
+        $arrFile['foto'] = $_FILES['foto'];
+
+        $result = curlPost('profil/edit_foto', $arr, $arrFile);
+
+        echo json_encode($result);
+    }
 }

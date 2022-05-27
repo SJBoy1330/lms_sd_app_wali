@@ -14,23 +14,38 @@ function previewImage(id_sekolah, id_wali) {
     formdata.append("foto", file);
 
     $.ajax({
-        url: API_URL + "profil/edit_foto/",
+        url: BASE_URL + "func_profil/edit_foto/",
         data: formdata,
         processData: false,
         contentType: false,
         method: 'POST',
         dataType: 'json',
         success: function (data) {
-            Swal.fire({
-                title: 'PEMBERITAHUAN',
-                text: "yey",
-                icon: 'success',
-                buttonsStyling: !1,
-                confirmButtonText: "Ok",
-                customClass: {
-                    confirmButton: "btn btn-primary"
-                }
-            })
+            // console.log(data);
+            if (data.status == 200) {
+                Swal.fire({
+                    title: 'PEMBERITAHUAN',
+                    text: data.message,
+                    icon: 'success',
+                    buttonsStyling: !1,
+                    confirmButtonText: "Ok",
+                    customClass: {
+                        confirmButton: "btn btn-primary"
+                    }
+                })
+
+            } else {
+                Swal.fire({
+                    title: 'PERINGATAN',
+                    text: data.message,
+                    icon: 'warning',
+                    buttonsStyling: !1,
+                    confirmButtonText: "Ok",
+                    customClass: {
+                        confirmButton: "btn btn-primary"
+                    }
+                })
+            }
         }
     })
 
