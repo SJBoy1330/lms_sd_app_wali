@@ -43,6 +43,9 @@
         </div>
 
         <div class="row">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLoader">
+                Launch demo modal
+            </button>
             <div class="col-12 px-0">
                 <div class="box-fiture">
                     <a href="<?= base_url('profil/ubah_profil'); ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
@@ -168,5 +171,26 @@
 
     </div>
     <!-- main page content ends -->
-
 </main>
+
+
+<!-- Modal Loader -->
+<div class="modal fade" id="modalLoader" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content" style="border-radius: 0px;">
+            <div class="modal-body loader">
+                <div class="row loader">
+                    <div class="col-12 loader">
+                        <div class="loadingio-spinner-double-ring-x5jbbv5x43o"><div class="ldio-wmpldorvik">
+                        <div></div>
+                        <div></div>
+                        <div><div></div></div>
+                        <div><div></div></div>
+                        </div></div>
+                        <p class="size-20 fw-medium"> Loading... </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
