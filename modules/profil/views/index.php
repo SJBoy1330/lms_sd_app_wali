@@ -177,7 +177,7 @@
 <!-- Modal Loader -->
 <div class="modal fade" id="modalLoader" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-        <div class="modal-content" style="border-radius: 0px;">
+        <div class="modal-content loader" style="border-radius: 0px;">
             <div class="modal-body loader">
                 <div class="row loader">
                     <div class="col-12 loader">

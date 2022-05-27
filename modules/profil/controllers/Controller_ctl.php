@@ -24,6 +24,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['data'] = curl_get("profil/get", array('id_sekolah' => $id_sekolah, 'id_wali' => $id_wali))[3];
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/loader.css') . '">';
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/uploadfoto.js"></script>';
