@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-12">
                         <figure class="overflow-hidden rounded-15 text-center">
-                            <img src="<?= base_url('linker/img_konten/' . base64url_encode($berita->gambar != '' || $berita->gambar != NULL ? $berita->gambar : 'kosong') . '/' . base64url_encode($berita->create_date)) ?>" alt="" class="w-100 mx-auto">
+                            <img src="<?= $berita->gambar != '' || $berita->gambar != NULL ? $berita->gambar : 'kosong' ?>" alt="" class="w-100 mx-auto">
                         </figure>
                     </div>
                 </div>
