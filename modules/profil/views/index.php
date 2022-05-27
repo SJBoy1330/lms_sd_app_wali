@@ -43,9 +43,9 @@
         </div>
 
         <div class="row">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLoader">
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLoader">
                 Launch demo modal
-            </button>
+            </button> -->
             <div class="col-12 px-0">
                 <div class="box-fiture">
                     <a href="<?= base_url('profil/ubah_profil'); ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
