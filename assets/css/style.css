@@ -16186,6 +16186,10 @@ div.progress{
   background-color: #B8B8B8;
 }
 
+figure.detail-pengumuman{
+  height: 200px;
+}
+
 /* Berita */
 .cardswiper.cardswiper-berita {
   overflow-x: auto;
@@ -16215,6 +16219,10 @@ div.progress{
   height: 100px;
   background-color: #FFFFFF;
   border-radius: 0px 0px 15px 15px;
+}
+
+figure.detail-berita{
+  height: 200px
 }
 
 /* Quick Link & Modal */
