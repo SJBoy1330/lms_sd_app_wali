@@ -88,15 +88,47 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal Loader -->
+<div class="modal fade" id="loading_scene" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content loader" style="border-radius: 0px;">
+            <div class="modal-body loader">
+                <div class="row loader">
+                    <div class="col-12 loader">
+                        <div class="loadingio-spinner-double-ring-x5jbbv5x43o">
+                            <div class="ldio-wmpldorvik">
+                                <div></div>
+                                <div></div>
+                                <div>
+                                    <div></div>
+                                </div>
+                                <div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="size-20 fw-medium loader"> Loading... </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- Required jquery and libraries -->
-<script>
-    var BASE_URL = baseUrl = '<?= base_url(); ?>';
-    var API_URL = apiUrl = '<?= API_URL() ?>';
-</script>
+
 <script src="<?= base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
 <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
 <script src="<?= base_url() ?>assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 
+<script>
+    var BASE_URL = baseUrl = '<?= base_url(); ?>';
+    var API_URL = apiUrl = '<?= API_URL() ?>';
+    var loading_scene = new bootstrap.Modal(document.getElementById("loading_scene"), {});
+</script>
 <!-- Customized jquery file  -->
 <script src="<?= base_url() ?>assets/js/main.js"></script>
 <script src="<?= base_url() ?>assets/js/color-scheme.js"></script>
@@ -117,11 +149,12 @@
 
 <script src="<?= base_url() ?>assets/js/global.js"></script>
 
-
 <script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/alert/scriptalert.js') ?>"></script>
 
 <script src="<?= base_url('assets/js/page/function.js') ?>"></script>
+
+
 <?php
 
 if (isset($js_add) && is_array($js_add)) {

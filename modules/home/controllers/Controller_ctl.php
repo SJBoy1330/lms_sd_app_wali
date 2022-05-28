@@ -104,7 +104,7 @@ class Controller_ctl extends MY_Frontend
 		[
 			$error, $message, $status, $data_pengumuman
 		] = curl_get(
-			'pengumuman',
+			'pengumuman/all/',
 			[
 				"id_sekolah" => $id_sekolah,
 				"id_pengumuman" => $id

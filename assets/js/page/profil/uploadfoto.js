@@ -1,3 +1,4 @@
+
 function previewImage(id_sekolah, id_wali) {
     const photo = document.querySelector('#photo');
     const getPhoto = document.querySelector('#photouser');
@@ -20,8 +21,8 @@ function previewImage(id_sekolah, id_wali) {
         contentType: false,
         method: 'POST',
         dataType: 'json',
+        cache: false,
         success: function (data) {
-            // console.log(data);
             if (data.status == 200) {
                 Swal.fire({
                     title: 'PEMBERITAHUAN',
@@ -48,6 +49,7 @@ function previewImage(id_sekolah, id_wali) {
             }
         }
     })
+
 
     oFReader.onload = function (oFREvent) {
         getPhoto.src = oFREvent.target.result;

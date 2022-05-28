@@ -40,12 +40,12 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
-                                        <img src="<?= base_url('linker/img_konten/' . base64url_encode($p->gambar != '' || $p->gambar != NULL ? $p->gambar : 'kosong') . '/' . base64url_encode($p->create_date)) ?>" alt="">
+                                        <img src="<?= $p->gambar; ?>" alt="">
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
                                     <p class="mb-1 size-13 fw-normal"><?= $p->judul ?></p>
-                                    <p class="fw-normal text-secondary size-12"><?= nice_time($p->create_date) ?></p>
+                                    <p class="fw-normal text-secondary size-12"><?= nice_time($p->tanggal_mulai) ?></p>
                                 </div>
                             </div>
                         </div>
