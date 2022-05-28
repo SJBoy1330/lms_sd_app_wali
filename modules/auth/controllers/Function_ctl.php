@@ -35,17 +35,13 @@ class Function_ctl extends MY_Welcome
             $data['status'] = !$error;
 
             if ($error) {
-                if (strpos($message, "Kode sekolah") !== false) {
-                    $data['required'][] = ['req_kode_sekolah', $message];
-                }
 
-                if (strpos($message, "Username") !== false) {
-                    $data['required'][] = ['req_username', $message];
-                }
-
-                if (strpos($message, "Kata sandi") !== false) {
-                    $data['required'][] = ['req_kata_sandi', $message];
-                }
+                $data['status'] = FALSE;
+                $data['alert']['title'] = 'PERINGATAN';
+                $data['alert']['message'] = $message;
+                $data['redirect'] = base_url('auth/login');
+                echo json_encode($data);
+                exit;
             } else {
                 $dbs['lms_sd_wali_server']      = $response_data->server;
                 $this->session->set_userdata($dbs);
@@ -56,6 +52,9 @@ class Function_ctl extends MY_Welcome
                 $arruser['lms_wali_id_sekolah'] = $response_data->id_sekolah;
                 $this->session->set_userdata($arruser);
 
+                $data['status'] = TRUE;
+                $data['alert']['title'] = 'PEMBERITAHUAN';
+                $data['alert']['message'] = $message;
                 $data['redirect'] = base_url('home');
             }
 

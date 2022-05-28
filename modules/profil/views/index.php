@@ -28,7 +28,7 @@
             <div class="col-12 d-flex justify-content-center">
                 <div class="image-profile position-relative text-center">
                     <figure class="avatar avatar-125 rounded-35 shadow-sm position-relative avatar-profile">
-                        <img src="<?= data_url('img_wali/' . base64url_encode($data->foto)); ?>" alt="" class="rounded-20" id="photouser">
+                        <img src="<?= $data->foto; ?>" alt="" class="rounded-20" id="photouser">
                     </figure>
                     <label for="photo" class="custom-profile-upload position-absolute top-100 start-100 bg-ec3528 rounded-15 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">
                         <i class="bi bi-plus-lg lg-size-myicon"></i>
