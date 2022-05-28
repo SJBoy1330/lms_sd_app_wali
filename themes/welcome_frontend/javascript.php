@@ -18,6 +18,12 @@
 <!-- PWA app service registration and works -->
 <script src="<?= base_url(); ?>assets/js/pwa-services.js"></script>
 <script src="<?= base_url(); ?>assets/js/global.js"></script>
+
+<script src="<?= base_url(); ?>assets/js/page/function.js"></script>
+
+
+<script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>
+<script src="<?= base_url('assets/js/alert/scriptalert.js') ?>"></script>
 <?php
 
 if (isset($js_add) && is_array($js_add)) {
