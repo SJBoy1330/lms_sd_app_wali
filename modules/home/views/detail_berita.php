@@ -27,8 +27,7 @@
             <div class="col-12 col-md-10 col-lg-8 mx-auto">
                 <div class="row">
                     <div class="col-12">
-                        <figure class="overflow-hidden rounded-15 text-center detail-berita">
-                            <img src="<?= $berita->gambar != '' || $berita->gambar != NULL ? $berita->gambar : 'kosong' ?>" alt="" class="w-100 mx-auto">
+                        <figure class="overflow-hidden rounded-15 text-center detail-berita" style="background-position: center; background-size: cover; background-image: url('<?= $berita->gambar != '' || $berita->gambar != NULL ? $berita->gambar : 'kosong' ?>');">
                         </figure>
                     </div>
                 </div>
