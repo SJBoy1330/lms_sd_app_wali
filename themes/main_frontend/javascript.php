@@ -154,6 +154,10 @@
 
 <script src="<?= base_url('assets/js/page/function.js') ?>"></script>
 
+<!--evo calender-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="<?= base_url() ?>assets/vendor/evo-calendar/js/evo-calendar.min.js"></script>
+
 
 <?php
 

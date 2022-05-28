@@ -85,7 +85,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
+                    <a href="<?= base_url('profil/laporan_presensi'); ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
                         <div class="row p-2">
                             <div class="d-flex col-auto align-items-center ">
                                 <div class="bg-ec3528 rounded-10 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">

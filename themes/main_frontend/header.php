@@ -27,6 +27,9 @@
     <!-- swiper carousel css -->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/vendor/swiperjs-6.6.2/swiper-bundle.min.css">
 
+    <!--evo calender-->
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/vendor/evo-calendar/css/evo-calendar.min.css" />
+
     <!-- style css for this template -->
     <link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet" id="style">
 

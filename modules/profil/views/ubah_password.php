@@ -12,7 +12,7 @@
                 </div>
                 <div class="col text-center">
                     <div class="logo-small">
-                        <h5>Ubah Kata Sandi</h5>
+                        <h6>Ubah Kata Sandi</h6>
                     </div>
                 </div>
                 <div class="col-auto">
