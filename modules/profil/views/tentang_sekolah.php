@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-auto">
                 <a href="<?= base_url('profil') ?>" class="btn btn-44">
-                    <img src="<?= base_url(); ?>assets/icons/kembali.svg" width="24" alt="">
+                    <i class="fa-solid fa-chevron-left size-18"></i>
                 </a>
             </div>
             <div class="col text-center">

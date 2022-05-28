@@ -115,7 +115,15 @@
                         </a>
                     <?php endforeach; ?>
                 <?php else : ?>
-                    <h1>Tidak ada data spp</h1>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center align-items-center flex-wrap">
+                            <div class="image-kosong">
+                                <img src="<?= data_url('img_default/'.base64url_encode('vector').'/'.base64url_encode('vector_spp_kosong.svg'),FALSE); ?>" width="275" alt="">
+                            </div>
+                            <h5 class="fw-medium mb-2">Tidak ada pembayaran aktif</h5>
+                            <p class="fw-normal text-secondary text-center size-14">Tidak ada pembayaran aktif sekarang. Kembali besok atau periksa koneksi internet</p>
+                        </div>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
