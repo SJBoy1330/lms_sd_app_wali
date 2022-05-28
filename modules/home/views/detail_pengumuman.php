@@ -29,13 +29,8 @@
             <div class="col-12 col-md-10 col-lg-8 mx-auto">
                 <div class="row">
                     <div class="col-12">
-<<<<<<< Updated upstream
                         <figure class="overflow-hidden rounded-15 text-center detail-pengumuman">
-                            <img src="<?= base_url('linker/img_konten/' . base64url_encode($pengumuman->gambar != '' || $pengumuman->gambar != NULL ? $pengumuman->gambar : 'kosong') . '/' . base64url_encode($pengumuman->create_date)) ?>" alt="" class="w-100 mx-auto">
-=======
-                        <figure class="overflow-hidden rounded-15 text-center">
                             <img src="<?= $pengumuman->gambar; ?>" alt="" class="w-100 mx-auto">
->>>>>>> Stashed changes
                         </figure>
                     </div>
                 </div>

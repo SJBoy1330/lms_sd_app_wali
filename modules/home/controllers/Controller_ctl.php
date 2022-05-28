@@ -54,7 +54,7 @@ class Controller_ctl extends MY_Frontend
 			'berita',
 			[
 				"id_sekolah" => $id_sekolah,
-				"limit" => 3
+				"limit" => 5
 			]
 		);
 		$mydata['data_berita'] = $data_berita;

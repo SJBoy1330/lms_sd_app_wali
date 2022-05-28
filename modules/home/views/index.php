@@ -143,7 +143,7 @@
                     <div class="swiper-container cardswiper cardswiper-berita">
                         <div class="swiper-wrapper">
                             <?php foreach ($data_berita as $b) : ?>
-                                <div class="swiper-slide">
+                                <a href="<?= base_url('home/detail_berita/' . $b->id_konten); ?>" class="swiper-slide">
                                     <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= $b->gambar; ?>');" loading="lazy">
                                         <div class="card-body">
                                             <div class="row">
@@ -159,7 +159,7 @@
                                             <p class="mb-0 title-4-home-text"><?= nice_title($b->keterangan, 70); ?></p>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             <?php endforeach; ?>
                         </div>
                     </div>
