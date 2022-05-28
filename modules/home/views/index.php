@@ -144,7 +144,7 @@
                         <div class="swiper-wrapper">
                             <?php foreach ($data_berita as $b) : ?>
                                 <a href="<?= base_url('home/detail_berita/' . $b->id_konten); ?>" class="swiper-slide">
-                                    <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= $b->gambar; ?>');" loading="lazy">
+                                    <div class="card theme-bg shadow-sm card-berita" style="background-image: url('<?= $b->gambar; ?>');" loading="lazy">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-auto position-absolute badge-status">
@@ -155,7 +155,7 @@
                                     </div>
                                     <div class="wrapper-text shadow-sm">
                                         <div class="row px-3 py-3">
-                                            <p class="mb-1 title-1-home-text"><?= $b->judul ?></p>
+                                            <p class="mb-1 title-1-home-text text-dark"><?= $b->judul ?></p>
                                             <p class="mb-0 title-4-home-text"><?= nice_title($b->keterangan, 70); ?></p>
                                         </div>
                                     </div>
