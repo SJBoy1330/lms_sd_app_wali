@@ -22,7 +22,7 @@
     <!-- Header ends -->
 
     <!-- main page content -->
-    <div class="main-container container py-4">
+    <div class="main-container container">
         <!-- comment -->
         <div class="row">
             <div class="col-12 d-flex justify-content-center">

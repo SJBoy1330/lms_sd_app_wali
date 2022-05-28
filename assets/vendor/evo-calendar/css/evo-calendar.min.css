@@ -122,10 +122,10 @@ button:focus {
   font-size: 16px;
 }
 .calendar-sidebar > .month-list > .calendar-months > li:hover {
-  background-color: #a692e0;
+  background-color: #cd0e00;
 }
 .calendar-sidebar > .month-list > .calendar-months > li.active-month {
-  background-color: #755eb5;
+  background-color: #cd0e00;
 }
 .calendar-inner {
   position: relative;
@@ -235,7 +235,7 @@ tr.calendar-body .calendar-day .day.calendar-today {
 }
 tr.calendar-body .calendar-day .day.calendar-today:hover {
   color: #fff;
-  background-color: #755eb5;
+  background-color: #EC3528;
 }
 tr.calendar-body .calendar-day .day[disabled] {
   pointer-events: none;

@@ -10,13 +10,12 @@
                 </a>
             </div>
             <div class="col text-center">
-
+                <div class="logo-small">
+                    <h6>Tentang Sekolah</h6>
+                </div>
             </div>
             <div class="col-auto">
-                <a href="notifikasi-SD.html" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
-                    <img src="<?= base_url('assets/icons/notif.png') ?>" width="24" alt="">
-                    <span class="count-indicator"></span>
-                </a>
+                <a href="#" target="_self" class="btn btn-44"></a>
             </div>
         </div>
     </header>

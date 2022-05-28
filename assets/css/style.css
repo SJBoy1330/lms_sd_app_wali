@@ -15998,7 +15998,7 @@ form input {
   }
 }
 
-@keyframes fadeInUp{
+/* @keyframes fadeInUp{
   from {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
@@ -16026,7 +16026,7 @@ p.second {
 div.progress{
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
-}
+} */
 
 @-webkit-keyframes up-down {
   0% {
