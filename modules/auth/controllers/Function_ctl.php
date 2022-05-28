@@ -39,7 +39,6 @@ class Function_ctl extends MY_Welcome
                 $data['status'] = FALSE;
                 $data['alert']['title'] = 'PERINGATAN';
                 $data['alert']['message'] = $message;
-                $data['redirect'] = base_url('auth/login');
                 echo json_encode($data);
                 exit;
             } else {

@@ -103,6 +103,9 @@ class Controller_ctl extends MY_Welcome
 		$this->session->unset_userdata('lms_wali_id_sekolah');
 		$this->session->unset_userdata('lms_wali_nama');
 
+		$this->session->set_flashdata('judul', 'PEMBERITAHUAN');
+		$this->session->set_flashdata('message', 'Anda telah keluar !');
+		$this->session->set_flashdata('icon', 'success');
 		redirect('auth/login');
 	}
 }
