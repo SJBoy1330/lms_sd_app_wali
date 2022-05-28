@@ -10,12 +10,10 @@
                   </a>
               </div>
               <div class="col d-flex justify-content-center align-items-center text-center">
-                  <h5 class="text-white">Mia Khalifah</h5>
+                  <h6 class="text-white">Mia Khalifah</h6>
               </div>
               <div class="col-auto">
-                  <a href="#" target="_self" class="btn btn-44 rounded-circle">
-
-                  </a>
+                  <a href="#" target="_self" class="btn btn-44 rounded-circle"></a>
               </div>
           </div>
           <div class="d-flex justify-content-center">

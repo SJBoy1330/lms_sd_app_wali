@@ -11,7 +11,7 @@
             <h6>Riwayat SPP</h6>
         </div>
         <div class="col-auto">
-            <a href="notifikasi-SD.html" target="_self" class="btn btn-44"></a>
+            <a href="#" target="_self" class="btn btn-44"></a>
         </div>
     </div>
 </header>

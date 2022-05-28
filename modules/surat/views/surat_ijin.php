@@ -11,8 +11,7 @@
             <h6>Surat Ijin</h6>
         </div>
         <div class="col-auto">
-            <a  class="btn btn-44">
-            </a>
+            <a  class="btn btn-44"></a>
         </div>
     </div>
 </header>

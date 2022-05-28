@@ -13,8 +13,7 @@
             <h6>Kontak</h6>
         </div>
         <div class="col-auto">
-            <a data-bs-toggle="modal" href="#tambahSuratIjin" role="button" class="btn btn-44">
-            </a>
+            <a href="#" role="button" class="btn btn-44"></a>
         </div>
     </div>
 </header>
