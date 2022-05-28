@@ -44,7 +44,7 @@ function submit_form(element, id_form, num = 0) {
                 }).then(function () {
                     if (data.redirect) {
                         location.href = data.redirect;
-                    } else {
+                    } else if (data.reload) {
                         location.reload();
                     }
                 });

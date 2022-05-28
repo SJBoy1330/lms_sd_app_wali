@@ -10,9 +10,9 @@ class Function_ctl extends MY_Welcome
 
     public function ubah_password_proses()
     {
-        $arrVar['nowpassword']  = 'Password sekarang';
-        $arrVar['newpassword'] = 'Password baru';
-        $arrVar['repeat_newpassword'] = 'Ulangi kata sandi';
+        $arrVar['nowpassword']  = 'Kata sandi lama';
+        $arrVar['newpassword'] = 'Kata sandi baru';
+        $arrVar['repeat_newpassword'] = 'Konfirmasi';
         foreach ($arrVar as $var => $value) {
             $$var = $this->input->post($var);
             if (!$$var) {
@@ -43,24 +43,22 @@ class Function_ctl extends MY_Welcome
         [$error, $message, $status, $response_data] = curl_post('profil/edit_password', $request_data);
         $data['status'] = !$error;
 
-        if ($error) {
-            if ($message === "Kata sandi lama anda salah!") {
-                $data['required'][] = ['req_nowpassword', 'Kata sandi salah !'];
-            }
-
-            if ($message === "Kata sandi tidak sama!") {
-                $data['required'][] = ['req_repeat_newpassword', 'Kata sandi tidak sesuai dengan input sandi baru !'];
-            }
-        } else {
+        if (!$error) {
+            $data['status'] = TRUE;
+            $data['alert']['title'] = 'PEMBERITAHUAN';
             $data['redirect'] = base_url('profil');
+        } else {
+            $data['status'] = FALSE;
+            $data['alert']['title'] = 'PERINGATAN';
         }
+
+        $data['alert']['message'] = $message;
         echo json_encode($data);
         exit;
     }
 
     public function edit_profil_proses()
     {
-        $arrVar['username']  = 'Username';
         $arrVar['email'] = 'Email';
         $arrVar['agama'] = 'Agama';
         foreach ($arrVar as $var => $value) {
@@ -87,7 +85,6 @@ class Function_ctl extends MY_Welcome
             "nama" => $this->input->post('nama'),
             "alamat" => $this->input->post('alamat'),
             "telp" => $this->input->post('nohp'),
-            "username" => $username,
             "email" => $email,
             "id_agama" => $agama,
         ];
@@ -104,7 +101,17 @@ class Function_ctl extends MY_Welcome
 
         $data['status'] = !$error;
         if (!$error) {
-            $data['redirect'] = base_url('profil/ubah_profil');
+            $arruser['lms_wali_nama']  = $this->input->post('nama');
+            $this->session->set_userdata($arruser);
+
+            $data['status'] = TRUE;
+            $data['alert']['title'] = 'PEMBERITAHUAN';
+            $data['alert']['message'] = $message;
+            $data['redirect'] = base_url('profil');
+        } else {
+            $data['status'] = FALSE;
+            $data['alert']['title'] = 'PERINGATAN';
+            $data['alert']['message'] = $message;
         }
         echo json_encode($data);
         exit;

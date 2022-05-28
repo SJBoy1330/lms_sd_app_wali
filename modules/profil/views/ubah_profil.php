@@ -25,7 +25,7 @@
         <!-- comment -->
         <div class="row mx-2">
             <div class="col-12">
-                <form class="row g-3 mt-1" method="POST" url="<?= base_url('func_profil/edit_profil_proses'); ?>" id="form_ubah_profil">
+                <form class="row g-3 mt-1" method="POST" action="<?= base_url('func_profil/edit_profil_proses'); ?>" id="form_ubah_profil">
                     <!-- <div class="col-12" id="req_agama">
                         Agama:
                         <select name="agama" id="agama">
@@ -35,10 +35,6 @@
                         </select>
                     </div> -->
 
-                    <div class="col-12" id="req_username">
-                        <label for="username" class="form-label fw-bold size-14">Username</label>
-                        <input type="text" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" id="username" name="username" placeholder="Masukan username anda!" value="<?= $data_wali->username ?>" autocomplete=" off">
-                    </div>
                     <div class="col-12" id="req_nama">
                         <label for="nama" class="form-label fw-bold size-14">Nama lengkap</label>
                         <input type="text" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" id="nama" name="nama" placeholder="Dono kasino indro..." autocomplete="off" value="<?= $data_wali->nama ?>">
@@ -61,7 +57,7 @@
                     </div>
                     <div class="col-12 mb-4" id="req_email">
                         <label for="email" class="form-label fw-bold size-14">Email</label>
-                        <input type="text" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" id="email" name="email" placeholder="tes@mail.com" autocomplete="off" value="<?= $data_wali->email ?>">
+                        <input type="email" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" id="email" name="email" placeholder="tes@mail.com" autocomplete="off" value="<?= $data_wali->email ?>">
                     </div>
                 </form>
             </div>

@@ -37,7 +37,7 @@
                         <span class="text-secondary">Silahkan isi inputan dibawah ini</span>
                     </div>
                 </div>
-                <form class="row" method="POST" url="<?= base_url('func_profil/ubah_password_proses'); ?>" id="form_ubah_password">
+                <form class="row" method="POST" action="<?= base_url('func_profil/ubah_password_proses'); ?>" id="form_ubah_password">
                     <div class="form-group mb-4" id="req_nowpassword">
                         <label for="kata_sandi" class="form-label title-3">Password sekarang</label>
                         <div class="wrapper-password d-flex">

@@ -30,7 +30,7 @@
         <!-- Ucapan Selamat Datang -->
         <div class="row my-4 text-start">
             <div class="col-9">
-                <p class="mb-0 ms-2 title-2">Halo, Wali <?= $nama_wali ?></p>
+                <p class="mb-0 ms-2 title-2">Halo, <?= explode(' ', $nama_wali)[0]; ?></p>
                 <p class="mb-0 ms-2 title-1-home">Selamat Datang</p>
             </div>
         </div>
