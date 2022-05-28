@@ -115,7 +115,7 @@
                         </a>
                     <?php endforeach; ?>
                 <?php else : ?>
-                    <div class="row">
+                    <div class="row mb-4">
                         <div class="col-12 d-flex justify-content-center align-items-center flex-wrap">
                             <div class="image-kosong">
                                 <img src="<?= data_url('img_default/'.base64url_encode('vector').'/'.base64url_encode('vector_spp_kosong.svg'),FALSE); ?>" width="275" alt="">
