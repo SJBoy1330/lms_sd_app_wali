@@ -499,7 +499,7 @@ function nice_date_time($tanggal = "now")
   return str_replace($en, $id, $date_formated);
 }
 
-function month_from_number($nomor)
+function month_from_number($nomor = NULL)
 {
   switch ($nomor) {
     case 1:
@@ -527,7 +527,7 @@ function month_from_number($nomor)
     case 12:
       return "Desember";
     default:
-      return "";
+      return array(1 => "Januari", 2 => "Februari", 3 => "Maret", 4 => "April", 5 => "Mei", 6 => "Juni", 7 => "Juli", 8 => "Agustus", 9 => "September", 10 => "Oktober", 11 => "November", 12 => "Desember");
   }
 }
 
@@ -543,4 +543,17 @@ function data_url($path = null, $id_sekolah = true)
     $uri .= '/' . base64url_encode($ci->session->userdata('lms_wali_id_sekolah'));
   }
   return $uri;
+}
+
+
+function vector_default($image, $judul = 'Tidak ada data', $text = 'Tidak terdapat record data. Hubungi admin jika terdapat kesalahan')
+{
+  $html  = '<div class="row mb-4">';
+  $html .= '<div class="col-12 d-flex justify-content-center align-items-center flex-wrap"><div class="image-kosong">';
+  $html .= '  <img src="' . data_url('img_default/' . base64url_encode('vector') . '/' . base64url_encode($image), FALSE) . '" width="275" alt="">';
+  $html .= '</div><h5 class="fw-medium mb-2">' . $judul . '</h5>';
+  $html .= '<p class="fw-normal text-secondary text-center size-14">' . $text . '</p>';
+  $html .= '</div></div>';
+
+  return $html;
 }

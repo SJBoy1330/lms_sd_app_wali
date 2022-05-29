@@ -21,12 +21,12 @@ function submit_form(element, id_form, num = 0) {
             $('#' + element.id).prop('disabled', true);
         },
         success: function (data) {
-            // console.log(data);
+            console.log(data);
             $('#' + element.id).prop('disabled', false);
 
             $('.fadedin').remove();
 
-            if (data.status == true) {
+            if (data.status == 200 || data.status == true) {
                 var icon = 'success';
             } else {
                 var icon = 'warning';
@@ -44,7 +44,8 @@ function submit_form(element, id_form, num = 0) {
                 }).then(function () {
                     if (data.redirect) {
                         location.href = data.redirect;
-                    } else if (data.reload) {
+                    }
+                    if (data.reload == true) {
                         location.reload();
                     }
                 });

@@ -60,17 +60,23 @@
                         </div>
                     </div>
                 </div>
-                <?php if ($data_spp) : ?>
+                <?php if ($data_spp->result) : ?>
                     <?php foreach ($data_spp->result as $spp) : ?>
-                        <a class="row mb-3">
-                            <a data-bs-toggle="modal" data-bs-target="#detailTagihan">
+                        <div class="row mb-3">
+                            <div>
                                 <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
                                     <?php if ($spp->lunas === 'Y') : ?>
                                         <span class="py-2 px-3 text-light size-14 position-absolute top-0 end-0 bg-00DFA3 rounded-15-start-bottom blm-lns">Lunas</span>
                                     <?php else : ?>
-                                        <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Belum Lunas</span>
+                                        <?php if ($spp->status_bayar == NULL) : ?>
+                                            <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Belum Lunas</span>
+                                        <?php elseif ($spp->status_bayar == 1) : ?>
+                                            <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-f5e269 rounded-15-start-bottom blm-lns">Menunggu Konfirmasi</span>
+                                        <?php elseif ($spp->status_bayar == 3) : ?>
+                                            <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Pembayaran Ditolak</span>
+                                        <?php endif; ?>
                                     <?php endif; ?>
-                                    <span class="size-14 fw-bold">SPP <?= month_from_number($spp->bulan) ?> <?= $spp->tahun ?></span>
+                                    <span class="size-14 fw-bold"><?= $spp->nama_kategori ?> <?= month_from_number($spp->bulan) ?> <?= $spp->tahun ?></span>
                                     <div class="row py-1 px-2 mt-2 mb-2 ">
                                         <div class="d-flex col-auto align-items-center ps-0 pe-2">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
@@ -84,7 +90,7 @@
                                             <p class="mb-0 fw-bold size-15"><?= rupiah($spp->jumlah) ?></p>
                                         </div>
                                     </div>
-                                    <?php if ($spp->lunas === 'Y') : ?>
+                                    <?php if ($spp->nama_bank != NULL) : ?>
                                         <div class="row py-1 px-2 mb-3">
                                             <div class="d-flex col-auto align-items-center ps-0 pe-2">
                                                 <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
@@ -100,30 +106,23 @@
                                         </div>
                                     <?php endif; ?>
 
-                                    <?php if ($spp->lunas === 'Y') : ?>
+                                    <?php if ($spp->lunas === 'Y' || $spp->status_bayar != 3 && $spp->status_bayar != NULL) : ?>
                                         <div class="row mt-4 mx-1">
                                             <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_detail_ajax">Detail Tagihan</a>
                                         </div>
                                     <?php else : ?>
                                         <div class="row mt-4 mx-1">
-                                            <a data-bs-toggle="modal" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas">Bayar Tagihan</a>
+                                            <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_bayar_ajax">Bayar Tagihan</a>
                                         </div>
                                     <?php endif; ?>
 
                                 </div>
-                            </a>
-                        </a>
+                            </div>
+                        </div>
                     <?php endforeach; ?>
                 <?php else : ?>
-                    <div class="row mb-4">
-                        <div class="col-12 d-flex justify-content-center align-items-center flex-wrap">
-                            <div class="image-kosong">
-                                <img src="<?= data_url('img_default/'.base64url_encode('vector').'/'.base64url_encode('vector_spp_kosong.svg'),FALSE); ?>" width="275" alt="">
-                            </div>
-                            <h5 class="fw-medium mb-2">Tidak ada pembayaran aktif</h5>
-                            <p class="fw-normal text-secondary text-center size-14">Tidak ada pembayaran aktif sekarang. Kembali besok atau periksa koneksi internet</p>
-                        </div>
-                    </div>
+                    <?= vector_default("vector_spp_kosong.svg", "Tidak ada pembayaran aktif", "Tidak ada tagihan untuk anda !, Hubungi admin atau operator jika terdapat kesalahan"); ?>
+
                 <?php endif; ?>
             </div>
         </div>
@@ -137,125 +136,7 @@
                     <h5 class="modal-title" id="detailTagihanModal">Detail Tagihan</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <!-- Ngko di hapus yo wkwkw -->
-                <!-- <h1 id="tampil_sementara"></h1> -->
                 <div id="display_content"></div>
-                <!-- <div class="modal-body">
-                    <div class="row m-2fix">
-                        <div class="col-6 px-1 mb-3">
-                            <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                                <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
-                                    <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                            <i class="fa-solid fa-receipt mt-0 size-16 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                    <p class="mb-0 fw-bold size-15">No. Tagihan</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary" id="no-tagihan">03/44545</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 px-1  mb-3">
-                            <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                                <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
-                                    <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                            <i class="fa-solid fa-calendar-week size-16 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                    <p class="mb-0 fw-bold size-15">Tanggal</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary" id="tanggal-tagihan">30 Maret 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 px-1 mb-3">
-                            <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                                <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
-                                    <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                            <i class="fa-solid fa-money-check-pen mt-0 size-16 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                    <p class="mb-0 fw-bold size-13">Kategori Biaya</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary" id="kategori-biaya">SPP Maret 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 px-1  mb-3">
-                            <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                                <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
-                                    <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                            <i class="fa-solid fa-rupiah-sign size-16 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                    <p class="mb-0 fw-bold size-15">Jumlah</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary" id="jumlah-tagihan">30 Maret 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 px-1 mb-3">
-                            <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                                <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
-                                    <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                            <i class="fa-solid fa-building-columns size-16 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                    <p class="mb-0 fw-bold size-13">Metode Bayar</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary" id="metode-bayar-tagihan">Bank BRI</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 px-1  mb-3">
-                            <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                                <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
-                                    <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                            <i class="fa-solid fa-money-bill-transfer size-16 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                    <p class="mb-0 fw-bold size-13">Status Tagihan</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary" id="status-tagihan">30 Maret 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row m-2fix d-flex justify-content-center">
-                        <div class="col-12 px-1 mb-3">
-                            <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                                <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
-                                    <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                            <i class="fa-solid fa-building-columns mt-0 size-16 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                    <p class="mb-0 fw-bold size-15">Bukti Pembayaran</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary">bukti bayar spp.png</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-11 p-0">
-                            <figure class="overflow-hidden rounded-15 text-center">
-                                <img src="assets/img/news1.jpg" alt="" class="w-100 mx-auto">
-                            </figure>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -280,7 +161,7 @@
                                 </div>
                                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                     <p class="mb-0 fw-bold size-15">No. Tagihan</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary">03/44545</p>
+                                    <p class="mb-0 fw-normal size-12 text-secondary" id="no_tagihan"> - </p>
                                 </div>
                             </div>
                         </div>
@@ -295,7 +176,7 @@
                                 </div>
                                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                     <p class="mb-0 fw-bold size-15">Kategori Pembayaran</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary">03/44545</p>
+                                    <p class="mb-0 fw-normal size-12 text-secondary" id="kategori_pembayaran"> - </p>
                                 </div>
                             </div>
                         </div>
@@ -310,76 +191,78 @@
                                 </div>
                                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                     <p class="mb-0 fw-bold size-15">Jumlah Pembayaran</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary">Rp. 1.000.000,00</p>
+                                    <p class="mb-0 fw-normal size-12 text-secondary" id="jumlah_pembayaran"> - </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 rounded-15 shadow-sm mb-2 p-2 border p-2">
                             <p class="mb-0 fw-bolder size-15 my-2 ms-1">Metode Pembayaran</p>
-                            <form class="mt-2 mx-1">
-                                <select class="form-select form-select-pribadi text-secondary bg-f5f5f5 size-11 border-0">
-                                    <option selected value="1">BRI</option>
-                                    <option value="2">BNI</option>
-                                    <option value="3">BCA</option>
+                            <div class="mt-2 mb-3 mx-1">
+                                <input type="hidden" id="input_id_tagihan" value="">
+                                <select id="select_metode" class="form-select form-select-pribadi text-secondary bg-f5f5f5 size-11 border-0">
+                                    <option value="" disabled selected>Pilih Metode Bayar</option>
+                                    <?php foreach ($data_spp->metode as $metode) : ?>
+                                        <option value="<?= $metode->id_metode_bayar; ?>"><?= $metode->nama ?></option>
+                                    <?php endforeach; ?>
                                 </select>
-                            </form>
-                            <div class="row">
-                                <div class="col-6 d-flex justify-content-center aign-items-center my-2">
-                                    <div class="avatar avatar-70 d-flex align-items-center">
-                                        <img src="<?= base_url() ?>assets/images/BRI-removebg-preview%201.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-6 d-flex align-items-center my-2">
-                                    <span class="size-15 fw-medium">Bank Rakyat Indonesia</span>
-                                </div>
-                                <div class="col-12 ps-4 mb-1">
-                                    <p class="mb-0 size-14 text-dark">Silahkan transfer ke</p>
-                                </div>
-                                <div class="col-12 d-flex ps-5 flex-column">
-                                    <div class="detail-tft d-flex my-2">
-                                        <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                            <i class="fa-solid fa-circle" style="color: #ec3528"></i>
-                                        </div>
-                                        <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                            <p class="mb-0 fw-bold size-13">Bank BRI cabang SIDOARJO</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="detail-tft d-flex mb-2">
-                                        <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                            <i class="fa-solid fa-circle" style="color: #ec3528"></i>
-                                        </div>
-                                        <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                            <p class="mb-0 fw-bold size-13">No. Rekening : 777777</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="detail-tft d-flex mb-2">
-                                        <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                            <i class="fa-solid fa-circle" style="color: #ec3528"></i>
-                                        </div>
-                                        <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                            <p class="mb-0 fw-bold size-13">Atas Nama : SMA NASIONAL</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 ps-4 my-2">
-                                    <p class="mb-0 size-14 text-dark">Mohon tuliskan berita :</p>
-                                    <p class="mb-0 size-15 fw-medium">INVOICE 03/1</p>
-                                </div>
                             </div>
+                            <div class="active_div"></div>
+                            <?php foreach ($data_spp->metode as $metode) : ?>
+                                <div class="row d-none" id="bank_display_<?= $metode->id_metode_bayar; ?>">
+                                    <div class="col-6 d-flex justify-content-center aign-items-center my-2">
+                                        <div class="avatar avatar-70 d-flex align-items-center">
+                                            <img src="<?= $metode->logo; ?>" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex align-items-center my-2">
+                                        <span class="size-15 fw-medium"><?= $metode->nama; ?></span>
+                                    </div>
+                                    <div class="col-12 ps-4 mb-1">
+                                        <p class="mb-0 size-14 text-dark">Silahkan transfer ke</p>
+                                    </div>
+                                    <div class="col-12 d-flex ps-5 flex-column">
+                                        <div class="detail-tft d-flex my-2">
+                                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
+                                                <i class="fa-solid fa-circle" style="color: #ec3528"></i>
+                                            </div>
+                                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
+                                                <p class="mb-0 fw-bold size-13"><?= $metode->nama; ?> cabang <?= $metode->cabang; ?></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="detail-tft d-flex mb-2">
+                                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
+                                                <i class="fa-solid fa-circle" style="color: #ec3528"></i>
+                                            </div>
+                                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
+                                                <p class="mb-0 fw-bold size-13">No. Rekening : <?= $metode->no_rekening; ?></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="detail-tft d-flex mb-2">
+                                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
+                                                <i class="fa-solid fa-circle" style="color: #ec3528"></i>
+                                            </div>
+                                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
+                                                <p class="mb-0 fw-bold size-13">Atas Nama : <?= $metode->atas_nama; ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php if ($metode->keterangan) : ?>
+                                        <div class="col-12 ps-4 my-2">
+                                            <p class="mb-0 size-14 text-dark">Keterangan</p>
+                                            <p class="mb-0 size-15 fw-medium"><?= $metode->keterangan; ?></p>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endforeach; ?>
                             <div class='file my-1'>
-                                <label for='input-file' class="btn btn-block btn-md btn-danger">Upload Bukti Pembayaran</label>
-                                <input id='input-file' type='file' />
+                                <label for='input-file' id="button_upload_bukti" class="btn btn-block btn-md btn-danger btn-disabled">Upload Bukti Pembayaran</label>
+                                <input id='input-file' type='file' disabled />
                             </div>
                         </div>
 
 
-                    </div>
-                    <div class="col-11 p-0">
-                        <figure class="overflow-hidden rounded-15 text-center">
-                            <img src="<?= base_url('assets/images/tari-saman.png'); ?>" alt="" class="w-100 mx-auto">
-                        </figure>
                     </div>
                 </div>
             </div>
@@ -495,7 +378,7 @@
     <!-- Filter Status SPP -->
     <div class="modal fade" id="filterSPP" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="box-shadow: 100px 0px 100px 100px rgb(0 0 0 / 10%)">
+            <form method="GET" action="<?= base_url("spp/index/" . $id_siswa); ?>" class="modal-content" style="box-shadow: 100px 0px 100px 100px rgb(0 0 0 / 10%)">
                 <div class="modal-header border-0">
                     <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -503,25 +386,53 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label class="form-label title-3">Kategori Pembayaran</label>
-                        <select class="form-select form-select form-select-pribadi border-0">
-                            <option selected>Pilih kategori</option>
+                        <select class="form-select form-select form-select-pribadi border-0" name="kategori">
+                            <option value="">Semua Kategori</option>
                             <?php foreach ($data_spp->kategori as $kategori) : ?>
-                                <option value="<?= $kategori->id_kategori_biaya ?>"><?= $kategori->nama ?></option>
+                                <option value="<?= $kategori->id_kategori_biaya ?>" <?php if ($kats == $kategori->id_kategori_biaya) {
+                                                                                        echo "selected";
+                                                                                    } ?>><?= $kategori->nama ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label title-3">Tahun</label>
+                        <select class="form-select form-select form-select-pribadi border-0" name="tahun">
+                            <option value="">Semua Tahun</option>
+                            <?php for ($i = (intval(date('Y')) - 7); $i <= (intval(date('Y')) + 2); $i++) { ?>
+                                <option value="<?= $i; ?>" <?php if ($i == $id_tahun) {
+                                                                echo ' selected';
+                                                            } ?>><?= $i; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label title-3">Bulan</label>
+                        <select class="form-select form-select form-select-pribadi border-0" name="bulan">
+                            <option value="">Semua Bulan</option>
+                            <?php foreach (month_from_number() as $kode => $bulan) : ?>
+                                <option value="<?= $kode; ?>" <?php if ($kode == $id_bulan) {
+                                                                    echo "selected";
+                                                                } ?>><?= $bulan; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label title-3">Status</label>
-                        <select class="form-select form-select form-select-pribadi border-0">
-                            <option selected>Pilih status</option>
-                            <option value="1">Lunas</option>
-                            <option value="2">Belum Lunas</option>
+                        <select class="form-select form-select form-select-pribadi border-0" name="lunas">
+                            <option value="">Semua Status</option>
+                            <option value="Y" <?php if ($lunas == 'Y') {
+                                                    echo "selected";
+                                                } ?>>Lunas</option>
+                            <option value="N" <?php if ($lunas == 'N') {
+                                                    echo "selected";
+                                                } ?>>Belum Lunas</option>
                         </select>
                     </div>
                 </div>
                 <div class="modal-footer border-0">
-                    <a href="#" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</a>
+                    <button type="submit" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>

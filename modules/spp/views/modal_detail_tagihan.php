@@ -41,7 +41,7 @@
                 </div>
                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                     <p class="mb-0 fw-bold size-13">Kategori Biaya</p>
-                    <p class="mb-0 fw-normal size-12 text-secondary" id="kategori-biaya"><?= $id_kategori_biaya ?></p>
+                    <p class="mb-0 fw-normal size-12 text-secondary" id="kategori-biaya"><?= $nama_kategori ?></p>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                     <p class="mb-0 fw-bold size-13">Metode Bayar</p>
-                    <p class="mb-0 fw-normal size-12 text-secondary" id="metode-bayar-tagihan"><?= $id_metode_bayar ?></p>
+                    <p class="mb-0 fw-normal size-12 text-secondary" id="metode-bayar-tagihan"><?= $nama_bank ?></p>
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
         </div>
         <div class="col-11 p-0">
             <figure class="overflow-hidden rounded-15 text-center">
-                <img src="<?= base_url('assets/img/news1.jpg'); ?>" alt="" class="w-100 mx-auto">
+                <img src="<?= $bukti_transfer; ?>" alt="" class="w-100 mx-auto">
             </figure>
         </div>
     </div>
