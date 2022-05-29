@@ -27,20 +27,19 @@
             <div class="col-12 col-md-10 col-lg-8 mx-auto">
                 <div class="row">
                     <div class="col-12">
-                        <figure class="overflow-hidden rounded-15 text-center detail-pengumuman">
-                            <img src="<?= $pengumuman->gambar; ?>" alt="" class="w-100 mx-auto">
+                        <figure class="overflow-hidden rounded-15 text-center detail-pengumuman" style="background-position: center; background-size: cover; background-image: url('<?= $pengumuman->gambar; ?>');">
                         </figure>
                     </div>
                 </div>
 
                 <div class="row mx-2">
                     <p class="mt-2 mb-3 title-1-home"><?= $pengumuman->judul ?></p>
-                    <p class="mb-1 title-2">Tanggal dibuat: </p>
+                    <p class="mb-1 title-2">Tanggal dibuat : </p>
                     <p class="mb-1 title-3"><?= nice_date_time($pengumuman->create_date) ?></p>
                 </div>
 
                 <div class="mt-3 mb-4 mx-2">
-                    <p class="text-secondary deskripsi-berita"><?= $pengumuman->detail ?></p>
+                    <p class="text-secondary deskripsi-berita size-15"><?= $pengumuman->detail ?></p>
                 </div>
             </div>
         </div>

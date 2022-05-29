@@ -61,8 +61,7 @@
                     <a href="<?= base_url('home/detail_berita/') . $b->id_konten ?>" class="col-12 text-dark">
                         <div class="row">
                             <div class="col-12">
-                                <figure class="overflow-hidden rounded-15 text-center detail-berita">
-                                    <img src="<?= $b->gambar != '' || $b->gambar != NULL ? $b->gambar : 'kosong' ?>" alt="" class="w-100 mx-auto">
+                                <figure class="overflow-hidden rounded-15 text-center detail-berita" style="background-position: center; background-size: cover; background-image: url('<?= $b->gambar != '' || $b->gambar != NULL ? $b->gambar : 'kosong' ?>');">
                                 </figure>
                             </div>
                         </div>

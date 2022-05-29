@@ -97,10 +97,22 @@
         <div class="row">
             <div class="col-12 px-0">
                 <div class="box-fiture">
-                    <a data-bs-toggle="modal" data-bs-target="#modalDetailNotifikasi" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
+                    <a data-bs-toggle="modal" data-bs-target="#modalDetailNotifikasi" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-2 mx-3">
                         <div class="row p-2">
                             <div class="col align-self-center ps-2">
                                 <p class="mb-0 fw-bold size-14">Bagaimana cara melakukan login?</p>
+                            </div>
+                            <div class="col-auto d-flex justify-content-end align-items-center ps-0">
+                                <div class="fs-3">
+                                    <i class="fa-solid fa-chevron-right size-14"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a data-bs-toggle="modal" data-bs-target="#modalDetailNotifikasi" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-2 mx-3">
+                        <div class="row p-2">
+                            <div class="col align-self-center ps-2">
+                                <p class="mb-0 fw-bold size-14">Bagaimana cara melakukan pembayaran SPP?</p>
                             </div>
                             <div class="col-auto d-flex justify-content-end align-items-center ps-0">
                                 <div class="fs-3">
@@ -120,122 +132,33 @@
     <div class="modal-dialog modal-fullscreen modal-dialog-centered">
         <div class="modal-content detail-tagihan">
             <div class="modal-header border-0">
-                <h5 class="modal-title" id="detailTagihanModal">Detail Tagihan</h5>
+                <h5 class="modal-title" id="detailTagihanModal">Detail Notifikasi</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row m-2fix">
-                    <div class="col-6 px-1 mb-3">
-                        <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-receipt mt-0 size-16 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-bold size-15">No. Tagihan</p>
-                                <p class="mb-0 fw-normal size-12 text-secondary">03/44545</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 px-1  mb-3">
-                        <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-calendar-week size-16 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-bold size-15">Tanggal</p>
-                                <p class="mb-0 fw-normal size-12 text-secondary">30 Maret 2022</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 px-1 mb-3">
-                        <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-money-check-pen mt-0 size-16 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-bold size-13">Kategori Biaya</p>
-                                <p class="mb-0 fw-normal size-12 text-secondary">SPP Maret 2022</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 px-1  mb-3">
-                        <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-rupiah-sign size-16 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-bold size-15">Jumlah</p>
-                                <p class="mb-0 fw-normal size-12 text-secondary">30 Maret 2022</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 px-1 mb-3">
-                        <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-building-columns size-16 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-bold size-13">Metode Bayar</p>
-                                <p class="mb-0 fw-normal size-12 text-secondary">Bank BRI</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 px-1  mb-3">
-                        <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2 ">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-money-bill-transfer size-16 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-bold size-13">Status Tagihan</p>
-                                <p class="mb-0 fw-normal size-12 text-secondary">30 Maret 2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row m-2fix d-flex justify-content-center">
-                    <div class="col-12 px-1 mb-3">
-                        <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-building-columns mt-0 size-16 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-bold size-15">Bukti Pembayaran</p>
-                                <p class="mb-0 fw-normal size-12 text-secondary">bukti bayar spp.png</p>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-11 p-0">
                         <figure class="overflow-hidden rounded-15 text-center">
-                            <img src="assets/img/news1.jpg" alt="" class="w-100 mx-auto">
+                            <img src="<?= base_url();?>assets/img/news1.jpg" alt="" class="w-100 mx-auto">
                         </figure>
+                    </div>
+                    <div class="col-6 pe-1">
+                        <figure class="overflow-hidden rounded-15 text-center">
+                            <img src="<?= base_url();?>assets/img/news1.jpg" alt="" class="w-100 mx-auto">
+                        </figure>
+                    </div>
+                    <div class="col-6 ps-1">
+                        <figure class="overflow-hidden rounded-15 text-center">
+                            <img src="<?= base_url();?>assets/img/news1.jpg" alt="" class="w-100 mx-auto">
+                        </figure>
+                    </div>
+                </div>
+                <div class="row mx-2">
+                        <p class="mt-2 mb-1 title-1-home">Notifikasi 1</p>
+                    </div>
+
+                    <div class="mt-3 mb-4 mx-2">
+                        <p class="text-secondary deskripsi-berita">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                     </div>
                 </div>
             </div>

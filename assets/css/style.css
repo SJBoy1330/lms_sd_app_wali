@@ -15843,7 +15843,7 @@ main .row.h-100.landing-page {
 
 .title-1-home {
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -15854,13 +15854,13 @@ main .row.h-100.landing-page {
 }
 
 .title-2 {
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-size: 15px;
   color: #6c757d;
 }
 
 .title-3 {
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-size: 14px;
   font-weight: 600;
 }
@@ -16361,7 +16361,6 @@ figure.detail-berita{
 }
 
 .deskripsi-berita{
-  letter-spacing: 1px;
   text-indent: 20px;
   color: #6c757d;
 }
