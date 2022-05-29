@@ -1,4 +1,4 @@
-<div class="modal-body">
+<div class="modal-body bg-white">
     <div class="row m-2fix">
         <div class="col-6 px-1 mb-3">
             <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
@@ -91,7 +91,7 @@
             </div>
         </div>
     </div>
-    <div class="row m-2fix d-flex justify-content-center">
+    <div class="row d-flex justify-content-center">
         <div class="col-12 px-1 mb-3">
             <div class="col-12  d-flex py-2 px-2 mt-2 rounded-15 shadow-sm ">
                 <div class="d-flex col-auto align-items-center ps-0 pe-2  ">
@@ -114,7 +114,7 @@
             </div>
         </div>
         <div class="col-11 p-0">
-            <figure class="overflow-hidden rounded-15 text-center">
+            <figure class="overflow-hidden rounded-15 text-center" style="background-image: url('')">
                 <img src="<?= $bukti_transfer; ?>" alt="" class="w-100 mx-auto">
             </figure>
         </div>

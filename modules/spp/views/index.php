@@ -76,7 +76,9 @@
                                             <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Pembayaran Ditolak</span>
                                         <?php endif; ?>
                                     <?php endif; ?>
-                                    <span class="size-14 fw-bold"><?= $spp->nama_kategori ?> <?= month_from_number($spp->bulan) ?> <?= $spp->tahun ?></span>
+                                    <div class="sizing-info">
+                                        <span class="size-14 fw-bold"><?= $spp->nama_kategori ?> <?= month_from_number($spp->bulan) ?> <?= $spp->tahun ?></span>
+                                    </div>
                                     <div class="row py-1 px-2 mt-2 mb-2 ">
                                         <div class="d-flex col-auto align-items-center ps-0 pe-2">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">

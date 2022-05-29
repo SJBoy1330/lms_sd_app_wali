@@ -54,3 +54,7 @@
     height: 40px;
     text-transform: none;
   }
+
+  .sizing-info{
+    width: 60%;
+  }
