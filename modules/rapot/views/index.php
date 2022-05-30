@@ -488,7 +488,7 @@
                                         </div>
                                     </div>
                                     <div class="col align-self-center ps-0 pe-1">
-                                        <p class="mb-0 size-12 fw-medium">Batas Akhir</p>
+                                        <p class="mb-0 size-12 fw-medium">Tanggal</p>
                                         <p class="mb-0 size-10 fw-normal text-secondary">30 Maret 2022</p>
                                     </div>
                                 </div>
@@ -510,7 +510,7 @@
                                         </div>
                                     </div>
                                     <div class="col align-self-center ps-0 pe-1">
-                                        <p class="mb-0 size-12 fw-medium">Keterangan</p>
+                                        <p class="mb-0 size-12 fw-medium">Nama Paket</p>
                                         <p class="mb-0 size-10 fw-normal text-secondary">Tugas Bahasa Indonesia</p>
                                     </div>
                                 </div>
