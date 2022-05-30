@@ -6,60 +6,60 @@
                 <div class="card-body tabcontent-wali" id="Tugas" style="padding: 6px 0px;">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="row mt-2 mb-3">
-                                <div class="col-6 d-flex">
+                            <div class="row">
+                                <div class="col-12 d-flex mb-3">
                                     <div class="col-auto align-self-center">
-                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-school size-13 text-white"></i>
+                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-school size-18 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                        <p class="mb-0 size-10 fw-normal text-secondary">Nama Sekolah</p>
-                                        <p class="mb-0 size-12 fw-medium"><?= $result->detail->sekolah; ?></p>
+                                        <p class="mb-0 size-12 fw-normal text-secondary">Nama Sekolah</p>
+                                        <p class="mb-0 size-14 fw-medium"><?= $result->detail->sekolah; ?></p>
                                     </div>
                                 </div>
-                                <div class="col-6 d-flex">
+                                <div class="col-12 d-flex mb-3">
                                     <div class="col-auto align-self-center">
-                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-building-user size-13 text-white"></i>
+                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-building-user size-18 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                        <p class="mb-0 size-10 fw-normal text-secondary">Kelas</p>
-                                        <p class="mb-0 size-12 fw-medium"><?= $result->detail->kelas; ?></p>
+                                        <p class="mb-0 size-12 fw-normal text-secondary">Kelas</p>
+                                        <p class="mb-0 size-14 fw-medium"><?= $result->detail->kelas; ?></p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-1">
-                                <div class="col-6 d-flex">
+                            <div class="row">
+                                <div class="col-12 d-flex mb-3">
                                     <div class="col-auto align-self-center">
-                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-location-dot size-16 text-white"></i>
+                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-globe-stand size-22 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                        <p class="mb-0 size-10 fw-normal text-secondary">Tahun Ajaran</p>
-                                        <p class="mb-0 size-12 fw-medium"><?= $result->detail->tahun_ajaran; ?></p>
+                                        <p class="mb-0 size-12 fw-normal text-secondary">Tahun Ajaran</p>
+                                        <p class="mb-0 size-14 fw-medium"><?= $result->detail->tahun_ajaran; ?></p>
                                     </div>
                                 </div>
-                                <div class="col-6 d-flex">
+                                <div class="col-12 d-flex">
                                     <div class="col-auto">
-                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-globe-stand size-18 text-white"></i>
+                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-location-dot size-20 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                        <p class="mb-0 size-10 fw-normal text-secondary">Alamat</p>
-                                        <p class="mb-0 size-12 fw-medium"><?= $result->detail->alamat; ?></p>
+                                        <p class="mb-0 size-12 fw-normal text-secondary">Alamat</p>
+                                        <p class="mb-0 size-14 fw-medium"><?= $result->detail->alamat; ?></p>
                                     </div>
                                 </div>
                             </div>
