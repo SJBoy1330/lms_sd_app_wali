@@ -112,6 +112,11 @@
                                         <div class="row mt-4 mx-1">
                                             <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_detail_ajax">Detail Tagihan</a>
                                         </div>
+                                        <?php if ($spp->status_bayar == 1) : ?>
+                                            <div class="row mt-4 mx-1">
+                                                <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_bayar_ajax">Edit Pembayaran</a>
+                                            </div>
+                                        <?php endif; ?>
                                     <?php else : ?>
                                         <div class="row mt-4 mx-1">
                                             <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_bayar_ajax">Bayar Tagihan</a>

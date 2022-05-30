@@ -10,17 +10,31 @@ class Controller_ctl extends MY_Welcome
 	}
 
 
-	public function index($idsiswa)
+	public function index($id_siswa = NULL)
 	{
+		if ($id_siswa == NULL) {
+			redirect('home');
+		}
 		// meta data
-		$idsekolah = $this->session->userdata('lms_wali_id_sekolah');
-		// $mydata["data_siswa"] = $this->siswa_m->get_siswa_by_id($idsiswa);
-		// $mydata["data_kelas"] = $this->siswa_m->get_kelas_tahun_ajaran_by_idsiswa($idsiswa);
-		// $mydata["data_sekolah"] = $this->sekolah_m->get_single_sekolah(array("id_sekolah" => $idsekolah));
-		// $mydata["data_pelajaran"] = $this->pelajaran_m->get_list_pelajaran_siswa($idsiswa);
+		$id_wali = $this->session->userdata('lms_wali_id_wali');
+
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		// LOAD DATA
+		[
+			$error, $message, $status, $data
+		] = curl_get(
+			'rapot',
+			[
+				"id_sekolah" => $id_sekolah,
+				"id_siswa" => $id_siswa,
+				"id_wali" => $id_wali
+			]
+		);
+		$mydata['result'] = $data;
 
 		// LOAD TITLE
 		$mydata['title'] = 'Rapot';
+		$mydata['judul_halaman'] = $data->detail->nama;
 
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
