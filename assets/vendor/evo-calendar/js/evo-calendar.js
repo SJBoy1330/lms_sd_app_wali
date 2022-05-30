@@ -126,6 +126,19 @@
                         nextYearText: "Volgend jaar",
                         closeSidebarText: "Sluit de zijbalk",
                         closeEventListText: "Sluit de event lijst"
+                    },
+                    ina: {
+                        days: ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"],
+                        daysShort: ["Min", "Sen", "Sel", "Rab", "Kam", "Jumat", "Sab"],
+                        daysMin: ["Mi", "S", "Se", "Ra", "Ka", "Ju", "Sa"],
+                        months: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+                        monthsShort: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+                        noEventForToday: "Tidak Ada acara hari ini :)",
+                        noEventForThisDay: "Tidak ada acara dihari ini :)",
+                        previousYearText: "Tahun Sebelumnya",
+                        nextYearText: "Tahun Depan",
+                        closeSidebarText: "Tutup Sidebar",
+                        closeEventListText: "Tutup List Acara"
                     }
                 }
             }

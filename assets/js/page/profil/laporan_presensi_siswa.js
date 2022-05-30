@@ -1,3 +1,5 @@
 $(document).ready(function() {
-    $('#calendar').evoCalendar();
+    $('#calendar').evoCalendar({
+        'language': 'ina'
+    });
 })
