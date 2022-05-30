@@ -16,33 +16,6 @@
                                         </div>
                                     </div>
 
-<<<<<<< Updated upstream
-      <!-- Header -->
-      <header class="header tugas-ujian position-fixed" style="background-color: #EC3528;">
-          <div class="row">
-              <div class="col-auto">
-                  <a href="<?= base_url('home'); ?>" target="_self" class="btn btn-44">
-                      <i class="fa-solid fa-chevron-left text-white"></i>
-                  </a>
-              </div>
-              <div class="col d-flex justify-content-center align-items-center text-center">
-                  <h6 class="text-white"><?= $judul_halaman; ?></h6>
-              </div>
-              <div class="col-auto">
-                  <a href="#" target="_self" class="btn btn-44 rounded-circle"></a>
-              </div>
-          </div>
-          <div class="d-flex justify-content-center">
-              <div class="tablinknya-tugas-ujian">
-                  <div class="col-12 align-self-center tab-wali" style="display: flex; justify-content:center; align-items:center;">
-                      <button id="defaultOpen" class="tablinks-wali" onclick="openCity(event, 'Tugas')" style=" width: 100%; height: 100%; padding: 10px;">Tugas</button>
-                      <button class="tablinks-wali" onclick="openCity(event, 'Ujian'),materi(event,'mapel')" style="width: 100%; height: 100%; padding: 10px;">Ujian</button>
-                  </div>
-              </div>
-          </div>
-      </header>
-      <!-- Header ends -->
-=======
                                     <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
                                         <p class="mb-0 size-10 fw-normal text-secondary">Nama Sekolah</p>
                                         <p class="mb-0 size-12 fw-medium"><?= $result->detail->sekolah; ?></p>
@@ -92,7 +65,6 @@
                             </div>
                         </div>
                     </div>
->>>>>>> Stashed changes
 
                     <div class="row mb-2">
                         <div class="col">
