@@ -555,7 +555,7 @@
                 <div class="mb-3">
                     <label class="form-label title-3">Keterangan Ujian</label>
                     <select class="form-select form-select form-select-pribadi border-0" id="status_ujian">
-                        <option value="all">Semua</option>
+                        <option value="all">Pilih keterangan</option>
                         <option value="lulus">Lulus</option>
                         <option value="belum_lulus">Belum Lulus</option>
                     </select>
@@ -582,7 +582,7 @@
                 <div class="mb-3">
                     <label class="form-label title-3">Keterangan Ujian</label>
                     <select class="form-select form-select form-select-pribadi border-0">
-                        <option>Semua</option>
+                        <option>Pilih keterangan tugas</option>
                         <option value="1">Lulus</option>
                         <option value="2">Belum Lulus</option>
                     </select>
