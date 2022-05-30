@@ -1,4 +1,4 @@
-<?php if (!isset($config_hidden) && $config_hidden['footer'] != true) : ?>
+<?php if (!isset($config_hidden) || $config_hidden['footer'] != true) : ?>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">

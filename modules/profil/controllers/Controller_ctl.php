@@ -66,6 +66,12 @@ class Controller_ctl extends MY_Frontend
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
 
+		// LOAD CONFIG PAGE 
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['button_back'] = base_url('profil');
+		$this->data['judul_halaman'] = 'Ubah Profil';
+		$this->data['right_button']['profil'] = true;
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('ubah_profil', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -82,6 +88,11 @@ class Controller_ctl extends MY_Frontend
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/ubahpassword.js"></script>';
 
+		// LOAD CONFIG HALAMAN
+		$this->data['judul_halaman'] = 'Ubah Kata Sandi';
+		$this->data['button_back'] = base_url('profil');
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['right_button']['ubah_password'] = true;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('ubah_password', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -95,6 +106,10 @@ class Controller_ctl extends MY_Frontend
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/laporan_presensi_siswa.js"></script>';
 
+
+		// LOAD CONFIG PAGE
+		$this->data['judul_halaman'] = 'Laporan Presensi Siswa';
+		$this->data['button_back'] = base_url('profil');
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('laporan_presensi', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

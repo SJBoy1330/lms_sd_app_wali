@@ -66,11 +66,31 @@ function curlGet($url, $fields = array())
 function response_parser($response)
 {
     $res = json_decode($response);
+    if (isset($res->error)) {
+        $error = $res->error;
+    } else {
+        $error = NULL;
+    }
+    if (isset($res->message)) {
+        $message = $res->message;
+    } else {
+        $message = NULL;
+    }
+    if (isset($res->status)) {
+        $status = $res->status;
+    } else {
+        $status = NULL;
+    }
+    if (isset($res->data)) {
+        $data = $res->data;
+    } else {
+        $data = NULL;
+    }
     return [
-        $res->error,
-        $res->message,
-        $res->status,
-        $res->data,
+        $error,
+        $message,
+        $status,
+        $data,
     ];
 }
 

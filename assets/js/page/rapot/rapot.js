@@ -1,19 +1,19 @@
-function materi(evt, page) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent-ujian");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    document.getElementById(page).style.display = "block";
+// function materi(evt, page) {
+//     var i, tabcontent, tablinks;
+//     tabcontent = document.getElementsByClassName("tabcontent-ujian");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//     }
+//     document.getElementById(page).style.display = "block";
 
-}
+// }
 
-function filter_rapot(property) {
-    const prop_display = document.querySelectorAll("#display_ujian_detail .zoom-filter");
+function filter_rapot() {
+    var id = $('#id_pelajaran_display').val();
+    const prop_display = document.querySelectorAll("#display_ujian_detail_" + id + " .zoom-filter");
     var status = $('#status_ujian').val();
-    var modal = new bootstrap.Modal(document.getElementById('filterUjian'))
-    modal.hide()
-    // console.log(status);
+
+    $('#filterUjian').modal('hide');
     prop_display.forEach((div) => {
         let attr_prop_display = div.getAttribute("data-status"); //getting image data-name value
         //if user selected item data-name value is equal to images data-name value
@@ -27,3 +27,16 @@ function filter_rapot(property) {
         }
     });
 }
+
+$(document).ready(function () {
+    $('.button_filter').on('click', function () {
+        var id = $(this).data('id');
+        $('#id_pelajaran_display').val(id);
+    })
+
+
+    $('.button_detail_ujian').on('click', function () {
+        var id = $(this).data('id');
+        console.log(id);
+    });
+});

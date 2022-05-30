@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Controller_ctl extends MY_Welcome
+class Controller_ctl extends MY_Frontend
 {
 	public function __construct()
 	{
@@ -43,6 +43,12 @@ class Controller_ctl extends MY_Welcome
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/rapot/tablink-wali.js"></script>';
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/rapot/rapot.js"></script>';
 
+		// LOAD CONFIG PAGE
+		$this->data['khusus']['rapot'] = true;
+		$this->data['button_back'] = base_url('home');
+		$this->data['config_hidden']['footer'] = true;
+		$this->data['config_hidden']['notifikasi'] = true;
+		$this->data['text']['white'] = true;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
