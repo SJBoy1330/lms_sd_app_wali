@@ -137,14 +137,14 @@
                                   <div class="row bg-white" style="width: 100vw;">
                                       <div class="col-12">
                                           <div class="input-group">
-                                              <input type="text" class="form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
+                                              <input type="text" onkeyup="search(this, '#display_ujian', 'a')" class=" form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
                                               <button class="input-group-text searhing" id="basic-addon2" style="background-color:#EC3528;"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
                                           </div>
                                       </div>
                                   </div>
                               </div>
                           <?php endif; ?>
-                          <div class="page-scroll-full pt-5">
+                          <div class="page-scroll-full pt-5" id="display_ujian">
                               <?php if (isset($result->ujian) && $result->ujian != NULL) : ?>
                                   <?php foreach ($result->ujian as $ujian) : ?>
                                       <a data-bs-toggle="offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-<?= $ujian->id_pelajaran; ?>" aria-controls="offcanvasRight" class="card my-4">
@@ -158,7 +158,7 @@
                                                       </div>
                                                   </div>
                                                   <div class="col align-self-center ps-0">
-                                                      <p class="mb-0 size-15 fw-medium"><?= $ujian->nama_pelajaran; ?></p>
+                                                      <p class="mb-0 size-15 fw-medium search_target"><?= $ujian->nama_pelajaran; ?></p>
                                                   </div>
                                                   <div class="col-auto align-self-center pe-3">
                                                       <i class="fa-regular fa-chevron-right"></i>
@@ -166,17 +166,18 @@
                                               </div>
                                           </div>
                                       </a>
+
                                       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight-<?= $ujian->id_pelajaran; ?>" aria-labelledby="offcanvasRightLabel">
                                           <div class="offcanvas-header">
-                                              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Daftar Ujian</h5>
+                                              <h5 class="offcanvas-title" id="offcanvasExampleLabel-<?= $ujian->id_pelajaran ?>">Daftar Ujian</h5>
                                               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                           </div>
                                           <div class="offcanvas-body">
                                               <div class="row bg-white" style="width: 100vw;">
                                                   <div class="col-10">
                                                       <div class="input-group">
-                                                          <input type="text" class="form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
-                                                          <button class="input-group-text searhing" id="basic-addon2" style="background-color:#EC3528;;"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
+                                                          <input onkeyup="search(this, '#display_ujian_detail', 'a')" type="text" class="form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="search-ujian-<?= $ujian->id_pelajaran; ?>">
+                                                          <button class="input-group-text searhing" id="search-ujian-<?= $ujian->id_pelajaran; ?>" style="background-color:#EC3528;;"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
                                                       </div>
                                                   </div>
                                                   <div class="col-2 d-flex justify-content-center align-items-center ps-0">
@@ -185,50 +186,55 @@
                                                       </button>
                                                   </div>
                                               </div>
-
-                                              <a data-bs-toggle="modal" href="#detailUjianModal" role="button" class="card my-4">
-                                                  <div class="card-body">
-                                                      <div class="row">
-                                                          <div class="col-auto">
-                                                              <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                                                  <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                                                      <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
+                                              <div id="display_ujian_detail">
+                                                  <?php foreach ($ujian->result as $row) : ?>
+                                                      <a data-bs-toggle="modal" data-status="<?php
+                                                                                                if ($row->nilai < $row->kkm) {
+                                                                                                    echo 'belum_lulus';
+                                                                                                } else {
+                                                                                                    echo 'lulus';
+                                                                                                }
+                                                                                                ?>" data-id="<?= $row->id_ujian; ?>" href="#detailUjianModal" role="button" class="card my-4 zoom-filter">
+                                                          <div class="card-body">
+                                                              <div class="row">
+                                                                  <div class="col-auto">
+                                                                      <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
+                                                                          <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
+                                                                              <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                                  <div class="col align-self-center ps-0">
+                                                                      <p class="mb-0 size-13 fw-medium"><?= $row->nama_paket; ?></p>
+                                                                      <p class="mb-0 size-14 fw-normal 
+                                                                  <?php
+                                                                    if ($row->nilai < $row->kkm) {
+                                                                        echo 'text-danger';
+                                                                    } else {
+                                                                        echo 'text-success';
+                                                                    }
+                                                                    ?>">
+                                                                          <?php
+                                                                            if ($row->nilai < $row->kkm) {
+                                                                                echo 'Tidak lulus';
+                                                                            } else {
+                                                                                echo 'Lulus';
+                                                                            }
+                                                                            ?>
+                                                                      </p>
+                                                                  </div>
+                                                                  <div class="col-auto align-self-center pe-3">
+                                                                      <i class="fa-regular fa-chevron-right"></i>
                                                                   </div>
                                                               </div>
                                                           </div>
-                                                          <div class="col align-self-center ps-0">
-                                                              <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                                              <p class="mb-0 size-14 fw-normal text-success">Tuntas</p>
-                                                          </div>
-                                                          <div class="col-auto align-self-center pe-3">
-                                                              <i class="fa-regular fa-chevron-right"></i>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </a>
+                                                      </a>
+                                                  <?php endforeach; ?>
+                                              </div>
 
-                                              <a data-bs-toggle="modal" href="#detailUjianModal" role="button" class="card my-4">
-                                                  <div class="card-body">
-                                                      <div class="row">
-                                                          <div class="col-auto">
-                                                              <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                                                  <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                                                      <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <div class="col align-self-center ps-0">
-                                                              <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                                              <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p>
-                                                          </div>
-                                                          <div class="col-auto align-self-center pe-3">
-                                                              <i class="fa-regular fa-chevron-right"></i>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </a>
                                           </div>
                                       </div>
+
                                   <?php endforeach; ?>
                               <?php else : ?>
                                   <?= vector_default("vector_ujian_kosong.svg", "Tidak ada data ujian", "Sekolah belum menyediakan ujian atau siswa belum mengikuti ujian satupun, Hubungi pihak sekolah jika terjadi kesalahan data!"); ?>
@@ -577,15 +583,15 @@
               <div class="modal-body">
                   <div class="mb-3">
                       <label class="form-label title-3">Keterangan Ujian</label>
-                      <select class="form-select form-select form-select-pribadi border-0">
-                          <option selected>Pilih keterangan</option>
-                          <option value="1">Tuntas</option>
-                          <option value="2">Belum Tuntas</option>
+                      <select class="form-select form-select form-select-pribadi border-0" id="status_ujian">
+                          <option value="all">Semua</option>
+                          <option value="lulus">Lulus</option>
+                          <option value="belum_lulus">Belum Lulus</option>
                       </select>
                   </div>
               </div>
               <div class="modal-footer border-0">
-                  <a href="#" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</a>
+                  <button type="button" onclick="filter_rapot(this)" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</button>
               </div>
           </div>
       </div>

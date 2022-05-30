@@ -11,6 +11,28 @@
   background-position: center;
 }
 
+.zoom-filter {
+  transition: all 0.3s ease;
+}
+
+.zoom-filter.showing {
+  animation: animate 0.4s ease;
+}
+
+.zoom-filter.hiding {
+  display: none;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .avatar.anak-wali {
   background-repeat: no-repeat;
   background-size: cover;
