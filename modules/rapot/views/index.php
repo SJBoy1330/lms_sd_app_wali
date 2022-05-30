@@ -241,7 +241,7 @@
                                 </div>
                             </div>
                             <div class="col-2 d-flex justify-content-center align-items-center ps-0">
-                                <button class="btn btn-secondary filter-tugas border-0" data-bs-toggle="modal" data-bs-target="#filterUjian">
+                                <button class="btn btn-secondary filter-tugas border-0" data-bs-toggle="modal" data-bs-target="#filterKeteranganTugas">
                                     <i class="fa-regular fa-filter" style="color: #EC3528;"></i>
                                 </button>
                             </div>
@@ -564,6 +564,32 @@
             <div class="modal-footer border-0">
                 <input type="hidden" id="id_pelajaran_display">
                 <button type="button" onclick="filter_rapot()" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Filter Keterangan Tugas -->
+<div class="modal fade" id="filterKeteranganTugas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="box-shadow: 100px 0px 100px 100px rgb(0 0 0 / 10%)">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="exampleModalLabel">Keterangan Tugas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label title-3">Keterangan Ujian</label>
+                    <select class="form-select form-select form-select-pribadi border-0">
+                        <option>Semua</option>
+                        <option value="1">Lulus</option>
+                        <option value="2">Belum Lulus</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</button>
             </div>
         </div>
     </div>
