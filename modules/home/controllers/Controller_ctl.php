@@ -85,6 +85,9 @@ class Controller_ctl extends MY_Frontend
 		);
 		$mydata['data_pengumuman'] = $data_pengumuman;
 
+		// LOAD CONFIG PAGE
+		$this->data['judul_halaman'] = 'Pengumuman';
+		$this->data['button_back'] = base_url('home');
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_pengumuman', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -112,6 +115,13 @@ class Controller_ctl extends MY_Frontend
 		);
 		$mydata['pengumuman'] = $data_pengumuman;
 
+		// LOAD CONFIG PAGE
+		$this->data['judul_halaman'] = 'Detail Pengumuman';
+		if ($this->input->get('redirect') == true) {
+			$this->data['button_back'] = base_url('home');
+		} else {
+			$this->data['button_back'] = base_url('home/list_pengumuman');
+		}
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_pengumuman', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -151,6 +161,9 @@ class Controller_ctl extends MY_Frontend
 		]);
 		$mydata['data_kategori'] = $data_kategori;
 
+		// LOAD CONFIG PAGE
+		$this->data['button_back'] = base_url('home');
+		$this->data['judul_halaman'] = 'Berita';
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_berita', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -172,7 +185,13 @@ class Controller_ctl extends MY_Frontend
 			'id_konten' => $id
 		]);
 		$mydata['berita'] = $data_berita;
-
+		// LOAD CONFIG PAGE
+		$this->data['judul_halaman'] = 'Detail Berita';
+		if ($this->input->get('redirect') == true) {
+			$this->data['button_back'] = base_url('home');
+		} else {
+			$this->data['button_back'] = base_url('home/list_berita');
+		}
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_berita', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

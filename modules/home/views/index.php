@@ -81,7 +81,7 @@
         <div class="row">
             <?php foreach ($data_pengumuman as $pengumuman) : ?>
                 <div class="col-12 col-md-6 col-lg-4">
-                    <a href="<?= base_url('home/detail_pengumuman/') . $pengumuman->id_pengumuman ?>" class="card mb-3">
+                    <a href="<?= base_url('home/detail_pengumuman/') . $pengumuman->id_pengumuman . '?redirect=true' ?>" class="card mb-3">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto">
@@ -116,7 +116,7 @@
                 <div class="swiper-container cardswiper cardswiper-berita">
                     <div class="swiper-wrapper">
                         <?php foreach ($data_berita as $b) : ?>
-                            <a href="<?= base_url('home/detail_berita/' . $b->id_konten); ?>" class="swiper-slide">
+                            <a href="<?= base_url('home/detail_berita/' . $b->id_konten . '?redirect=true'); ?>" class="swiper-slide">
                                 <div class="card theme-bg shadow-sm card-berita" style="background-image: url('<?= $b->gambar; ?>');" loading="lazy">
                                     <div class="card-body">
                                         <div class="row">
