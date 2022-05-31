@@ -160,6 +160,17 @@ button.btn-filter {
   color: #00DFA3;
 }
 
+.nilai-tugas-merah {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  height: 45px;
+  width: 45px;
+  border: 1px solid #f73563;
+  color: #f73563;
+}
+
 .wrapper-samaran {
   background-color: #FFFFFF;
   height: 85px;

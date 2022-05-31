@@ -28,6 +28,24 @@ function filter_rapot() {
     });
 }
 
+
+function filter_tugas() {
+    const prop_display = document.querySelectorAll("#loop_tugas .zoom-filter");
+    var status = $('#select_status_tugas').val();
+
+    $('#filterKeteranganTugas').modal('hide');
+    prop_display.forEach((div) => {
+        let attr_prop_display = div.getAttribute("data-katgas");
+        if ((attr_prop_display == status) || (status == "all")) {
+            div.classList.remove("hiding");
+            div.classList.add("showing");
+        } else {
+            div.classList.add("hiding");
+            div.classList.remove("showing");
+        }
+    });
+}
+
 $(document).ready(function () {
     $('.button_filter').on('click', function () {
         var id = $(this).data('id');
@@ -37,6 +55,34 @@ $(document).ready(function () {
 
     $('.button_detail_ujian').on('click', function () {
         var id = $(this).data('id');
-        console.log(id);
+        $.ajax({
+            url: BASE_URL + "func_rapot/modal_ujian",
+            data: { id_ujian: id },
+            method: 'POST',
+            cache: false,
+            success: function (msg) {
+                $('#display_detail_ujian').html(msg);
+                // console.log(msg);
+            }
+        })
+    });
+
+
+
+    $('.button_daftar_tugas').on('click', function () {
+        var id_pelajaran = $(this).data('pelajaran');
+        var id_kelas = $(this).data('kelas');
+        var id_siswa = $('#access_siswa').val();
+
+        $.ajax({
+            url: BASE_URL + "func_rapot/modal_tugas",
+            data: { id_pelajaran: id_pelajaran, id_kelas: id_kelas, id_siswa: id_siswa },
+            method: 'POST',
+            cache: false,
+            success: function (msg) {
+                $('#display_daftar_tugas').html(msg);
+                // console.log(msg);
+            }
+        })
     });
 });

@@ -30,6 +30,7 @@ class Controller_ctl extends MY_Frontend
 				"id_wali" => $id_wali
 			]
 		);
+		$mydata['id_siswa'] = $id_siswa;
 		$mydata['result'] = $data;
 
 		// LOAD TITLE
@@ -52,10 +53,5 @@ class Controller_ctl extends MY_Frontend
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
-	}
-
-	public function detail_tugas($idtugas)
-	{
-		echo $idtugas;
 	}
 }

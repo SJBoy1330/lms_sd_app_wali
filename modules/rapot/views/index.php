@@ -1,5 +1,6 @@
 <!-- main page content -->
 <div class="main-container container">
+    <input type="hidden" id="access_siswa" value="<?= $id_siswa; ?>">
     <div class="row mb-2">
         <div class="col-12 col-md-12 col-lg-12" style="margin-top: 60px;">
             <div class="card shadow-none bg-transparent">
@@ -73,7 +74,7 @@
                     </div>
                     <?php if (isset($result->tugas) && $result->tugas != NULL) : ?>
                         <?php foreach ($result->tugas as $tugas) : ?>
-                            <a data-bs-toggle="modal" href="#modalDetailTugas" role="button" class="card mb-4">
+                            <a data-bs-toggle="modal" data-pelajaran="<?= $tugas->id_pelajaran; ?>" data-kelas="<?= $tugas->id_kelas; ?>" href="#modalDetailTugas" role="button" class="card mb-4 button_daftar_tugas">
                                 <div class="card-body">
                                     <div class="row mb-3">
                                         <div class="col-auto">
@@ -85,7 +86,7 @@
                                         </div>
                                         <div class="col align-self-center ps-0">
                                             <p class="mb-0 size-14 fw-normal text-secondary">Mata Pelajaran</p>
-                                            <p class="mb-0 size-16 fw-medium"><?= $tugas->nama_pelajaran; ?></p>
+                                            <p class="mb-0 size-16 fw-medium"><?= nice_title($tugas->nama_pelajaran, 50); ?></p>
                                             <?php if ($tugas->persentase != 0) : ?>
                                                 <div class="progress mt-1 rounded-10" style="height:20px;">
                                                     <div class="progress-bar bg-danger" role="progressbar" style="width :<?= $tugas->persentase; ?>% ;" aria-valuemin="0" aria-valuemax="100"><?= $tugas->persentase . '%' ?></div>
@@ -129,7 +130,7 @@
                                                 </div>
                                             </div>
                                             <div class="col align-self-center ps-0">
-                                                <p class="mb-0 size-15 fw-medium search_target"><?= $ujian->nama_pelajaran; ?></p>
+                                                <p class="mb-0 size-15 fw-medium search_target"><?= nice_title($ujian->nama_pelajaran, 50); ?></p>
                                             </div>
                                             <div class="col-auto align-self-center pe-3">
                                                 <i class="fa-regular fa-chevron-right"></i>
@@ -159,13 +160,13 @@
                                         </div>
                                         <div id="display_ujian_detail_<?= $ujian->id_pelajaran ?>">
                                             <?php foreach ($ujian->result as $row) : ?>
-                                                <a data-bs-toggle="modal" data-status="<?php
-                                                                                        if ($row->nilai < $row->kkm) {
-                                                                                            echo 'belum_lulus';
-                                                                                        } else {
-                                                                                            echo 'lulus';
-                                                                                        }
-                                                                                        ?>" data-id="<?= $row->id_ujian; ?>" href="#detailUjianModal" role="button" class="card my-4 zoom-filter button_detail_ujian">
+                                                <a data-bs-toggle="modal" data-id="<?= $row->id_ujian ?>" data-status="<?php
+                                                                                                                        if ($row->nilai < $row->kkm) {
+                                                                                                                            echo 'belum_lulus';
+                                                                                                                        } else {
+                                                                                                                            echo 'lulus';
+                                                                                                                        }
+                                                                                                                        ?>" data-id="<?= $row->id_ujian; ?>" href="#detailUjianModal" role="button" class="card my-4 zoom-filter button_detail_ujian">
                                                     <div class="card-body">
                                                         <div class="row">
                                                             <div class="col-auto">
@@ -176,7 +177,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col align-self-center ps-0">
-                                                                <p class="mb-0 size-13 fw-medium"><?= $row->nama_paket; ?></p>
+                                                                <p class="mb-0 size-13 fw-medium"><?= nice_title($row->nama_paket, 30); ?></p>
                                                                 <p class="mb-0 size-14 fw-normal 
                                                                   <?php
                                                                     if ($row->nilai < $row->kkm) {
@@ -222,14 +223,14 @@
 <!-- Page ends-->
 
 <!-- Modal Detail Tugas -->
-<div class="modal fade" id="modalDetailTugas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalDetailTugas" tabindex="-1" aria-labelledby="daftar_tugas_siswa" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen modal-dialog-centered">
         <div class="modal-content detail-tugas-ujian">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tugas Siswa</h5>
+                <h5 class="modal-title" id="daftar_tugas_siswa">Daftar Tugas</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="display_daftar_tugas">
                 <div class="row bg-white" style="position: fixed; z-index: 1;">
                     <div class="wrapper-searching-tugas mb-3">
                         <div class="wrapper-samaran"></div>
@@ -248,296 +249,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="page-scroll pt-5">
-                    <div class="card my-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                            <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-success">Tuntas</p>
-                                </div>
-                                <div class="col-auto align-self-center">
-                                    <div class="nilai-tugas">
-                                        <p>150</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                            <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                            <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                            <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                            <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card my-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                            <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-success">Tuntas</p>
-                                </div>
-                                <div class="col-auto align-self-center">
-                                    <div class="nilai-tugas">
-                                        <p>150</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                            <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                            <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                            <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-danger">Belum Tuntas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                        <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
-                                            <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-13 fw-medium">Mengerjakan Soal Aljabar</p>
-                                    <p class="mb-0 size-14 fw-normal text-warning">Terlambat</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
             </div>
         </div>
     </div>
 </div>
 
 <!-- Filter Detail Ujian Modal -->
-<div class="modal fade" id="detailUjianModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="detailUjianModal" tabindex="-1" aria-labelledby="detail_ujian" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="box-shadow: 100px 0px 100px 100px rgb(0 0 0 / 10%)">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Detail Ujian</h5>
+                <h5 class="modal-title" id="detail_ujian">Detail Ujian</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <div class="row mb-3">
-                    <div class="col-6 ps-1 pe-1">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto pe-2 ps-2">
-                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-brands fa-stack-overflow size-18 text-white"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col align-self-center ps-0 pe-1">
-                                        <p class="mb-0 size-12 fw-medium">Mata Pelajaran</p>
-                                        <p class="mb-0 size-10 fw-normal text-secondary">Bahasa Indonesia...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="modal-body" id="display_detail_ujian">
 
-                    <div class="col-6 ps-1">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto pe-2 ps-2">
-                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-hourglass-clock size-16 text-white"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col align-self-center ps-0 pe-1">
-                                        <p class="mb-0 size-12 fw-medium">Tanggal</p>
-                                        <p class="mb-0 size-10 fw-normal text-secondary">30 Maret 2022</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6 ps-1 pe-1">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto pe-2 ps2">
-                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-memo mt-0 size-16 text-white"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col align-self-center ps-0 pe-1">
-                                        <p class="mb-0 size-12 fw-medium">Nama Paket</p>
-                                        <p class="mb-0 size-10 fw-normal text-secondary">Tugas Bahasa Indonesia</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 ps-1">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto pe-2 ps-2">
-                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-book-open-cover mt-0 size-16 text-white"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col align-self-center ps-0 pe-1">
-                                        <p class="mb-0 size-12 fw-medium">Status Ujian</p>
-                                        <p class="mb-0 size-10 fw-normal text-success">Tuntas</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -553,9 +279,9 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label class="form-label title-3">Keterangan Ujian</label>
+                    <label class="form-label title-3">Status Ujian</label>
                     <select class="form-select form-select form-select-pribadi border-0" id="status_ujian">
-                        <option value="all">Pilih keterangan</option>
+                        <option value="all">Semua</option>
                         <option value="lulus">Lulus</option>
                         <option value="belum_lulus">Belum Lulus</option>
                     </select>
@@ -580,16 +306,18 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label class="form-label title-3">Keterangan Ujian</label>
-                    <select class="form-select form-select form-select-pribadi border-0">
-                        <option>Pilih keterangan tugas</option>
-                        <option value="1">Lulus</option>
-                        <option value="2">Belum Lulus</option>
+                    <label class="form-label title-3">Status tugas</label>
+                    <select class="form-select form-select form-select-pribadi border-0" id="select_status_tugas">
+                        <option value="all">Semua</option>
+                        <option value="selesai">Selesai</option>
+                        <option value="belum_dikerjakan">Belum dikerjakan</option>
+                        <option value="koreksi">Menunggu Koreksi</option>
+                        <option value="ditolak">Ditolak</option>
                     </select>
                 </div>
             </div>
             <div class="modal-footer border-0">
-                <button type="button" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</button>
+                <button type="button" onclick="filter_tugas()" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</button>
             </div>
         </div>
     </div>
