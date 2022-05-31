@@ -8,25 +8,29 @@
             </div>
         </div> -->
     <div class="row">
-        <?php foreach ($data_pengumuman as $p) : ?>
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="<?= base_url("home/detail_pengumuman/{$p->id_pengumuman}"); ?>" class="card mb-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-auto">
-                                <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
-                                    <img src="<?= $p->gambar; ?>" alt="">
+        <?php if (isset($data_pengumuman) && $data_pengumuman != NULL) : ?>
+            <?php foreach ($data_pengumuman as $p) : ?>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <a href="<?= base_url("home/detail_pengumuman/{$p->id_pengumuman}"); ?>" class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
+                                        <img src="<?= $p->gambar; ?>" alt="">
+                                    </div>
+                                </div>
+                                <div class="col align-self-center ps-0">
+                                    <p class="mb-1 size-13 fw-normal"><?= $p->judul ?></p>
+                                    <p class="fw-normal text-secondary size-12"><?= nice_time($p->tanggal_mulai) ?></p>
                                 </div>
                             </div>
-                            <div class="col align-self-center ps-0">
-                                <p class="mb-1 size-13 fw-normal"><?= $p->judul ?></p>
-                                <p class="fw-normal text-secondary size-12"><?= nice_time($p->tanggal_mulai) ?></p>
-                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-        <?php endforeach; ?>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        <?php else : ?>
+            <?= vector_default("vector_pengumuman_berita_kosong.svg", "Pengumuman tidak tersedia!", "Sekolah belum memberikan pengumuman apa pun untuk wali maupun perserta didik"); ?>
+        <?php endif; ?>
 
         <div class="col-12 col-md-6 col-lg-4">
             <div class="row d-flex justify-content-center align-items-center">

@@ -1,161 +1,74 @@
-<main class="h-100">
-
-<header class="header position-fixed">
-    <div class="row">
-        <div class="col-auto">
-            <a href="<?= base_url('home')?>" target="_self" class="btn btn-44">
-                <i class="fa-solid fa-chevron-left"></i>
-            </a>
-        </div>
-        <div class="col d-flex justify-content-center align-items-center text-center">
-            <h6>Surat Ijin</h6>
-        </div>
-        <div class="col-auto">
-            <a  class="btn btn-44"></a>
-        </div>
-    </div>
-</header>
-
 <!-- main page content -->
 <div class="main-container container">
-    <div class="row">
+    <div class="row mb-3">
         <a data-bs-toggle="modal" data-bs-target="#tambahSuratIjin" class="avatar avatar-60 shadow-lg rounded-circle avatar-presensi-solid avatar-kontak position-fixed">
             <i class="fa-solid fa-plus-large size-26 text-white mt-1"></i>
         </a>
-        <div class="col-12 px-0">
-            <!-- swiper categories -->
-            <div class="swiper-container connectionwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="tag border active">
-                            <span class="text-uppercase">Saka</span>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="tag border ">
-                            <span class="text-uppercase">Aljen</span>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="tag border ">
-                            <span class="text-uppercase">Nabila</span>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="tag border ">
-                            <span class="text-uppercase">Nanda</span>
-                        </div>
+        <?php if (count($result->siswa) > 1) : ?>
+            <div class="col-12 px-0">
+                <!-- swiper categories -->
+                <div class="swiper-container connectionwiper">
+                    <div class="swiper-wrapper">
+                        <?php foreach ($result->siswa as $siswa) : ?>
+                            <a href="<?= base_url('surat/index/' . $siswa->id_siswa); ?>" class="swiper-slide">
+                                <div class="tag border <?php if ($siswa->id_siswa == $id_siswa) {
+                                                            echo 'active';
+                                                        } ?>">
+                                    <span class="text-uppercase"><?= $siswa->nama; ?></span>
+                                </div>
+                            </a>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php endif; ?>
     </div>
     <div class="row">
         <div class="col-12">
-            <a class="row mb-3">
-                <a data-bs-toggle="modal" data-bs-target="#detailSuratIjin">
-                    <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
-                        <span class="size-14 fw-bold">Surat Keterangan Ijin</span>
-                        <div class="row py-1 px-2 mt-2 mb-2 ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-graduation-cap size-15 text-white"></i>
+            <?php if ($result->surat) : ?>
+                <?php foreach ($result->surat as $surat) : ?>
+                    <div class="row mb-3">
+                        <a class="detail_surat" data-bs-toggle="modal" data-id="<?= $surat->id_surat_ijin; ?>" data-bs-target="#detailSuratIjin">
+                            <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
+                                <span class="size-14 fw-bold">Surat Keterangan <?php if ($surat->tipe == 1) {
+                                                                                    echo 'ijin';
+                                                                                } else {
+                                                                                    echo 'sakit';
+                                                                                } ?></span>
+                                <p class="mb-0 fw-normal size-13 text-secondary"><?= nice_time($surat->tanggal); ?></p>
+                                <div class="row py-1 px-2 mt-2 mb-2 ">
+                                    <div class="d-flex col-auto align-items-center ps-0 pe-2">
+                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-graduation-cap size-15 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col align-self-center p-0 d-flex align-items-start flex-column">
+                                        <p class="mb-0 fw-normal size-13 text-secondary">Nama Siswa/Siswi</p>
+                                        <p class="mb-0 fw-bold size-15"><?= $surat->nama; ?></p>
+                                    </div>
+                                </div>
+                                <div class="row py-1 px-2">
+                                    <div class="d-flex col-auto align-items-center ps-0 pe-2">
+                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-building-user size-15 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col align-self-center p-0 d-flex align-items-start flex-column">
+                                        <p class="mb-0 fw-normal size-13 text-secondary">Kelas</p>
+                                        <p class="mb-0 fw-bold size-15"><?= ifnull($surat->nama_kelas, ' - '); ?></p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-normal size-13 text-secondary">Nama Siswa/Siswi</p>
-                                <p class="mb-0 fw-bold size-15">Saka Dana Asmara</p>
-                            </div>
-                        </div>
-                        <div class="row py-1 px-2">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-building-user size-15 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-normal size-13 text-secondary">Kelas</p>
-                                <p class="mb-0 fw-bold size-15">XI IPA 1</p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                </a>
-            </a>
-
-            <a class="row mb-3">
-                <a data-bs-toggle="modal" data-bs-target="#detailSuratIjin">
-                    <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
-                        <span class="size-14 fw-bold">Surat Keterangan Ijin</span>
-                        <div class="row py-1 px-2 mt-2 mb-2 ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-graduation-cap size-15 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-normal size-13 text-secondary">Nama Siswa/Siswi</p>
-                                <p class="mb-0 fw-bold size-15">Saka Dana Asmara</p>
-                            </div>
-                        </div>
-                        <div class="row py-1 px-2">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-building-user size-15 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-normal size-13 text-secondary">Kelas</p>
-                                <p class="mb-0 fw-bold size-15">XI IPA 1</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </a>
-
-            <a class="row mb-3">
-                <a data-bs-toggle="modal" data-bs-target="#detailSuratIjin">
-                    <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
-                        <span class="size-14 fw-bold">Surat Keterangan Ijin</span>
-                        <div class="row py-1 px-2 mt-2 mb-2 ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-graduation-cap size-15 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-normal size-13 text-secondary">Nama Siswa/Siswi</p>
-                                <p class="mb-0 fw-bold size-15">Saka Dana Asmara</p>
-                            </div>
-                        </div>
-                        <div class="row py-1 px-2">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-solid fa-building-user size-15 text-white"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-normal size-13 text-secondary">Kelas</p>
-                                <p class="mb-0 fw-bold size-15">XI IPA 1</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </a>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <?= vector_default("vector_surat_ijin_kosong.svg", "Tidak ada surat ijin!", "Siswa anda belum pernah melakukan izin, tambahkan surat ijin jika anda akan  mengizinkan putra/putri anda!"); ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -167,32 +80,10 @@
     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content" style="border-radius: 0px;">
             <div class="modal-header border-0">
-                <h5 class="modal-title" id="detailSuratIjinModal">Detail Surat Ijin</h5>
+                <h5 class="modal-title" id="detailSuratIjinModal">Detail Surat</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <div class="row m-2fix d-flex justify-content-center">
-                    <div class="col-11 p-0">
-                        <figure class="overflow-hidden rounded-15 text-center">
-                            <img src="<?= base_url('assets/img/news1.jpg')?>" alt="" class="w-100 mx-auto">
-                        </figure>
-                    </div>
-                </div>
-                <form class="row g-3 mt-1 mb-4">
-                    <div class="col-12">
-                        <label class="form-label fw-bold size-14">Jenis Surat</label>
-                        <input type="text" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" value="Surat Keterangan Ijin" readonly>
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label fw-bold size-14">Mulai Berlaku</label>
-                        <input type="text" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" value="28 Maret 2022" readonly>
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label fw-bold size-14">Berlaku Sampai</label>
-                        <input type="text" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" value="28 Maret 2022" readonly>
-                    </div>
-                </form>
-            </div>
+            <div id="display_ijin"></div>
         </div>
     </div>
 </div>
@@ -202,7 +93,7 @@
     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content" style="border-radius: 0px;">
             <div class="modal-header border-0">
-                <h5 class="modal-title" id="detailSuratIjinModal">Tambah Surat Izin</h5>
+                <h5 class="modal-title" id="detailSuratIjinModal">Tambah Surat</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

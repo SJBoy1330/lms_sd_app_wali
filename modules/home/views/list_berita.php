@@ -49,7 +49,7 @@
                 </div>
 
             <?php else : ?>
-                <?= vector_default("vector_tugas_kosong.svg", "Berita tidak tersedia!", "Sekolah tidak menyediakan berita untuk anda, Silahkan hubungi pihak sekolah jika terjadi kesalahan!"); ?>
+                <?= vector_default("vector_pengumuman_berita_kosong.svg", "Berita tidak tersedia!", "Sekolah tidak menyediakan berita untuk anda, Silahkan hubungi pihak sekolah jika terjadi kesalahan!"); ?>
             <?php endif; ?>
         </div>
     </div>
