@@ -9,7 +9,7 @@ if (flashdata[0]) {
 		icon: flashdata[0],
 		buttonsStyling: !1,
 		confirmButtonText: 'Ok',
-		customClass: { confirmButton: 'btn btn-lg shadow-sm btn-pribadi' }
+		customClass: { confirmButton: 'btn shadow-sm' }
 	});
 }
 if (flashdata[3]) {
@@ -19,7 +19,7 @@ if (flashdata[3]) {
 		imageUrl: flashdata[3],
 		imageWidth: 100,
 		imageHeight: 100,
-		customClass: { confirmButton: 'btn btn-lg shadow-sm btn-pribadi' }
+		customClass: { confirmButton: 'btn shadow-sm' }
 	})
 }
 $('.confirm_alert').on('click', function (e) {

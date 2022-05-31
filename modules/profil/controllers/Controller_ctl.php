@@ -106,10 +106,13 @@ class Controller_ctl extends MY_Frontend
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/laporan_presensi_siswa.js"></script>';
 
-
 		// LOAD CONFIG PAGE
 		$this->data['judul_halaman'] = 'Laporan Presensi Siswa';
 		$this->data['button_back'] = base_url('profil');
+
+		// HIDDEN ICON NOTIFICATION
+		$this->data['config_hidden']['notifikasi'] = true;
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('laporan_presensi', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -134,6 +137,10 @@ class Controller_ctl extends MY_Frontend
 		$mydata['count_siswa'] = $data_sekolah->jumlah->siswa;
 		$mydata['count_staf'] = $data_sekolah->jumlah->staf;
 
+		// LOAD CONFIG HALAMAN
+		$this->data['button_back'] = base_url('profil');
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+
 		// HIDDEN FOOTER
 		$mydata['config_hidden']['footer'] = true;
 		$mydata['config_hidden']['button_back'] = true;
@@ -156,6 +163,10 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/bantuan.js"></script>';
+
+		// LOAD CONFIG HALAMAN
+		$this->data['button_back'] = base_url('profil');
+		$this->data['config_hidden']['notifikasi'] = TRUE;
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('bantuan', $mydata, TRUE);

@@ -90,7 +90,7 @@
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="mb-1 size-13 fw-normal"><?= $pengumuman->judul ?></p>
+                                    <p class="mb-1 size-15 fw-normal"><?= $pengumuman->judul ?></p>
                                     <p class="fw-normal text-secondary size-12"><?= nice_time($pengumuman->tanggal_mulai) ?></p>
                                 </div>
                             </div>

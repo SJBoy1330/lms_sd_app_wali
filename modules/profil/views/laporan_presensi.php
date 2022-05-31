@@ -1,85 +1,120 @@
-<!-- comment -->
-<div class="row">
-    <div class="col-12">
-        <div id="calendar" class="my-2 mx-1 shadow-sm"></div>
+<div class="main-container container">
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+            <div class="row mb-2 my-2">
+                <div class="col-12 px-0">
+                    <div class="swiper-container connectionwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="tag border active">
+                                    <span class="text-uppercase">Saka</span>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="tag border ">
+                                    <span class="text-uppercase">Aljen</span>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="tag border ">
+                                    <span class="text-uppercase">Nanda</span>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="tag border ">
+                                    <span class="text-uppercase">Nabila</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div id="calendar" class="my-2 rounded-3 shadow-sm"></div>
+        </div>
+
+        <div class="col-12">
+            <a data-bs-toggle="modal" href="#modalPresensiSiswa" class="card mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-auto">
+                            <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
+                                <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
+                                    <i class="fa-solid fa-calendar-range size-26 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col align-self-center ps-0">
+                            <p class="mb-0 size-15 fw-medium">Materi Pelajaran 01</p>
+                            <p class="mb-0 size-13 fw-normal text-danger">Belum Presensi</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a data-bs-toggle="modal" href="#modalPresensiSiswa" class="card mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-auto">
+                            <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
+                                <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
+                                    <i class="fa-solid fa-calendar-range size-26 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col align-self-center ps-0">
+                            <p class="mb-0 size-15 fw-medium">Materi Pelajaran 02</p>
+                            <p class="mb-0 size-13 fw-normal text-success">Sudah Presensi</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a data-bs-toggle="modal" href="#modalPresensiSiswa" class="card mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-auto">
+                            <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
+                                <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
+                                    <i class="fa-solid fa-calendar-range size-26 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col align-self-center ps-0">
+                            <p class="mb-0 size-15 fw-medium">Materi Pelajaran 03</p>
+                            <p class="mb-0 size-13 fw-normal text-danger">Belum Presensi</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a data-bs-toggle="modal" href="#modalPresensiSiswa" class="card mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-auto">
+                            <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
+                                <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
+                                    <i class="fa-solid fa-calendar-range size-26 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col align-self-center ps-0">
+                            <p class="mb-0 size-15 fw-medium">Materi Pelajaran 04</p>
+                            <p class="mb-0 size-13 fw-normal text-success">Sudah Presensi</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
-<div class="col-12">
-    <a data-bs-toggle="modal" href="#modalPresensiSiswa" class="card mb-3">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-auto">
-                    <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
-                        <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
-                            <i class="fa-solid fa-calendar-range size-26 text-white"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col align-self-center ps-0">
-                    <p class="mb-0 size-15 fw-medium">Materi Pelajaran 01</p>
-                    <p class="mb-0 size-13 fw-normal text-danger">Belum Presensi</p>
-                </div>
-            </div>
-        </div>
-    </a>
 
-    <a data-bs-toggle="modal" href="#modalPresensiSiswa" class="card mb-3">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-auto">
-                    <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
-                        <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
-                            <i class="fa-solid fa-calendar-range size-26 text-white"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col align-self-center ps-0">
-                    <p class="mb-0 size-15 fw-medium">Materi Pelajaran 02</p>
-                    <p class="mb-0 size-13 fw-normal text-success">Sudah Presensi</p>
-                </div>
-            </div>
-        </div>
-    </a>
-
-    <a data-bs-toggle="modal" href="#modalPresensiSiswa" class="card mb-3">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-auto">
-                    <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
-                        <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
-                            <i class="fa-solid fa-calendar-range size-26 text-white"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col align-self-center ps-0">
-                    <p class="mb-0 size-15 fw-medium">Materi Pelajaran 03</p>
-                    <p class="mb-0 size-13 fw-normal text-danger">Belum Presensi</p>
-                </div>
-            </div>
-        </div>
-    </a>
-
-    <a data-bs-toggle="modal" href="#modalPresensiSiswa" class="card mb-3">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-auto">
-                    <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
-                        <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
-                            <i class="fa-solid fa-calendar-range size-26 text-white"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col align-self-center ps-0">
-                    <p class="mb-0 size-15 fw-medium">Materi Pelajaran 04</p>
-                    <p class="mb-0 size-13 fw-normal text-success">Sudah Presensi</p>
-                </div>
-            </div>
-        </div>
-    </a>
-</div>
-</div>
-<!-- main page content ends -->
-</main>
 
 <!-- Modal Presensi Siswa -->
 <div class="modal fade" id="modalPresensiSiswa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

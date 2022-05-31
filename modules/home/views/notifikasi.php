@@ -1,4 +1,4 @@
-<main class="h-100">
+<main class="h-100 py-0">
     <!-- Header -->
 <header class="header position-fixed">
     <div class="row">

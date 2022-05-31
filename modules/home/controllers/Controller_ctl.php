@@ -88,6 +88,8 @@ class Controller_ctl extends MY_Frontend
 		// LOAD CONFIG PAGE
 		$this->data['judul_halaman'] = 'Pengumuman';
 		$this->data['button_back'] = base_url('home');
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_pengumuman', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -122,6 +124,12 @@ class Controller_ctl extends MY_Frontend
 		} else {
 			$this->data['button_back'] = base_url('home/list_pengumuman');
 		}
+		
+		// LOAD CONFIG PAGE
+		$this->data['button_back'] = base_url('home/list_pengumuman');
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_pengumuman', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -164,6 +172,8 @@ class Controller_ctl extends MY_Frontend
 		// LOAD CONFIG PAGE
 		$this->data['button_back'] = base_url('home');
 		$this->data['judul_halaman'] = 'Berita';
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_berita', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -192,6 +202,12 @@ class Controller_ctl extends MY_Frontend
 		} else {
 			$this->data['button_back'] = base_url('home/list_berita');
 		}
+		
+		// LOAD CONFIG PAGE
+		$this->data['button_back'] = base_url('home/list_berita');
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_berita', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -201,6 +217,11 @@ class Controller_ctl extends MY_Frontend
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Notifikasi';
+
+		// LOAD CONFIG PAGE
+		$this->data['button_back'] = base_url('home');
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
 
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';

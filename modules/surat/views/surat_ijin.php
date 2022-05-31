@@ -108,7 +108,7 @@
                     </div>
                     <div class="">
                         <label for="formFile" class="form-label title-3">File Surat</label>
-                        <input class="form-control form-control-solid form-control-pribadi file-input border-0" type="file" id="formFile">
+                        <input class="form-control form-control-solid form-control-pribadi file-input border-0" type="file" id="formFile" style="line-height: 40px;">
                         <div class="wrapper-files">
                             <span class="fw-medium">Pilih File</span>
                         </div>

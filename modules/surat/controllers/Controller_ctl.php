@@ -48,6 +48,8 @@ class Controller_ctl extends MY_Frontend
 		$this->data['button_back'] = base_url('home');
 		$this->data['judul_halaman'] = 'Surat Ijin';
 		$this->data['config_hidden']['footer'] = true;
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('surat_ijin', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

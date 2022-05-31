@@ -46,7 +46,7 @@
             <div class="form-group mb-4" id="req_repeat_newpassword">
                 <label for="kata_sandi" class="form-label title-3">Ulangi kata sandi</label>
                 <div class="wrapper-password d-flex">
-                    <input type="password" class="form-control form-control-pribadi text-start" name="repeat_newpassword" id="repeat_newpassword" placeholder="Masukkan kata sandi baru" autocomplete="off">
+                    <input type="password" class="form-control form-control-pribadi text-start" name="repeat-newpassword" id="repeat-newpassword" placeholder="Masukkan kata sandi baru" autocomplete="off">
 
                     <div class="input-group-append show-hide">
 

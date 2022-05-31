@@ -1,15 +1,14 @@
-<div class="modal-body">
+<div class="modal-body bg-white">
     <div class="row m-2fix d-flex justify-content-center">
         <div class="col-11 p-0">
             <?php if (!in_array($extension, ['pdf'])) : ?>
-                <figure class="overflow-hidden rounded-15 text-center">
-                    <img src="<?= $file_surat ?>" alt="" class="w-100 mx-auto">
+                <figure class="overflow-hidden rounded-15 text-center detail-pengumuman" style="background-position: center; background-size: cover; background-image: url('<?= $file_surat ?>');">
                 </figure>
             <?php else : ?>
-                <figure class="overflow-hidden rounded-15 text-center">
-                    <i class="fa-solid fa-file-pdf" style="font-size : 10em;"></i>
+                <figure class="overflow-hidden rounded-15 text-center" style="background-color: #FFE6E6; padding: 40px;">
+                    <i class="fa-solid fa-file-pdf" style="font-size: 7rem;"></i>
                 </figure>
-                <a class="btn btn-block btn-md btn-danger btn-filter" href="<?= $file_surat ?>">DOWNLOAD</a>
+                <a class="btn btn-block btn-md btn-filter" href="<?= $file_surat ?>">DOWNLOAD</a>
             <?php endif; ?>
         </div>
     </div>

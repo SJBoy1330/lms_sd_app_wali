@@ -35,6 +35,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+    <style>
+        h2.swal2-title{
+            font-size: 1.5rem !important;
+        }
+
+        div#swal2-content{
+            font-size: 1rem !important;
+        }
+
+        button.swal2-confirm{
+            background-color: #1AB64F !important;
+            border-color: #1AB64F !important;
+            width: 100px !important;
+            border-radius: 10px !important;
+            color: #FFFFFF !important;
+        }
+    </style>
 </head>
 
 <body class="body-scroll d-flex flex-column h-100" data-page="signin" style="background-image: url(<?= base_url(); ?>assets/images/bg-2.png); background-repeat: no-repeat; background-size: cover; background-position: center;">

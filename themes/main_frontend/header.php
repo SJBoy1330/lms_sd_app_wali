@@ -36,6 +36,24 @@
     <!-- Font Awesome-->
     <script src="https://kit.fontawesome.com/ec75c6c12e.js" crossorigin="anonymous"></script>
 
+    <style>
+        h2.swal2-title{
+            font-size: 1.5rem;
+        }
+
+        div#swal2-content{
+            font-size: 1rem;
+        }
+
+        button.swal2-confirm{
+            background-color: #1AB64F !important;
+            border-color: #1AB64F !important;
+            width: 100px;
+            height 75px;
+            border-radius: 10px;
+        }
+    </style>
+
 </head>
 
 <body class="body-scroll" data-page="index" style="background-image: url(<?= base_url(); ?>assets/images/bg-2.pn); background-repeat: no-repeat; background-size: cover; background-position: center;">
