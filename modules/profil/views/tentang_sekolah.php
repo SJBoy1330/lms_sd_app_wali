@@ -31,25 +31,11 @@
                                 <img src="<?= base_url(); ?>assets/images/tentang_logo_sekolah.svg" alt="" width="175">
                             </div>
                             <div class="col-6 align-self-center ps-2">
-                                <p class="mb-0 fw-bold size-16">Logo Sekolah</p>
+                                <p class="mb-0 fw-bold size-16">Nama Sekolah</p>
                                 <p class="text-secondary size-14"><?= $data_sekolah->nama_sekolah ?></p>
                             </div>
                             <div class="logo-sekolah position-absolute" style="top: 45px; left: 65px; width:50px;">
                                 <img src="<?= base_url(); ?>assets/images/logo-grafika.png" alt="" width="30">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box-fiture">
-                    <div class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
-                        <div class="row p-2">
-                            <div class="col-6 align-self-center ps-3">
-                                <p class="mb-0 fw-bold size-16">Nama Sekolah</p>
-                                <p class="text-secondary size-14"><?= $data_sekolah->nama_sekolah ?></p>
-                            </div>
-                            <div class="col-6 align-self-center p-0">
-                                <img src="<?= base_url(); ?>assets/images/tentang_nama_sekolah.svg" alt="" width="125">
                             </div>
                         </div>
                     </div>

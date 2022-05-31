@@ -96,7 +96,7 @@
                     <div class="col-auto pe-2 ps2">
                         <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                             <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                <i class="fa-solid fa-memo mt-0 size-16 text-white"></i>
+                                <i class="fa-solid fa-clock mt-0 size-18 text-white"></i>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                     <div class="col-auto pe-2 ps-2">
                         <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                             <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                <i class="fa-solid fa-book-open-cover mt-0 size-16 text-white"></i>
+                                <i class="fa-solid fa-bullseye-pointer mt-0 size-18 text-white"></i>
                             </div>
                         </div>
                     </div>
