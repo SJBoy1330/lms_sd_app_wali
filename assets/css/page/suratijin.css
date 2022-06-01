@@ -1,8 +1,8 @@
 input[type="file"] {
     display: block;
-  }
+}
 
-  .wrapper-files{
+.wrapper-files{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +10,45 @@ input[type="file"] {
     position: absolute;
     height: 50px;
     width: 111px;
-    top: 145px;
+    top: 145px !important;
     border-radius: 10px 0px 0px 10px;
+}
+
+button.btn.btn-filter {
+  width: 100%;
+  background-color: #EC3528;
+  border-radius: 8px;
+  color: #FFFFFF;
+  height: 45px;
+  padding-top: 10px;
+}
+
+button.btn.btn-simpan {
+  width: 50%;
+  background-color: #EC3528;
+  border-radius: 8px;
+  color: #FFFFFF;
+  height: 40px;
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+button.btn.btn-batal {
+  width: 50%;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  color: #303030;
+  border-color: #F5F5F5;
+  height: 40px;
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+button.btn.btn-surat{
+  width: 100%;
+  background-color: #FFBD17;
+  border-radius: 8px;
+  color: #303030;
+  height: 45px;
+  padding-top: 10px;
 }

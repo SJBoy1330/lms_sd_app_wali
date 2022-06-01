@@ -127,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer border-0">
                 <button type="button" id="button_tambah_surat" onclick="submit_form(this,'#form_tambah_surat')" class="btn btn-block btn-md btn-danger btn-filter">TAMBAH</button>
             </div>
         </form>

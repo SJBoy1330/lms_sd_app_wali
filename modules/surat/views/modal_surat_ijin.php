@@ -12,7 +12,7 @@
             <?php endif; ?>
         </div>
     </div>
-    <form id="form_edit_surat" method="post" action="<?= base_url('surat/edit'); ?>" enctype="multipart/form-data" class="row g-3 mt-1 mb-4">
+    <form id="form_edit_surat" method="post" action="<?= base_url('surat/edit'); ?>" enctype="multipart/form-data" class="row g-3 mt-1">
         <div id="div_upload_file" class="col-12 d-none">
             <div class="" id="req_surat">
                 <label for="formFile2" class="form-label title-3">File Surat</label>
@@ -46,13 +46,15 @@
             <input type="date" id="berlaku_hingga" name="berlaku_hingga" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" value="<?= $berlaku_sampai; ?>" readonly>
         </div>
 
-        <?php if (strtotime($berlaku_mulai) > strtotime(date('Y-m-d'))) : ?>
-            <button type="button" id="edit_surat_ijin" class=" btn btn-warning">EDIT</button>
-            <div id="display_button_action" class="d-none">
-                <button type="button" onclick="submit_form(this,'#form_edit_surat')" id="simpan_edit_surat_ijin" class=" btn btn-warning">Simpan</button>
-                <button type="button" id="batal_edit_surat_ijin" class=" btn btn-warning">Batal</button>
-            </div>
-        <?php endif; ?>
+        <div class="modal-footer border-0">
+            <?php if (strtotime($berlaku_mulai) > strtotime(date('Y-m-d'))) : ?>
+                <button type="button" id="edit_surat_ijin" class="btn btn-block btn-md btn-warning btn-surat">Edit Surat</button>
+                <div id="display_button_action" class="d-flex d-none">
+                    <button type="button" id="batal_edit_surat_ijin" class="btn btn-block btn-md btn-secondary btn-batal me-2">Batal</button>
+                    <button type="button" onclick="submit_form(this,'#form_edit_surat')" id="simpan_edit_surat_ijin" class="btn btn-block btn-md btn-danger btn-simpan">Simpan</button>
+                </div>
+            <?php endif; ?>
+        </div>
 
     </form>
 </div>
