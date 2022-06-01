@@ -93,12 +93,19 @@
                                 <?php endif; ?>
 
                                 <?php if ($spp->lunas === 'Y' || $spp->status_bayar != 3 && $spp->status_bayar != NULL) : ?>
-                                    <div class="row mt-4 mx-1">
-                                        <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_detail_ajax">Detail Tagihan</a>
-                                    </div>
                                     <?php if ($spp->status_bayar == 1) : ?>
+                                        <!-- Button Menunggu Konfirmasi -->
+                                        <div class="row d-flex mt-4">
+                                            <div class="col-6 pe-1">
+                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white button_bayar_ajax">Edit</button>
+                                            </div>
+                                            <div class="col-6 ps-1">
+                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-sm btn-warning btn-detail-tagihan button_detail_ajax">Detail Tagihan</button>
+                                            </div>
+                                        </div>
+                                    <?php else : ?>
                                         <div class="row mt-4 mx-1">
-                                            <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_bayar_ajax">Edit Pembayaran</a>
+                                            <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_detail_ajax">Detail Tagihan</a>
                                         </div>
                                     <?php endif; ?>
                                 <?php else : ?>
@@ -107,15 +114,7 @@
                                     </div>
                                 <?php endif; ?>
 
-                                    <!-- Button Menunggu Konfirmasi -->
-                                    <div class="row d-flex mt-4">
-                                        <div class="col-6 pe-1">
-                                            <button class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white">Edit Pembayaran</button>
-                                        </div>
-                                        <div class="col-6 ps-1">
-                                            <button class="btn btn-block btn-sm btn-warning btn-detail-tagihan">Detail Tagihan</button>
-                                        </div>
-                                    </div>
+
                             </div>
                         </div>
                     </div>

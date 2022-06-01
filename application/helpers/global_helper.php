@@ -532,6 +532,43 @@ function month_from_number($nomor = NULL)
 }
 
 
+function get_tipe_notif($num = NULL)
+{
+  switch ($num) {
+    case 1:
+      return "Presensi";
+    case 2:
+      return "Spp";
+    case 3:
+      return "Tugas";
+    case 4:
+      return "Kbm";
+    case 5:
+      return "Pengumuman";
+    case 6:
+      return "Berita";
+    case 7:
+      return "Jadwal Ujian";
+    case 8:
+      return "Pesan Balasan";
+    case 9:
+      return "Broadcast";
+    default:
+      return array(1 => "Presensi", 2 => "Spp", 3 => "Tugas", 4 => "Kbm", 5 => "Pengumuman", 6 => "Berita", 7 => "Jadwal Ujian", 8 => "Pesan Balasan", 9 => "Broadcast");
+  }
+}
+
+
+function convert_link($link)
+{
+  if (strpos('a' . $link, "|*|")) {
+    $link_fix_sub = str_replace('|*|', base_url(), $link);
+  } else {
+    $link_fix_sub = $link;
+  }
+
+  return $link_fix_sub;
+}
 function data_url($path = null, $id_sekolah = true)
 {
   $ci = &get_instance();
@@ -546,9 +583,20 @@ function data_url($path = null, $id_sekolah = true)
 }
 
 
-function vector_default($image, $judul = 'Tidak ada data', $text = 'Tidak terdapat record data. Hubungi admin jika terdapat kesalahan')
+function vector_default($image, $judul = 'Tidak ada data', $text = 'Tidak terdapat record data. Hubungi admin jika terdapat kesalahan', $id = NULL, $status = 1)
 {
-  $html  = '<div class="row mb-4">';
+  if ($id != NULL) {
+    $idfix = 'id="' . $id . '"';
+  } else {
+    $idfix = NULL;
+  }
+
+  if ($status > 0) {
+    $stts = 'd-none';
+  } else {
+    $stts = NULL;
+  }
+  $html  = '<div ' . $idfix . ' class="row mb-4 ' . $stts . '">';
   $html .= '<div class="col-12 d-flex justify-content-center align-items-center flex-wrap"><div class="image-kosong">';
   $html .= '  <img src="' . data_url('img_default/' . base64url_encode('vector') . '/' . base64url_encode($image), FALSE) . '" width="275" alt="">';
   $html .= '</div><h5 class="fw-medium mb-2">' . $judul . '</h5>';

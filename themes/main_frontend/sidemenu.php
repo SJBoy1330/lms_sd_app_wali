@@ -95,7 +95,7 @@
         <?php else : ?>
             <header class="header position-fixed">
             <?php endif; ?>
-            <div class="row">
+            <div class="row" id="header_config">
                 <div class="col-auto">
                     <?php if (isset($button_back)) : ?>
                         <a href="<?= $button_back ?>" target="_self" class="btn btn-44">
@@ -155,7 +155,18 @@
                     <?php endif; ?>
 
                 </div>
+
             </div>
+            <?php if (isset($khusus['notifikasi'])) : ?>
+                <div class="row mt-2 d-none" id="action_notifikasi">
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <button type="button" id="btn_bca_ntf" class="btn btn-danger rounded-pill btn-notifikasi-fill"><span class="size-10 span-notifikasi">Tandai sudah dibaca</span></button>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <button type="button" id="btn_hps_ntf" onclick="submit_form(this,'#form_action_notifikasi')" class="btn btn-danger rounded-pill btn-notifikasi-outline"><span class="size-10 span-notifikasi">Hapus Notifikasi</span></button>
+                    </div>
+                </div>
+            <?php endif; ?>
             <?php if (isset($khusus['rapot'])) : ?>
                 <div class="d-flex justify-content-center">
                     <div class="tablinknya-tugas-ujian">

@@ -21,7 +21,7 @@ function submit_form(element, id_form, num = 0) {
             $('#' + element.id).prop('disabled', true);
         },
         success: function (data) {
-            console.log(data);
+            // console.log(data);
             $('#' + element.id).prop('disabled', false);
 
             $('.fadedin').remove();
@@ -30,6 +30,13 @@ function submit_form(element, id_form, num = 0) {
                 var icon = 'success';
             } else {
                 var icon = 'warning';
+            }
+            if (data.load != null) {
+                $(data.load.parent).load(data.load.reload);
+            }
+
+            if (data.reload == true) {
+                location.reload();
             }
             if (data.alert) {
                 Swal.fire({
@@ -49,6 +56,8 @@ function submit_form(element, id_form, num = 0) {
                         location.reload();
                     }
                     if (data.load != null) {
+                        console.log(data.load.parent);
+                        console.log(data.load.reload);
                         $(data.load.parent).load(data.load.reload);
                     }
                     if (data.modal != null) {

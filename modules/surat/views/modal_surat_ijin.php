@@ -46,7 +46,7 @@
             <input type="date" id="berlaku_hingga" name="berlaku_hingga" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" value="<?= $berlaku_sampai; ?>" readonly>
         </div>
 
-        <div class="modal-footer border-0">
+        <div class="modal-footer border-0 d-flex justify-content-center">
             <?php if (strtotime($berlaku_mulai) > strtotime(date('Y-m-d'))) : ?>
                 <button type="button" id="edit_surat_ijin" class="btn btn-block btn-md btn-warning btn-surat">Edit Surat</button>
                 <div id="display_button_action" class="d-flex d-none">

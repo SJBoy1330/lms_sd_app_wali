@@ -236,6 +236,9 @@ button.btn-filter {
   background-color: #FFEAEA;
 }
 
+.notif-active {
+  background-color: #e3fffa !important;
+}
 
 .dot-notif {
   height: 10px;

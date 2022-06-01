@@ -129,7 +129,7 @@ class MY_Frontend extends MY_Controller
 
     function display($routing = null)
     {
-        if (!isset($this->data['config_hidden']['notifikasi'])) {
+        if (!isset($this->data['button_back'])) {
             $this->data['profil'] = curl_get("profil/get", array('id_sekolah' => $this->session->userdata('lms_wali_id_sekolah'), 'id_wali' => $this->session->userdata('lms_wali_id_wali')))[3];
         }
         if (!isset($routing)) {
