@@ -21,7 +21,12 @@ class Controller_ctl extends MY_Frontend
 
 
 		// LOAD CONFIG PAGE
-		$this->data['button_back'] = $_SERVER['HTTP_REFERER'];
+		if ($_SERVER['HTTP_REFERER'] == NULL || $_SERVER['HTTP_REFERER'] == base_url('notifikasi')) {
+			$link = base_url('home');
+		} else {
+			$link = $_SERVER['HTTP_REFERER'];
+		}
+		$this->data['button_back'] =  $link;
 		$this->data['config_hidden']['notifikasi'] = TRUE;
 		$this->data['config_hidden']['footer'] = TRUE;
 		$this->data['judul_halaman'] = 'Notifikasi';
