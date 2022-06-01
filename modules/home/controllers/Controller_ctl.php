@@ -22,7 +22,6 @@ class Controller_ctl extends MY_Frontend
 		$id_wali = $this->session->userdata('lms_wali_id_wali');
 
 		$mydata['nama_wali'] = $this->session->userdata('lms_wali_nama');
-
 		// Data Siswa
 		[
 			$error, $message, $status, $data_siswa
@@ -124,7 +123,7 @@ class Controller_ctl extends MY_Frontend
 		} else {
 			$this->data['button_back'] = base_url('home/list_pengumuman');
 		}
-		
+
 		// LOAD CONFIG PAGE
 		$this->data['button_back'] = base_url('home/list_pengumuman');
 		$this->data['config_hidden']['notifikasi'] = TRUE;
@@ -202,7 +201,7 @@ class Controller_ctl extends MY_Frontend
 		} else {
 			$this->data['button_back'] = base_url('home/list_berita');
 		}
-		
+
 		// LOAD CONFIG PAGE
 		$this->data['button_back'] = base_url('home/list_berita');
 		$this->data['config_hidden']['notifikasi'] = TRUE;
@@ -210,27 +209,6 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_berita', $mydata, TRUE);
-		$this->display($this->input->get('routing'));
-	}
-
-	public function notifikasi()
-	{
-		// LOAD TITLE
-		$mydata['title'] = 'Notifikasi';
-
-		// LOAD CONFIG PAGE
-		$this->data['button_back'] = base_url('home');
-		$this->data['config_hidden']['notifikasi'] = TRUE;
-		$this->data['config_hidden']['footer'] = TRUE;
-
-		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
-
-		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/notifikasi/notifikasi.js"></script>';
-
-		// LOAD VIEW
-		$this->data['content'] = $this->load->view('notifikasi', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 }

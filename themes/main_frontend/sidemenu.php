@@ -9,12 +9,12 @@
                 <div class="row mt-3">
                     <div class="col-auto">
                         <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm">
-                            <img src="<?= base_url('assets/images/mia-khalifa.png') ?>" alt="" class="rounded-18">
+                            <img src="<?= $profil->foto; ?>" alt="" class="rounded-18">
                         </figure>
                     </div>
                     <div class="col px-0 align-self-center">
-                        <h5 class="mb-0 fw-normal text-white">Mia Khalifah</h5>
-                        <p class="text-muted size-12">XI IPA 1</p>
+                        <h5 class="mb-0 fw-normal text-white"><?= $profil->nama; ?></h5>
+                        <p class="text-muted size-12">Wali Murid</p>
                     </div>
                 </div>
             </div>
