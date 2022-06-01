@@ -75,4 +75,108 @@ class Controller_ctl extends MY_Frontend
 		);
 		$this->load->view('modal_surat_ijin', $result);
 	}
+
+
+	public function tambah()
+	{
+		$arrVar['id_siswa'] = 'ID Siswa';
+		$arrVar['tipe']     = 'Tipe Surat';
+		$arrVar['tanggal_mulai']   = 'Tanggal Mulai';
+		$arrVar['tanggal_sampai']   = 'Tanggal Sampai';
+		foreach ($arrVar as $var => $value) {
+			$$var = $this->input->post($var);
+			if (!$$var) {
+				$data['required'][] = ['req_' . $var, $value . ' tidak boleh kosong !'];
+				$arrAccess[] = false;
+			} else {
+				$arrAccess[] = true;
+			}
+		}
+
+		$surat = $_FILES['surat'];
+		if (!isset($surat['tmp_name']) || $surat['tmp_name'] == null) {
+			$data['required'][] = ['req_surat',  'Surat tidak boleh kosong !'];
+			$arrAccess[] = false;
+		} else {
+			$arrAccess[] = true;
+		}
+		// Meta data
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		if (!in_array(FALSE, $arrAccess)) {
+			// DEKLARASI DATA
+			$arr['id_sekolah'] = $id_sekolah;
+			$arr['id_siswa'] = $id_siswa;
+			$arr['tipe'] = $tipe;
+			$arr['tanggal_mulai'] = $tanggal_mulai;
+			$arr['tanggal_sampai'] = $tanggal_sampai;
+			$arrFile['surat'] = $_FILES['surat'];
+			// LOAD DATA API
+			$insert = curlPost('surat/tambah', $arr, $arrFile);
+			$data['status'] = !$insert->error;
+			$data['alert']['message'] = $insert->message;
+			if ($insert->status == 200) {
+				$data['alert']['title'] = 'PEMBERITAHUAN';
+				$data['reload'] = true;
+			} else {
+				$data['alert']['title'] = 'PERINGATAN';
+			}
+			echo json_encode($data);
+			exit;
+		} else {
+			$data['status'] = false;
+			echo json_encode($data);
+			exit;
+		}
+	}
+
+
+	public function edit()
+	{
+		$arrVar['tipe']     = 'Tipe Surat';
+		$arrVar['id_surat']     = 'ID Surat';
+		$arrVar['mulai_berlaku']   = 'Tanggal Mulai';
+		$arrVar['berlaku_hingga']   = 'Tanggal Sampai';
+		foreach ($arrVar as $var => $value) {
+			$$var = $this->input->post($var);
+
+			if (!$$var) {
+				$data['required'][] = ['req_edit_' . $var, $value . ' tidak boleh kosong !'];
+				$arrAccess[] = false;
+			} else {
+				$arrAccess[] = true;
+			}
+		}
+		// Meta data
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		if (!in_array(FALSE, $arrAccess)) {
+			// DEKLARASI DATA
+			$arr['id_sekolah'] = $id_sekolah;
+			$arr['id_surat_ijin'] = $id_surat;
+			$arr['tipe'] = $tipe;
+			$arr['tanggal_mulai'] = $mulai_berlaku;
+			$arr['tanggal_sampai'] = $berlaku_hingga;
+			if ($_FILES['surat']['tmp_name'] != NULL) {
+				$arrFile['surat'] = $_FILES['surat'];
+			} else {
+				$arrFile = NULL;
+			}
+
+			// LOAD DATA API
+			$update = curlPost('surat/edit', $arr, $arrFile);
+			$data['status'] = !$update->error;
+			$data['alert']['message'] = $update->message;
+			if ($update->status == 200) {
+				$data['alert']['title'] = 'PEMBERITAHUAN';
+				$data['reload'] = true;
+			} else {
+				$data['alert']['title'] = 'PERINGATAN';
+			}
+			echo json_encode($data);
+			exit;
+		} else {
+			$data['status'] = false;
+			echo json_encode($data);
+			exit;
+		}
+	}
 }

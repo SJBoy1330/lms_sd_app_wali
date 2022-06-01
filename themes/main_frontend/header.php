@@ -11,7 +11,7 @@
 
     <!-- manifest meta -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    
+
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="<?= base_url(); ?>assets/images/logo-sd.png" sizes="180x180">
     <link rel="icon" href="<?= base_url(); ?>assets/images/logo-sd.png" sizes="32x32" type="image/png">
@@ -37,19 +37,19 @@
     <script src="https://kit.fontawesome.com/ec75c6c12e.js" crossorigin="anonymous"></script>
 
     <style>
-        h2.swal2-title{
+        h2.swal2-title {
             font-size: 1.5rem;
         }
 
-        div#swal2-content{
+        div#swal2-content {
             font-size: 1rem;
         }
 
-        button.swal2-confirm{
-            background-color: #1AB64F !important;
-            border-color: #1AB64F !important;
+        button.swal2-confirm {
+            background-color: #f73563 !important;
+            border-color: #f73563 !important;
             width: 100px;
-            height 75px;
+            /* height: 75px; */
             border-radius: 10px;
         }
     </style>

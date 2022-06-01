@@ -23,8 +23,8 @@
             </div>
         <?php endif; ?>
     </div>
-    <div class="row">
-        <div class="col-12">
+    <div class="row" id="parent_load">
+        <div class="col-12" id="load_surat">
             <?php if ($result->surat) : ?>
                 <?php foreach ($result->surat as $surat) : ?>
                     <div class="row mb-3">
@@ -91,47 +91,45 @@
 <!-- Modal Tambah Surat Ijin -->
 <div class="modal fade" id="tambahSuratIjin" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-        <div class="modal-content" style="border-radius: 0px;">
+        <form action="<?= base_url('surat/tambah'); ?>" method="POST" enctype="multipart/form-data" id="form_tambah_surat" class="modal-content" style="border-radius: 0px;">
             <div class="modal-header border-0">
                 <h5 class="modal-title" id="detailSuratIjinModal">Tambah Surat</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="row g-3">
-                    <div class="mb-0">
+                <div class="row g-3">
+                    <input type="hidden" name="id_siswa" value="<?= $id_siswa; ?>">
+                    <div class="mb-0" id="req_tipe">
                         <label for="jenis_surat" class="form-label title-3">Jenis Surat</label>
-                        <select class="form-select form-select-pribadi border-0" aria-label="Default select example">
-                            <option selected>Pilih jenis surat</option>
+                        <select name="tipe" class="form-select form-select-pribadi border-0" aria-label="Default select example">
+                            <option selected disabled>Pilih jenis surat</option>
                             <option value="1">Izin</option>
                             <option value="2">Sakit</option>
                         </select>
                     </div>
-                    <div class="">
+                    <div class="" id="req_surat">
                         <label for="formFile" class="form-label title-3">File Surat</label>
-                        <input class="form-control form-control-solid form-control-pribadi file-input border-0" type="file" id="formFile" style="line-height: 40px;">
-                        <div class="wrapper-files">
-                            <span class="fw-medium">Pilih File</span>
-                        </div>
+                        <input class="form-control form-control-solid form-control-pribadi file-input border-0" type="file" name="surat" id="formFile" style="line-height: 40px;">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" id="req_tanggal_mulai">
                         <label for="kata_sandi" class="form-label title-3">Berlaku Mulai</label>
                         <div class="wrapper-password d-flex">
-                            <input type="date" class="form-control form-control-pribadi text-start border-0" autocomplete="off">
+                            <input type="date" name="tanggal_mulai" class="form-control form-control-pribadi text-start border-0" autocomplete="off">
                         </div>
                     </div>
 
-                    <div class="form-group mb-3">
+                    <div class="form-group mb-3" id="req_tanggal_sampai">
                         <label for="kata_sandi" class="form-label title-3">Berlaku Sampai</label>
                         <div class="wrapper-password d-flex">
-                            <input type="date" class="form-control form-control-pribadi text-start birder-0" autocomplete="off">
+                            <input type="date" name="tanggal_sampai" class="form-control form-control-pribadi text-start birder-0" autocomplete="off">
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
             <div class="modal-footer">
-                <a href="#" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</a>
+                <button type="button" id="button_tambah_surat" onclick="submit_form(this,'#form_tambah_surat')" class="btn btn-block btn-md btn-danger btn-filter">TAMBAH</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>

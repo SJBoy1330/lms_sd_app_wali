@@ -126,7 +126,7 @@
                 </div>
                 <div class="col-auto">
                     <?php if (!isset($config_hidden['notifikasi']) && $config_hidden['notifikasi'] != true) : ?>
-                        <a href="<?= base_url('home/notifikasi'); ?>" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
+                        <a href="<?= base_url('notifikasi'); ?>" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
                             <img src="<?= base_url(); ?>assets/icons/notif.png" width="24" alt="">
                             <span class="count-indicator"></span>
                         </a>

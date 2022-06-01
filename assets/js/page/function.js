@@ -39,7 +39,7 @@ function submit_form(element, id_form, num = 0) {
                     buttonsStyling: !1,
                     confirmButtonText: "Ok",
                     customClass: {
-                        confirmButton: "btn btn-primary"
+                        confirmButton: css_button
                     }
                 }).then(function () {
                     if (data.redirect) {
@@ -47,6 +47,12 @@ function submit_form(element, id_form, num = 0) {
                     }
                     if (data.reload == true) {
                         location.reload();
+                    }
+                    if (data.load != null) {
+                        $(data.load.parent).load(data.load.reload);
+                    }
+                    if (data.modal != null) {
+                        $(data.modal.id).moda(data.modal.action);
                     }
                 });
             } else {

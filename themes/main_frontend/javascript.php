@@ -128,6 +128,7 @@
     var BASE_URL = baseUrl = '<?= base_url(); ?>';
     var API_URL = apiUrl = '<?= API_URL() ?>';
     var loading_scene = new bootstrap.Modal(document.getElementById("loading_scene"), {});
+    var css_button = 'btn btn-block btn-md';
 </script>
 <!-- Customized jquery file  -->
 <script src="<?= base_url() ?>assets/js/main.js"></script>
