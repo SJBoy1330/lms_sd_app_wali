@@ -46,7 +46,3 @@
         </div>
     </div>
 </div>
-
-</div>
-<!-- main page content ends -->
-</main>
