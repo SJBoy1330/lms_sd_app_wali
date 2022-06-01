@@ -140,6 +140,8 @@ class Controller_ctl extends MY_Frontend
 		// LOAD CONFIG HALAMAN
 		$this->data['button_back'] = base_url('profil');
 		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
+		$this->data['judul_halaman'] = 'Tentang Sekolah';
 
 		// HIDDEN FOOTER
 		$mydata['config_hidden']['footer'] = true;
