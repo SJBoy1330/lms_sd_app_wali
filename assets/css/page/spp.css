@@ -58,3 +58,25 @@
   .sizing-info{
     width: 50%;
   }
+
+  button.btn.btn-edit-pembayaran{
+    width: 100%;
+    background-color: #EC3528;
+    border-radius: 8px;
+    line-height: 1px;
+    font-size: 13px;
+    color: #303030;
+    height: 45px;
+    padding-top: 10px;
+  }
+
+  button.btn.btn-detail-tagihan{
+    width: 100%;
+    background-color: #FFBD17;
+    border-radius: 8px;
+    line-height: 1px;
+    font-size: 13px;
+    color: #303030;
+    height: 45px;
+    padding-top: 10px;
+  }

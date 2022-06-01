@@ -107,6 +107,15 @@
                                     </div>
                                 <?php endif; ?>
 
+                                    <!-- Button Menunggu Konfirmasi -->
+                                    <div class="row d-flex mt-4">
+                                        <div class="col-6 pe-1">
+                                            <button class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white">Edit Pembayaran</button>
+                                        </div>
+                                        <div class="col-6 ps-1">
+                                            <button class="btn btn-block btn-sm btn-warning btn-detail-tagihan">Detail Tagihan</button>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
