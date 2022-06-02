@@ -1,0 +1,16 @@
+button.btn.btn-notifikasi-fill{
+    background-color: #EC3528;
+    color: #FFFFFF;
+    height: 45px;
+    width: 150px;
+    font-weight: 600;
+}
+
+button.btn.btn-notifikasi-outline{
+    background-color: transparent;
+    border-color: #EC3528;
+    color: #EC3528;
+    height: 45px;
+    width: 150px;
+    font-weight: 600;
+}
