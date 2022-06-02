@@ -68,6 +68,7 @@
     color: #303030;
     height: 45px;
     padding-top: 10px;
+    font-weight: 600;
   }
 
   button.btn.btn-detail-tagihan{
@@ -79,4 +80,9 @@
     color: #303030;
     height: 45px;
     padding-top: 10px;
+    font-weight: 600;
+  }
+
+  .bg-ffbd17{
+    background-color: #FFBD17;
   }

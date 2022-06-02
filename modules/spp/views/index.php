@@ -55,7 +55,7 @@
                                     <?php if ($spp->status_bayar == NULL) : ?>
                                         <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Belum Lunas</span>
                                     <?php elseif ($spp->status_bayar == 1) : ?>
-                                        <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-f5e269 rounded-15-start-bottom blm-lns">Menunggu Konfirmasi</span>
+                                        <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ffbd17 rounded-15-start-bottom blm-lns">Menunggu Konfirmasi</span>
                                     <?php elseif ($spp->status_bayar == 3) : ?>
                                         <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Pembayaran Ditolak</span>
                                     <?php endif; ?>
@@ -97,7 +97,7 @@
                                         <!-- Button Menunggu Konfirmasi -->
                                         <div class="row d-flex mt-4">
                                             <div class="col-6 pe-1">
-                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white button_bayar_ajax">Edit</button>
+                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white button_bayar_ajax">Edit Pembayaran</button>
                                             </div>
                                             <div class="col-6 ps-1">
                                                 <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-sm btn-warning btn-detail-tagihan button_detail_ajax">Detail Tagihan</button>
