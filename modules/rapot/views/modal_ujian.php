@@ -122,7 +122,12 @@
                     </div>
                     <div class="col align-self-center ps-0 pe-1">
                         <p class="mb-0 size-12 fw-medium">Nilai</p>
-                        <p class="mb-0 size-10 fw-normal text-success"><?= $nilai; ?></p>
+                        <?php if ($nilai >= $kkm) : ?>
+                            <p class="mb-0 size-10 fw-normal text-success"><?= $nilai; ?></p>
+                        <?php else : ?>
+                            <p class="mb-0 size-10 fw-normal text-danger"><?= $nilai; ?></p>
+                        <?php endif; ?>
+
                     </div>
                 </div>
             </div>
