@@ -41,7 +41,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'suratijin', $this->uri->segment(2), array())) ?>" href="<?= base_url('suratijin') ?>" tabindex="-1">
+                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'surat', $this->uri->segment(2), array())) ?>" href="<?= base_url('surat') ?>" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-envelope-open-text"></i></div>
                             <div class="col">Surat Ijin</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>

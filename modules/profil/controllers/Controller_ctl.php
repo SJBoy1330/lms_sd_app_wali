@@ -24,7 +24,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['data'] = curl_get("profil/get", array('id_sekolah' => $id_sekolah, 'id_wali' => $id_wali))[3];
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/loader.css') . '">';
+		// $this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/loader.css') . '">';
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/uploadfoto.js"></script>';
@@ -68,6 +68,7 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD CONFIG PAGE 
 		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
 		$this->data['button_back'] = base_url('profil');
 		$this->data['judul_halaman'] = 'Ubah Profil';
 		$this->data['right_button']['profil'] = true;
@@ -92,13 +93,14 @@ class Controller_ctl extends MY_Frontend
 		$this->data['judul_halaman'] = 'Ubah Kata Sandi';
 		$this->data['button_back'] = base_url('profil');
 		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
 		$this->data['right_button']['ubah_password'] = true;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('ubah_password', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 
-	public function laporan_presensi()
+	public function laporan_presensi($id_siswa = NULL)
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Laporan Presensi Siswa';
@@ -112,6 +114,27 @@ class Controller_ctl extends MY_Frontend
 
 		// HIDDEN ICON NOTIFICATION
 		$this->data['config_hidden']['notifikasi'] = true;
+		// Load meta data
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+		$id_wali = $this->session->userdata('lms_wali_id_wali');
+
+		// GET API ANAK
+		[
+			$error, $message, $status, $data_siswa
+		] = curl_get(
+			'data_anak',
+			[
+				"id_sekolah" => $id_sekolah,
+				"id_wali" => $id_wali
+			]
+		);
+		$mydata['data_siswa'] = $data_siswa;
+		if ($id_siswa == NULL) {
+			$mydata['id_siswa'] = $data_siswa[0]->id_siswa;
+			$mydata['id_kelas'] = $data_siswa[0]->id_kelas;
+		} else {
+			$mydata['id_siswa'] = $id_siswa;
+		}
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('laporan_presensi', $mydata, TRUE);
@@ -166,12 +189,64 @@ class Controller_ctl extends MY_Frontend
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/bantuan.js"></script>';
 
+
+		// LOAD API 
+		[
+			$error, $message, $status, $data
+		] = curl_get(
+			'attribut/bantuan/',
+			NULL
+		);
+		$mydata['result'] = $data;
 		// LOAD CONFIG HALAMAN
 		$this->data['button_back'] = base_url('profil');
 		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['judul_halaman'] = 'Bantuan';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('bantuan', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
+	}
+
+	public function get_detail_bantuan()
+	{
+		$id_bantuan = $this->input->post('id_bantuan');
+		// LOAD API 
+		[
+			$error, $message, $status, $data
+		] = curl_get(
+			'attribut/bantuan/',
+			['id_bantuan' => $id_bantuan]
+		);
+
+		$this->load->view('modal_detail_bantuan', $data);
+	}
+
+	public function get_report_absen()
+	{
+		$date = strtotime($this->input->post('date'));
+		$id_kelas = $this->input->post('id_kelas');
+		$id_siswa = $this->input->post('id_siswa');
+		$hari = day_from_number(date('N', $date));
+		$bulan = month_from_number(date('m', $date));
+		$mydata['tanggal'] = $hari . ', ' . date('d', $date) . ' ' . $bulan . ' ' . date('Y', $date);
+
+		// meta data
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
+
+		// LOAD API 
+		[
+			$error, $message, $status, $data
+		] = curl_get(
+			'profil/laporan/',
+			[
+				'id_sekolah' => $id_sekolah,
+				'id_kelas' => $id_kelas,
+				'id_siswa' => $id_siswa,
+				'tanggal' => date('Y-m-d', $date)
+			]
+		);
+		$mydata['result'] = $data;
+		$this->load->view('display_laporan', $mydata);
 	}
 }

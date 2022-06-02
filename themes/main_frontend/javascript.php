@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'profil', $this->uri->segment(2), array())) ?>" href="<?= base_url('profil') ?>">
+                    <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'profil', $this->uri->segment(2), array('bantuan', 'laporan_presensi', 'ubah_password'))) ?>" href="<?= base_url('profil') ?>">
                         <span>
                             <i class="fa-solid fa-user size-18"></i>
                             <span class="nav-text">Profil</span>
@@ -158,6 +158,7 @@
 <!--evo calender-->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="<?= base_url() ?>assets/vendor/evo-calendar/js/evo-calendar.min.js"></script>
+<script src="<?= base_url() ?>assets/vendor/evo-calendar/js/evo-calendar.js"></script>
 
 
 <?php

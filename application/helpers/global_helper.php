@@ -531,6 +531,28 @@ function month_from_number($nomor = NULL)
   }
 }
 
+function day_from_number($nomor = NULL)
+{
+  switch ($nomor) {
+    case 1:
+      return "Senin";
+    case 2:
+      return "Selasa";
+    case 3:
+      return "Rabu";
+    case 4:
+      return "Kamis";
+    case 5:
+      return "Jumat";
+    case 6:
+      return "Sabtu";
+    case 7:
+      return "Minggu";
+    default:
+      return array(1 => "Senin", 2 => "Selasa", 3 => "Rabu", 4 => "Kamis", 5 => "Jumat", 6 => "Sabtu", 7 => "Minggu");
+  }
+}
+
 
 function get_tipe_notif($num = NULL)
 {
@@ -583,7 +605,7 @@ function data_url($path = null, $id_sekolah = true)
 }
 
 
-function vector_default($image, $judul = 'Tidak ada data', $text = 'Tidak terdapat record data. Hubungi admin jika terdapat kesalahan', $id = NULL, $status = 1)
+function vector_default($image, $judul = 'Tidak ada data', $text = 'Tidak terdapat record data. Hubungi admin jika terdapat kesalahan', $id = NULL, $status = 0)
 {
   if ($id != NULL) {
     $idfix = 'id="' . $id . '"';
