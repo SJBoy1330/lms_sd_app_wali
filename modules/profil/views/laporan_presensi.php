@@ -32,7 +32,7 @@
         <div class=" col-12">
             <input type="hidden" value="<?= $id_siswa; ?>" id="id_siswa">
             <div id="calendar" class="my-2 rounded-3 shadow-sm"></div>
-            <div id="display_detail" class="calendar-event" style="background-color: #FFFFFF;">
+            <div id="display_detail" class="calendar-event shadow-sm pb-1" style="background-color: #FFFFFF;">
 
             </div>
         </div>

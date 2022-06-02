@@ -1,16 +1,14 @@
 <div class="col-12">
-    <h5><?= $tanggal; ?></h5>
-
-
+    <h6 class="pt-3 ps-3 my-2"><?= $tanggal; ?></h6>
     <?php if ($result->mapel) : ?>
-        <h4>PRESENSI HARIAN</h4>
-        <a class="card mb-3">
+        <h6 class="pt-1 ps-3 mb-2">Presensi Harian</h6>
+        <a class="card mb-3 mx-2">
             <div class="card-body">
                 <div class="row">
                     <div class="col-auto">
-                        <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
-                            <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
-                                <i class="fa-solid fa-calendar-range size-26 text-white"></i>
+                        <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
+                            <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
+                                <i class="fa-solid fa-calendar-range size-20 text-white"></i>
                             </div>
                         </div>
                     </div>
@@ -22,13 +20,13 @@
             </div>
         </a>
 
-        <a class="card mb-3">
+        <a class="card mb-3 mx-2">
             <div class="card-body">
                 <div class="row">
                     <div class="col-auto">
-                        <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
-                            <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
-                                <i class="fa-solid fa-calendar-range size-26 text-white"></i>
+                        <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
+                            <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
+                                <i class="fa-solid fa-calendar-range size-20 text-white"></i>
                             </div>
                         </div>
                     </div>
@@ -39,15 +37,15 @@
                 </div>
             </div>
         </a>
-        <h4>PRESENSI MAPEL</h4>
+        <h6 class="pt-1 ps-3 mb-2">Presensi Mata Pelajaran</h6>
         <?php foreach ($result->mapel as $row) : ?>
-            <a class="card mb-3">
+            <a class="card mb-3 mx-2">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-auto">
-                            <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
-                                <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
-                                    <i class="fa-solid fa-calendar-range size-26 text-white"></i>
+                            <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
+                                <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
+                                    <i class="fa-solid fa-calendar-range size-20 text-white"></i>
                                 </div>
                             </div>
                         </div>

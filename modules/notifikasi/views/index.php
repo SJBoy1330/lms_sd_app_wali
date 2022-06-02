@@ -34,7 +34,7 @@
                 </div> -->
                 <div class="form-check d-none align-self-center ms-2 mb-2" id="pilih_semua" style="display : flex; justify-content: flex-start; align-items : end">
                     <input class="form-check-input" type="checkbox"  id="notif_parent_checkbox" style="width : 18px; height: 18px; border-radius: 5px;">
-                    <label class="form-check-label size-13 ms-1">
+                    <label class="form-check-label size-12 ms-1">
                         Pilih Semua
                     </label>
                 </div>
