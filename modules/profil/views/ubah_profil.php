@@ -13,7 +13,7 @@
 
             <div class="col-12" id="req_nama">
                 <label for="nama" class="form-label fw-bold size-14">Nama lengkap</label>
-                <input type="text" class="form-control form-control-pribadi text-start" id="nama" name="nama" placeholder="Dono kasino indro..." autocomplete="off" value="<?= $data_wali->nama ?>">
+                <input type="text" class="form-control form-control-pribadi text-start" id="nama" name="nama" placeholder="Masukan nama anda" autocomplete="off" value="<?= $data_wali->nama ?>">
             </div>
             <div class="col-12" id="req_agama">
                 <label for="agama" class="form-label fw-bold size-14">Agama</label>
@@ -25,15 +25,15 @@
             </div>
             <div class="col-12" id="req_alamat">
                 <label for="alamat" class="form-label fw-bold size-14">Alamat</label>
-                <input type="text" class="form-control form-control-pribadi text-start" id="alamat" name="alamat" placeholder="203131341321t" autocomplete="off" value="<?= $data_wali->alamat ?>">
+                <input type="text" class="form-control form-control-pribadi text-start" id="alamat" name="alamat" placeholder="Masukan alamat rumah" autocomplete="off" value="<?= $data_wali->alamat ?>">
             </div>
             <div class="col-12" id="req_nohp">
                 <label for="nohp" class="form-label fw-bold size-14">No. Handphone</label>
-                <input type="text" class="form-control form-control-pribadi text-start" id="nohp" name="nohp" placeholder="08123111111" value="<?= $data_wali->telp ?>">
+                <input type="text" class="form-control form-control-pribadi text-start" id="nohp" name="nohp" placeholder="Masukan nomor telepon" value="<?= $data_wali->telp ?>">
             </div>
             <div class="col-12 mb-4" id="req_email">
                 <label for="email" class="form-label fw-bold size-14">Email</label>
-                <input type="email" class="form-control form-control-pribadi text-start" id="email" name="email" placeholder="tes@mail.com" autocomplete="off" value="<?= $data_wali->email ?>">
+                <input type="email" class="form-control form-control-pribadi text-start" id="email" name="email" placeholder="Masukan email anda" autocomplete="off" value="<?= $data_wali->email ?>">
             </div>
         </form>
     </div>
