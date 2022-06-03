@@ -31,13 +31,6 @@ function submit_form(element, id_form, num = 0) {
             } else {
                 var icon = 'warning';
             }
-            if (data.load != null) {
-                $(data.load.parent).load(data.load.reload);
-            }
-
-            if (data.reload == true) {
-                location.reload();
-            }
             if (data.alert) {
                 Swal.fire({
                     title: data.alert.title,
@@ -73,6 +66,14 @@ function submit_form(element, id_form, num = 0) {
                 }
                 if (data.redirect) {
                     location.href = data.redirect;
+                }
+
+                if (data.load != null) {
+                    $(data.load.parent).load(data.load.reload);
+                }
+
+                if (data.reload == true) {
+                    location.reload();
                 }
             }
         }
