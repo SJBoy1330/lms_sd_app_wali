@@ -23,6 +23,7 @@ function previewImage(id_sekolah, id_wali) {
         dataType: 'json',
         cache: false,
         success: function (data) {
+            $('#reload_side_foto').load(BASE_URL + 'profil #side_foto_profil');
             if (data.status == 200) {
                 Swal.fire({
                     title: 'PEMBERITAHUAN',
