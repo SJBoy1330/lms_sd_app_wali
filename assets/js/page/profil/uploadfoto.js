@@ -31,7 +31,7 @@ function previewImage(id_sekolah, id_wali) {
                     buttonsStyling: !1,
                     confirmButtonText: "Ok",
                     customClass: {
-                        confirmButton: "btn btn-primary"
+                        confirmButton: css_button
                     }
                 })
 
@@ -43,7 +43,7 @@ function previewImage(id_sekolah, id_wali) {
                     buttonsStyling: !1,
                     confirmButtonText: "Ok",
                     customClass: {
-                        confirmButton: "btn btn-primary"
+                        confirmButton: css_button
                     }
                 })
             }
@@ -52,6 +52,6 @@ function previewImage(id_sekolah, id_wali) {
 
 
     oFReader.onload = function (oFREvent) {
-        getPhoto.src = oFREvent.target.result;
+        getPhoto.style.backgroundImage = 'url(' + oFREvent.target.result + ')';
     }
 }

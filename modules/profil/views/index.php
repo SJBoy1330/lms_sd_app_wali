@@ -3,7 +3,7 @@
     <!-- comment -->
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <div class="image-profile position-relative text-center">
+            <div class="image-profile position-relative text-center" id="reload_foto">
                 <figure id="photouser" class="avatar avatar-125 rounded-35 shadow-sm position-relative avatar-profile" style="background-position: center; background-size: cover; background-image: url('<?= $data->foto; ?>');">
                     <!-- <img src="" alt="" class="rounded-20" id="photouser"> -->
                 </figure>
