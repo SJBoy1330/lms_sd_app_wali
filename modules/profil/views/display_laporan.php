@@ -1,7 +1,7 @@
 <div class="col-12">
     <h6 class="pt-3 ps-3 my-2"><?= $tanggal; ?></h6>
     <?php if ($result->mapel) : ?>
-        <h6 class="pt-1 ps-3 mb-2">Presensi Harian</h6>
+        <h6 class="fw-medium pt-1 ps-3 mb-2">Presensi Harian</h6>
         <div class="row">
             <div class="col-6 ps-4 pe-1">
                 <a class="card mb-3">
