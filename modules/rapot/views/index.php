@@ -18,8 +18,8 @@
                                     </div>
 
                                     <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                        <p class="mb-0 size-12 fw-normal text-secondary">Nama Sekolah</p>
-                                        <p class="mb-0 size-14 fw-medium"><?= $result->detail->sekolah; ?></p>
+                                        <p class="mb-0 size-13 fw-normal text-secondary">Nama Sekolah</p>
+                                        <p class="mb-0 size-14 fw-normal"><?= $result->detail->sekolah; ?></p>
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex mb-3">
@@ -31,8 +31,8 @@
                                         </div>
                                     </div>
                                     <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                        <p class="mb-0 size-12 fw-normal text-secondary">Kelas</p>
-                                        <p class="mb-0 size-14 fw-medium"><?= $result->detail->kelas; ?></p>
+                                        <p class="mb-0 size-13 fw-normal text-secondary">Kelas</p>
+                                        <p class="mb-0 size-14 fw-normal"><?= $result->detail->kelas; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -46,8 +46,8 @@
                                         </div>
                                     </div>
                                     <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                        <p class="mb-0 size-12 fw-normal text-secondary">Tahun Ajaran</p>
-                                        <p class="mb-0 size-14 fw-medium"><?= $result->detail->tahun_ajaran; ?></p>
+                                        <p class="mb-0 size-13 fw-normal text-secondary">Tahun Ajaran</p>
+                                        <p class="mb-0 size-14 fw-normal"><?= $result->detail->tahun_ajaran; ?></p>
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex">
@@ -59,8 +59,8 @@
                                         </div>
                                     </div>
                                     <div class="ms-2 align-self-center" style="flex-wrap: wrap;">
-                                        <p class="mb-0 size-12 fw-normal text-secondary">Alamat</p>
-                                        <p class="mb-0 size-14 fw-medium"><?= $result->detail->alamat; ?></p>
+                                        <p class="mb-0 size-13 fw-normal text-secondary">Alamat</p>
+                                        <p class="mb-0 size-14 fw-normal"><?= $result->detail->alamat; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                         <?php foreach ($result->tugas as $tugas) : ?>
                             <a data-bs-toggle="modal" data-pelajaran="<?= $tugas->id_pelajaran; ?>" data-kelas="<?= $tugas->id_kelas; ?>" href="#modalDetailTugas" role="button" class="card mb-4 button_daftar_tugas">
                                 <div class="card-body">
-                                    <div class="row mb-3">
+                                    <div class="row">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
                                                 <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
@@ -85,11 +85,11 @@
                                             </div>
                                         </div>
                                         <div class="col align-self-center ps-0">
-                                            <p class="mb-0 size-14 fw-normal text-secondary">Mata Pelajaran</p>
-                                            <p class="mb-0 size-16 fw-medium"><?= nice_title($tugas->nama_pelajaran, 50); ?></p>
+                                            <p class="mb-0 size-13 fw-normal text-secondary">Mata Pelajaran</p>
+                                            <p class="mb-0 size-14 fw-normal"><?= nice_title($tugas->nama_pelajaran, 50); ?></p>
                                             <?php if ($tugas->persentase != 0) : ?>
                                                 <div class="progress mt-1 rounded-10" style="height:20px;">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width :<?= $tugas->persentase; ?>% ;" aria-valuemin="0" aria-valuemax="100"><?= $tugas->persentase . '%' ?></div>
+                                                    <div class="progress-bar bg-danger-pribadi" role="progressbar" style="width :<?= $tugas->persentase; ?>% ;" aria-valuemin="0" aria-valuemax="100"><?= $tugas->persentase . '%' ?></div>
                                                 </div>
                                             <?php endif; ?>
                                         </div>
@@ -130,7 +130,7 @@
                                                 </div>
                                             </div>
                                             <div class="col align-self-center ps-0">
-                                                <p class="mb-0 size-15 fw-medium search_target"><?= nice_title($ujian->nama_pelajaran, 50); ?></p>
+                                                <p class="mb-0 size-15 fw-normal search_target"><?= nice_title($ujian->nama_pelajaran, 50); ?></p>
                                             </div>
                                             <div class="col-auto align-self-center pe-3">
                                                 <i class="fa-regular fa-chevron-right"></i>
@@ -177,8 +177,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col align-self-center ps-0">
-                                                                <p class="mb-0 size-13 fw-medium"><?= nice_title($row->nama_paket, 30); ?></p>
-                                                                <p class="mb-0 size-14 fw-normal 
+                                                                <p class="mb-0 size-14 fw-normal"><?= nice_title($row->nama_paket, 30); ?></p>
+                                                                <p class="mb-0 size-13 fw-normal 
                                                                   <?php
                                                                     if ($row->nilai < $row->kkm) {
                                                                         echo 'text-danger';

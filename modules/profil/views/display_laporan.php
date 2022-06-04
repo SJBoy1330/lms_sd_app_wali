@@ -1,7 +1,7 @@
 <div class="col-12">
-    <h6 class="pt-3 ps-3 my-2"><?= $tanggal; ?></h6>
+    <h6 class="pt-3 ps-3 my-2" style="color: #EC3528;"><?= $tanggal; ?></h6>
     <?php if ($result->mapel) : ?>
-        <h6 class="fw-medium pt-1 ps-3 mb-2">Presensi Harian</h6>
+        <h6 class="fw-normal pt-1 ps-3 mb-2">Presensi Harian</h6>
         <div class="row">
             <div class="col-6 ps-4 pe-1">
                 <a class="card mb-3">
@@ -15,7 +15,7 @@
                                 </div>
                             </div>
                             <div class="col align-self-center ps-0">
-                                <p class="mb-0 size-14 fw-medium">Scan Masuk</p>
+                                <p class="mb-0 size-14 fw-normal">Scan Masuk</p>
                                 <p class="mb-0 size-12 fw-normal"><?= ifnull($result->presensi_siswa->scan_masuk, ' - '); ?></p>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="col align-self-center ps-0">
-                                <p class="mb-0 size-14 fw-medium">Scan Pulang</p>
+                                <p class="mb-0 size-14 fw-normal">Scan Pulang</p>
                                 <p class="mb-0 size-12 fw-normal"><?= ifnull($result->presensi_siswa->scan_pulang, ' - '); ?></p>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                 </a>
             </div>
         </div>
-        <h6 class="pt-1 ps-3 mb-2">Presensi Mata Pelajaran</h6>
+        <h6 class="fw-normal pt-1 ps-3 mb-2">Presensi Mata Pelajaran</h6>
         <?php foreach ($result->mapel as $row) : ?>
             <a class="card mb-3 mx-2">
                 <div class="card-body">
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <div class="col align-self-center ps-0">
-                            <p class="mb-0 size-15 fw-medium"><?= $row->nama_pelajaran ?></p>
+                            <p class="mb-0 size-15 fw-normal"><?= $row->nama_pelajaran ?></p>
                             <?php
                             if ($row->status == 1) {
                                 $warna = 'text-success';

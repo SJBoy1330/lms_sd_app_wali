@@ -10,7 +10,7 @@
                         </div>
                         <div class="col-6 align-self-center ps-2">
                             <p class="mb-0 fw-bold size-16">Nama Sekolah</p>
-                            <p class="text-secondary size-14"><?= $data_sekolah->nama_sekolah ?></p>
+                            <p class="text-secondary size-12"><?= $data_sekolah->nama_sekolah ?></p>
                         </div>
                         <div class="logo-sekolah position-absolute" style="top: 45px; left: 65px; width:50px;">
                             <img src="<?= $data_sekolah->logo; ?>" alt="" width="30">
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-6 align-self-center p-0">
                             <p class="mb-0 fw-bold size-16">NPSM Sekolah</p>
-                            <p class="text-secondary size-14"><?= $data_sekolah->npsm ?></p>
+                            <p class="text-secondary size-12"><?= $data_sekolah->npsm ?></p>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-6 align-self-center p-0">
                             <p class="mb-0 fw-bold size-16">Jumlah Siswa</p>
-                            <p class="text-secondary size-14"><?= $count_siswa ?> Siswa</p>
+                            <p class="text-secondary size-12"><?= $count_siswa ?> Siswa</p>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     <div class="row p-2">
                         <div class="col-6 align-self-center ps-3">
                             <p class="mb-0 fw-bold size-16">Jumlah Staf</p>
-                            <p class="text-secondary size-14"><?= $count_staf ?> Staf</p>
+                            <p class="text-secondary size-12"><?= $count_staf ?> Staf</p>
                         </div>
                         <div class="col-6 align-self-center p-0">
                             <img src="<?= base_url(); ?>assets/images/tentang_jumlah_staf.svg" alt="" width="115">

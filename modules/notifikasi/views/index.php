@@ -70,7 +70,7 @@
                                                 </div>
                                             </div>
                                             <div class="col align-self-center">
-                                                <span class="mb-1 size-12"><b><?= nice_title($row->judul, 30); ?></b> </span>
+                                                <span class="mb-1 size-14"><b><?= nice_title($row->judul, 30); ?></b> </span>
                                                 <p class="size-12 text-secondary"><?= nice_title($row->keterangan, 80); ?></p>
                                             </div>
                                         </div>

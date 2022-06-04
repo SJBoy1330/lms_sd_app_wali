@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                    <p class="mb-0 fw-bold size-15">No. Tagihan</p>
+                    <p class="mb-0 fw-medium size-12">No. Tagihan</p>
                     <p class="mb-0 fw-normal size-12 text-secondary" id="no-tagihan"><?= $no_tagihan ?></p>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                    <p class="mb-0 fw-bold size-15">Tanggal</p>
+                    <p class="mb-0 fw-medium size-12">Tanggal</p>
                     <p class="mb-0 fw-normal size-12 text-secondary" id="tanggal-tagihan"><?= nice_date("j M Y", $tanggal) ?></p>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                    <p class="mb-0 fw-bold size-13">Kategori Biaya</p>
+                    <p class="mb-0 fw-medium size-12">Kategori Biaya</p>
                     <p class="mb-0 fw-normal size-12 text-secondary" id="kategori-biaya"><?= $nama_kategori ?></p>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                    <p class="mb-0 fw-bold size-15">Jumlah</p>
+                    <p class="mb-0 fw-medium size-12">Jumlah</p>
                     <p class="mb-0 fw-normal size-12 text-secondary" id="jumlah-tagihan"><?= rupiah($jumlah) ?></p>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                    <p class="mb-0 fw-bold size-13">Metode Bayar</p>
+                    <p class="mb-0 fw-medium size-12">Metode Bayar</p>
                     <p class="mb-0 fw-normal size-12 text-secondary" id="metode-bayar-tagihan"><?= $nama_bank ?></p>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                    <p class="mb-0 fw-bold size-13">Status Tagihan</p>
+                    <p class="mb-0 fw-bold size-12">Status Tagihan</p>
                     <p class="mb-0 fw-normal size-12 <?= $lunas === "Y" ? 'text-success' : 'text-danger' ?>" id="status-tagihan"><?= $lunas === "Y" ? 'Lunas' : 'Belum Lunas' ?></p>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                    <p class="mb-0 fw-bold size-15">Bukti Pembayaran</p>
+                    <p class="mb-0 fw-bold size-12">Bukti Pembayaran</p>
                 </div>
             </div>
         </div>

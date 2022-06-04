@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-auto d-flex justify-content-end align-items-center ps-0">
                                 <div class="">
-                                    <p class="mb-0 fw-bold size-13 text-danger text-end mb-0">Jumlah Tagihan</p>
+                                    <p class="mb-0 fw-normal size-13 text-danger text-end mb-0">Jumlah Tagihan</p>
                                     <p class="mb-0 fw-normal size-12 text-secondary text-end"><?= rupiah($data_spp->jumlah_tagihan) ?></p>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                         <p class="mb-0 fw-normal size-13 text-secondary">Jumlah bayar</p>
-                                        <p class="mb-0 fw-bold size-15"><?= rupiah($spp->jumlah) ?></p>
+                                        <p class="mb-0 fw-medium size-14"><?= rupiah($spp->jumlah) ?></p>
                                     </div>
                                 </div>
                                 <?php if ($spp->nama_bank != NULL) : ?>
@@ -87,7 +87,7 @@
                                         </div>
                                         <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                             <p class="mb-0 fw-normal size-13 text-secondary">Nama Bank</p>
-                                            <p class="mb-0 fw-bold size-15"><?= $spp->nama_bank ?></p>
+                                            <p class="mb-0 fw-medium size-14"><?= $spp->nama_bank ?></p>
                                         </div>
                                     </div>
                                 <?php endif; ?>
@@ -97,7 +97,7 @@
                                         <!-- Button Menunggu Konfirmasi -->
                                         <div class="row d-flex mt-4">
                                             <div class="col-6 pe-1">
-                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white button_bayar_ajax">Edit Pembayaran</button>
+                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white button_bayar_ajax">Edit</button>
                                             </div>
                                             <div class="col-6 ps-1">
                                                 <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-sm btn-warning btn-detail-tagihan button_detail_ajax">Detail Tagihan</button>
@@ -159,7 +159,7 @@
                                 </div>
                             </div>
                             <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-bold size-15">No. Tagihan</p>
+                                <p class="mb-0 fw-bold size-14">No. Tagihan</p>
                                 <p class="mb-0 fw-normal size-12 text-secondary" id="no_tagihan"> - </p>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                                 </div>
                             </div>
                             <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-bold size-15">Kategori Pembayaran</p>
+                                <p class="mb-0 fw-bold size-14">Kategori Pembayaran</p>
                                 <p class="mb-0 fw-normal size-12 text-secondary" id="kategori_pembayaran"> - </p>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                                 </div>
                             </div>
                             <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                <p class="mb-0 fw-bold size-15">Jumlah Pembayaran</p>
+                                <p class="mb-0 fw-bold size-14">Jumlah Pembayaran</p>
                                 <p class="mb-0 fw-normal size-12 text-secondary" id="jumlah_pembayaran"> - </p>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                                             <i class="fa-solid fa-circle" style="color: #ec3528"></i>
                                         </div>
                                         <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                            <p class="mb-0 fw-bold size-13"><?= $metode->nama; ?> cabang <?= $metode->cabang; ?></p>
+                                            <p class="mb-0 fw-normal size-13"><?= $metode->nama; ?> cabang <?= $metode->cabang; ?></p>
                                         </div>
                                     </div>
 
@@ -234,7 +234,7 @@
                                             <i class="fa-solid fa-circle" style="color: #ec3528"></i>
                                         </div>
                                         <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                            <p class="mb-0 fw-bold size-13">No. Rekening : <?= $metode->no_rekening; ?></p>
+                                            <p class="mb-0 fw-normal size-13">No. Rekening : <?= $metode->no_rekening; ?></p>
                                         </div>
                                     </div>
 
@@ -243,13 +243,13 @@
                                             <i class="fa-solid fa-circle" style="color: #ec3528"></i>
                                         </div>
                                         <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                            <p class="mb-0 fw-bold size-13">Atas Nama : <?= $metode->atas_nama; ?></p>
+                                            <p class="mb-0 fw-normal size-13">Atas Nama : <?= $metode->atas_nama; ?></p>
                                         </div>
                                     </div>
                                 </div>
                                 <?php if ($metode->keterangan) : ?>
                                     <div class="col-12 ps-4 my-2">
-                                        <p class="mb-0 size-14 text-dark">Keterangan</p>
+                                        <p class="mb-0 size-14 text-dark">Keterangan :</p>
                                         <p class="mb-0 size-15 fw-medium"><?= $metode->keterangan; ?></p>
                                     </div>
                                 <?php endif; ?>

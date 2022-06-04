@@ -42,9 +42,9 @@
                             </div>
                         </div>
                         <div class="col align-self-center ps-0">
-                            <p class="mb-0 size-13 fw-medium"><?= nice_title($row->nama, 30); ?></p>
+                            <p class="mb-0 size-14 fw-normal"><?= nice_title($row->nama, 30); ?></p>
                             <?php if ($row->dikerjakan != FALSE) : ?>
-                                <p class="mb-0 size-14 fw-normal <?php if ($row->kode_status == 1) {
+                                <p class="mb-0 size-13 fw-normal <?php if ($row->kode_status == 1) {
                                                                         echo 'text-warning';
                                                                     } elseif ($row->kode_status == 2) {
                                                                         echo 'text-success';
@@ -52,7 +52,7 @@
                                                                         echo 'text-danger';
                                                                     } ?>"><?= $row->status; ?></p>
                             <?php else : ?>
-                                <p class="mb-0 size-14 fw-normal text-danger">Belum dikerjakan</p>
+                                <p class="mb-0 size-13 fw-normal text-danger">Belum dikerjakan</p>
                             <?php endif; ?>
                         </div>
                         <?php if ($row->dikerjakan != FALSE) : ?>

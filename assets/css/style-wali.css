@@ -450,6 +450,10 @@ button.input-group-text {
   background-color: #00dfa3;
 }
 
+.bg-danger-pribadi{
+  background-color: #EC3528;
+}
+
 .avatar-125 {
   line-height: 125px;
   height: 125px;

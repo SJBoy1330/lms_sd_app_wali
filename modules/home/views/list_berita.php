@@ -38,7 +38,7 @@
 
                                 <div class="row mb-4 mx-2">
                                     <div class="col-12">
-                                        <p class="my-2 title-1-home"><?= $b->judul ?></p>
+                                        <p class="my-2 fw-medium size-18"><?= $b->judul ?></p>
                                         <p class="text-secondary deskripsi-berita"><?= $b->keterangan ?><a href="<?= base_url('home/detail_berita/') . $b->id_konten ?>" class="label-merah">Selengkapnya</a></p>
                                     </div>
                                 </div>

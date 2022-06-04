@@ -46,20 +46,20 @@
                                     </div>
                                     <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                         <p class="mb-0 fw-normal size-13 text-secondary">Nama Siswa/Siswi</p>
-                                        <p class="mb-0 fw-bold size-15"><?= $surat->nama; ?></p>
+                                        <p class="mb-0 fw-normal size-15"><?= $surat->nama; ?></p>
                                     </div>
                                 </div>
                                 <div class="row py-1 px-2">
                                     <div class="d-flex col-auto align-items-center ps-0 pe-2">
                                         <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
                                             <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-building-user size-15 text-white"></i>
+                                                <i class="fa-solid fa-building-user size-14 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                         <p class="mb-0 fw-normal size-13 text-secondary">Kelas</p>
-                                        <p class="mb-0 fw-bold size-15"><?= ifnull($surat->nama_kelas, ' - '); ?></p>
+                                        <p class="mb-0 fw-normal size-15"><?= ifnull($surat->nama_kelas, ' - '); ?></p>
                                     </div>
                                 </div>
                             </div>

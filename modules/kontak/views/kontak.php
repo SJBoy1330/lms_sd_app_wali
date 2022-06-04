@@ -7,9 +7,9 @@
                     <a href="whatsapp://send?text=&number=<?php echo $result->no_admin; ?>" class="col-12 mx-auto mb-4 text-dark">
                         <div class="card mb-3">
                             <div class="col-auto position-absolute avatar-detail-kbm">
-                                <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
-                                    <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
-                                        <i class="fa-solid fa-phone size-22 text-white"></i>
+                                <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
+                                    <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
+                                        <i class="fa-solid fa-phone size-18 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -30,9 +30,9 @@
                     <a href="whatsapp://send?text=&number=<?php echo $result->no_keuangan; ?>" class="col-12 mx-auto mb-4 text-dark">
                         <div class="card mb-3">
                             <div class="col-auto position-absolute avatar-detail-kbm">
-                                <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
-                                    <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
-                                        <i class="fa-solid fa-rupiah-sign size-22 text-white"></i>
+                                <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
+                                    <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
+                                        <i class="fa-solid fa-rupiah-sign size-18 text-white"></i>
                                     </div>
                                 </div>
                             </div>

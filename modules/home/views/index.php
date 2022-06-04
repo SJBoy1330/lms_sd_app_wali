@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="wrapper-text shadow-sm">
                                     <div class="row px-3 py-3">
-                                        <p class="mb-1 title-1-home-text text-dark"><?= $b->judul ?></p>
+                                        <p class="mb-1 fw-medium size-15 text-dark"><?= $b->judul ?></p>
                                         <p class="mb-0 title-4-home-text"><?= nice_title($b->keterangan, 70); ?></p>
                                     </div>
                                 </div>
