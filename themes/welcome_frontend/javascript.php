@@ -1,15 +1,18 @@
 <!-- Required jquery and libraries -->
 
-<script>
-    var BASE_URL = baseUrl = '<?= base_url(); ?>';
-</script>
+
 <script src="<?= base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
 <script src="<?= base_url(); ?>assets/js/popper.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 
 <!-- swiper js script -->
 <script src="<?= base_url(); ?>assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
-
+<script>
+    var BASE_URL = baseUrl = '<?= base_url(); ?>';
+    var API_URL = apiUrl = '<?= API_URL() ?>';
+    var loading_scene = new bootstrap.Modal(document.getElementById("loading_scene"), {});
+    var css_button = 'btn btn-block btn-md';
+</script>
 
 <!-- Customized jquery file  -->
 <script src="<?= base_url(); ?>assets/js/main.js"></script>

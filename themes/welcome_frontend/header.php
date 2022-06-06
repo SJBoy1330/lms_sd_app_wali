@@ -36,20 +36,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <style>
-        h2.swal2-title{
-            font-size: 1.5rem !important;
+        h2.swal2-title {
+            font-size: 1.5rem;
         }
 
-        div#swal2-content{
-            font-size: 1rem !important;
+        div#swal2-content {
+            font-size: 1rem;
         }
 
-        button.swal2-confirm{
-            background-color: #1AB64F !important;
-            border-color: #1AB64F !important;
-            width: 100px !important;
-            border-radius: 10px !important;
-            color: #FFFFFF !important;
+        button.swal2-confirm {
+            background-color: #f73563 !important;
+            border-color: #f73563 !important;
+            width: 100px;
+            /* height: 75px; */
+            border-radius: 10px;
         }
     </style>
 </head>
