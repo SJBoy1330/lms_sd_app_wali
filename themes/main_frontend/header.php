@@ -51,6 +51,7 @@
             width: 100px;
             /* height: 75px; */
             border-radius: 10px;
+            color: #FFFFFF !important;
         }
     </style>
 
