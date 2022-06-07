@@ -39,7 +39,7 @@
                                 <div class="row py-1 px-2 mt-2 mb-2 ">
                                     <div class="d-flex col-auto align-items-center ps-0 pe-2">
                                         <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline" style="line-height: 33px;">
                                                 <i class="fa-solid fa-graduation-cap size-15 text-white"></i>
                                             </div>
                                         </div>
@@ -52,7 +52,7 @@
                                 <div class="row py-1 px-2">
                                     <div class="d-flex col-auto align-items-center ps-0 pe-2">
                                         <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline" style="line-height: 33px;">
                                                 <i class="fa-solid fa-building-user size-14 text-white"></i>
                                             </div>
                                         </div>

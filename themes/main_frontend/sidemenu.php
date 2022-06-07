@@ -9,7 +9,7 @@
                 <div class="row mt-3">
                     <div class="col-auto">
                         <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm" id="reload_side_foto">
-                            <img src="<?= $profil->foto; ?>" alt="" class="rounded-18" id="side_foto_profil">
+                            <img src="<?= $profil->foto; ?>" alt="" class="rounded-18" id="side_foto_profil" style="height: 100%">
                         </figure>
                     </div>
                     <div class="col px-0 align-self-center">
