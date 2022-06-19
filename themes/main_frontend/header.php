@@ -53,6 +53,27 @@
             border-radius: 10px;
             color: #FFFFFF !important;
         }
+
+        @media only screen and (max-width: 320px) {
+            .avatar.avatar-60.avatar-quicklinks {
+                line-height: 60px;
+                height: 50px;
+                width: 50px;
+                border-radius: -5px !important;
+            }
+
+            i.fa-solid.fa-envelope-open-text{
+                font-size: 24px;
+            }
+
+            i.fa-solid.fa-envelope-open-dollar{
+                font-size: 24px;
+            }
+
+            i.fa-solid.fa-phone{
+                font-size: 24px;
+            }
+        }
     </style>
 
 </head>
