@@ -26,7 +26,7 @@
         </div>
     <?php endif; ?>
     <div class="row" id="parent_notif">
-        <div class=" col-12 px-0" id="reload_content_notif">
+        <div class="col-12 px-0" id="reload_content_notif" style="margin-bottom: 100px;">
             <?php if ($result) : ?>
                 <!-- <div class="d-none ms-3 mb-2 align-self-center" id="pilih_semua" style="display : flex; justify-content: flex-start; align-items : flex-start">
                     <input class="form-check-input" type="checkbox"  id="notif_parent_checkbox" style="width : 18px; height: 18px; border-radius: 5px;">
@@ -84,6 +84,22 @@
 
             <?= vector_default("vector_notifikasi_kosong.svg", "Tidak ada notifikasi", "Tidak ditemukan pemberitahuan untuk anda, Hubungi admin jika terjadi kesalahan!", 'vector_notifikasi', count($result)); ?>
         </div>
+
+        <!-- Action Notfikasi -->
+            <div class="footer-notifikasi d-none">
+                <div class="container px-0">
+                    <div class="row notifikasi px-0">
+                        <div class="col-6 d-flex justify-content-center align-items-center">
+                            <button type="button" class="btn btn-danger rounded-pill btn-notifikasi-fill"><i class="fa-regular fa-check notifikasi"></i><span class="span-notifikasi">Tandai dibaca</span></button>
+                        </div>
+                        <div class="col-6 d-flex justify-content-center align-items-center">
+                            <button type="button" class="btn btn-danger rounded-pill btn-notifikasi-outline"><i class="fa-regular fa-trash notifikasi"></i><span class="span-notifikasi">Hapus Notifikasi</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- End Action Notifikasi -->
+
     </div>
 </div>
 <!-- main page content ends -->
