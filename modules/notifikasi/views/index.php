@@ -33,7 +33,7 @@
                     <span class="ms-2 size-13">Pilih Semua</span>
                 </div> -->
                 <div class="form-check d-none align-self-center ms-2 mb-2" id="pilih_semua" style="display : flex; justify-content: flex-start; align-items : end">
-                    <input class="form-check-input" type="checkbox"  id="notif_parent_checkbox" style="width : 18px; height: 18px; border-radius: 5px;">
+                    <input class="form-check-input" type="checkbox" id="notif_parent_checkbox" style="width : 18px; height: 18px; border-radius: 5px;">
                     <label class="form-check-label size-12 ms-1">
                         Pilih Semua
                     </label>
@@ -86,18 +86,18 @@
         </div>
 
         <!-- Action Notfikasi -->
-            <div class="footer-notifikasi d-none">
-                <div class="container px-0">
-                    <div class="row notifikasi px-0">
-                        <div class="col-6 d-flex justify-content-center align-items-center">
-                            <button type="button" class="btn btn-danger rounded-pill btn-notifikasi-fill"><i class="fa-regular fa-check notifikasi"></i><span class="span-notifikasi">Tandai dibaca</span></button>
-                        </div>
-                        <div class="col-6 d-flex justify-content-center align-items-center">
-                            <button type="button" class="btn btn-danger rounded-pill btn-notifikasi-outline"><i class="fa-regular fa-trash notifikasi"></i><span class="span-notifikasi">Hapus Notifikasi</span></button>
-                        </div>
+        <div id="action_notifikasi" class="footer-notifikasi d-none">
+            <div class="container px-0">
+                <div class="row notifikasi px-0">
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <button type="button" id="btn_bca_ntf" class="btn btn-danger rounded-pill btn-notifikasi-fill"><i class="fa-regular fa-check notifikasi"></i><span class="span-notifikasi">Tandai dibaca</span></button>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <button type="button" id="btn_hps_ntf" onclick="submit_form(this,'#form_action_notifikasi')" class="btn btn-danger rounded-pill btn-notifikasi-outline"><i class="fa-regular fa-trash notifikasi"></i><span class="span-notifikasi">Hapus Notifikasi</span></button>
                     </div>
                 </div>
             </div>
+        </div>
         <!-- End Action Notifikasi -->
 
     </div>

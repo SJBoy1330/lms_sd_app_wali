@@ -5,8 +5,7 @@ var swiper2 = new Swiper(".connectionwiper", {
     pagination: false
 });
 
-const header_notif = document.querySelector('#action_notifikasi');
-const header = document.querySelector('#header_config');
+const footer_notif = document.querySelector('#action_notifikasi');
 const pilih_semua = document.getElementById('pilih_semua');
 
 function get_tipe(property, tipe) {
@@ -45,12 +44,12 @@ function pilih_notif(element) {
         div.classList.remove('notif-active');
     }
     if (jumlah > 0) {
-        header_notif.classList.remove('d-none');
-        header.classList.add('d-none');
+        footer_notif.classList.remove('d-none');
+
         pilih_semua.classList.remove('d-none');
     } else {
-        header_notif.classList.add('d-none');
-        header.classList.remove('d-none');
+        footer_notif.classList.add('d-none');
+
         pilih_semua.classList.add('d-none');
         var checkbox = document.querySelectorAll('.checkboxes');
         checkbox.forEach((cb) => {
@@ -101,8 +100,8 @@ $(document).ready(function () {
             });
         } else {
             $('.checkboxes').prop('checked', false);
-            header_notif.classList.add('d-none');
-            header.classList.remove('d-none');
+            footer_notif.classList.add('d-none');
+
             pilih_semua.classList.add('d-none');
 
             div_notif.forEach((dn) => {
@@ -111,12 +110,12 @@ $(document).ready(function () {
         }
         var jumlah = $(".checkboxes:checked").length;
         if (jumlah > 0) {
-            header_notif.classList.remove('d-none');
-            header.classList.add('d-none');
+            footer_notif.classList.remove('d-none');
+
             pilih_semua.classList.remove('d-none');
         } else {
-            header_notif.classList.add('d-none');
-            header.classList.remove('d-none');
+            footer_notif.classList.add('d-none');
+
             pilih_semua.classList.add('d-none');
             var checkbox = document.querySelectorAll('.checkboxes');
             checkbox.forEach((cb) => {
@@ -150,8 +149,8 @@ $(document).ready(function () {
                 $('.checkboxes[value=' + value + ']').prop('checked', true);
             });
             var flex = document.querySelector('#pro-notif-' + value);
-            header_notif.classList.remove('d-none');
-            header.classList.add('d-none');
+            footer_notif.classList.remove('d-none');
+
             pilih_semua.classList.remove('d-none');
             flex.classList.add('notif-active');
         }, 600);
@@ -189,8 +188,8 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 // $(data.load.parent).load(data.load.reload);
-                // header_notif.classList.add('d-none');
-                // header.classList.remove('d-none');
+                // footer_notif.classList.add('d-none');
+                // 
                 // pilih_semua.classList.add('d-none');
 
                 location.reload();
