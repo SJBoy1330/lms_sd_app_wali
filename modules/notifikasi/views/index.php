@@ -59,19 +59,19 @@
                                             <div class="col-12">
                                                 <div class="row d-flex justify-content-between my-2">
                                                     <div class="col-auto not-info">
-                                                        <div class="col not-info">
+                                                        <div class="col not-info d-flex align-items-center">
                                                             <span class="dot-notif"></span>
-                                                            <span class="size-12 fw-bold"><?= get_tipe_notif($row->tipe); ?></span>
+                                                            <p class="size-12 fw-bold ps-1 unselectable"><?= get_tipe_notif($row->tipe); ?></p>
                                                         </div>
                                                     </div>
                                                     <div class="col-auto">
-                                                        <span class="size-12"><?= nice_time($row->tanggal); ?></span>
+                                                        <p class="size-12 unselectable"><?= nice_time($row->tanggal); ?></p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col align-self-center">
-                                                <span class="mb-1 size-14"><b><?= nice_title($row->judul, 30); ?></b> </span>
-                                                <p class="size-12 text-secondary"><?= nice_title($row->keterangan, 80); ?></p>
+                                                <p class="mb-1 size-14 unselectable"><b><?= nice_title($row->judul, 30); ?></b> </p>
+                                                <p class="size-12 text-secondary unselectable"><?= nice_title($row->keterangan, 80); ?></p>
                                             </div>
                                         </div>
                                         </a>
