@@ -146,8 +146,6 @@
 <!-- swiper js script -->
 <script src="<?= base_url() ?>assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
 
-<script src="<?= base_url() ?>assets/js/pagination-carousel.js"></script>
-
 <script src="<?= base_url() ?>assets/js/global.js"></script>
 
 <script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>
