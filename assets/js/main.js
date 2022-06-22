@@ -125,9 +125,9 @@ $(window).on('load', function () {
     /* main container min height */
     $('main').css('min-height', $(window).height());
 
-    if ($('.header.position-fixed').length > 0) {
-        $('main').css('padding-top', $('.header').outerHeight() + 10);
-    }
+    // if ($('.header.position-fixed').length > 0) {
+    //     $('main').css('padding-top', $('.header').outerHeight());
+    // }
     if ($('.footer').length > 0) {
         $('main').css('padding-bottom', $('.footer').outerHeight() + 10);
     }

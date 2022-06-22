@@ -12092,6 +12092,16 @@ fieldset:disabled .btn {
   transition: ease all 0.5s;
 }
 
+main{
+  padding-top: 75px;
+  animation: fadein 0.3s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .transition-1,
 .sidebar-wrap.sidebar-overlay::after {
   -webkit-transition: ease all 1s;
