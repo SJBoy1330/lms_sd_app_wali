@@ -25,7 +25,7 @@
             <form id="form_login" method="POST" action="<?= base_url('func_auth/login_proses'); ?>">
                 <div class="text-center my-5">
                     <p class="mb-1 title-1">Log in App Wali</p>
-                    <p class="mb-0 fw-600 size-18 title-2">Masuk dengan username dan kata sandi</p>
+                    <p class="mb-0 fw-600 size-18 title-2">Masuk dengan Kode sekolah, Username dan Kata sandi</p>
                 </div>
 
                 <div class="mb-4" id="req_kode_sekolah">

@@ -68,6 +68,7 @@
     color: #303030;
     height: 45px;
     padding-top: 10px;
+    padding-bottom: 8px !important;
     font-weight: 600;
   }
 
@@ -80,6 +81,7 @@
     color: #303030;
     height: 45px;
     padding-top: 10px;
+    padding-bottom: 8px !important;
     font-weight: 600;
   }
 
