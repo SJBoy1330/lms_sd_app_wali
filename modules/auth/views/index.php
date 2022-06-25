@@ -1,5 +1,5 @@
 <!-- Begin page content -->
-<main class="container-fluid h-100">
+<main class="container-fluid h-100 welcome">
     <div class="row h-100 landing-page">
         <div class="text-landing">
             <div class="row mb-3">

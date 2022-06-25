@@ -12097,6 +12097,10 @@ main{
   animation: fadein 0.3s;
 }
 
+main.welcome{
+  padding-top: 0px !important;
+}
+
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }

@@ -1,5 +1,5 @@
 <!-- Begin page content -->
-<main class="container-fluid h-100 ">
+<main class="container-fluid h-100 welcome">
     <div class="row h-100">
         <div class="col-11 col-sm-11 mx-auto">
 
