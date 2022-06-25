@@ -45,11 +45,11 @@
         }
 
         button.swal2-confirm {
-            background-color: #f73563 !important;
+            background-color: #EC3528 !important;
             border-color: transparent !important;
             width: 100px;
             height: 38px;
-            border-radius: 10px;
+            border-radius: 30px;
             text-transform: uppercase;
             color: #FFFFFF !important;
         }
