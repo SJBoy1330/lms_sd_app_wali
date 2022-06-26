@@ -28,7 +28,7 @@
             <?php if ($result->surat) : ?>
                 <?php foreach ($result->surat as $surat) : ?>
                     <div class="row mb-3">
-                        <a class="detail_surat" data-bs-toggle="modal" data-id="<?= $surat->id_surat_ijin; ?>" data-bs-target="#detailSuratIjin">
+                        <a class="detail_surat" data-bs-toggle="modal" onclick="modal_surat(<?= $surat->id_surat_ijin; ?>)" data-bs-target="#detailSuratIjin">
                             <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
                                 <span class="size-14 fw-bold">Surat Keterangan <?php if ($surat->tipe == 1) {
                                                                                     echo 'ijin';

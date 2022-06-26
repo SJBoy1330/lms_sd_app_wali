@@ -105,10 +105,8 @@ class Controller_ctl extends MY_Frontend
 		$api = curlPost('notifikasi/hapus', ['id_sekolah' => $id_sekolah, 'id_notifikasi' => json_encode($id_notifikasi)]);
 
 		$data['status'] = 200;
-		// $data['load']['parent'] = '#parent_notif';
-		// $data['load']['reload'] = base_url('notifikasi #reload_content_notif');\
+		$data['id_notifikasi'] = $id_notifikasi;
 
-		$data['reload'] = true;
 
 		echo json_encode($data);
 	}
@@ -124,9 +122,9 @@ class Controller_ctl extends MY_Frontend
 		$data['status'] = 200;
 		// $data['load']['parent'] = '#parent_notif';
 		// $data['load']['reload'] = base_url('notifikasi #reload_content_notif');
+		$data['id_notifikasi'] = $id_notifikasi;
 
-		$data['reload'] = true;
-
+		sleep(2);
 		echo json_encode($data);
 	}
 }

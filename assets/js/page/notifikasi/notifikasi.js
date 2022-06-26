@@ -8,6 +8,7 @@ var swiper2 = new Swiper(".connectionwiper", {
 const footer_notif = document.querySelector('#action_notifikasi');
 const pilih_semua = document.getElementById('pilih_semua');
 
+
 function get_tipe(property, tipe) {
     const base_tipe = document.querySelector(".base_tipe");
     const dis_notif = document.querySelectorAll("#display_notifikasi .zoom-filter");
@@ -186,13 +187,62 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             dataType: 'json',
+            beforeSend() {
+                $('#loading_scene').modal('show');
+            },
             success: function (data) {
-                // $(data.load.parent).load(data.load.reload);
-                // footer_notif.classList.add('d-none');
-                // 
-                // pilih_semua.classList.add('d-none');
+                var jumlah = data.id_notifikasi.length;
+                footer_notif.classList.add('d-none');
+                pilih_semua.classList.add('d-none');
+                for (let i = 0; i < jumlah; i++) {
+                    var div = document.getElementById('pro-notif-' + data.id_notifikasi[i]);
+                    div.classList.remove('bg-notif-readed');
+                    div.classList.remove('notif-active');
 
-                location.reload();
+                }
+                var checkbox = document.querySelectorAll('.checkboxes');
+                $('.checkboxes').prop('checked', false);
+                checkbox.forEach((cb) => {
+                    cb.classList.add("d-none");
+                });
+                $('#loading_scene').modal('hide');
+            }
+        })
+    });
+
+
+
+    $('#btn_hps_ntf').on('click', function () {
+        var url = BASE_URL + 'notifikasi/hapus_all';
+        var method = 'POST';
+        var form = $('form')[0];
+        var form_data = new FormData(form);
+
+        $.ajax({
+            url: url,
+            data: form_data,
+            method: method,
+            contentType: false,
+            cache: false,
+            processData: false,
+            dataType: 'json',
+            beforeSend() {
+                $('#loading_scene').modal('show');
+            },
+            success: function (data) {
+                var jumlah = data.id_notifikasi.length;
+                footer_notif.classList.add('d-none');
+                pilih_semua.classList.add('d-none');
+                for (let i = 0; i < jumlah; i++) {
+                    $('#pro-notif-' + data.id_notifikasi[i]).fadeOut();
+
+                }
+                var checkbox = document.querySelectorAll('.checkboxes');
+                $('.checkboxes').prop('checked', false);
+                checkbox.forEach((cb) => {
+                    cb.classList.add("d-none");
+                });
+                $('#loading_scene').modal('hide');
             }
         })
     });

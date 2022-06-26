@@ -129,29 +129,40 @@
     var API_URL = apiUrl = '<?= API_URL() ?>';
     var loading_scene = new bootstrap.Modal(document.getElementById("loading_scene"), {});
     var css_button = 'btn btn-block btn-md';
+    var html_loader = '<div class="row loader">\
+                    <div class="col-12 loader">\
+                        <div class="loadingio-spinner-double-ring-x5jbbv5x43o">\
+                            <div class="ldio-wmpldorvik">\
+                                <div></div>\
+                                <div></div>\
+                                <div>\
+                                    <div></div>\
+                                </div>\
+                                <div>\
+                                    <div></div>\
+                                </div>\
+                            </div>\
+                        </div>\
+                        <p class="size-20 fw-medium loader"> Loading... </p>\
+                    </div>\
+                </div>';
 </script>
 <!-- Customized jquery file  -->
-<script src="<?= base_url() ?>assets/js/main.js"></script>
+<script src="<?= base_url() ?>assets/js/main.js?v=<?= date(' YmdHis'); ?>"></script>
 <script src="<?= base_url() ?>assets/js/color-scheme.js"></script>
 
 <!-- PWA app service registration and works -->
-<script src="<?= base_url() ?>assets/js/pwa-services.js"></script>
-
-<!-- Chart js script -->
-<script src="<?= base_url() ?>assets/vendor/chart-js-3.3.1/chart.min.js"></script>
-
-<!-- Progress circle js script -->
-<script src="<?= base_url() ?>assets/vendor/progressbar-js/progressbar.min.js"></script>
+<!-- <script src="<?= base_url() ?>assets/js/pwa-services.js"></script> -->
 
 <!-- swiper js script -->
 <script src="<?= base_url() ?>assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
 
-<script src="<?= base_url() ?>assets/js/global.js"></script>
+<script src="<?= base_url() ?>assets/js/global.js?v=<?= date(' YmdHis'); ?>"></script>
 
 <script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>
-<script src="<?= base_url('assets/js/alert/scriptalert.js') ?>"></script>
+<script src="<?= base_url('assets/js/alert/scriptalert.js') . '?v=' . date('YmdHis') ?>"></script>
 
-<script src="<?= base_url('assets/js/page/function.js') ?>"></script>
+<script src="<?= base_url('assets/js/page/function.js') . '?v=' . date('YmdHis') ?>"></script>
 
 <!--evo calender-->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>

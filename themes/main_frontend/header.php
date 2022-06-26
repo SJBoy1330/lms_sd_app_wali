@@ -29,9 +29,10 @@
 
     <!--evo calender-->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/vendor/evo-calendar/css/evo-calendar.min.css" />
+    <link href="<?= base_url(); ?>assets/css/page/loader.css" rel="stylesheet" id="style">
 
     <!-- style css for this template -->
-    <link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet" id="style">
+    <link href="<?= base_url(); ?>assets/css/style.css?v=<?= date(' YmdHis'); ?>" rel="stylesheet" id="style">
 
     <!-- Font Awesome-->
     <script src="https://kit.fontawesome.com/ec75c6c12e.js" crossorigin="anonymous"></script>
@@ -62,15 +63,15 @@
                 border-radius: -5px !important;
             }
 
-            i.fa-solid.fa-envelope-open-text{
+            i.fa-solid.fa-envelope-open-text {
                 font-size: 24px;
             }
 
-            i.fa-solid.fa-envelope-open-dollar{
+            i.fa-solid.fa-envelope-open-dollar {
                 font-size: 24px;
             }
 
-            i.fa-solid.fa-phone{
+            i.fa-solid.fa-phone {
                 font-size: 24px;
             }
         }

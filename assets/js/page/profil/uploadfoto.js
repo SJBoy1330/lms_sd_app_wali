@@ -22,7 +22,11 @@ function previewImage(id_sekolah, id_wali) {
         method: 'POST',
         dataType: 'json',
         cache: false,
+        beforeSend() {
+            $('#loading_scene').modal('show');
+        },
         success: function (data) {
+            $('#loading_scene').modal('hide');
             $('#reload_side_foto').load(BASE_URL + 'profil #side_foto_profil');
             if (data.status == 200) {
                 Swal.fire({

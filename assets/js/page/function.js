@@ -1,6 +1,7 @@
 
-function submit_form(element, id_form, num = 0) {
+function submit_form(element, id_form, num = 0, color = '#FFFFFF') {
     // console.log('ok');
+    var text_button = document.getElementById(element.id).innerHTML;
     var url = $(id_form).attr('action');
     var method = $(id_form).attr('method');
     // console.log(url);
@@ -19,12 +20,21 @@ function submit_form(element, id_form, num = 0) {
         dataType: 'json',
         beforeSend: function () {
             $('#' + element.id).prop('disabled', true);
+            $('#' + element.id).html('<div class="spinner-border" style="color : ' + color + '" role="status">\
+                <span class="sr-only"></span>\
+</div>');
         },
         success: function (data) {
             // console.log(data);
-            $('#' + element.id).prop('disabled', false);
 
             $('.fadedin').remove();
+            if (data.load != null) {
+                for (var a = 0; a < data.load.length; a++) {
+                    $(data.load[a].parent).load(data.load[a].reload);
+                }
+            }
+            $('#' + element.id).prop('disabled', false);
+            $('#' + element.id).html(text_button);
 
             if (data.status == 200 || data.status == true) {
                 var icon = 'success';
@@ -48,13 +58,8 @@ function submit_form(element, id_form, num = 0) {
                     if (data.reload == true) {
                         location.reload();
                     }
-                    if (data.load != null) {
-                        console.log(data.load.parent);
-                        console.log(data.load.reload);
-                        $(data.load.parent).load(data.load.reload);
-                    }
                     if (data.modal != null) {
-                        $(data.modal.id).moda(data.modal.action);
+                        $(data.modal.id).modal(data.modal.action);
                     }
                 });
             } else {
@@ -67,9 +72,8 @@ function submit_form(element, id_form, num = 0) {
                 if (data.redirect) {
                     location.href = data.redirect;
                 }
-
-                if (data.load != null) {
-                    $(data.load.parent).load(data.load.reload);
+                if (data.modal != null) {
+                    $(data.modal.id).modal(data.modal.action);
                 }
 
                 if (data.reload == true) {
@@ -80,6 +84,7 @@ function submit_form(element, id_form, num = 0) {
     });
 
 }
+
 
 
 function search(element, id_tabel, property = 'tbody tr') {

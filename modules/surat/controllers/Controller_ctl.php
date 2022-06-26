@@ -73,6 +73,7 @@ class Controller_ctl extends MY_Frontend
 				'id_wali' => $id_wali
 			]
 		);
+		sleep(1.5);
 		$this->load->view('modal_surat_ijin', $result);
 	}
 
@@ -116,7 +117,10 @@ class Controller_ctl extends MY_Frontend
 			$data['alert']['message'] = $insert->message;
 			if ($insert->status == 200) {
 				$data['alert']['title'] = 'PEMBERITAHUAN';
-				$data['reload'] = true;
+				$data['modal']['id'] = '#tambahSuratIjin';
+				$data['modal']['action'] = 'hide';
+				$data['load'][0]['parent'] = '#parent_load';
+				$data['load'][0]['reload'] = base_url('surat') . ' #load_surat';
 			} else {
 				$data['alert']['title'] = 'PERINGATAN';
 			}

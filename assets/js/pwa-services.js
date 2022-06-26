@@ -3,8 +3,8 @@
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function (event) {
         navigator.serviceWorker
-            .register("././serviceWorker.js", {
-            //.register("https://maxartkiller.com/website/finwallapp2/HTML/serviceWorker.js", {
+            .register("serviceWorker.js", {
+                //.register("https://maxartkiller.com/website/finwallapp2/HTML/serviceWorker.js", {
                 scope: './'
             })
             .then(reg => console.log("service worker registered"))

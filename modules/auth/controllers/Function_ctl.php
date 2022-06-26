@@ -25,11 +25,17 @@ class Function_ctl extends MY_Welcome
         }
 
         if (!in_array(false, $arrAccess)) {
-            $request_data = array(
-                'kode_sekolah' => $this->input->post('kode_sekolah'),
-                'username' => $this->input->post('username'),
-                'password' => $this->input->post('kata_sandi'),
-            );
+            $request_data['kode_sekolah'] = $this->input->post('kode_sekolah');
+            $request_data['username'] = $this->input->post('username');
+            $request_data['password'] = $this->input->post('kata_sandi');
+
+            if (isset($_COOKIE['FCM_TOKEN'])) {
+                $request_data['fcm_token'] = $_COOKIE['FCM_TOKEN'];
+            }
+
+            if (isset($_COOKIE['DEVICE_INFO'])) {
+                $request_data['device_info'] = $_COOKIE['DEVICE_INFO'];
+            }
 
             [$error, $message, $status, $response_data] = curl_post('login', $request_data);
             $data['status'] = !$error;
