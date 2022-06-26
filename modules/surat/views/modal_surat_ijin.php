@@ -49,9 +49,16 @@
         <div class="modal-footer border-0 d-flex justify-content-center">
             <?php if (strtotime($berlaku_mulai) > strtotime(date('Y-m-d'))) : ?>
                 <button type="button" id="edit_surat_ijin" class="btn btn-block btn-md btn-warning btn-surat">Edit Surat</button>
-                <div id="display_button_action" class="d-flex d-none">
-                    <button type="button" id="batal_edit_surat_ijin" class="btn btn-block btn-md btn-secondary btn-batal me-2">Batal</button>
-                    <button type="button" onclick="submit_form(this,'#form_edit_surat')" id="simpan_edit_surat_ijin" class="btn btn-block btn-md btn-danger btn-simpan">Simpan</button>
+                <button type="button" class="btn btn-block btn-md btn-warning btn-hps-surat">Hapus Surat</button>
+                <div id="display_button_action" class="row d-flex d-none" style="width: 100vw;">
+                    <!-- <button type="button" id="batal_edit_surat_ijin" class="btn btn-block btn-md btn-secondary btn-batal me-2">Batal</button>
+                    <button type="button" onclick="submit_form(this,'#form_edit_surat')" id="simpan_edit_surat_ijin" class="btn btn-block btn-md btn-danger btn-simpan">Simpan</button> -->
+                    <div class="col-6">
+                        <button type="button" id="batal_edit_surat_ijin" class="btn btn-block btn-md btn-secondary btn-batal me-2"><i class="fa-regular fa-ban me-2"></i>Batal</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" onclick="submit_form(this,'#form_edit_surat')" id="simpan_edit_surat_ijin" class="btn btn-block btn-md btn-danger btn-simpan">Simpan<i class="fa-regular fa-floppy-disk ms-2"></i></button>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>
