@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                         <p class="mb-0 fw-normal size-13 text-secondary">Jumlah bayar</p>
-                                        <p class="mb-0 fw-medium size-14"><?= rupiah($spp->jumlah) ?></p>
+                                        <p class="mb-0 fw-normal size-14"><?= rupiah($spp->jumlah) ?></p>
                                     </div>
                                 </div>
                                 <?php if ($spp->nama_bank != NULL) : ?>
@@ -87,7 +87,7 @@
                                         </div>
                                         <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                             <p class="mb-0 fw-normal size-13 text-secondary">Nama Bank</p>
-                                            <p class="mb-0 fw-medium size-14"><?= $spp->nama_bank ?></p>
+                                            <p class="mb-0 fw-normal size-14"><?= $spp->nama_bank ?></p>
                                         </div>
                                     </div>
                                 <?php endif; ?>
@@ -97,16 +97,16 @@
                                         <!-- Button Menunggu Konfirmasi -->
                                         <div class="row d-flex mt-4">
                                             <div class="col-6 pe-1">
-                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white button_bayar_ajax">Edit</button>
+                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white button_bayar_ajax"><i class="fa-regular fa-pen-to-square me-1"></i> Edit</button>
                                             </div>
                                             <div class="col-6 ps-1">
-                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-sm btn-warning btn-detail-tagihan button_detail_ajax">Detail Tagihan</button>
+                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-sm btn-warning btn-detail-tagihan button_detail_ajax">Detail<i class="fa-regular fa-money-from-bracket ms-1"></i></button>
                                             </div>
                                         </div>
                                     <?php else : ?>
                                         <div class="row mt-4 mx-1">
                                             <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_detail_ajax">Detail Tagihan</a>
-                                        </div>
+                                        </div>  
                                     <?php endif; ?>
                                 <?php else : ?>
                                     <div class="row mt-4 mx-1">

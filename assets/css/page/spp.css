@@ -64,25 +64,23 @@
     background-color: #EC3528;
     border-radius: 8px;
     line-height: 1px;
-    font-size: 13px;
+    font-size: 15px;
     color: #303030;
     height: 45px;
     padding-top: 10px;
     padding-bottom: 8px !important;
-    font-weight: 600;
   }
 
   button.btn.btn-detail-tagihan{
     width: 100%;
-    background-color: #FFBD17;
+    background-color: #fdb500;
     border-radius: 8px;
     line-height: 1px;
-    font-size: 13px;
+    font-size: 15px;
     color: #303030;
     height: 45px;
     padding-top: 10px;
     padding-bottom: 8px !important;
-    font-weight: 600;
   }
 
   .bg-ffbd17{
