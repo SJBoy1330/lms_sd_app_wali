@@ -47,19 +47,21 @@
         </div>
 
         <div class="modal-footer border-0 d-flex justify-content-center">
-            <?php if (strtotime($berlaku_mulai) > strtotime(date('Y-m-d'))) : ?>
-                <button type="button" id="edit_surat_ijin" class="btn btn-block btn-md btn-warning btn-surat">Edit Surat</button>
-                <button type="button" class="btn btn-block btn-md btn-warning btn-hps-surat">Hapus Surat</button>
-                <div id="display_button_action" class="row d-flex d-none" style="width: 100vw;">
-                    <!-- <button type="button" id="batal_edit_surat_ijin" class="btn btn-block btn-md btn-secondary btn-batal me-2">Batal</button>
+            <?php if ($kode_status != 2) : ?>
+                <?php if (strtotime($berlaku_mulai) > strtotime(date('Y-m-d'))) : ?>
+                    <button type="button" id="edit_surat_ijin" class="btn btn-block btn-md btn-warning btn-surat">Edit Surat</button>
+                    <button type="button" id="hapus_surat_ijin" onclick="hapus_surat(<?= $id_surat_ijin; ?>)" class="btn btn-block btn-md btn-warning btn-hps-surat">Hapus Surat</button>
+                    <div id="display_button_action" class="row d-flex d-none" style="width: 100vw;">
+                        <!-- <button type="button" id="batal_edit_surat_ijin" class="btn btn-block btn-md btn-secondary btn-batal me-2">Batal</button>
                     <button type="button" onclick="submit_form(this,'#form_edit_surat')" id="simpan_edit_surat_ijin" class="btn btn-block btn-md btn-danger btn-simpan">Simpan</button> -->
-                    <div class="col-6">
-                        <button type="button" id="batal_edit_surat_ijin" class="btn btn-block btn-md btn-secondary btn-batal me-2"><i class="fa-regular fa-ban me-2"></i>Batal</button>
+                        <div class="col-6">
+                            <button type="button" id="batal_edit_surat_ijin" class="btn btn-block btn-md btn-secondary btn-batal me-2"><i class="fa-regular fa-ban me-2"></i>Batal</button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" onclick="submit_form(this,'#form_edit_surat')" id="simpan_edit_surat_ijin" class="btn btn-block btn-md btn-danger btn-simpan">Simpan<i class="fa-regular fa-floppy-disk ms-2"></i></button>
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <button type="button" onclick="submit_form(this,'#form_edit_surat')" id="simpan_edit_surat_ijin" class="btn btn-block btn-md btn-danger btn-simpan">Simpan<i class="fa-regular fa-floppy-disk ms-2"></i></button>
-                    </div>
-                </div>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
 
@@ -71,6 +73,7 @@
     var select = document.getElementById('edit_tipe');
     var file = document.getElementById('div_upload_file');
     var edit_surat_ijin = document.getElementById('edit_surat_ijin');
+    var hapus_surat_ijin = document.getElementById('hapus_surat_ijin');
     var display_button_action = document.getElementById('display_button_action');
     $('#edit_surat_ijin').on('click', function() {
         $('#mulai_berlaku').prop('readonly', false);
@@ -79,6 +82,7 @@
         select.classList.remove('d-none');
         file.classList.remove('d-none');
         edit_surat_ijin.classList.add('d-none');
+        hapus_surat_ijin.classList.add('d-none');
         display_button_action.classList.remove('d-none');
     })
 
@@ -89,6 +93,7 @@
         select.classList.add('d-none');
         file.classList.add('d-none');
         edit_surat_ijin.classList.remove('d-none');
+        hapus_surat_ijin.classList.remove('d-none');
         display_button_action.classList.add('d-none');
     })
 </script>

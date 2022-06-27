@@ -12,7 +12,7 @@
             <div class="row mx-2">
                 <p class="mt-2 fw-medium size-18"><?= $pengumuman->judul ?></p>
                 <p class="mb-1 title-2">Tanggal dibuat : </p>
-                <p class="mb-1 title-3"><?= nice_date_time($pengumuman->create_date) ?></p>
+                <p class="mb-1 title-3"><?= $pengumuman->nice_tanggal ?></p>
             </div>
 
             <div class="mt-3 mb-4 mx-2">

@@ -183,4 +183,22 @@ class Controller_ctl extends MY_Frontend
 			exit;
 		}
 	}
+
+
+	public function hapus_surat()
+	{
+		$id_surat = $this->input->post('id_surat_ijin');
+		$result = curlPost('surat/hapus', ['id_sekolah' => $this->session->userdata('lms_wali_id_sekolah'), 'id_wali' => $this->session->userdata('lms_wali_id_wali'), 'id_surat_ijin' => $id_surat]);
+		if ($result->status == 200) {
+			$data['status'] = TRUE;
+			$data['title'] = 'PEMBERITAHUAN';
+		} else {
+			$data['status'] = FALSE;
+			$data['title'] = 'PERINGATAN';
+		}
+
+		$data['message'] = $result->message;
+		sleep(1.5);
+		echo json_encode($data);
+	}
 }

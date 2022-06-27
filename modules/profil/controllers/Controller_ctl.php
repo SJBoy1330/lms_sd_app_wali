@@ -105,15 +105,18 @@ class Controller_ctl extends MY_Frontend
 		// LOAD TITLE
 		$mydata['title'] = 'Laporan Presensi Siswa';
 
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/laporan_presensi.css') . '">';
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/laporan_presensi_siswa.js"></script>';
 
 		// LOAD CONFIG PAGE
-		$this->data['judul_halaman'] = 'Laporan Presensi Siswa';
-		$this->data['button_back'] = base_url('profil');
 
-		// HIDDEN ICON NOTIFICATION
-		$this->data['config_hidden']['notifikasi'] = true;
+		// LOAD CONFIG PAGE
+		$this->data['judul_halaman'] = 'Laporan Presensi';
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
+		$this->data['button_back'] = base_url('profil');
 		// Load meta data
 		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
 		$id_wali = $this->session->userdata('lms_wali_id_wali');
@@ -224,24 +227,21 @@ class Controller_ctl extends MY_Frontend
 
 	public function get_report_absen()
 	{
-		$date = strtotime($this->input->post('date'));
-		$id_kelas = $this->input->post('id_kelas');
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
 		$id_siswa = $this->input->post('id_siswa');
+
+		$date = strtotime($this->input->post('date'));
 		$hari = day_from_number(date('N', $date));
 		$bulan = month_from_number(date('m', $date));
 		$mydata['tanggal'] = $hari . ', ' . date('d', $date) . ' ' . $bulan . ' ' . date('Y', $date);
-
-		// meta data
-		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
 
 		// LOAD API 
 		[
 			$error, $message, $status, $data
 		] = curl_get(
-			'profil/laporan/',
+			'profil/laporan',
 			[
 				'id_sekolah' => $id_sekolah,
-				'id_kelas' => $id_kelas,
 				'id_siswa' => $id_siswa,
 				'tanggal' => date('Y-m-d', $date)
 			]

@@ -22,15 +22,7 @@
                                 <div class="col align-self-center ps-0">
                                     <p class="size-14 text-center text-secondary mb-0"><?= $siswa->nis ?></p>
                                     <p class="text-center label-merah fw-medium">
-                                        <?php
-                                        $exNama = explode(' ', $siswa->nama);
-                                        $gabung = $exNama[0];
-                                        if (isset($exNama[1])) {
-                                            $gabung .= ' ' . $exNama[1];
-                                        }
-
-                                        echo $gabung;
-                                        ?>
+                                        <?= tampil_text($siswa->nama, 9) ?>
                                     </p>
                                 </div>
                             </div>

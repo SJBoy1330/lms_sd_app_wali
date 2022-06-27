@@ -41,7 +41,7 @@ class Controller_ctl extends MY_Frontend
 		[
 			$error, $message, $status, $data_pengumuman
 		] = curl_get(
-			'pengumuman',
+			'pengumuman/all/',
 			[
 				"id_sekolah" => $id_sekolah,
 				"limit" => 3
@@ -91,6 +91,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['judul_halaman'] = 'Pengumuman';
 		$this->data['button_back'] = base_url('home');
 		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_pengumuman', $mydata, TRUE);
@@ -128,7 +129,6 @@ class Controller_ctl extends MY_Frontend
 		}
 
 		// LOAD CONFIG PAGE
-		$this->data['button_back'] = base_url('home/list_pengumuman');
 		$this->data['config_hidden']['notifikasi'] = TRUE;
 		$this->data['config_hidden']['footer'] = TRUE;
 
@@ -175,6 +175,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['button_back'] = base_url('home');
 		$this->data['judul_halaman'] = 'Berita';
 		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_berita', $mydata, TRUE);

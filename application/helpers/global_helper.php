@@ -417,7 +417,15 @@ function video_access($path, $filename = 'kosong', $default = NULL)
   }
 }
 
-
+function tampil_text($str, $tampil)
+{
+  $hasil = substr($str, 0, $tampil);
+  if (strlen($str) > $tampil) {
+    return $hasil . '...';
+  } else {
+    return $hasil;
+  }
+}
 function nice_title($str, $limit = 75)
 {
   $tmp = array();
