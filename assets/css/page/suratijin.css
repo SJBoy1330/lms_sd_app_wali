@@ -44,12 +44,12 @@ button.btn.btn-batal {
   padding-top: 10px;
 }
 
-button.btn.btn-surat{
+button.btn.btn-surat {
   width: 100%;
   border: none !important;
-  background-color: #fff2d3;
+  background-color: #ffd36a;
   border-radius: 8px;
-  color: #fdb500;
+  color: #986c00;
   font-weight: 600;
   height: 45px;
   padding-top: 10px;
