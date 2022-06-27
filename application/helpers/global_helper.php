@@ -613,6 +613,7 @@ function data_url($path = null, $id_sekolah = true)
 }
 
 
+
 function vector_default($image, $judul = 'Tidak ada data', $text = 'Tidak terdapat record data. Hubungi admin jika terdapat kesalahan', $id = NULL, $status = 0)
 {
   if ($id != NULL) {
@@ -622,7 +623,7 @@ function vector_default($image, $judul = 'Tidak ada data', $text = 'Tidak terdap
   }
 
   if ($status > 0) {
-    $stts = 'd-none';
+    $stts = 'hiding';
   } else {
     $stts = NULL;
   }

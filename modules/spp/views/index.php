@@ -19,111 +19,114 @@
                 </div>
             </div>
         <?php endif; ?>
-        <div class="col-12">
-            <div class="row">
-                <div class="col">
-                    <div class="list-group-item rounded-20 py-1 px-1 mb-3 shadow-sm ">
-                        <div class="row p-2">
-                            <div class="d-flex col-auto align-items-center ">
-                                <div class="avatar avatar-50 shadow-sm rounded-12 avatar-presensi-outline">
-                                    <div class="avatar avatar-40 rounded-10 avatar-presensi-inline">
-                                        <i class="fa-solid fa-envelope-open-text size-24 text-white"></i>
+        <div id="base_spp">
+            <div class="col-12" id="reload_spp">
+                <div class="row">
+                    <div class="col">
+                        <div class="list-group-item rounded-20 py-1 px-1 mb-3 shadow-sm ">
+                            <div class="row p-2">
+                                <div class="d-flex col-auto align-items-center ">
+                                    <div class="avatar avatar-50 shadow-sm rounded-12 avatar-presensi-outline">
+                                        <div class="avatar avatar-40 rounded-10 avatar-presensi-inline">
+                                            <i class="fa-solid fa-envelope-open-text size-24 text-white"></i>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col align-self-center p-0">
-                                <p class="mb-0 fw-bold size-15">Sisa Tagihan</p>
-                            </div>
-                            <div class="col-auto d-flex justify-content-end align-items-center ps-0">
-                                <div class="">
-                                    <p class="mb-0 fw-normal size-13 text-danger text-end mb-0">Jumlah Tagihan</p>
-                                    <p class="mb-0 fw-normal size-12 text-secondary text-end"><?= rupiah($data_spp->jumlah_tagihan) ?></p>
+                                <div class="col align-self-center p-0">
+                                    <p class="mb-0 fw-bold size-15">Sisa Tagihan</p>
+                                </div>
+                                <div class="col-auto d-flex justify-content-end align-items-center ps-0">
+                                    <div class="">
+                                        <p class="mb-0 fw-normal size-13 text-danger text-end mb-0">Jumlah Tagihan</p>
+                                        <p class="mb-0 fw-normal size-12 text-secondary text-end"><?= rupiah($data_spp->jumlah_tagihan) ?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <?php if ($data_spp->result) : ?>
-                <?php foreach ($data_spp->result as $spp) : ?>
-                    <div class="row mb-3">
-                        <div>
-                            <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
-                                <?php if ($spp->lunas === 'Y') : ?>
-                                    <span class="py-2 px-3 text-light size-14 position-absolute top-0 end-0 bg-00DFA3 rounded-15-start-bottom blm-lns">Lunas</span>
-                                <?php else : ?>
-                                    <?php if ($spp->status_bayar == NULL) : ?>
-                                        <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Belum Lunas</span>
-                                    <?php elseif ($spp->status_bayar == 1) : ?>
-                                        <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ffbd17 rounded-15-start-bottom blm-lns">Menunggu Konfirmasi</span>
-                                    <?php elseif ($spp->status_bayar == 3) : ?>
-                                        <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Pembayaran Ditolak</span>
+                <?php if ($data_spp->result) : ?>
+                    <?php foreach ($data_spp->result as $spp) : ?>
+                        <div class="row mb-3">
+                            <div>
+                                <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
+                                    <?php if ($spp->lunas === 'Y') : ?>
+                                        <span class="py-2 px-3 text-light size-14 position-absolute top-0 end-0 bg-00DFA3 rounded-15-start-bottom blm-lns">Lunas</span>
+                                    <?php else : ?>
+                                        <?php if ($spp->status_bayar == NULL) : ?>
+                                            <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Belum Lunas</span>
+                                        <?php elseif ($spp->status_bayar == 1) : ?>
+                                            <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ffbd17 rounded-15-start-bottom blm-lns">Menunggu Konfirmasi</span>
+                                        <?php elseif ($spp->status_bayar == 3) : ?>
+                                            <span class="py-2 px-3 text-light size-12 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Pembayaran Ditolak</span>
+                                        <?php endif; ?>
                                     <?php endif; ?>
-                                <?php endif; ?>
-                                <div class="sizing-info">
-                                    <span class="size-14 fw-bold"><?= $spp->nama_kategori ?> <?= month_from_number($spp->bulan) ?> <?= $spp->tahun ?></span>
-                                </div>
-                                <div class="row py-1 px-2 mt-2 mb-2 ">
-                                    <div class="d-flex col-auto align-items-center ps-0 pe-2">
-                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-rupiah-sign size-20 text-white"></i>
-                                            </div>
-                                        </div>
+                                    <div class="sizing-info">
+                                        <span class="size-14 fw-bold"><?= $spp->nama_kategori ?> <?= month_from_number($spp->bulan) ?> <?= $spp->tahun ?></span>
                                     </div>
-                                    <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                        <p class="mb-0 fw-normal size-13 text-secondary">Jumlah bayar</p>
-                                        <p class="mb-0 fw-normal size-14"><?= rupiah($spp->jumlah) ?></p>
-                                    </div>
-                                </div>
-                                <?php if ($spp->nama_bank != NULL) : ?>
-                                    <div class="row py-1 px-2 mb-3">
+                                    <div class="row py-1 px-2 mt-2 mb-2 ">
                                         <div class="d-flex col-auto align-items-center ps-0 pe-2">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                                 <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-building-columns size-20 text-white"></i>
+                                                    <i class="fa-solid fa-rupiah-sign size-20 text-white"></i>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                            <p class="mb-0 fw-normal size-13 text-secondary">Nama Bank</p>
-                                            <p class="mb-0 fw-normal size-14"><?= $spp->nama_bank ?></p>
+                                            <p class="mb-0 fw-normal size-13 text-secondary">Jumlah bayar</p>
+                                            <p class="mb-0 fw-normal size-14"><?= rupiah($spp->jumlah) ?></p>
                                         </div>
                                     </div>
-                                <?php endif; ?>
-
-                                <?php if ($spp->lunas === 'Y' || $spp->status_bayar != 3 && $spp->status_bayar != NULL) : ?>
-                                    <?php if ($spp->status_bayar == 1) : ?>
-                                        <!-- Button Menunggu Konfirmasi -->
-                                        <div class="row d-flex mt-4">
-                                            <div class="col-6 pe-1">
-                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white button_bayar_ajax"><i class="fa-regular fa-pen-to-square me-1"></i> Edit</button>
+                                    <?php if ($spp->nama_bank != NULL) : ?>
+                                        <div class="row py-1 px-2 mb-3">
+                                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
+                                                <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                                    <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                        <i class="fa-solid fa-building-columns size-20 text-white"></i>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-6 ps-1">
-                                                <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-sm btn-warning btn-detail-tagihan button_detail_ajax">Detail<i class="fa-regular fa-money-from-bracket ms-1"></i></button>
+                                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
+                                                <p class="mb-0 fw-normal size-13 text-secondary">Nama Bank</p>
+                                                <p class="mb-0 fw-normal size-14"><?= $spp->nama_bank ?></p>
                                             </div>
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="row mt-4 mx-1">
-                                            <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_detail_ajax">Detail Tagihan</a>
                                         </div>
                                     <?php endif; ?>
-                                <?php else : ?>
-                                    <div class="row mt-4 mx-1">
-                                        <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_bayar_ajax">Bayar Tagihan</a>
-                                    </div>
-                                <?php endif; ?>
+
+                                    <?php if ($spp->lunas === 'Y' || $spp->status_bayar != 3 && $spp->status_bayar != NULL) : ?>
+                                        <?php if ($spp->status_bayar == 1) : ?>
+                                            <!-- Button Menunggu Konfirmasi -->
+                                            <div class="row d-flex mt-4">
+                                                <div class="col-6 pe-1">
+                                                    <button data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-sm btn-danger btn-edit-pembayaran text-white button_bayar_ajax"><i class="fa-regular fa-pen-to-square me-1"></i> Edit</button>
+                                                </div>
+                                                <div class="col-6 ps-1">
+                                                    <button data-bs-toggle="modal" onclick="button_detail(<?= $spp->id_siswa; ?>,<?= $spp->id_tagihan; ?>)" data-bs-target=" #detailTagihan" role="button" class="btn btn-block btn-sm btn-warning btn-detail-tagihan">Detail<i class="fa-regular fa-money-from-bracket ms-1"></i></button>
+                                                </div>
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="row mt-4 mx-1">
+                                                <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#detailTagihan" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_detail_ajax">Detail Tagihan</a>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php else : ?>
+                                        <div class="row mt-4 mx-1">
+                                            <a data-bs-toggle="modal" data-tagihan="<?= $spp->id_tagihan; ?>" data-siswa="<?= $spp->id_siswa; ?>" data-bs-target="#formulirPembayaran" role="button" class="btn btn-block btn-md btn-danger btn-detail-tugas button_bayar_ajax">Bayar Tagihan</a>
+                                        </div>
+                                    <?php endif; ?>
 
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else : ?>
-                <?= vector_default("vector_spp_kosong.svg", "Tidak ada pembayaran aktif", "Tidak ada tagihan untuk anda !, Hubungi admin atau operator jika terdapat kesalahan"); ?>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <?= vector_default("vector_spp_kosong.svg", "Tidak ada pembayaran aktif", "Tidak ada tagihan untuk anda !, Hubungi admin atau operator jika terdapat kesalahan"); ?>
 
-            <?php endif; ?>
+                <?php endif; ?>
+            </div>
         </div>
+
     </div>
 </div>
 

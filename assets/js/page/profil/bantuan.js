@@ -26,9 +26,11 @@ function get_kategori(property, kategori) {
     const vector_bantuan = document.querySelector("#vector_bantuan");
     const tampil = document.querySelectorAll(".showing");
     if (tampil.length == 0) {
-        vector_bantuan.classList.remove('d-none');
+        vector_bantuan.classList.remove("hiding");
+        vector_bantuan.classList.add("showing");
     } else {
-        vector_bantuan.classList.add('d-none');
+        vector_bantuan.classList.add("hiding");
+        vector_bantuan.classList.remove("showing");
     }
 }
 

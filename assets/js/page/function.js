@@ -89,8 +89,65 @@ function submit_form(element, id_form, num = 0, color = '#FFFFFF') {
 
 
 
-function search(element, id_tabel, property = 'tbody tr') {
-    $(id_tabel + ' ' + property).filter(function () {
-        $(this).toggle($(this).text().toLowerCase().indexOf(element.value.toLowerCase()) > -1);
-    });
+// function search(element, id_tabel, property = 'tbody tr') {
+//     $(id_tabel + ' ' + property).filter(function () {
+//         $(this).toggle($(this).text().toLowerCase().indexOf(element.value.toLowerCase()) > -1);
+//     });
+// }
+
+
+
+function search(element, property = 'tbody tr', backup = null) {
+    // $(id_tabel + ' ' + property).filter(function () {
+    //     $(this).toggle($(this).text().toLowerCase().indexOf(element.value.toLowerCase()) > -1);
+    //     if (backup != null) {
+    //         var vector = document.querySelector(backup);
+    //         // console.log($(this).text().toLowerCase().indexOf(element.value.toLowerCase()));
+    //         var hitung = $('.showing').length;
+    //         if ($(this).text().toLowerCase().indexOf(element.value.toLowerCase()) <= -1) {
+    //             vector.classList.remove('d-none');
+    //         } else {
+    //             vector.classList.add('d-none');
+    //         }
+    //     }
+    // });
+
+    let cards = document.querySelectorAll(property)
+
+    let search_query = element.value;
+
+    //Use innerText if all contents are visible
+    //Use textContent for including hidden elements
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].textContent.toLowerCase()
+            .includes(search_query.toLowerCase())) {
+            // cards[i].style.display = "";
+            cards[i].classList.remove("hiding");
+            cards[i].classList.add("showing");
+        } else {
+            cards[i].classList.add("hiding");
+            cards[i].classList.remove("showing");
+        }
+    }
+
+    if (backup != null) {
+        var vector = document.querySelector(backup);
+        let jumlah = document.querySelectorAll(property + '.showing').length;
+        console.log(jumlah);
+        if (jumlah < 1) {
+            vector.classList.remove('hiding');
+            vector.classList.add('showing');
+        } else {
+            vector.classList.remove('showing');
+            vector.classList.add('hiding');
+        }
+    }
+
+    //A little delay
+    let typingTimer;
+    // let typeInterval = 500;
+    let searchInput = document.getElementById(element.id);
+
+    clearTimeout(typingTimer);
+    // typingTimer = setTimeout(liveSearch, 0);
 }

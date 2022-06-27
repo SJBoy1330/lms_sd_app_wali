@@ -26,10 +26,21 @@ function filter_rapot() {
             div.classList.remove("showing"); //remove show class from the image
         }
     });
+    var pelajaran_aktif = $('#pelajaran_aktif').val();
+    var vector = document.getElementById('vector_ujian_' + pelajaran_aktif);
+    var count = $('.blabla.showing').length;
+    if (count <= 0) {
+        vector.classList.remove('hiding');
+        vector.classList.add('showing');
+    } else {
+        vector.classList.add('hiding');
+        vector.classList.remove('showing');
+    }
 }
 
 
 function filter_tugas() {
+    var vector = document.getElementById('vector_detail_tugas');
     const prop_display = document.querySelectorAll("#loop_tugas .zoom-filter");
     var status = $('#select_status_tugas').val();
 
@@ -44,6 +55,15 @@ function filter_tugas() {
             div.classList.remove("showing");
         }
     });
+
+    var count = $('.zoom-filter.showing').length;
+    if (count <= 0) {
+        vector.classList.remove('hiding');
+        vector.classList.add('showing');
+    } else {
+        vector.classList.add('hiding');
+        vector.classList.remove('showing');
+    }
 }
 
 $(document).ready(function () {
@@ -86,3 +106,7 @@ $(document).ready(function () {
         })
     });
 });
+
+function set_id(id_pelajaran) {
+    $('#pelajaran_aktif').val(id_pelajaran);
+}

@@ -35,7 +35,7 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD TITLE
 		$mydata['title'] = 'Rapot';
-		$mydata['judul_halaman'] = $data->detail->nama;
+		$mydata['judul_halaman'] = tampil_text($data->detail->nama, 18);
 
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-wali.css') . '">';

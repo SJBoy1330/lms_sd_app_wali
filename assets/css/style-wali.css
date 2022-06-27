@@ -23,6 +23,14 @@
   display: none;
 }
 
+.showing {
+  animation: animate 0.4s ease;
+}
+
+.hiding {
+  display: none;
+}
+
 @keyframes animate {
   0% {
     transform: scale(0.5);
@@ -450,7 +458,7 @@ button.input-group-text {
   background-color: #00dfa3;
 }
 
-.bg-danger-pribadi{
+.bg-danger-pribadi {
   background-color: #EC3528;
 }
 
@@ -539,4 +547,3 @@ span.blm-lns {
   background-size: cover;
   background-position: center;
 }
-

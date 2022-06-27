@@ -3,25 +3,24 @@ var swiper2 = new Swiper(".connectionwiper", {
     spaceBetween: 0,
     pagination: false
 });
-
-$(document).ready(function () {
-    $('.button_detail_ajax').on('click', function () {
-        var id_siswa = $(this).data('siswa');
-        var id_tagihan = $(this).data('tagihan');
-
-        $.ajax({
-            url: BASE_URL + "spp/modal_detail_tagihan",
-            method: "POST",
-            data: {
-                id_siswa: id_siswa,
-                id_tagihan: id_tagihan
-            },
-            cache: false,
-            success: function (data) {
-                $('#display_content').html(data);
-            }
-        })
+function button_detail(id_siswa, id_tagihan) {
+    $.ajax({
+        url: BASE_URL + "spp/modal_detail_tagihan",
+        method: "POST",
+        data: {
+            id_siswa: id_siswa,
+            id_tagihan: id_tagihan
+        },
+        cache: false,
+        beforeSend() {
+            $('#display_content').html(html_loader);
+        },
+        success: function (data) {
+            $('#display_content').html(data);
+        }
     })
+}
+$(document).ready(function () {
 
 
     $('#select_metode').on('change', function () {
@@ -81,7 +80,11 @@ $(document).ready(function () {
             method: 'POST',
             dataType: 'json',
             cache: false,
+            beforeSend() {
+                $('#loading_scene').modal('show');
+            },
             success: function (data) {
+                $('#loading_scene').modal('hide');
                 if (data.status == 200 || data.status == true) {
                     Swal.fire({
                         title: 'PEMBERITAHUAN',
@@ -93,7 +96,8 @@ $(document).ready(function () {
                             confirmButton: css_button
                         }
                     }).then(function () {
-                        location.reload();
+                        $('#base_spp').load(BASE_URL + 'spp/ #reload_spp');
+                        $('#formulirPembayaran').modal('hide');
                     });
 
                 } else {

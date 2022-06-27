@@ -101,7 +101,7 @@
                         <?= vector_default("vector_tugas_kosong.svg", "Tidak ada data tugas", "Kelas putra/putri anda belum memberikan tugas apapun, Hubungi pihak sekolah jika terjadi kesalahan data"); ?>
                     <?php endif; ?>
                 </div>
-
+                <input type="hidden" id="pelajaran_aktif">
                 <div class="card-body tabcontent-wali" id="Ujian" style="padding: 6px 0px;">
                     <?php if ($result->ujian) : ?>
                         <div class="wrapper-searching-tugas mb-3">
@@ -109,7 +109,7 @@
                             <div class="row bg-white" style="width: 100vw;">
                                 <div class="col-12">
                                     <div class="input-group">
-                                        <input type="text" onkeyup="search(this, '#display_ujian', 'a')" class=" form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
+                                        <input type="text" onkeyup="search(this, '.target_search','#vector_pelajaran')" class=" form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
                                         <button class="input-group-text searhing" id="basic-addon2" style="background-color:#EC3528;"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
                                     </div>
                                 </div>
@@ -119,9 +119,9 @@
                     <div class="page-scroll-full pt-5" id="display_ujian">
                         <?php if (isset($result->ujian) && $result->ujian != NULL) : ?>
                             <?php foreach ($result->ujian as $ujian) : ?>
-                                <a data-bs-toggle="offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-<?= $ujian->id_pelajaran; ?>" aria-controls="offcanvasRight" class="card my-4">
+                                <a data-bs-toggle="offcanvas" type="button" onclick="set_id(<?= $ujian->id_pelajaran; ?>)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight-<?= $ujian->id_pelajaran; ?>" aria-controls="offcanvasRight" class="card my-4 zoom-filter showing target_search">
                                     <div class="card-body">
-                                        <div class="row">
+                                        <div class=" row">
                                             <div class="col-auto">
                                                 <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
                                                     <div class="avatar avatar-40 rounded-12 avatar-presensi-inline">
@@ -148,7 +148,7 @@
                                         <div class="row bg-white" style="width: 100vw;">
                                             <div class="col-10">
                                                 <div class="input-group">
-                                                    <input onkeyup="search(this, '#display_ujian_detail_<?= $ujian->id_pelajaran ?>', 'a .card-body')" type="text" class="form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="search-ujian-<?= $ujian->id_pelajaran; ?>">
+                                                    <input onkeyup="search(this, '.target_<?= $ujian->id_pelajaran; ?>','#vector_ujian_<?= $ujian->id_pelajaran; ?>')" id="cari_pelajaran" type="text" class="form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="search-ujian-<?= $ujian->id_pelajaran; ?>">
                                                     <button class="input-group-text searhing" id="search-ujian-<?= $ujian->id_pelajaran; ?>" style="background-color:#EC3528;;"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
                                                 </div>
                                             </div>
@@ -166,7 +166,7 @@
                                                                                                                         } else {
                                                                                                                             echo 'lulus';
                                                                                                                         }
-                                                                                                                        ?>" data-id="<?= $row->id_ujian; ?>" href="#detailUjianModal" role="button" class="card my-4 zoom-filter button_detail_ujian">
+                                                                                                                        ?>" data-id="<?= $row->id_ujian; ?>" href="#detailUjianModal" role="button" class="card my-4 zoom-filter blabla showing target_<?= $ujian->id_pelajaran; ?> button_detail_ujian">
                                                     <div class="card-body">
                                                         <div class="row">
                                                             <div class="col-auto">
@@ -202,15 +202,15 @@
                                                     </div>
                                                 </a>
                                             <?php endforeach; ?>
+                                            <?= vector_default("vector_ujian_kosong.svg", "Tidak ada data ujian", "Sekolah belum menyediakan ujian atau siswa belum mengikuti ujian satupun, hubungi pihak sekolah jika terjadi kesalahan data!", "vector_ujian_" . $ujian->id_pelajaran, count($ujian->result)); ?>
                                         </div>
 
                                     </div>
                                 </div>
 
                             <?php endforeach; ?>
-                        <?php else : ?>
-                            <?= vector_default("vector_ujian_kosong.svg", "Tidak ada data ujian", "Sekolah belum menyediakan ujian atau siswa belum mengikuti ujian satupun, Hubungi pihak sekolah jika terjadi kesalahan data!"); ?>
                         <?php endif; ?>
+                        <?= vector_default("vector_ujian_kosong.svg", "Tidak ada data ujian", "Sekolah belum menyediakan ujian atau siswa belum mengikuti ujian satupun, Hubungi pihak sekolah jika terjadi kesalahan data!", "vector_pelajaran", count($result->ujian)); ?>
                     </div>
                 </div>
             </div>

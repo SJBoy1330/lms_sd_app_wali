@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="input-group searching" style="width: 92vw;">
-                                <input type="text" onkeyup="search(this, '#display_bantuan', '.showing')" id="cari_bantuan" class="form-control form-control-pribadi text-start pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
+                                <input type="text" onkeyup="search(this, 'a.target_search','#vector_bantuan')" id="cari_bantuan" class="form-control form-control-pribadi text-start pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
                                 <button class="input-group-text searhing" id="basic-addon2"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
             <div class="col-12 px-0">
                 <div class="box-fiture" id="display_bantuan">
                     <?php foreach ($result->bantuan as $row) : ?>
-                        <a data-bs-toggle="modal" data-id="<?= $row->id_bantuan; ?>" data-kategori="bantuan_<?= $row->id_kategori_bantuan; ?>" data-bs-target="#modalDetailNotifikasi" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-2 mx-3 zoom-filter showing detail_bantuan">
+                        <a data-bs-toggle="modal" data-id="<?= $row->id_bantuan; ?>" data-kategori="bantuan_<?= $row->id_kategori_bantuan; ?>" data-bs-target="#modalDetailNotifikasi" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-2 mx-3 target_search zoom-filter showing detail_bantuan">
                             <div class="row p-2">
                                 <div class="col align-self-center ps-2">
                                     <p class="mb-0 fw-bold size-14"><?= $row->judul ?></p>
@@ -78,7 +78,7 @@
 
 <div class="modal fade" id="modalDetailNotifikasi" tabindex="-1" aria-labelledby="detailTagihanModal" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen modal-dialog-centered">
-        <div class="modal-content detail-tagihan">
+        <div class="modal-content detail-tagihan rounded-0">
             <div class="modal-header border-0">
                 <h5 class="modal-title" id="detailTagihanModal">Detail Bantuan</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
