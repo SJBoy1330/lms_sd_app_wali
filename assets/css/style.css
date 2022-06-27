@@ -12560,7 +12560,9 @@ main.bg-3 {
 .alert-danger,
 .card.alert-danger,
 .bg-danger-light {
-  background-color: #feeff3;
+  background-color: #FCEDEA;
+  border-color: 5px solid #EA4E2C !important;
+  border-radius: 10px !important;
 }
 
 .alert-info,
@@ -12584,7 +12586,9 @@ main.bg-3 {
 .alert-success,
 .card.alert-success,
 .bg-success-light {
-  background-color: #a2ffe6;
+  background-color: #EBF7EE;
+  border-color: 5px solid #3DBC60 !important;
+  border-radius: 10px !important;
 }
 
 .alert-theme,
@@ -16427,7 +16431,7 @@ figure.detail-berita {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  border: 2px solid #757575;
+  border: 2px solid #a2a1a1;
 }
 
 .avatar-presensi-solid {
@@ -16438,7 +16442,7 @@ figure.detail-berita {
 }
 
 .avatar-presensi-inline-second {
-  background-color: #757575;
+  background-color: #a2a1a1;
 }
 
 .avatar-presensi-inline {
@@ -16998,7 +17002,7 @@ input[type="file"] {
 }
 
 .bg-757575 {
-  background-color: #757575;
+  background-color: #a2a1a1;
 }
 
 .lg-size-myicon {

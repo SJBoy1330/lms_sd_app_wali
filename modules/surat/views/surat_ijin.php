@@ -46,12 +46,14 @@
                                 }
                                 ?>
                                 <span class="py-2 px-3 text-light size-14 position-absolute top-0 end-0 <?= $color; ?> rounded-15-start-bottom blm-lns"><?= $surat->status; ?></span>
-                                <span class="size-14 fw-bold">Surat Keterangan <?php if ($surat->tipe == 1) {
-                                                                                    echo 'ijin';
-                                                                                } else {
-                                                                                    echo 'sakit';
-                                                                                } ?></span>
-                                <p class="mb-0 fw-normal size-13 text-secondary"><?= nice_time($surat->tanggal); ?></p>
+                                <div class="sizing-info">
+                                    <span class="size-13 mb-0 fw-bold">Surat Keterangan <?php if ($surat->tipe == 1) {
+                                                                                        echo 'ijin';
+                                                                                    } else {
+                                                                                        echo 'sakit';
+                                                                                    } ?></span>
+                                    <p class="mb-0 fw-normal size-13 text-secondary"><?= nice_time($surat->tanggal); ?></p>
+                                </div>
                                 <div class="row py-1 px-2 mt-2 mb-2 ">
 
                                     <?php if (strtotime(date('Y-m-d H:i:s')) >= strtotime($surat->berlaku_mulai)) : ?>

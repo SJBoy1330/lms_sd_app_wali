@@ -81,3 +81,7 @@ button.btn.btn-surat:hover{
   background-color: #E5E5E5;
   border: none;
 }
+
+.sizing-info{
+  width: 50%;
+}
