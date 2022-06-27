@@ -128,9 +128,9 @@ $(window).on('load', function () {
     // if ($('.header.position-fixed').length > 0) {
     //     $('main').css('padding-top', $('.header').outerHeight());
     // }
-    // if ($('.footer').length > 0) {
-    //     $('main').css('padding-bottom', $('.footer').outerHeight() + 10);
-    // }
+    if ($('.footer').length > 0) {
+        $('main').css('padding-bottom', $('.footer').outerHeight() + 10);
+    }
 
 
 });
