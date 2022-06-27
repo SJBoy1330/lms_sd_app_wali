@@ -30,6 +30,7 @@
                     <div class="row mb-3">
                         <a class="detail_surat" data-bs-toggle="modal" onclick="modal_surat(<?= $surat->id_surat_ijin; ?>)" data-bs-target="#detailSuratIjin">
                             <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
+                                <span class="py-2 px-3 text-light size-14 position-absolute top-0 end-0 bg-ec3528 rounded-15-start-bottom blm-lns">Masuk</span>
                                 <span class="size-14 fw-bold">Surat Keterangan <?php if ($surat->tipe == 1) {
                                                                                     echo 'ijin';
                                                                                 } else {

@@ -12095,6 +12095,7 @@ fieldset:disabled .btn {
 main{
   padding-top: 75px;
   animation: fadein 0.3s;
+  padding-bottom: 75px;
 }
 
 main.welcome{
@@ -16976,6 +16977,11 @@ input[type="file"] {
 .bg-00DFA3{
   background-color: #00dfa3;
 }
+
+.bg-FFBD17{
+  background-color: #FFBD17;
+}
+
 
 .avatar-125{
   line-height: 125px;
