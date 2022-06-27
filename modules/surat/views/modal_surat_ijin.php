@@ -12,6 +12,18 @@
             <?php endif; ?>
         </div>
     </div>
+    <?php if ($komentar != NULL) : ?>
+        <?php if ($kode_status == 1 || $kode_status == NULL) {
+            $alert = 'alert-warning';
+        } elseif ($kode_status == 2) {
+            $alert = 'alert-success';
+        } else {
+            $alert = 'alert-danger';
+        } ?>
+        <div class="alert <?= $alert; ?>">
+            <?= $komentar; ?>
+        </div>
+    <?php endif; ?>
     <form id="form_edit_surat" method="post" action="<?= base_url('surat/edit'); ?>" enctype="multipart/form-data" class="row g-3 mt-1">
         <div id="div_upload_file" class="col-12 d-none">
             <div class="" id="req_surat">
