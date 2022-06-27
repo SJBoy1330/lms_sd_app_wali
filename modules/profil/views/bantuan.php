@@ -20,7 +20,6 @@
 
         <div class="row mt-5 mb-2">
             <div class="col-12 col-md-12 col-lg-12">
-                <span class="size-15 fw-bolder">Trending Topik</span>
                 <div class="row mb-2 my-2">
                     <div class="col-12 px-0">
                         <!-- swiper categories -->

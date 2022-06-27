@@ -17189,3 +17189,10 @@ span.blm-lns{
   border-radius: 0px;
 }
 
+/* Figure Sidemnu */
+.figure-sidemenu{
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  border: 3px solid white !important;
+}

@@ -7,7 +7,7 @@
                     <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" href="<?= base_url('home'); ?>">
                         <span>
                             <i class="fa-solid fa-house size-18"></i>
-                            <span class="nav-text">Dashboard</span>
+                            <span class="nav-text">Beranda</span>
                         </span>
                     </a>
                 </li>
