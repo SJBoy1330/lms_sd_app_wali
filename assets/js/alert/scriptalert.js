@@ -64,10 +64,11 @@ $('.question_alert').on('click', function (e) {
 			imageWidth: 100,
 			imageHeight: 100,
 			showCancelButton: true,
-			buttons: ["Stop", "Do it!"],
+			buttons: ["batal", "ya"],
 			confirmButtonColor: '#3085d6',
 			cancelButtonColor: '#d33',
-			confirmButtonhtml: 'Ya'
+			confirmButtonText: "Ya",
+			cancelButtonText: "Batal",
 		}).then((result) => {
 			if (result.isConfirmed) {
 				document.location.href = href;
@@ -81,7 +82,8 @@ $('.question_alert').on('click', function (e) {
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
 			cancelButtonColor: '#969696',
-			confirmButtonhtml: 'Ya',
+			confirmButtonText: "Ya",
+			cancelButtonText: "Batal",
 			reverseButtons: true
 		}).then((result) => {
 			if (result.isConfirmed) {

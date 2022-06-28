@@ -102,7 +102,7 @@
                     </div>
                     <div class="col align-self-center ps-0 pe-1">
                         <p class="mb-0 size-12 fw-medium">Waktu</p>
-                        <p class="mb-0 size-10 fw-normal text-secondary"><?= $waktu; ?></p>
+                        <p class="mb-0 size-10 fw-normal text-secondary"><?= $waktu; ?> Menit</p>
                     </div>
                 </div>
             </div>

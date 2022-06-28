@@ -141,7 +141,10 @@
 
                                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight-<?= $ujian->id_pelajaran; ?>" aria-labelledby="offcanvasRightLabel">
                                     <div class="offcanvas-header">
-                                        <h5 class="offcanvas-title" id="offcanvasExampleLabel-<?= $ujian->id_pelajaran ?>">Daftar Ujian</h5>
+                                        <h5 class="offcanvas-title" id="offcanvasExampleLabel-<?= $ujian->id_pelajaran ?>">Daftar Ujian <br>
+                                            <p class="size-13 fw-medium text-secondary"><?= $ujian->nama_pelajaran; ?></p>
+                                        </h5>
+
                                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
