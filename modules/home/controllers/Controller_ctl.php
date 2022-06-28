@@ -218,12 +218,30 @@ class Controller_ctl extends MY_Frontend
 
 	public function cek()
 	{
-		$arr['fcm_key'] = 'eqLv2ng2SaqjXZWj-kDKRx:APA91bHT6lMJA0IkUG_UhWSIkng36NVZ_ztAnXlpdioMT3MlhfekZAtTRi8BzuUdOCs7wG9t0sI0oINk6jOqMiaDW70IDr8Nq3idzy4yVfQQGO0fYx_jxb80VRuPYVvX-k3AvjA-Ro66';
-		$arr['priority'] = 'high';
-		$arr['title'] = 'Coba kirim notifikasi';
-		$arr['subtitle'] = 'haiya';
-		$arr['body'] = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod facilis esse delectus, accusamus, rerum libero molestiae id hic minus aspernatur laborum sapiente nulla beatae nesciunt! Sequi corrupti reprehenderit adipisci nemo!';
-		$arr['organization'] = 'PT. ALPHATECH';
+		$arrData = array(
+
+			"priority" => 'high',
+
+			"sound" => "https://sd.klasq.id/linker/audio_default/" . base64url_encode('audio') . '/' . base64url_encode('global_notif.mp3'),
+
+			"content_available" => true,
+
+			"organization" => 'KlasQ',
+
+			"type" => 'presensi',
+
+			"title" => 'Coba notifikasi 1000000',
+
+			"message" => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod facilis esse delectus, accusamus, rerum libero molestiae id hic minus aspernatur laborum sapiente nulla beatae nesciunt! Sequi corrupti reprehenderit adipisci nemo!',
+
+			"url" => NULL,
+
+			"images" => 'https://sd.klasq.id/linker/bukti_transfer/MjAyMg/Mw/NjJiYTg3NGQzNjAzMi5qcGc/MQ'
+
+		);
+		$arr['fcm_key'] = 'feR8DXZ6SVyaa_7Fuv5hqK:APA91bHyTlGbvZ7QSyHAqzkwGtHyDmrlMRXSjp4sEzAAtdAvY3HMlwFURzntETgVyICkW08DoaBgpipbJCEYmY-XQ1JMIl9CjVw4F--BKUJTBfUkELBjoPWO6XeJCxN3MlkBCAMARCyC';
+		$arr['data'] = $arrData;
+
 		send_notification($arr);
 	}
 }

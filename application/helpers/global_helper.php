@@ -667,7 +667,7 @@ function send_notification($array = array())
 
     'to' => $array['fcm_key'],
 
-    'priority' => $array['priority'],
+    'priority' => $array['data']['priority'],
 
     'mutable_content' => true,
 
