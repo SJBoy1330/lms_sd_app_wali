@@ -14,7 +14,7 @@
         </div>
         <form class="row" method="POST" action="<?= base_url('func_profil/ubah_password_proses'); ?>" id="form_ubah_password">
             <div class="form-group mb-4" id="req_nowpassword">
-                <label for="kata_sandi" class="form-label title-3">Password sekarang</label>
+                <label for="kata_sandi" class="form-label title-3">Kata sandi sekarang</label>
                 <div class="wrapper-password d-flex">
                     <input type="password" class="form-control form-control-pribadi text-start" name="nowpassword" id="nowpassword" placeholder="Masukkan kata sandi sekarang" autocomplete="off">
 
@@ -29,7 +29,7 @@
             </div>
 
             <div class="form-group mb-4" id="req_newpassword">
-                <label for="kata_sandi" class="form-label title-3">Password baru</label>
+                <label for="kata_sandi" class="form-label title-3">Kata sandi baru</label>
                 <div class="wrapper-password d-flex">
                     <input type="password" class="form-control form-control-pribadi text-start" name="newpassword" id="newpassword" placeholder="Masukkan kata sandi baru" autocomplete="off">
 

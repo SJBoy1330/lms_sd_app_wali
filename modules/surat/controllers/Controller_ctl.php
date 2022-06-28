@@ -19,7 +19,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/suratijin.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/suratijin/suratijin.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/suratijin/suratijin.js?v=' . date('YmdHis') . '"></script>';
 
 		// Meta data
 		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
