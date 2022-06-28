@@ -22,17 +22,17 @@
 <div class="page-scroll pt-5" id="loop_tugas">
     <?php if ($result) : ?>
         <?php foreach ($result as $row) : ?>
-            <div class="card my-4 zoom-filter showing target_cari_tugas" data-katgas="<?php if ($row->dikerjakan == FALSE) {
-                                                                                            echo 'belum_dikerjakan';
-                                                                                        } else {
-                                                                                            if ($row->kode_status == 1) {
-                                                                                                echo 'koreksi';
-                                                                                            } elseif ($row->kode_status == 2) {
-                                                                                                echo 'selesai';
-                                                                                            } elseif ($row->kode_status == 3) {
-                                                                                                echo 'ditolak';
-                                                                                            }
-                                                                                        } ?>">
+            <div class="card my-4 kon_tugas zoom-filter showing target_cari_tugas" data-katgas="<?php if ($row->dikerjakan == FALSE) {
+                                                                                                    echo 'belum_dikerjakan';
+                                                                                                } else {
+                                                                                                    if ($row->kode_status == 1) {
+                                                                                                        echo 'koreksi';
+                                                                                                    } elseif ($row->kode_status == 2) {
+                                                                                                        echo 'selesai';
+                                                                                                    } elseif ($row->kode_status == 3) {
+                                                                                                        echo 'ditolak';
+                                                                                                    }
+                                                                                                } ?>">
                 <div class="card-body ">
                     <div class="row">
                         <div class="col-auto">

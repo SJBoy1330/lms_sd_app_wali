@@ -56,7 +56,8 @@ function filter_tugas() {
         }
     });
 
-    var count = $('.zoom-filter.showing').length;
+    var count = $('.kon_tugas.zoom-filter.showing').length;
+    console.log(count);
     if (count <= 0) {
         vector.classList.remove('hiding');
         vector.classList.add('showing');
