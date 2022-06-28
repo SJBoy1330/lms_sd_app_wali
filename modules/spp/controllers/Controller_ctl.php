@@ -150,6 +150,7 @@ class Controller_ctl extends MY_Frontend
 		$data['status'] = $result->status;
 		$data['message'] = $result->message;
 		$data['id_siswa'] = $this->input->post('id_siswa');
+		sleep(1.5);
 		echo json_encode($data);
 	}
 }

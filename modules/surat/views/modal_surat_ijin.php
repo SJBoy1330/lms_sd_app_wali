@@ -35,7 +35,7 @@
             <label class="form-label fw-bold size-14">Jenis Surat</label>
             <input type="hidden" name="id_surat" value="<?= $id_surat_ijin; ?>">
             <input type="text" id="div_tipe" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" value="<?php if ($tipe == 1) {
-                                                                                                                                        echo 'Surat Keterangan Ijin';
+                                                                                                                                        echo 'Surat Keterangan izin';
                                                                                                                                     } else {
                                                                                                                                         echo 'Surat Keterangan Sakit';
                                                                                                                                     } ?>" readonly>
@@ -43,7 +43,7 @@
                 <option selected disabled>Pilih jenis surat</option>
                 <option value="1" <?php if ($tipe == 1) {
                                         echo 'selected';
-                                    }  ?>>Surat Keterangan Ijin</option>
+                                    }  ?>>Surat Keterangan Izin</option>
                 <option value="2" <?php if ($tipe == 2) {
                                         echo 'selected';
                                     }  ?>>Surat Keterangan Sakit</option>
