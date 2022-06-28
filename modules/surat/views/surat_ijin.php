@@ -47,7 +47,7 @@
                                 ?>
                                 <span class="py-2 px-3 text-light size-14 position-absolute top-0 end-0 <?= $color; ?> rounded-15-start-bottom blm-lns"><?= $surat->status; ?></span>
                                 <div class="sizing-info">
-                                    <span class="size-13 mb-0 fw-bold">Surat Keterangan <?php if ($surat->tipe == 1) {
+                                    <span class="size-14 mb-0 fw-bold">Surat Keterangan <?php if ($surat->tipe == 1) {
                                                                                         echo 'ijin';
                                                                                     } else {
                                                                                         echo 'sakit';
