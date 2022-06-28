@@ -117,6 +117,19 @@
     </div>
 </div>
 
+<!-- Modal Preview -->
+<div class="modal fade" id="modal_preview_all" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content" style="border-radius: 0px;">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="" id="preview_preview_image" style="width : 100%;" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Required jquery and libraries -->
 

@@ -2,8 +2,9 @@
     <div class="row m-2fix d-flex justify-content-center">
         <div class="col-11 p-0">
             <?php if (!in_array($extension, ['pdf'])) : ?>
-                <figure class="overflow-hidden rounded-15 text-center detail-pengumuman" style="background-position: center; background-size: cover; background-image: url('<?= $file_surat ?>');">
+                <figure onclick="preview_image('<?= $file_surat ?>')" class="overflow-hidden rounded-15 text-center detail-pengumuman" style="background-position: center; background-size: cover; background-image: url('<?= $file_surat ?>');">
                 </figure>
+
             <?php else : ?>
                 <figure class="overflow-hidden rounded-15 text-center" style="background-color: #FFE6E6; padding: 40px;">
                     <i class="fa-solid fa-file-pdf" style="font-size: 7rem;"></i>
