@@ -386,6 +386,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <input type="hidden" id="data_siswa" value="<?= $id_siswa; ?>">
                 <div class="mb-3">
                     <label class="form-label title-3">Kategori Pembayaran</label>
                     <select class="form-select form-select form-select-pribadi border-0" name="kategori">

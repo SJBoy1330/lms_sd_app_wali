@@ -5,13 +5,13 @@
     <div class="sidebar">
         <!-- user information -->
         <div class="row my-3">
-            <div class="col-12 profile-sidebar">
-                <div class="row mt-3">
-                    <div class="col-auto">
-                        <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm figure-sidemenu" style="background-image: url('<?= base_url('assets/img/user1.jpg'); ?>')"></figure>
+            <div class="col-12 profile-sidebar" id="reload_side_foto">
+                <div class="row mt-3" id="side_foto_profil">
+                    <div class=" col-auto">
+                        <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm figure-sidemenu" style="background-image: url('<?= $profil->foto; ?>')"></figure>
                     </div>
                     <div class="col px-0 align-self-center">
-                        <h5 class="mb-0 fw-normal text-white"><?= $profil->nama; ?></h5>
+                        <h5 class="mb-0 fw-normal text-white"><?= tampil_text($profil->nama, 8); ?></h5>
                         <p class="text-muted size-12">Wali Murid</p>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                     <li class="nav-item">
                         <a class="nav-link <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" aria-current="page" href="<?= base_url('home'); ?>">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-house"></i></div>
-                            <div class="col">Dashboard</div>
+                            <div class="col">Beranda</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li>
@@ -71,7 +71,7 @@
                     </li>
 
                     <li class="nav-item logout">
-                        <a class="nav-link" href="<?= base_url('auth/logout') ?>?>" tabindex="-1">
+                        <a class="nav-link question_alert" href="<?= base_url('auth/logout') ?>" <?= alert_question('KONFIRMASI', 'Apakah anda akan keluar dari aplikasi KlasQ Wali ?', 'question') ?> tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-right-from-bracket"></i></div>
                             <div class="col">Keluar</div>
                         </a>

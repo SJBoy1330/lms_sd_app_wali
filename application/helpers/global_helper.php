@@ -636,3 +636,70 @@ function vector_default($image, $judul = 'Tidak ada data', $text = 'Tidak terdap
 
   return $html;
 }
+
+
+function send_notification($array = array())
+{
+
+  /**
+
+    array (
+
+    fcm_key, 
+
+    priority, 
+
+    title,
+
+    substitle,
+
+    body,
+
+    organization
+
+    )
+
+   **/
+
+
+
+  $payload = array(
+
+    'to' => $array['fcm_key'],
+
+    'priority' => $array['priority'],
+
+    'mutable_content' => true,
+
+    'data' => $array['data']
+
+  );
+
+  $headers = array(
+
+    "Authorization:key=AAAAEWT74Yc:APA91bEpHSWLIT1k9Dv5fncpAWIsw5nmTENIZftsh5q-nmmpgLbq3IerUMtFq7A3LRvk78thCX0OWhJlI2JEdGL8p0VPT6tjOvhi5t-Fva1zsz1tQUkZYYWwrTj0eSJGQwpmMbZwqe0F",
+
+    'Content-Type: application/json'
+
+  );
+
+  $ch = curl_init();
+
+  curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
+
+  curl_setopt($ch, CURLOPT_POST, true);
+
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+
+  $result = curl_exec($ch);
+
+  curl_close($ch);
+
+  var_dump($result);
+}

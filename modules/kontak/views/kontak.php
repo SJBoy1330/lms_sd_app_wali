@@ -4,7 +4,7 @@
         <div class="col-12 col-md-10 col-lg-8 mx-auto">
             <div class="row">
                 <?php if (isset($result->no_admin) && $result->no_admin != NULL) : $arr_access[] = true; ?>
-                    <a href="whatsapp://send?text=&number=<?php echo $result->no_admin; ?>" class="col-12 mx-auto mb-4 text-dark">
+                    <a href="https://wa.me/<?php echo $result->no_admin; ?>" class="col-12 mx-auto mb-4 text-dark">
                         <div class="card mb-3">
                             <div class="col-auto position-absolute avatar-detail-kbm">
                                 <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
@@ -27,7 +27,7 @@
                 <?php endif; ?>
 
                 <?php if (isset($result->no_keuangan) && $result->no_keuangan != NULL) : $arr_access[] = true; ?>
-                    <a href="whatsapp://send?text=&number=<?php echo $result->no_keuangan; ?>" class="col-12 mx-auto mb-4 text-dark">
+                    <a href="https://wa.me/<?php echo $result->no_keuangan; ?>" class="col-12 mx-auto mb-4 text-dark">
                         <div class="card mb-3">
                             <div class="col-auto position-absolute avatar-detail-kbm">
                                 <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
@@ -51,7 +51,7 @@
                 <?php if (isset($result->wali_kelas) && $result->wali_kelas != NULL) : ?>
                     <?php foreach ($result->wali_kelas as $row) : ?>
                         <?php if ($row->no_wali_kelas != NULL) : $arr_access[] = true; ?>
-                            <a href="whatsapp://send?text=&number=<?php echo $row->no_wali_kelas; ?>" class="col-12 mx-auto mb-4 text-dark">
+                            <a href="https://wa.me/<?php echo $row->no_wali_kelas; ?>" class="col-12 mx-auto mb-4 text-dark">
                                 <div class="card mb-3">
                                     <div class="col-auto position-absolute avatar-detail-kbm">
                                         <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">

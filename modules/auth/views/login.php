@@ -25,7 +25,7 @@
             <form id="form_login" method="POST" action="<?= base_url('func_auth/login_proses'); ?>">
                 <div class="text-center my-5">
                     <p class="mb-1 title-1">Log in App Wali</p>
-                    <p class="mb-0 fw-600 size-18 title-2">Masuk dengan Kode sekolah, User ID dan Kata sandi</p>
+                    <p class="mb-0 fw-600 size-18 title-2">Masuk dengan Kode sekolah, ID Pengguna dan Kata sandi</p>
                 </div>
 
                 <div class="mb-4" id="req_kode_sekolah">
@@ -34,8 +34,8 @@
                 </div>
 
                 <div class="mb-4" id="req_username">
-                    <label for="username" class="form-label title-3">User ID</label>
-                    <input type="text" class="form-control form-control-pribadi" id="username" name="username" placeholder="Masukkan username" autocomplete="off">
+                    <label for="username" class="form-label title-3">ID Pengguna</label>
+                    <input type="text" class="form-control form-control-pribadi" id="username" name="username" placeholder="Masukkan id pengguna" autocomplete="off">
                 </div>
 
                 <div class="form-group mb-4" id="req_kata_sandi">

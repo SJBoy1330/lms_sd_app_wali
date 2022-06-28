@@ -215,4 +215,15 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('detail_berita', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function cek()
+	{
+		$arr['fcm_key'] = 'eqLv2ng2SaqjXZWj-kDKRx:APA91bHT6lMJA0IkUG_UhWSIkng36NVZ_ztAnXlpdioMT3MlhfekZAtTRi8BzuUdOCs7wG9t0sI0oINk6jOqMiaDW70IDr8Nq3idzy4yVfQQGO0fYx_jxb80VRuPYVvX-k3AvjA-Ro66';
+		$arr['priority'] = 'high';
+		$arr['title'] = 'Coba kirim notifikasi';
+		$arr['subtitle'] = 'haiya';
+		$arr['body'] = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod facilis esse delectus, accusamus, rerum libero molestiae id hic minus aspernatur laborum sapiente nulla beatae nesciunt! Sequi corrupti reprehenderit adipisci nemo!';
+		$arr['organization'] = 'PT. ALPHATECH';
+		send_notification($arr);
+	}
 }

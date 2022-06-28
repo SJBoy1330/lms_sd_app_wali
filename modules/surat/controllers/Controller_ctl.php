@@ -120,7 +120,7 @@ class Controller_ctl extends MY_Frontend
 				$data['modal']['id'] = '#tambahSuratIjin';
 				$data['modal']['action'] = 'hide';
 				$data['load'][0]['parent'] = '#parent_load';
-				$data['load'][0]['reload'] = base_url('surat') . ' #load_surat';
+				$data['load'][0]['reload'] = base_url('surat/index/' . $id_siswa) . ' #load_surat';
 			} else {
 				$data['alert']['title'] = 'PERINGATAN';
 			}

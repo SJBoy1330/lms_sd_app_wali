@@ -10,9 +10,9 @@ class Function_ctl extends MY_Welcome
 
     public function login_proses()
     {
-        $arrVar['kode_sekolah'] = 'Kode sekolah';
-        $arrVar['username']     = 'Username';
-        $arrVar['kata_sandi']   = 'Kata sandi';
+        $arrVar['kode_sekolah'] = 'Kode Sekolah';
+        $arrVar['username']     = 'ID Pengguna';
+        $arrVar['kata_sandi']   = 'Kata Sandi';
         foreach ($arrVar as $var => $value) {
             $$var = $this->input->post($var);
 

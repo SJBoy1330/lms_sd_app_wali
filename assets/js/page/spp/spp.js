@@ -71,6 +71,7 @@ $(document).ready(function () {
         formdata.append("bukti", file);
         formdata.append("id_tagihan", $('#input_id_tagihan').val());
         formdata.append("id_metode_bayar", $('#select_metode').val());
+        formdata.append("id_siswa", $('#data_siswa').val());
 
         $.ajax({
             url: BASE_URL + "spp/bayar",
@@ -96,7 +97,7 @@ $(document).ready(function () {
                             confirmButton: css_button
                         }
                     }).then(function () {
-                        $('#base_spp').load(BASE_URL + 'spp/ #reload_spp');
+                        $('#base_spp').load(BASE_URL + 'spp/index/' + data.id_siswa + ' #reload_spp');
                         $('#formulirPembayaran').modal('hide');
                     });
 

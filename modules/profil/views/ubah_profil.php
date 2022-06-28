@@ -28,7 +28,7 @@
                 <input type="text" class="form-control form-control-pribadi text-start" id="alamat" name="alamat" placeholder="Masukan alamat rumah" autocomplete="off" value="<?= $data_wali->alamat ?>">
             </div>
             <div class="col-12" id="req_nohp">
-                <label for="nohp" class="form-label fw-bold size-14">No. Handphone</label>
+                <label for="nohp" class="form-label fw-bold size-14">No. Telepon</label>
                 <input type="text" class="form-control form-control-pribadi text-start" id="nohp" name="nohp" placeholder="Masukan nomor telepon" value="<?= $data_wali->telp ?>">
             </div>
             <div class="col-12 mb-4" id="req_email">
