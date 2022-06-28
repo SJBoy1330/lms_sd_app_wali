@@ -211,14 +211,24 @@
                         <div class="active_div"></div>
                         <?php foreach ($data_spp->metode as $metode) : ?>
                             <div class="row d-none" id="bank_display_<?= $metode->id_metode_bayar; ?>">
-                                <div class="col-6 d-flex justify-content-center aign-items-center my-2">
-                                    <div class="avatar avatar-70 d-flex align-items-center">
-                                        <img src="<?= $metode->logo; ?>" alt="">
+                                <div class="col-12">
+                                    <!-- Design Baru -->
+                                    <div class="card shadow-sm mb-3 text-normal">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <figure class="avatar avatar-60 p-1 shadow-sm rounded-15" style="background-image: url('<?= $metode->logo; ?>'); background-size: contain; background-position: center center; background-repeat: no-repeat;">
+                                                    </figure>
+                                                </div>
+                                                <div class="col align-self-center">
+                                                    <p class="fw-normal size-15 mb-0"><?= $metode->nama; ?></p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <!-- Akhir Design Baru -->
                                 </div>
-                                <div class="col-6 d-flex align-items-center my-2">
-                                    <span class="size-15 fw-medium"><?= $metode->nama; ?></span>
-                                </div>
+
                                 <div class="col-12 ps-4 mb-1">
                                     <p class="mb-0 size-14 text-dark">Silahkan transfer ke</p>
                                 </div>

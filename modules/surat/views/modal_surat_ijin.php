@@ -52,11 +52,11 @@
         </div>
         <div class="col-12" id="req_edit_mulai_berlaku">
             <label class="form-label fw-bold size-14">Mulai Berlaku</label>
-            <input type="date" id="mulai_berlaku" name="mulai_berlaku" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" value="<?= $berlaku_mulai; ?>" readonly>
+            <input type="date" id="mulai_berlaku" name="mulai_berlaku" class="form-control form-control-pribadi size-11 mb-0 border-0 rounded-10 text-start" value="<?= $berlaku_mulai; ?>" readonly>
         </div>
         <div class="col-12" id="req_edit_berlaku_hingga">
             <label class="form-label fw-bold size-14">Berlaku Sampai</label>
-            <input type="date" id="berlaku_hingga" name="berlaku_hingga" class="form-control bg-f5f5f5 size-11 pyfix-14 border-0 rounded-10 text-start" value="<?= $berlaku_sampai; ?>" readonly>
+            <input type="date" id="berlaku_hingga" name="berlaku_hingga" class="form-control form-control-pribadi size-11 mb-0 border-0 rounded-10 text-start" value="<?= $berlaku_sampai; ?>" readonly>
         </div>
 
         <div class="modal-footer border-0 d-flex justify-content-center">

@@ -120,11 +120,11 @@
 <!-- Modal Preview -->
 <div class="modal fade" id="modal_preview_all" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-        <div class="modal-content" style="border-radius: 0px;">
+        <div class="modal-content" style="border-radius: 0px; background-color: hsl(0deg 1% 20% / 90%);">
             <div class="modal-header border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close-detailsurat" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body d-flex justify-content-center align-items-center">
                 <img src="" id="preview_preview_image" style="width : 100%;" alt="">
             </div>
         </div>
