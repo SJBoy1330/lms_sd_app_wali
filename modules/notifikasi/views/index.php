@@ -46,7 +46,7 @@
                             } else {
                                 $status = 0;
                             } ?>
-                            <div class="list-group-item bg-white py-0 zoom-filter showing" data-tipe="tipe-<?= $row->tipe; ?>">
+                            <div id="fadeout-notif-<?= $row->id_notifikasi_ortu; ?>" class="list-group-item bg-white py-0 zoom-filter showing" data-tipe="tipe-<?= $row->tipe; ?>">
                                 <input type="checkbox" onchange="pilih_notif(this)" class="checkboxes d-none" name="id_notifikasi[]" value="<?= $row->id_notifikasi_ortu; ?>" style="position : absolute;width : 85vw; height : 100%;opacity : 0;">
                                 <?php if ($row->link != NULL) : ?>
                                     <a onclick="read_notif(this,<?= $status; ?>)" data-url="<?= convert_link($row->link); ?>" data-id="<?= $row->id_notifikasi_ortu; ?>" class="button_long_press text-dark py-0" data-tipe="tipe-<?= $row->tipe; ?>">

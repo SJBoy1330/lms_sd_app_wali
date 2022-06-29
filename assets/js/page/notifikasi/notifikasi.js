@@ -233,18 +233,35 @@ $(document).ready(function () {
                 $('#loading_scene').modal('show');
             },
             success: function (data) {
+                $('#loading_scene').modal('hide');
                 var jumlah = data.id_notifikasi.length;
                 footer_notif.classList.add('d-none');
                 pilih_semua.classList.add('d-none');
                 for (let i = 0; i < jumlah; i++) {
-                    $('#pro-notif-' + data.id_notifikasi[i]).fadeOut();
-
+                    var divv = document.getElementById('fadeout-notif-' + data.id_notifikasi[i]);
+                    $('#fadeout-notif-' + data.id_notifikasi[i]).fadeOut(function () {
+                        divv.classList.remove('showing');
+                        divv.classList.add('hiding');
+                    });
                 }
+
                 var checkbox = document.querySelectorAll('.checkboxes');
                 $('.checkboxes').prop('checked', false);
                 checkbox.forEach((cb) => {
                     cb.classList.add("d-none");
                 });
+                const vector_notifikasi = document.querySelector("#vector_notifikasi");
+                var jumlah_new = $('.zoom-filter.showing').length;
+                // console.log(jumlah_new);
+
+                setTimeout(function () {
+                    $('#parent_notif').load(BASE_URL + 'notifikasi/ #reload_content_notif');
+                    $('#parent_loading').load(BASE_URL + 'notifikasi/ #loading_scene');
+                }, 1000);
+
+
+
+            }, error: function () {
                 $('#loading_scene').modal('hide');
             }
         })
