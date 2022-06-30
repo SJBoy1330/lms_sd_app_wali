@@ -230,7 +230,7 @@ class Controller_ctl extends MY_Frontend
 
 			"type" => 'presensi',
 
-			"title" => 'Coba notifikasi 1000000',
+			"title" => 'Haloo boy',
 
 			"message" => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod facilis esse delectus, accusamus, rerum libero molestiae id hic minus aspernatur laborum sapiente nulla beatae nesciunt! Sequi corrupti reprehenderit adipisci nemo!',
 
@@ -239,8 +239,10 @@ class Controller_ctl extends MY_Frontend
 			"images" => 'https://sd.klasq.id/linker/bukti_transfer/MjAyMg/Mw/NjJiYTg3NGQzNjAzMi5qcGc/MQ'
 
 		);
-		$arr['fcm_key'] = 'feR8DXZ6SVyaa_7Fuv5hqK:APA91bHyTlGbvZ7QSyHAqzkwGtHyDmrlMRXSjp4sEzAAtdAvY3HMlwFURzntETgVyICkW08DoaBgpipbJCEYmY-XQ1JMIl9CjVw4F--BKUJTBfUkELBjoPWO6XeJCxN3MlkBCAMARCyC';
+		$arr['fcm_key'] = 'f0Rrpv6bRTC192-N5hJa-d:APA91bH7wKiPf2PsismcMjcikP8SWxeA7iXtjrGCC5l6_WhjsLU__E2TDv00SrQYoU_oFYMVqv5VIkWdbdHIQKFJ64hDf4X6LgzwCgXxg9GK9RYMQorPYw4FWu8bryjskzIcn6ZQzZnN';
 		$arr['data'] = $arrData;
+		$arr['title'] = 'Haloo boy';
+		$arr['body'] = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod facilis esse delectus, accusamus, rerum libero molestiae id hic minus aspernatur laborum sapiente nulla beatae nesciunt! Sequi corrupti reprehenderit adipisci nemo!';
 
 		send_notification($arr);
 	}

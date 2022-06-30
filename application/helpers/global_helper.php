@@ -669,6 +669,10 @@ function send_notification($array = array())
 
     'priority' => $array['data']['priority'],
 
+    'title' => $array['title'],
+
+    'body' => $array['body'],
+
     'mutable_content' => true,
 
     'data' => $array['data']
