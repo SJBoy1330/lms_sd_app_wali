@@ -26,8 +26,8 @@
                             <img src="<?= base_url(); ?>assets/images/tentang_nspm_sekolah.svg" alt="" width="100">
                         </div>
                         <div class="col-6 align-self-center p-0">
-                            <p class="mb-0 fw-bold size-16">NPSM Sekolah</p>
-                            <p class="text-secondary size-12"><?= $data_sekolah->npsm ?></p>
+                            <p class="mb-0 fw-bold size-16">NPSN Sekolah</p>
+                            <p class="text-secondary size-12"><?= $data_sekolah->npsn ?></p>
                         </div>
                     </div>
                 </div>
