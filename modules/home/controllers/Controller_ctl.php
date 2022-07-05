@@ -239,7 +239,7 @@ class Controller_ctl extends MY_Frontend
 			"images" => 'https://sd.klasq.id/linker/bukti_transfer/MjAyMg/Mw/NjJiYTg3NGQzNjAzMi5qcGc/MQ'
 
 		);
-		$arr['fcm_key'] = 'f0Rrpv6bRTC192-N5hJa-d:APA91bH7wKiPf2PsismcMjcikP8SWxeA7iXtjrGCC5l6_WhjsLU__E2TDv00SrQYoU_oFYMVqv5VIkWdbdHIQKFJ64hDf4X6LgzwCgXxg9GK9RYMQorPYw4FWu8bryjskzIcn6ZQzZnN';
+		$arr['fcm_key'] = 'esnTqhFjSPax6cq6IFXsWs:APA91bGJJc5lvYV4p3ab9yTzEiNcwda7pTyESCcdcC8NuDXOOlWW24Fa22l8F26JorIVZjyN9J__eDOcEcjnAbQUm56XFZ6cHBYOZ1-bhfwH6QzKJaSgKgyKGQWyPK3BouQwEYEBlmUC';
 		$arr['data'] = $arrData;
 		$arr['title'] = 'Haloo boy';
 		$arr['body'] = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod facilis esse delectus, accusamus, rerum libero molestiae id hic minus aspernatur laborum sapiente nulla beatae nesciunt! Sequi corrupti reprehenderit adipisci nemo!';

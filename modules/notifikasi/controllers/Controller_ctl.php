@@ -107,7 +107,7 @@ class Controller_ctl extends MY_Frontend
 		$data['status'] = 200;
 		$data['id_notifikasi'] = $id_notifikasi;
 
-
+		sleep(1.5);
 		echo json_encode($data);
 	}
 
