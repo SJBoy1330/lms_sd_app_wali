@@ -583,8 +583,10 @@ function get_tipe_notif($num = NULL)
       return "Pesan Balasan";
     case 9:
       return "Broadcast";
+    case 10:
+      return "Surat Ijin";
     default:
-      return array(1 => "Presensi", 2 => "Spp", 3 => "Tugas", 4 => "Kbm", 5 => "Pengumuman", 6 => "Berita", 7 => "Jadwal Ujian", 8 => "Pesan Balasan", 9 => "Broadcast");
+      return array(1 => "Presensi", 2 => "Spp", 3 => "Tugas", 4 => "Kbm", 5 => "Pengumuman", 6 => "Berita", 7 => "Jadwal Ujian", 8 => "Pesan Balasan", 9 => "Broadcast", 10 => "Surat Ijin");
   }
 }
 
