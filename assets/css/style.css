@@ -16780,6 +16780,10 @@ button.filter-tugas {
   background-color: #E5E5E5;
 }
 
+button.filter-tugas:hover{
+  box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+}
+
 a.btn-filter {
   width: 100%;
   background-color: #EC3528;

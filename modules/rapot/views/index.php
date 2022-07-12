@@ -156,7 +156,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-2 d-flex justify-content-center align-items-center ps-0">
-                                                <button class="btn btn-secondary filter-tugas border-0 button_filter" data-id="<?= $ujian->id_pelajaran; ?>" data-bs-toggle="modal" data-bs-target="#filterUjian">
+                                                <button class="btn filter-tugas border-0 button_filter" data-id="<?= $ujian->id_pelajaran; ?>" data-bs-toggle="modal" data-bs-target="#filterUjian">
                                                     <i class="fa-regular fa-filter" style="color: #EC3528;"></i>
                                                 </button>
                                             </div>
