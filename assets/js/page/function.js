@@ -68,7 +68,7 @@ function submit_form(element, id_form, num = 0, color = '#FFFFFF') {
                 if (data.required) {
                     const array = data.required.length;
                     for (var i = 0; i < array; i++) {
-                        $('#' + data.required[i][0]).append('<span class="text-danger fadedin">' + data.required[i][1] + '</span>');
+                        $('#' + data.required[i][0]).append('<span class="text-danger size-12 fadedin">' + data.required[i][1] + '</span>');
                     }
                 }
                 if (data.redirect) {
