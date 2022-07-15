@@ -163,7 +163,7 @@
                 </div>';
 </script>
 <!-- Customized jquery file  -->
-<script src="<?= base_url() ?>assets/js/main.js?v=<?= date(' YmdHis'); ?>"></script>
+<script src="<?= base_url() ?>assets/js/main.js?v=<?= date('YmdHis'); ?>"></script>
 <script src="<?= base_url() ?>assets/js/color-scheme.js"></script>
 
 <!-- PWA app service registration and works -->
