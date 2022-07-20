@@ -218,32 +218,8 @@ class Controller_ctl extends MY_Frontend
 
 	public function cek()
 	{
-		$arrData = array(
-
-			"priority" => 'high',
-
-			"sound" => "https://sd.klasq.id/linker/audio_default/" . base64url_encode('audio') . '/' . base64url_encode('global_notif.mp3'),
-
-			"content_available" => true,
-
-			"organization" => 'KlasQ',
-
-			"type" => 'presensi',
-
-			"title" => 'Haloo boy',
-
-			"message" => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod facilis esse delectus, accusamus, rerum libero molestiae id hic minus aspernatur laborum sapiente nulla beatae nesciunt! Sequi corrupti reprehenderit adipisci nemo!',
-
-			"url" => NULL,
-
-			"images" => 'https://sd.klasq.id/linker/bukti_transfer/MjAyMg/Mw/NjJiYTg3NGQzNjAzMi5qcGc/MQ'
-
-		);
-		$arr['fcm_key'] = 'd89LfaESRzWaFIxxBlNbuw:APA91bH26f-TZ_A6uBMlk5lJEQbYNlZ-4byDahJJ-AlNsxnBqCc7UftSnv_ex3jdFuAaT9az9_1DNS08IO_bVPxBwCjxsBENK7tU1q4oy1l8CSUY-I_k54PI5Kxcmzdmyk3LhSa_W5l9';
-		$arr['data'] = $arrData;
-		$arr['title'] = 'Haloo boy';
-		$arr['body'] = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod facilis esse delectus, accusamus, rerum libero molestiae id hic minus aspernatur laborum sapiente nulla beatae nesciunt! Sequi corrupti reprehenderit adipisci nemo!';
-
-		send_notification($arr);
+		$res = sendNotif('f0Rrpv6bRTC192-N5hJa-d:APA91bFOmkauwxp6BpPCkdLhOeraz_fCTz10U0qIOD9Q-fnofB7-CwvOB2nyXXreoUzrHKF_MbsRhgNuu9qM3sHjCCc97lb2Wsl5Xip_CHR7jz4o6c0CbwguGk7zYoxBcgbGpIfOeJWl', 'Saka Nyeblein', 'Lu jadi orang jangan nyebelin napa!');
+		var_dump($res);
+		die;
 	}
 }

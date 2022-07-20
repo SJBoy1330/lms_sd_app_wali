@@ -709,3 +709,39 @@ function send_notification($array = array())
 
   var_dump($result);
 }
+
+function sendNotif($fcm_token, $title, $message, $id = null, $action = null)
+{
+
+  $url = "https://fcm.googleapis.com/fcm/send";
+  $header = [
+    'authorization: key=AAAAEWT74Yc:APA91bEpHSWLIT1k9Dv5fncpAWIsw5nmTENIZftsh5q-nmmpgLbq3IerUMtFq7A3LRvk78thCX0OWhJlI2JEdGL8p0VPT6tjOvhi5t-Fva1zsz1tQUkZYYWwrTj0eSJGQwpmMbZwqe0F',
+    'content-type: application/json'
+  ];
+
+  $notification = [
+    'title' => $title,
+    'body' => $message,
+    'image' => 'https://sd.klasq.id/linker/img_siswa/NjJjZDE1ZGQ2MzEwZS5qcGc/MQ'
+  ];
+  $extraNotificationData = ["message" => $notification, "id" => $id, 'action' => $action];
+
+  $fcmNotification = [
+    'to'        => $fcm_token,
+    'notification' => $notification,
+    'data' => $extraNotificationData
+  ];
+
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fcmNotification));
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+
+  $result = curl_exec($ch);
+  curl_close($ch);
+
+  return $result;
+}
