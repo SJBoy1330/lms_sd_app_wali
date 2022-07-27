@@ -41,7 +41,7 @@
     <div class="col-11 col-sm-11 mt-auto mx-auto pt-4 pb-5">
         <div class="row">
             <div class="col-12 d-flex justify-content-center d-grid">
-                <button type="submit" id="button_submit" onclick="submit_form(this,'#form_ubah_profil')" class="w-100 py-3 rounded-pill btn btn-primary bg-ec3528 border-white size-10 fw-lighter btn-simpan">Simpan</button>
+                <button type="submit" id="button_submit" onclick="submit_form(this,'#form_ubah_profil')" class="w-100 py-3 rounded-pill btn btn-primary bg-ec3528 border-white size-10 fw-medium btn-simpan">Simpan</button>
             </div>
         </div>
     </div>
