@@ -29,7 +29,10 @@
             </div>
             <div class="col-12" id="req_nohp">
                 <label for="nohp" class="form-label fw-bold size-14">No. Telepon</label>
-                <input type="text" class="form-control form-control-pribadi text-start" id="nohp" name="nohp" placeholder="Masukan nomor telepon" value="<?= $data_wali->telp ?>">
+                <div class="d-flex">
+                    <span class="kode-negara d-flex justify-content-center align-items-center">+62</span>
+                    <input type="text" class="form-control form-control-pribadi nomor-telepon text-start" id="nohp" name="nohp" placeholder="Masukan nomor telepon" value="<?= $data_wali->telp ?>">
+                </div>
             </div>
             <div class="col-12 mb-4" id="req_email">
                 <label for="email" class="form-label fw-bold size-14">Email</label>

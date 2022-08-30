@@ -17296,3 +17296,16 @@ span.blm-lns {
   background-size: cover !important;
   border: 3px solid white !important;
 }
+
+.form-control.form-control-pribadi.nomor-telepon {
+  border-radius: 0px 10px 10px 0px;
+  height: 50px;
+  background-color: #F5F5F5;
+}
+
+span.kode-negara{
+  border-radius: 10px 0px 0px 10px;
+  width: 60px;
+  background-color: #dfdfe0;
+  border: 1px solid #dfdfe0;
+}
