@@ -86,3 +86,10 @@
   .bg-ffbd17{
     background-color: #FFBD17;
   }
+
+  button.btn.btn-reset {
+    background-color: transparent;
+    border-radius: 8px;
+    color: #EC3528;
+    border: 1px solid #EC3528;
+}

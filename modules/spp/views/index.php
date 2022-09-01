@@ -442,6 +442,9 @@
                                             } ?>>Belum Lunas</option>
                     </select>
                 </div>
+                <div class="d-flex justify-content-end align-items-center">
+                    <button class="btn btn-danger btn-sm btn-reset">Reset</button>
+                </div>
             </div>
             <div class="modal-footer border-0">
                 <button type="submit" class="btn btn-block btn-md btn-danger btn-filter">Tampilkan</button>
