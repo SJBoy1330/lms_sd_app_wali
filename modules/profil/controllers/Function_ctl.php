@@ -70,7 +70,13 @@ class Function_ctl extends MY_Welcome
                 $arrAccess[] = true;
             }
         }
-
+        $telp = $this->input->post('nohp');
+        if ($telp) {
+            if (in_array(substr($telp, 0, 1), ['0', '+', '6', '2'])) {
+                $data['required'][] = ['req_nohp', 'Nomor tidak diterima!'];
+                $arrAccess[] = false;
+            }
+        }
         if (in_array(false, $arrAccess)) {
             $data['status'] = false;
             echo json_encode($data);
