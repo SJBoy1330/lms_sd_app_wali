@@ -143,9 +143,10 @@ a.btn-filter {
 }
 
 .btn-disabled {
-  background-color: #D3D3D3 !important;
-  color: #303030 !important;
-  border: none;
+  color: #EC3528;
+  background-color: #EC3528;
+  border: 1px solid #EC3528;
+  opacity: 0.6;
 }
 
 button.btn-filter {
